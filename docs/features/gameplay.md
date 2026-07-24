@@ -1,62 +1,62 @@
-# Reglas y flujo de juego
+# Gameplay rules and flow
 
-## Inicio
+## Starting a game
 
-Una partida contiene cuatro soluciones únicas de cinco letras y una fecha
-`YYYY-MM-DD`. También tiene un `gameId`: estable para el puzzle diario y único
-para cada repetición local. El motor expone un estado inmutable.
+A game contains four unique five-letter solutions and a `YYYY-MM-DD` date. It
+also has a `gameId`: stable for the daily puzzle and unique for each local
+replay. The engine exposes immutable state.
 
-## Intentos
+## Guesses
 
-- Se normalizan a mayúsculas, eliminando tildes y conservando `Ñ`.
-- Deben contener cinco caracteres de `A-Z` o `Ñ`.
-- Deben existir en el mismo diccionario usado para elegir soluciones.
-- Un intento inválido no consume turno.
-- Un intento válido se evalúa contra todo tablero todavía activo.
+- They are normalized to uppercase, with accent marks removed and `Ñ`
+  preserved.
+- They must contain five characters from `A-Z` or `Ñ`.
+- They must exist in the same dictionary used to choose solutions.
+- An invalid guess does not consume a turn.
+- A valid guess is evaluated against every board that is still active.
 
-## Duplicados
+## Duplicate letters
 
-La evaluación usa dos pasadas:
+Evaluation uses two passes:
 
-1. Marca coincidencias en posición correcta.
-2. Cuenta las letras restantes de la solución y consume una por cada
-   coincidencia en otra posición.
+1. Mark matches in the correct position.
+2. Count the remaining letters in the solution and consume one for each match
+   in another position.
 
-Esto impide marcar más apariciones amarillas de las existentes.
+This prevents more yellow occurrences from being marked than actually exist.
 
-## Resolución
+## Resolution
 
-Al acertar un tablero se registra el número global de intento. Los intentos
-posteriores guardan `null` para ese tablero y no alteran su resultado. Se gana
-al resolver los cuatro y se pierde al completar el noveno intento sin hacerlo.
-Al terminar, tanto la victoria como la derrota abren un diálogo centrado con el
-resumen de los cuatro tableros y las acciones disponibles.
+When a board is solved, the global guess number is recorded. Subsequent guesses
+store `null` for that board and do not change its result. The player wins by
+solving all four boards and loses by completing the ninth guess without doing
+so. At the end, both a win and a loss open a centered dialog with a summary of
+the four boards and the available actions.
 
-## Teclado
+## Keyboard
 
-Cada tecla puede tener cuatro estados visuales, uno por tablero. Dentro de cada
-tablero la prioridad es `correct > present > absent`, por lo que una pista nunca
-se degrada.
+Each key can have four visual states, one per board. Within each board, the
+priority is `correct > present > absent`, so a clue never degrades.
 
-## Persistencia
+## Persistence
 
-Se guardan versión, fecha, lista de intentos y si la partida terminó. Al cargar,
-los intentos se reproducen desde cero. Un payload corrupto, incoherente o de
-otra fecha se elimina.
+The version, date, guess list, and whether the game has ended are stored. On
+load, guesses are replayed from scratch. A corrupt, inconsistent, or
+different-date payload is removed.
 
-## Desarrollo local
+## Local development
 
-- Solo hay una sesión local activa: recargar restaura sus mismas soluciones y
-  progreso.
-- La sesión inicial obtiene cuatro palabras aleatorias directamente del JSON.
-- No se consulta el historial ni se importa el cliente Supabase.
-- Cada tablero muestra su solución como marca de agua para facilitar las
-  comprobaciones manuales. La UI exige simultáneamente build `DEV` y modo
-  `local`; nunca se renderiza en producción.
-- “Volver a jugar” aparece únicamente después de ganar o perder.
-- El botón solicita `POST /api/game/today`, reemplaza la sesión local, borra el
-  progreso anterior y crea un estado con el nuevo `gameId`.
-- En producción el POST responde `405` y el botón no se renderiza.
+- Only one local session is active: reloading restores the same solutions and
+  progress.
+- The initial session gets four random words directly from the JSON file.
+- The history is not queried and the Supabase client is not imported.
+- Each board displays its solution as a watermark to simplify manual checks.
+  The UI requires both a `DEV` build and `local` mode; the watermark is never
+  rendered in production.
+- “Volver a jugar” (“Play again”) appears only after a win or loss.
+- The button requests `POST /api/game/today`, replaces the local session,
+  removes the previous progress, and creates state with the new `gameId`.
+- In production, POST returns `405` and the button is not rendered.
 
-La integración debe usar `getOrCreateLocalSession` durante el arranque local y
-`replayLocalGame` en el callback de `LocalReplayButton`.
+The integration must use `getOrCreateLocalSession` during local startup and
+`replayLocalGame` in the `LocalReplayButton` callback.

@@ -1,31 +1,31 @@
-# Prácticas de desarrollo
+# Development practices
 
 ## TypeScript
 
-- Modo estricto y `noUncheckedIndexedAccess`.
-- Tipos `readonly` en contratos de dominio.
-- Resultados discriminados para errores esperables.
-- Los errores de infraestructura se capturan en el límite HTTP.
+- Strict mode and `noUncheckedIndexedAccess`.
+- `readonly` types in domain contracts.
+- Discriminated results for expected errors.
+- Infrastructure errors are caught at the HTTP boundary.
 
-## Diseño del código
+## Code design
 
-- Separación explícita entre dominio, infraestructura y presentación.
-- Inyección del repositorio y del generador aleatorio para probar sin red.
-- Sin abstracciones que solo tengan una implementación salvo que delimiten una
-  frontera externa, como `DailyGameRepository`.
-- Estados derivados, como el teclado, no se persisten.
+- Explicit separation between domain, infrastructure, and presentation.
+- Repository and random generator injection for testing without network access.
+- No abstractions with only one implementation unless they define an external
+  boundary, such as `DailyGameRepository`.
+- Derived state, such as the keyboard, is not persisted.
 
-## Seguridad
+## Security
 
-- Menor privilegio en Supabase y RLS habilitado.
-- Secret keys solo en módulos `.server.ts`.
-- Cron autenticado mediante Bearer token.
-- Mensajes públicos genéricos y detalles únicamente en logs de servidor.
+- Least privilege in Supabase, with RLS enabled.
+- Secret keys only in `.server.ts` modules.
+- Cron authentication with a Bearer token.
+- Generic public messages, with details only in server logs.
 
-## Interfaz
+## Interface
 
-- Estado semántico además de color.
-- Navegación táctil y teclado físico.
-- Foco visible y regiones `aria-live`.
-- `prefers-reduced-motion` desactiva movimientos no esenciales.
-- Las animaciones se limpian al desmontar componentes.
+- Semantic state in addition to color.
+- Touch navigation and physical keyboard support.
+- Visible focus and `aria-live` regions.
+- `prefers-reduced-motion` disables nonessential movement.
+- Animations are cleaned up when components unmount.

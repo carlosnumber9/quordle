@@ -1,24 +1,23 @@
-# Compartir resultados
+# Result sharing
 
-Solo una partida terminada puede compartirse.
+Only a completed game can be shared.
 
-## Contenido
+## Content
 
-- Nombre y fecha del juego.
-- Resultado por tablero: emoji numérico del intento de resolución o `❌`.
-- Cuatro cuadrículas colocadas en dos filas y dos columnas.
-- `🟩`, `🟨` y `⬛` para evaluaciones.
-- `⬜` para intentos posteriores a la resolución de un tablero.
-- URL canónica sin slash final.
+- Game name and date.
+- Result per board: the number emoji for the solving guess or `❌`.
+- Four grids arranged in two rows and two columns.
+- `🟩`, `🟨`, and `⬛` for evaluations.
+- `⬜` for guesses made after a board was solved.
+- Canonical URL without a trailing slash.
 
-No se incluyen letras, palabras ni soluciones.
+No letters, words, or solutions are included.
 
-## Portapapeles
+## Clipboard
 
-La UI llama `createShareText` y luego `copyTextToClipboard`. Si la Clipboard API
-no está disponible o el navegador la bloquea, el helper devuelve `false` y un
-diálogo muestra el texto seleccionado para que la persona pueda copiarlo
-manualmente.
+The UI calls `createShareText` and then `copyTextToClipboard`. If the Clipboard
+API is unavailable or blocked by the browser, the helper returns `false` and a
+dialog displays the selected text so the user can copy it manually.
 
-La URL procede de `PUBLIC_SITE_URL`; durante desarrollo puede usarse el origen
-actual del navegador.
+The URL comes from `PUBLIC_SITE_URL`; during development, the browser's current
+origin may be used.

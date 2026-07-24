@@ -1,57 +1,60 @@
-# Puzzle diario
+# Daily puzzle
 
-## Fechas
+## Dates
 
-La fecha visible cambia a las 05:00 de `Europe/Madrid`. El cálculo usa campos
-locales producidos por `Intl.DateTimeFormat`; no resta un número fijo de horas,
-por lo que funciona en CET, CEST y sus transiciones.
+The visible date changes at 05:00 in `Europe/Madrid`. The calculation uses local
+fields produced by `Intl.DateTimeFormat`; it does not subtract a fixed number
+of hours, so it works in CET, CEST, and during transitions between them.
 
 ## Cron
 
-Vercel ejecuta `GET /api/cron/create-daily-game` a las `03:00 UTC`. En verano
-coincide con las 05:00 de Madrid; en invierno prepara la fecha civil del día a
-las 04:00, pero esa partida no se sirve hasta el cambio de las 05:00.
+Vercel runs `GET /api/cron/create-daily-game` at `03:00 UTC`. In summer this is
+05:00 in Madrid; in winter it prepares that calendar day's game at 04:00, but
+the game is not served until the 05:00 rollover.
 
-La ruta exige `Authorization: Bearer <CRON_SECRET>` y nunca devuelve palabras.
+The route requires `Authorization: Bearer <CRON_SECRET>` and never returns
+words.
 
-## Generación
+## Generation
 
-1. Consultar filas de la fecha objetivo.
-2. Si hay cuatro válidas, devolver inmediatamente.
-3. Si hay entre una y tres, fallar por corrupción.
-4. Paginar y cargar todas las palabras usadas.
-5. Filtrarlas del diccionario.
-6. Barajar y escoger cuatro.
-7. Insertar las cuatro en una sola sentencia.
+1. Query rows for the target date.
+2. If four valid rows exist, return immediately.
+3. If one to three rows exist, fail because the data is corrupt.
+4. Paginate through and load all previously used words.
+5. Remove them from the dictionary.
+6. Shuffle the remainder and choose four.
+7. Insert all four in a single statement.
 
-La clave primaria de `word` evita reutilización histórica. La restricción
-única `(game_date, position)` garantiza exactamente un ganador por posición.
-Si una ejecución pierde una carrera de inserción, relee y acepta el juego
-completo del ganador.
+The `word` primary key prevents historical reuse. The unique
+`(game_date, position)` constraint guarantees exactly one winner per position.
+If one execution loses an insertion race, it reads again and accepts the
+winner's complete game.
 
-## Recuperación
+## Recovery
 
-`GET /api/game/today` aplica la misma operación idempotente. Si el cron falló,
-la primera visita posterior puede crear la partida. La respuesta no se cachea.
+`GET /api/game/today` applies the same idempotent operation. If the cron job
+failed, the first subsequent visit can create the game. The response is not
+cached.
 
-## Rama de desarrollo local
+## Local development branch
 
-Con `import.meta.env.DEV`, `GET /api/game/today` selecciona cuatro palabras
-distintas del JSON y responde:
+With `import.meta.env.DEV`, `GET /api/game/today` selects four distinct words
+from the JSON file and returns:
 
-- `gameId` único con prefijo `local:`
+- a unique `gameId` with the `local:` prefix
 - `gameDate`
 - `words`
 - `mode: "local"`
 - `replayAllowed: true`
 
-No se importa el adaptador de Supabase ni se consulta el historial. El cliente
-persiste esta respuesta para reutilizarla al recargar. Tras terminar,
-`POST /api/game/today` genera otra partida local. En producción el GET devuelve
-`mode: "daily"` y `replayAllowed: false`, y el POST está deshabilitado.
+The Supabase adapter is not imported and the history is not queried. The client
+persists this response so it can be reused after a reload. Once the game ends,
+`POST /api/game/today` generates another local game. In production, GET returns
+`mode: "daily"` and `replayAllowed: false`, and POST is disabled.
 
-## Fallos operativos
+## Operational failures
 
-- Diccionario agotado: `503`, sustituir o ampliar el diccionario.
-- Partida parcial: `500`, revisar las filas manualmente; no completar al azar.
-- Configuración ausente: `503`, revisar variables de Vercel.
+- Exhausted dictionary: `503`; replace or expand the dictionary.
+- Partial game: `500`; inspect the rows manually and do not fill the missing
+  positions at random.
+- Missing configuration: `503`; check the Vercel variables.

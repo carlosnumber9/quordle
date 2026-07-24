@@ -1,54 +1,54 @@
-# Arquitectura
+# Architecture
 
-## Capas
+## Layers
 
-1. `src/game/`: dominio puro. Normaliza, evalúa y transforma estados.
-2. `src/lib/`: utilidades compartidas sin infraestructura.
-3. `src/services/`: casos de uso diarios y adaptadores de Supabase.
-4. `src/pages/api/`: transporte HTTP, autenticación del cron y códigos de error.
-5. `src/pages/` y `src/components/`: composición Astro/React.
+1. `src/game/`: pure domain code. It normalizes, evaluates, and transforms
+   state.
+2. `src/lib/`: shared infrastructure-independent utilities.
+3. `src/services/`: daily use cases and Supabase adapters.
+4. `src/pages/api/`: HTTP transport, cron authentication, and error codes.
+5. `src/pages/` and `src/components/`: Astro/React composition.
 
-Las dependencias apuntan hacia el dominio. El dominio no conoce Astro,
-Supabase, React ni GSAP.
+Dependencies point toward the domain. The domain has no knowledge of Astro,
+Supabase, React, or GSAP.
 
-## Flujo de carga
+## Loading flow
 
-1. La página solicita `GET /api/game/today`.
-2. El servidor calcula la fecha de juego de Madrid.
-3. En producción, el servicio recupera cuatro filas ordenadas o crea la
-   partida si falta.
-4. En desarrollo, selecciona cuatro palabras del JSON sin cargar el adaptador
-   de Supabase.
-5. El cliente recibe identificador, fecha, soluciones, modo y permiso de replay.
-6. La isla React crea el estado o lo reconstruye desde Local Storage.
-7. Cada intento se procesa con `submitGuess`.
-8. La UI persiste el nuevo estado y anima la evaluación resultante.
+1. The page requests `GET /api/game/today`.
+2. The server calculates the Madrid game date.
+3. In production, the service retrieves four ordered rows or creates the game
+   if it does not exist.
+4. In development, it selects four words from the JSON file without loading
+   the Supabase adapter.
+5. The client receives the ID, date, solutions, mode, and replay permission.
+6. The React island creates the state or reconstructs it from Local Storage.
+7. Each guess is processed with `submitGuess`.
+8. The UI persists the new state and animates the resulting evaluation.
 
-## Estado
+## State
 
-El servidor solo conserva el historial de soluciones. El progreso del jugador
-permanece en Local Storage y se reconstruye reproduciendo intentos sobre el
-motor; no se confía en evaluaciones persistidas.
+The server stores only the solution history. Player progress remains in Local
+Storage and is reconstructed by replaying guesses through the engine; persisted
+evaluations are not trusted.
 
-En local se guarda además la sesión activa —identificador y cuatro soluciones—
-para que recargar no conceda una partida nueva. Cada replay recibe otro
-identificador y elimina el progreso anterior.
+Local development also stores the active session—its ID and four solutions—so
+reloading does not grant a new game. Each replay receives a new ID and removes
+the previous progress.
 
-## Integración de UI
+## UI integration
 
-La página monta una isla React `Game`. Button, Card, Badge, Alert, Dialog,
-Textarea, Separator, Skeleton y Sonner proceden del preset shadcn. Los
-componentes de composición `Board` y `Keyboard` usan exclusivamente utilidades
-de Tailwind asociadas a los tokens del preset; no añaden hojas de estilo,
-colores ni variables propios.
+The page mounts a `Game` React island. Button, Card, Badge, Alert, Dialog,
+Textarea, Separator, Skeleton, and Sonner come from the shadcn preset. The
+`Board` and `Keyboard` composition components use only Tailwind utilities tied
+to the preset tokens; they do not add their own style sheets, colors, or
+variables.
 
-La isla representa el estado inmutable del motor, carga y restaura la sesión,
-despacha intentos y delega las reglas en `src/game/`. GSAP coordina la entrada
-del título, las respuestas visuales de las casillas evaluadas, el plegado de
-los tableros resueltos y la aparición del resultado según victoria o derrota.
-Todas estas animaciones se omiten con `prefers-reduced-motion`.
+The island renders the engine's immutable state, loads and restores the
+session, dispatches guesses, and delegates rules to `src/game/`. GSAP
+coordinates the title entrance, visual feedback for evaluated tiles, collapsing
+solved boards, and revealing the result after a win or loss. All these
+animations are skipped when `prefers-reduced-motion` is enabled.
 
-Los tableros se distribuyen en dos columnas independientes: 1 sobre 3 y 2
-sobre 4. Las columnas quedan ancladas arriba para que los tableros superiores
-no cambien su posición al plegarse y para que cada tablero inferior ascienda
-con el encogimiento del que tiene encima.
+The boards are arranged in two independent columns: 1 above 3 and 2 above 4.
+The columns remain anchored to the top so that the upper boards do not move
+when they collapse and each lower board rises as the board above it shrinks.

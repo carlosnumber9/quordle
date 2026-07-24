@@ -1,52 +1,54 @@
-# Desarrollo local
+# Local development
 
-## Requisitos
+## Requirements
 
-- Node.js 22.12 o posterior.
-- Un proyecto Supabase.
-- Variables basadas en `.env.example`.
+- Node.js 22.12 or later.
+- A Supabase project.
+- Variables based on `.env.example`.
 
-## Preparación
+## Setup
 
 1. `npm install`
-2. Crear `.env`.
-3. `npm run db:link` para enlazar el proyecto indicado por `SUPABASE_URL`.
-4. `npm run db:migrate` para aplicar migraciones pendientes.
-5. Sustituir y validar el diccionario.
+2. Create `.env`.
+3. Run `npm run db:link` to link the project specified by `SUPABASE_URL`.
+4. Run `npm run db:migrate` to apply pending migrations.
+5. Replace and validate the dictionary.
 6. `npm run dev`
 
-Los agentes no deben iniciar el servidor de desarrollo, ni abrir la aplicación
-en un navegador local, salvo que el propietario lo solicite explícitamente.
+Agents must not start the development server or open the application in a local
+browser unless the owner explicitly requests it.
 
-La primera vez, autentica la CLI con `npx supabase login`. `db:status` compara
-el historial local y remoto sin modificar la base de datos. `db:verify`
-comprueba la conexión Data API y que `daily_words` rechaza la clave pública.
+On first use, authenticate the CLI with `npx supabase login`. `db:status`
+compares the local and remote migration histories without modifying the
+database. `db:verify` checks the Data API connection and verifies that
+`daily_words` rejects the public key.
 
 ## Variables
 
-| Variable | Exposición | Uso |
+| Variable | Exposure | Purpose |
 | --- | --- | --- |
-| `SUPABASE_URL` | Servidor | Data API de Supabase |
-| `SUPABASE_SECRET_KEY` | Secreto | Lectura/escritura administrativa |
-| `SUPABASE_PUBLISHABLE_KEY` | Servidor | Renovación de sesiones en middleware |
-| `CRON_SECRET` | Secreto | Autenticación de Vercel Cron |
-| `PUBLIC_SITE_URL` | Pública | Enlace del resultado compartido |
+| `SUPABASE_URL` | Server | Supabase Data API |
+| `SUPABASE_SECRET_KEY` | Secret | Administrative read/write access |
+| `SUPABASE_PUBLISHABLE_KEY` | Server | Session renewal in middleware |
+| `CRON_SECRET` | Secret | Vercel Cron authentication |
+| `PUBLIC_SITE_URL` | Public | Link included in shared results |
 
-El proyecto puede compilar sin valores reales para facilitar la preparación,
-pero las API de juego responderán como no disponibles.
+The project can build without real values to simplify initial setup, but the
+game APIs will respond as unavailable.
 
-Durante `npm run dev`, las credenciales de Supabase no son necesarias para
-jugar. La API selecciona cuatro palabras del JSON y el navegador mantiene una
-sesión local por fecha. Al terminar se puede generar otra con “Volver a jugar”.
-Este comportamiento se elimina del build de producción.
+Supabase credentials are not required to play while `npm run dev` is running.
+The API selects four words from the JSON file and the browser maintains one
+local session per date. After the game ends, another can be generated with
+“Volver a jugar” (“Play again”). This behavior is removed from the production
+build.
 
 ## shadcn/ui
 
-El proyecto usa el preset `b1aJEHx6e` con estilo Luma, base zinc, tema lime,
-fuente Figtree, radio grande e iconos Remix. `components.json` es la fuente de
-configuración y no debe reconfigurarse manualmente.
+The project uses preset `b1aJEHx6e` with the Luma style, zinc base, lime theme,
+Figtree font, large radius, and Remix icons. `components.json` is the source of
+configuration and must not be reconfigured manually.
 
-Antes de añadir un componente propio, reutiliza los disponibles en
-`src/components/ui/`. La composición puede usar utilidades Tailwind basadas en
-los tokens del preset, pero no debe introducir colores, variables globales ni
-hojas de estilo propias.
+Before adding a custom component, reuse those available in
+`src/components/ui/`. Composition may use Tailwind utilities based on the
+preset tokens, but it must not introduce its own colors, global variables, or
+style sheets.

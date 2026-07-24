@@ -1,28 +1,29 @@
-# ADR-0003: partidas repetibles solo en local
+# ADR-0003: replayable games in local development only
 
-## Estado
+## Status
 
-Aceptada.
+Accepted.
 
-## Decisión
+## Decision
 
-Desarrollo local tiene una sesión activa por fecha, guardada en Local Storage.
-Recargar conserva esa partida. Después de terminar, una acción explícita
-“Volver a jugar” puede sustituirla por cuatro palabras nuevas del JSON.
+Local development has one active session per date, stored in Local Storage.
+Reloading preserves that game. After it ends, an explicit “Volver a jugar”
+(“Play again”) action can replace it with four new words from the JSON file.
 
-El endpoint local no consulta Supabase. Cada partida recibe un `gameId` único
-para impedir que se restaure progreso de otra repetición del mismo día.
+The local endpoint does not query Supabase. Each game receives a unique
+`gameId` to prevent progress from another replay on the same day from being
+restored.
 
-## Motivo
+## Rationale
 
-Permite probar victorias, derrotas, persistencia y diálogos repetidamente sin
-contaminar el historial compartido ni preparar datos en Supabase.
+This makes it possible to test wins, losses, persistence, and dialogs repeatedly
+without polluting the shared history or preparing data in Supabase.
 
-## Consecuencias
+## Consequences
 
-- Las soluciones se guardan localmente solo durante desarrollo.
-- La interfaz puede mostrarlas como marca de agua únicamente cuando coinciden
-  `import.meta.env.DEV` y el modo `local`.
-- `POST /api/game/today` existe únicamente en modo DEV.
-- Producción mantiene una sola partida diaria y nunca muestra replay.
-- La futura UI debe reemplazar la sesión antes de crear el nuevo estado.
+- Solutions are stored locally only during development.
+- The interface may display them as watermarks only when
+  `import.meta.env.DEV` and `local` mode both apply.
+- `POST /api/game/today` exists only in DEV mode.
+- Production keeps a single daily game and never shows replay controls.
+- The future UI must replace the session before creating the new state.

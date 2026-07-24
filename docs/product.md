@@ -1,44 +1,44 @@
-# Producto y alcance
+# Product and scope
 
-## Objetivo
+## Goal
 
-Ofrecer una partida diaria de Quordle sencilla, rápida y cuidada para un grupo
-pequeño de personas. El producto prioriza claridad y mantenimiento frente a
-escalabilidad.
+Provide a simple, fast, polished daily Quordle game for a small group of people.
+The product prioritizes clarity and maintainability over scalability.
 
 ## MVP
 
-- Cuatro tableros simultáneos.
-- Una sola palabra introducida afecta a los cuatro.
-- Nueve intentos globales.
-- Misma partida para todas las personas.
-- Cambio diario a las 05:00 de `Europe/Madrid`.
-- Restauración de progreso en el mismo navegador.
-- Bloqueo de repetición al terminar.
-- Resultado final copiable como cuadrícula emoji con enlace.
-- Animaciones GSAP contenidas y accesibles.
-- En desarrollo local, replay explícito tras terminar para facilitar pruebas.
+- Four simultaneous boards.
+- A single submitted word affects all four boards.
+- Nine total guesses.
+- The same game for everyone.
+- Daily rollover at 05:00 in `Europe/Madrid`.
+- Progress restoration in the same browser.
+- Replays blocked after the game ends.
+- A copyable final result containing an emoji grid and a link.
+- Restrained, accessible GSAP animations.
+- An explicit replay after the game ends in local development to make testing
+  easier.
 
-## Fuera de alcance
+## Out of scope
 
-- Autenticación, cuentas y perfiles.
-- Estadísticas y rachas.
-- Multijugador.
-- Histórico jugable.
-- Modo difícil.
-- Temas configurables.
-- Varios idiomas.
+- Authentication, accounts, and profiles.
+- Statistics and streaks.
+- Multiplayer.
+- A playable game history.
+- Hard mode.
+- Configurable themes.
+- Multiple languages.
 - PWA.
-- Persistencia de jugadores en servidor.
+- Server-side player persistence.
 
-El soporte de letras, Enter y borrar desde teclado físico es entrada básica y
-accesibilidad, no un sistema de atajos configurable.
+Support for letters, Enter, and Backspace from a physical keyboard is basic
+input and accessibility, not a configurable shortcut system.
 
-La posibilidad de volver a jugar no existe en producción. Allí se mantiene el
-bloqueo diario incluso después de terminar.
+The option to play again does not exist in production. The daily lock remains
+in place there even after the game ends.
 
-## Estados visibles
+## Visible states
 
-La UI representa carga, partida activa, palabra incompleta, palabra
-desconocida, victoria, derrota, restauración y fallo temporal del servicio.
-Nunca muestra una pantalla vacía ante un error.
+The UI represents loading, an active game, an incomplete word, an unknown word,
+a win, a loss, restoration, and a temporary service failure. It never displays
+a blank screen when an error occurs.

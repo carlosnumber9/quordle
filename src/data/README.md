@@ -1,20 +1,19 @@
-# Diccionario
+# Dictionary
 
-El diccionario de producción debe guardarse en `src/data/words.json`.
+The production dictionary must be stored in `src/data/words.json`.
 
-El fichero incluido en el repositorio contiene únicamente palabras de muestra
-para poder desarrollar y ejecutar las pruebas. Debe reemplazarse antes de
-publicar la aplicación.
+The file included in the repository contains only sample words for development
+and test execution. It must be replaced before the application is released.
 
-## Contrato
+## Contract
 
-- El contenido es un array JSON de strings.
-- Cada entrada se normaliza a mayúsculas.
-- Las vocales acentuadas se normalizan a su forma sin tilde.
-- La `Ñ` se conserva.
-- Cada palabra normalizada contiene exactamente cinco caracteres de `A-Z` o
+- The content is a JSON array of strings.
+- Each entry is normalized to uppercase.
+- Accented vowels are normalized to their unaccented form.
+- `Ñ` is preserved.
+- Each normalized word contains exactly five characters from `A-Z` or
   `Ñ`.
-- No puede haber duplicados después de normalizar.
-- Todas las palabras pueden ser tanto intentos como soluciones.
+- There can be no duplicates after normalization.
+- Every word can be used both as a guess and as a solution.
 
-Ejecuta `npm run validate:dictionary` después de sustituir el fichero.
+Run `npm run validate:dictionary` after replacing the file.

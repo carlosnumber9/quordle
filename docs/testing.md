@@ -1,29 +1,29 @@
-# Estrategia de pruebas
+# Testing strategy
 
-`npm test` ejecuta Vitest.
+`npm test` runs Vitest.
 
-## Cobertura crítica
+## Critical coverage
 
-- Duplicados y prioridad de posiciones exactas.
-- Inmutabilidad y transición de estados.
-- Tableros resueltos que quedan inactivos.
-- Victoria, derrota e intentos inválidos.
-- Teclado independiente por tablero.
-- Normalización y agotamiento del diccionario.
-- Restauración de Local Storage.
-- Texto compartido sin palabras.
-- Corte de las 05:00 en invierno, verano y ambos cambios de hora.
-- Partida existente, creación, carrera y corrupción de filas.
-- Selección local sin historial, identidad nueva por replay y sesión estable
-  durante recargas.
-- Botón de replay visible solo al ganar o perder en modo local.
+- Duplicate letters and exact-position priority.
+- State immutability and transitions.
+- Solved boards remaining inactive.
+- Wins, losses, and invalid guesses.
+- An independent keyboard state for each board.
+- Dictionary normalization and exhaustion.
+- Local Storage restoration.
+- Shared text without words.
+- The 05:00 cutoff in winter, summer, and both daylight-saving transitions.
+- Existing games, creation, races, and row corruption.
+- Local selection without history, a new identity for each replay, and a stable
+  session across reloads.
+- The replay button being visible only after a win or loss in local mode.
 
-## Antes de integrar
+## Before merging
 
 1. `npm run validate:dictionary`
 2. `npm test`
 3. `npm run check`
 4. `npm run build`
 
-Cuando exista la UI se añadirán pruebas de interacción y una comprobación
-manual responsive, de teclado y `prefers-reduced-motion`.
+Once the UI exists, interaction tests and manual checks for responsive
+behavior, keyboard support, and `prefers-reduced-motion` will be added.

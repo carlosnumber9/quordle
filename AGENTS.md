@@ -1,61 +1,62 @@
 # AGENTS.md
 
-## Proyecto
+## Project
 
-Quordle diario en español construido con Astro, TypeScript, React islands,
-shadcn/ui, CSS Modules, GSAP, Supabase y Vercel.
+Daily Spanish-language Quordle built with Astro, TypeScript, React islands,
+shadcn/ui, CSS Modules, GSAP, Supabase, and Vercel.
 
-Lee `docs/README.md` antes de realizar cambios relevantes.
+Read `docs/README.md` before making significant changes.
 
-## Comandos
+## Commands
 
-- `npm run dev`: servidor local. No lo inicies salvo petición explícita del
-  propietario.
-- `npm run check`: tipos y diagnóstico de Astro.
-- `npm test`: pruebas unitarias.
-- `npm run validate:dictionary`: valida `src/data/words.json`.
-- `npm run build`: comprobación y build de producción.
+- `npm run dev`: local server. Do not start it unless explicitly requested by
+  the owner.
+- `npm run check`: Astro type checking and diagnostics.
+- `npm test`: unit tests.
+- `npm run validate:dictionary`: validates `src/data/words.json`.
+- `npm run build`: checks and creates the production build.
 
-## Reglas arquitectónicas
+## Architecture rules
 
-- `src/game/` es independiente de Astro, React, GSAP, Supabase y el DOM, salvo
-  `clipboard.ts`, que es una utilidad explícitamente cliente.
-- La UI representa estado y despacha acciones; no reimplementa reglas.
-- Las soluciones y la fecha del juego proceden de `/api/game/today`.
-- En `import.meta.env.DEV`, esa API no debe importar ni consultar Supabase:
-  selecciona cuatro palabras del JSON y permite replay tras terminar.
-- Una sesión local se conserva durante recargas. Solo la acción explícita
-  “Volver a jugar” puede reemplazarla en el mismo día.
-- Toda conexión a Supabase es server-only. Nunca importes
-  `SUPABASE_SECRET_KEY` desde código cliente.
-- El día de juego se calcula exclusivamente mediante `src/lib/game-date.ts`.
-- No completes silenciosamente una partida diaria parcial en base de datos.
-- No diferencies entre palabras aceptadas y posibles soluciones.
-- Conserva estados inmutables y funciones pequeñas, tipadas y testeables.
+- `src/game/` is independent of Astro, React, GSAP, Supabase, and the DOM,
+  except for `clipboard.ts`, which is an explicitly client-side utility.
+- The UI renders state and dispatches actions; it does not reimplement rules.
+- Solutions and the game date come from `/api/game/today`.
+- Under `import.meta.env.DEV`, that API must not import or query Supabase: it
+  selects four words from the JSON file and allows replay after the game ends.
+- A local session persists across reloads. Only the explicit “Volver a jugar”
+  (“Play again”) action may replace it on the same day.
+- Every Supabase connection is server-only. Never import
+  `SUPABASE_SECRET_KEY` from client code.
+- The game day is calculated exclusively through `src/lib/game-date.ts`.
+- Do not silently complete a partial daily game in the database.
+- Do not distinguish between accepted guesses and possible solutions.
+- Keep state immutable and functions small, typed, and testable.
 
-## shadcn/ui y estilos
+## shadcn/ui and styles
 
-- El propietario proporcionará un preset de shadcn/ui más adelante.
-- No ejecutes `shadcn init` sin ese preset.
-- No sustituyas ni reconfigures `components.json` una vez incorporado.
-- Reutiliza componentes de `src/components/ui/` antes de crear equivalentes.
-- Usa CSS Modules para la composición propia y conserva los tokens globales
-  creados por el preset.
-- GSAP debe respetar `prefers-reduced-motion` y no ralentizar el juego.
+- The owner will provide a shadcn/ui preset later.
+- Do not run `shadcn init` without that preset.
+- Do not replace or reconfigure `components.json` once it has been added.
+- Reuse components from `src/components/ui/` before creating equivalents.
+- Use CSS Modules for custom composition and preserve the global tokens created
+  by the preset.
+- GSAP must respect `prefers-reduced-motion` and must not slow down gameplay.
 
-## Datos y secretos
+## Data and secrets
 
-- El diccionario completo vive en `src/data/words.json`.
-- `.env` nunca se versiona; `.env.example` debe reflejar todas las variables.
-- `SUPABASE_SECRET_KEY` y `CRON_SECRET` son secretos de servidor.
-- Los errores públicos no deben incluir credenciales, consultas ni soluciones.
+- The complete dictionary lives in `src/data/words.json`.
+- `.env` is never committed; `.env.example` must reflect all variables.
+- `SUPABASE_SECRET_KEY` and `CRON_SECRET` are server secrets.
+- Public errors must not include credentials, queries, or solutions.
 
-## Cambios mínimos obligatorios
+## Minimum required changes
 
-- Cambios en reglas: actualizar tests y `docs/features/gameplay.md`.
-- Cambios de esquema: añadir migración, nunca editar una ya desplegada.
-- Cambios de cron/fecha: actualizar tests de CET/CEST y el ADR correspondiente.
-- Cambios en el formato compartido: actualizar snapshot/expectativas y
+- Rule changes: update tests and `docs/features/gameplay.md`.
+- Schema changes: add a migration; never edit one that has already been
+  deployed.
+- Cron/date changes: update CET/CEST tests and the corresponding ADR.
+- Shared-format changes: update the snapshot/expectations and
   `docs/features/result-sharing.md`.
-- Cambios en modo local/replay: actualizar `docs/features/gameplay.md`, el
-  ADR-0003 y las pruebas de sesión local.
+- Local-mode/replay changes: update `docs/features/gameplay.md`, ADR-0003, and
+  the local-session tests.

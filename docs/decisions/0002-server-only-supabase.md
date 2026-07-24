@@ -1,25 +1,25 @@
-# ADR-0002: Supabase solo desde servidor
+# ADR-0002: server-only Supabase
 
-## Estado
+## Status
 
-Aceptada.
+Accepted.
 
-## Decisión
+## Decision
 
-El navegador llama a Astro API Routes y no crea clientes Supabase. Los módulos
-`.server.ts` crean el cliente administrativo con secret key. El middleware
-Astro puede crear por petición un cliente SSR con publishable key para renovar
-cookies de Supabase Auth, sin exponer ese cliente al navegador.
+The browser calls Astro API Routes and does not create Supabase clients.
+`.server.ts` modules create the administrative client with a secret key. Astro
+middleware may create a per-request SSR client with a publishable key to renew
+Supabase Auth cookies without exposing that client to the browser.
 
-## Motivo
+## Rationale
 
-No hay necesidad de acceso directo a datos desde el cliente. Mantener la tabla
-detrás del servidor reduce políticas públicas, evita escrituras anónimas y
-protege la clave administrativa. El cliente SSR de sesiones no se reutiliza
-entre peticiones y no concede acceso administrativo.
+The client does not need direct data access. Keeping the table behind the server
+reduces the number of public policies, prevents anonymous writes, and protects
+the administrative key. The session SSR client is not reused across requests
+and does not grant administrative access.
 
-## Consecuencia
+## Consequence
 
-La respuesta de `/api/game/today` contiene las cuatro soluciones necesarias
-para jugar y puede inspeccionarse desde el navegador. Esto es inherente a un
-juego evaluado localmente y se acepta para el alcance del proyecto.
+The `/api/game/today` response contains the four solutions required to play and
+can be inspected from the browser. This is inherent to a locally evaluated game
+and is accepted within the project's scope.

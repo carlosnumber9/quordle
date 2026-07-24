@@ -1,30 +1,31 @@
-# Diccionario
+# Dictionary
 
-## Ubicación
+## Location
 
-El fichero total debe sustituir a `src/data/words.json`. No se configura por
-variable de entorno porque debe formar parte del bundle de la función de
-Vercel.
+The complete file must replace `src/data/words.json`. It is not configured
+through an environment variable because it must be included in the Vercel
+function bundle.
 
-## Normalización
+## Normalization
 
-Se eliminan espacios exteriores, se convierten letras a mayúsculas, se
-eliminan diacríticos y se protege `Ñ`. Por ejemplo:
+Leading and trailing spaces are removed, letters are converted to uppercase,
+diacritics are removed, and `Ñ` is preserved. For example:
 
 - `árbol` → `ARBOL`
 - `niñez` → `NIÑEZ`
 
-Los duplicados se comprueban después de esta transformación.
+Duplicates are checked after this transformation.
 
-## Requisitos
+## Requirements
 
-- JSON válido.
-- Array de strings.
-- Exactamente cinco letras normalizadas.
-- Solo `A-Z` y `Ñ`.
-- Sin duplicados.
-- Al menos cuatro entradas.
+- Valid JSON.
+- An array of strings.
+- Exactly five normalized letters.
+- Only `A-Z` and `Ñ`.
+- No duplicates.
+- At least four entries.
 
-El fichero actual es una muestra de desarrollo. Ejecuta
-`npm run validate:dictionary` antes de cada despliegue que modifique palabras.
-Si quedan menos de cuatro palabras sin usar, no se reciclan automáticamente.
+The current file is a development sample. Run
+`npm run validate:dictionary` before every deployment that changes the word
+list. If fewer than four unused words remain, they are not recycled
+automatically.

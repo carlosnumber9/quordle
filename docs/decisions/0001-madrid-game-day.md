@@ -1,22 +1,23 @@
-# ADR-0001: día de juego de Madrid
+# ADR-0001: Madrid game day
 
-## Estado
+## Status
 
-Aceptada.
+Accepted.
 
-## Decisión
+## Decision
 
-La fecha cambia a las 05:00 de `Europe/Madrid`. Vercel Cron se programa una vez
-al día a las 03:00 UTC y genera la fecha civil actual de Madrid. La API pública
-calcula por separado la fecha de juego vigente.
+The date changes at 05:00 in `Europe/Madrid`. Vercel Cron is scheduled once a
+day at 03:00 UTC and generates the current Madrid calendar date. The public API
+calculates the active game date separately.
 
-## Motivo
+## Rationale
 
-Vercel usa UTC y una sola expresión no puede seguir CET/CEST. Ejecutar a las
-03:00 UTC prepara el juego a tiempo en ambas estaciones sin requerir dos
-ejecuciones diarias. La visibilidad sigue cambiando exactamente a las 05:00.
+Vercel uses UTC, and a single expression cannot track CET/CEST. Running at
+03:00 UTC prepares the game on time in both seasons without requiring two daily
+runs. Visibility still changes at exactly 05:00.
 
-## Consecuencia
+## Consequence
 
-En invierno la fila del nuevo día existe una hora antes de ser servida. Esto no
-afecta al juego y simplifica la operación en planes con un cron diario.
+In winter, the row for the new day exists one hour before it is served. This
+does not affect gameplay and simplifies operation on plans that allow one daily
+cron job.
