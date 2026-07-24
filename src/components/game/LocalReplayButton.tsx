@@ -1,3 +1,6 @@
+import { RiRestartLine } from "@remixicon/react";
+
+import { Button } from "@/components/ui/button";
 import type { GameMode } from "@/types/api";
 import type { GameStatus } from "@/game/types";
 import { canReplayGame } from "@/game/replay";
@@ -20,13 +23,16 @@ export function LocalReplayButton({
   }
 
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="lg"
       disabled={pending}
       aria-busy={pending}
       onClick={() => void onReplay()}
     >
+      <RiRestartLine data-icon="inline-start" />
       {pending ? "Preparando partida…" : "Volver a jugar"}
-    </button>
+    </Button>
   );
 }

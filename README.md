@@ -6,9 +6,9 @@ disponen de nueve intentos.
 
 ## Estado
 
-La base técnica, el motor, la persistencia local, la generación diaria y el
-formato para compartir resultados están preparados. La interfaz visual se
-completará cuando se incorpore el preset de shadcn/ui.
+La base técnica, el motor, la persistencia local, la generación diaria, el
+formato para compartir resultados y la interfaz de juego están preparados. La
+UI usa el preset de shadcn/ui `b1aJEHx6e` como único sistema visual.
 
 En desarrollo local no se conecta a Supabase: se mantiene una partida aleatoria
 del JSON y, al terminar, se habilita “Volver a jugar”. Producción conserva una

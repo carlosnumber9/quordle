@@ -31,4 +31,5 @@ Este directorio es el punto de entrada para comprender y mantener Quordle.
 - [ADR-0002: acceso a Supabase solo desde servidor](decisions/0002-server-only-supabase.md)
 - [ADR-0003: partidas repetibles solo en local](decisions/0003-local-replay.md)
 
-La interfaz visual está deliberadamente pendiente del preset de shadcn/ui.
+La interfaz visual usa el preset de shadcn/ui `b1aJEHx6e` y sus tokens como
+único sistema de estilos.

@@ -16,7 +16,7 @@
 | Supabase | `src/services/*supabase*` | Adaptador server-only |
 | HTTP | `src/pages/api/` | Contratos de entrada y salida |
 | Base de datos | `supabase/migrations/` | Historial y restricciones |
-| Interfaz | `src/pages/index.astro` | Placeholder hasta recibir el preset |
+| Interfaz | `src/components/game/Game.tsx` | Carga, interacción y representación mediante el preset shadcn |
 
 Ante una incidencia, empieza por el punto de entrada del área y su fichero
 `*.test.ts` correspondiente.

@@ -39,6 +39,11 @@ Este comportamiento se elimina del build de producción.
 
 ## shadcn/ui
 
-No inicializar hasta recibir el preset del propietario. Cuando llegue, aplicar
-el preset al proyecto existente y revisar el diff antes de construir la isla
-React.
+El proyecto usa el preset `b1aJEHx6e` con estilo Luma, base zinc, tema lime,
+fuente Figtree, radio grande e iconos Remix. `components.json` es la fuente de
+configuración y no debe reconfigurarse manualmente.
+
+Antes de añadir un componente propio, reutiliza los disponibles en
+`src/components/ui/`. La composición puede usar utilidades Tailwind basadas en
+los tokens del preset, pero no debe introducir colores, variables globales ni
+hojas de estilo propias.

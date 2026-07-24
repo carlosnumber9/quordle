@@ -1,10 +1,10 @@
 ---
+import { Game } from "@/components/game/Game";
 import MainLayout from "@/layouts/MainLayout.astro";
+
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? Astro.url.origin;
 ---
 
 <MainLayout>
-  <main>
-    <h1>Quordle</h1>
-    <p>La interfaz se añadirá cuando esté disponible el preset de shadcn/ui.</p>
-  </main>
+  <Game client:load siteUrl={siteUrl} />
 </MainLayout>

@@ -39,6 +39,6 @@ bloqueo diario incluso después de terminar.
 
 ## Estados visibles
 
-La futura UI debe representar carga, partida activa, palabra incompleta,
-palabra desconocida, victoria, derrota, restauración y fallo temporal del
-servicio. Nunca debe mostrar una pantalla vacía ante un error.
+La UI representa carga, partida activa, palabra incompleta, palabra
+desconocida, victoria, derrota, restauración y fallo temporal del servicio.
+Nunca muestra una pantalla vacía ante un error.

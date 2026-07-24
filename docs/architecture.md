@@ -6,7 +6,7 @@
 2. `src/lib/`: utilidades compartidas sin infraestructura.
 3. `src/services/`: casos de uso diarios y adaptadores de Supabase.
 4. `src/pages/api/`: transporte HTTP, autenticación del cron y códigos de error.
-5. `src/pages/` y futura `src/components/`: composición Astro/React.
+5. `src/pages/` y `src/components/`: composición Astro/React.
 
 Las dependencias apuntan hacia el dominio. El dominio no conoce Astro,
 Supabase, React ni GSAP.
@@ -34,9 +34,14 @@ En local se guarda además la sesión activa —identificador y cuatro solucione
 para que recargar no conceda una partida nueva. Cada replay recibe otro
 identificador y elimina el progreso anterior.
 
-## Integración futura de UI
+## Integración de UI
 
-La página mínima actual será sustituida por una isla `Game`. Dialog, Button y
-Toast se tomarán del preset shadcn. Board, Tile y Keyboard serán componentes
-propios con CSS Modules. `LocalReplayButton` ya contiene la condición funcional
-y se adaptará al Button del preset. Ningún componente calculará reglas.
+La página monta una isla React `Game`. Button, Card, Badge, Alert, Dialog,
+Textarea, Separator, Skeleton y Sonner proceden del preset shadcn. Los
+componentes de composición `Board` y `Keyboard` usan exclusivamente utilidades
+de Tailwind asociadas a los tokens del preset; no añaden hojas de estilo,
+colores ni variables propios.
+
+La isla representa el estado inmutable del motor, carga y restaura la sesión,
+despacha intentos y delega las reglas en `src/game/`. Las animaciones de
+evaluación usan GSAP y se desactivan con `prefers-reduced-motion`.
