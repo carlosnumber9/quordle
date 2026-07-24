@@ -29,6 +29,8 @@ Esto impide marcar más apariciones amarillas de las existentes.
 Al acertar un tablero se registra el número global de intento. Los intentos
 posteriores guardan `null` para ese tablero y no alteran su resultado. Se gana
 al resolver los cuatro y se pierde al completar el noveno intento sin hacerlo.
+Al terminar, tanto la victoria como la derrota abren un diálogo centrado con el
+resumen de los cuatro tableros y las acciones disponibles.
 
 ## Teclado
 

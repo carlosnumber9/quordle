@@ -20,7 +20,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -94,6 +93,7 @@ export function Game({ siteUrl }: GameProps) {
   const [view, setView] = useState<GameView>({ status: "loading" });
   const [currentGuess, setCurrentGuess] = useState("");
   const [manualShareText, setManualShareText] = useState<string | null>(null);
+  const [resultOpen, setResultOpen] = useState(false);
   const [replaying, setReplaying] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const manualShareRef = useRef<HTMLTextAreaElement>(null);
@@ -156,6 +156,12 @@ export function Game({ siteUrl }: GameProps) {
 
   const game = view.status === "ready" ? view.game : null;
   const attemptCount = game?.attempts.length ?? 0;
+  const gameId = game?.gameId ?? null;
+  const gameStatus = game?.status ?? null;
+
+  useEffect(() => {
+    setResultOpen(gameStatus !== null && gameStatus !== "playing");
+  }, [gameId, gameStatus]);
 
   useLayoutEffect(() => {
     if (
@@ -372,15 +378,19 @@ export function Game({ siteUrl }: GameProps) {
                 onLetter={addLetter}
               />
             </section>
-          ) : (
-            <ResultCard
+          ) : null}
+
+          {view.game.status !== "playing" ? (
+            <ResultDialog
               game={view.game}
               mode={view.mode}
+              onOpenChange={setResultOpen}
               onReplay={replay}
               onShare={share}
+              open={resultOpen}
               replaying={replaying}
             />
-          )}
+          ) : null}
         </>
       ) : null}
 
@@ -418,38 +428,43 @@ export function Game({ siteUrl }: GameProps) {
   );
 }
 
-function ResultCard({
+function ResultDialog({
   game,
   mode,
+  onOpenChange,
   onReplay,
   onShare,
+  open,
   replaying,
 }: {
   readonly game: GameState;
   readonly mode: GameMode;
+  readonly onOpenChange: (open: boolean) => void;
   readonly onReplay: () => void | Promise<void>;
   readonly onShare: () => void | Promise<void>;
+  readonly open: boolean;
   readonly replaying: boolean;
 }) {
   const won = game.status === "won";
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{won ? "¡Cuatro de cuatro!" : "Partida terminada"}</CardTitle>
-        <CardDescription>
-          {won
-            ? `Has resuelto el reto en ${game.attempts.length} intentos.`
-            : "Mañana tendrás cuatro palabras nuevas."}
-        </CardDescription>
-        <CardAction>
-          <Badge variant={won ? "default" : "secondary"}>
+    <Dialog onOpenChange={onOpenChange} open={open}>
+      <DialogContent className="gap-5 text-center sm:max-w-lg">
+        <DialogHeader className="items-center text-center">
+          <Badge className="mb-2" variant={won ? "default" : "secondary"}>
             <RiTrophyLine data-icon="inline-start" />
             {won ? "Victoria" : "Completada"}
           </Badge>
-        </CardAction>
-      </CardHeader>
-      <CardContent>
+          <DialogTitle className="text-2xl">
+            {won ? "¡Cuatro de cuatro!" : "Partida terminada"}
+          </DialogTitle>
+          <DialogDescription>
+            {won
+              ? `Has resuelto el reto en ${game.attempts.length} intentos.`
+              : "Mañana tendrás cuatro palabras nuevas."}
+          </DialogDescription>
+        </DialogHeader>
+
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {game.boards.map((board, index) => (
             <div
@@ -465,21 +480,22 @@ function ResultCard({
             </div>
           ))}
         </div>
-      </CardContent>
-      <Separator />
-      <CardFooter className="flex flex-wrap gap-2">
-        <Button onClick={() => void onShare()} size="lg" type="button">
-          <RiShareLine data-icon="inline-start" />
-          Compartir resultado
-        </Button>
-        <LocalReplayButton
-          mode={mode}
-          onReplay={onReplay}
-          pending={replaying}
-          status={game.status}
-        />
-      </CardFooter>
-    </Card>
+
+        <Separator />
+        <DialogFooter className="flex-col gap-2 sm:justify-center">
+          <Button onClick={() => void onShare()} size="lg" type="button">
+            <RiShareLine data-icon="inline-start" />
+            Compartir resultado
+          </Button>
+          <LocalReplayButton
+            mode={mode}
+            onReplay={onReplay}
+            pending={replaying}
+            status={game.status}
+          />
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
 
