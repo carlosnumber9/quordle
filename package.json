@@ -45,6 +45,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "ajv": "^8.20.0",
     "supabase": "latest",
     "tsx": "latest",
     "typescript": "^6.0.0",
