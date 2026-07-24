@@ -21,7 +21,7 @@ const LETTER_ROWS = [
 
 const DOT_CLASSES: Readonly<Record<LetterStatus, string>> = {
   correct: "bg-primary",
-  present: "bg-secondary-foreground",
+  present: "bg-sky-300",
   absent: "bg-muted-foreground/40",
 };
 
@@ -39,7 +39,7 @@ export function Keyboard({
           {rowIndex === 2 ? (
             <Button
               aria-label="Enviar palabra"
-              className="h-[clamp(2rem,5.5svh,2.25rem)] flex-2 rounded-lg px-1"
+              className="h-[clamp(2.75rem,6svh,3rem)] flex-2 rounded-lg px-1"
               disabled={disabled}
               onClick={onEnter}
               type="button"
@@ -52,7 +52,7 @@ export function Keyboard({
           {row.map((letter) => (
             <Button
               aria-label={`Letra ${letter}`}
-              className="h-[clamp(2rem,5.5svh,2.25rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-xs sm:text-sm"
+              className="h-[clamp(2.75rem,6svh,3rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-sm sm:text-base"
               disabled={disabled}
               key={letter}
               onClick={() => onLetter(letter)}
@@ -81,7 +81,7 @@ export function Keyboard({
           {rowIndex === 2 ? (
             <Button
               aria-label="Borrar letra"
-              className="h-[clamp(2rem,5.5svh,2.25rem)] flex-1 rounded-lg px-1"
+              className="h-[clamp(2.75rem,6svh,3rem)] flex-1 rounded-lg px-1"
               disabled={disabled}
               onClick={onBackspace}
               type="button"

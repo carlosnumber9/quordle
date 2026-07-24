@@ -710,7 +710,7 @@ function Legend({
 }) {
   const classes = {
     correct: "border-primary bg-primary text-primary-foreground",
-    present: "border-ring bg-secondary text-secondary-foreground",
+    present: "border-transparent bg-sky-300 text-sky-950",
     absent: "border-muted bg-muted text-muted-foreground",
   } as const;
 
@@ -739,9 +739,9 @@ function GameSkeleton() {
           key={boardIndex}
           size="sm"
         >
-          <CardContent className="grid gap-0.5">
+          <CardContent className="grid gap-px">
             {Array.from({ length: 9 }, (_, rowIndex) => (
-              <div className="grid grid-cols-5 gap-0.5" key={rowIndex}>
+              <div className="grid grid-cols-5 gap-px" key={rowIndex}>
                 {Array.from({ length: WORD_LENGTH }, (_, tileIndex) => (
                   <Skeleton
                     className={cn(styles.tile, "rounded-md")}

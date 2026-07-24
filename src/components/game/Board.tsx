@@ -23,7 +23,7 @@ interface BoardProps {
 
 const TILE_STATUS_CLASSES: Readonly<Record<LetterStatus, string>> = {
   correct: "border-primary bg-primary text-primary-foreground",
-  present: "border-ring bg-secondary text-secondary-foreground ring-1 ring-ring/30",
+  present: "border-transparent bg-sky-300 text-sky-950",
   absent: "border-muted bg-muted text-muted-foreground",
 };
 
@@ -130,7 +130,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
           : `La palabra era ${visibleSolution}`}
       </span>
       <CardContent>
-        <div className="grid gap-0.5" data-board-grid role="grid">
+        <div className="grid gap-px" data-board-grid role="grid">
           {Array.from({ length: visibleRowCount }, (_, rowIndex) => {
             const attempt = state.attempts[rowIndex];
             const isCurrentRow =
@@ -145,7 +145,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
 
             return (
               <div
-                className="grid grid-cols-5 gap-0.5"
+                className="grid grid-cols-5 gap-px"
                 data-attempt={
                   attempt === undefined || evaluation === null
                     ? undefined

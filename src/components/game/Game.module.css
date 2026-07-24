@@ -40,13 +40,13 @@
 }
 
 .keyboard {
-  width: min(100%, 42rem);
+  width: min(100%, 48rem);
   margin-inline: auto;
 }
 
 .tile {
-  width: var(--tile-size);
-  height: var(--tile-size);
+  width: calc(var(--tile-size) - 4px);
+  height: calc(var(--tile-size) - 4px);
 }
 
 .tile[data-letter-status="present"] {
