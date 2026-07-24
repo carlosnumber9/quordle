@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/react": "latest",
     "@astrojs/vercel": "latest",
+    "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
     "astro": "latest",
     "gsap": "latest",

@@ -6,14 +6,17 @@ Aceptada.
 
 ## Decisión
 
-El navegador llama a Astro API Routes. Solo módulos `.server.ts` crean un
-cliente Supabase con secret key.
+El navegador llama a Astro API Routes y no crea clientes Supabase. Los módulos
+`.server.ts` crean el cliente administrativo con secret key. El middleware
+Astro puede crear por petición un cliente SSR con publishable key para renovar
+cookies de Supabase Auth, sin exponer ese cliente al navegador.
 
 ## Motivo
 
-No hay autenticación ni necesidad de acceso directo desde el cliente. Mantener
-la tabla detrás del servidor reduce políticas públicas, evita escrituras
-anónimas y protege la clave administrativa.
+No hay necesidad de acceso directo a datos desde el cliente. Mantener la tabla
+detrás del servidor reduce políticas públicas, evita escrituras anónimas y
+protege la clave administrativa. El cliente SSR de sesiones no se reutiliza
+entre peticiones y no concede acceso administrativo.
 
 ## Consecuencia
 

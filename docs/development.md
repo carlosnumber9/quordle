@@ -20,6 +20,7 @@
 | --- | --- | --- |
 | `SUPABASE_URL` | Servidor | Data API de Supabase |
 | `SUPABASE_SECRET_KEY` | Secreto | Lectura/escritura administrativa |
+| `SUPABASE_PUBLISHABLE_KEY` | Servidor | Renovación de sesiones en middleware |
 | `CRON_SECRET` | Secreto | Autenticación de Vercel Cron |
 | `PUBLIC_SITE_URL` | Pública | Enlace del resultado compartido |
 

@@ -18,6 +18,11 @@ export default defineConfig({
         access: "secret",
         optional: true,
       }),
+      SUPABASE_PUBLISHABLE_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: true,
+      }),
       CRON_SECRET: envField.string({
         context: "server",
         access: "secret",
