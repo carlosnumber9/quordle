@@ -50,6 +50,9 @@ otra fecha se elimina.
   progreso.
 - La sesión inicial obtiene cuatro palabras aleatorias directamente del JSON.
 - No se consulta el historial ni se importa el cliente Supabase.
+- Cada tablero muestra su solución como marca de agua para facilitar las
+  comprobaciones manuales. La UI exige simultáneamente build `DEV` y modo
+  `local`; nunca se renderiza en producción.
 - “Volver a jugar” aparece únicamente después de ganar o perder.
 - El botón solicita `POST /api/game/today`, reemplaza la sesión local, borra el
   progreso anterior y crea un estado con el nuevo `gameId`.

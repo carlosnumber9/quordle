@@ -18,6 +18,7 @@ import styles from "./Game.module.css";
 interface BoardProps {
   readonly boardIndex: number;
   readonly currentGuess: string;
+  readonly showSolutionWatermark: boolean;
   readonly state: GameState;
 }
 
@@ -27,7 +28,12 @@ const TILE_STATUS_CLASSES: Readonly<Record<LetterStatus, string>> = {
   absent: "border-muted bg-muted text-muted-foreground",
 };
 
-export function Board({ boardIndex, currentGuess, state }: BoardProps) {
+export function Board({
+  boardIndex,
+  currentGuess,
+  showSolutionWatermark,
+  state,
+}: BoardProps) {
   const board = state.boards[boardIndex];
   const solvedAtAttempt = board?.solvedAtAttempt ?? null;
   const [visibleRowCount, setVisibleRowCount] = useState(
@@ -129,6 +135,11 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
             : "Cinco letras"
           : `La palabra era ${visibleSolution}`}
       </span>
+      {showSolutionWatermark ? (
+        <span aria-hidden="true" className={styles.solutionWatermark}>
+          {board.solution}
+        </span>
+      ) : null}
       <CardContent>
         <div className="grid gap-px" data-board-grid role="grid">
           {Array.from({ length: visibleRowCount }, (_, rowIndex) => {

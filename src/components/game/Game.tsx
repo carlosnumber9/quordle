@@ -63,6 +63,7 @@ import {
 import type { GameMode, GamePayload } from "@/types/api";
 
 import { Board } from "./Board";
+import { shouldShowSolutionWatermark } from "./local-development";
 import { Keyboard } from "./Keyboard";
 import { LocalReplayButton } from "./LocalReplayButton";
 import styles from "./Game.module.css";
@@ -475,6 +476,10 @@ export function Game({ siteUrl }: GameProps) {
                     boardIndex={boardIndex}
                     currentGuess={currentGuess}
                     key={boardIndex}
+                    showSolutionWatermark={shouldShowSolutionWatermark(
+                      import.meta.env.DEV,
+                      view.mode,
+                    )}
                     state={view.game}
                   />
                 ))}

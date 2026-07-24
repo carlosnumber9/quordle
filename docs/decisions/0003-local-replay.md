@@ -21,6 +21,8 @@ contaminar el historial compartido ni preparar datos en Supabase.
 ## Consecuencias
 
 - Las soluciones se guardan localmente solo durante desarrollo.
+- La interfaz puede mostrarlas como marca de agua únicamente cuando coinciden
+  `import.meta.env.DEV` y el modo `local`.
 - `POST /api/game/today` existe únicamente en modo DEV.
 - Producción mantiene una sola partida diaria y nunca muestra replay.
 - La futura UI debe reemplazar la sesión antes de crear el nuevo estado.
