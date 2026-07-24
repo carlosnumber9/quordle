@@ -43,5 +43,7 @@ de Tailwind asociadas a los tokens del preset; no añaden hojas de estilo,
 colores ni variables propios.
 
 La isla representa el estado inmutable del motor, carga y restaura la sesión,
-despacha intentos y delega las reglas en `src/game/`. Las animaciones de
-evaluación usan GSAP y se desactivan con `prefers-reduced-motion`.
+despacha intentos y delega las reglas en `src/game/`. GSAP coordina la entrada
+del título, las respuestas visuales de las casillas evaluadas y la aparición
+del resultado según victoria o derrota. Todas estas animaciones se omiten con
+`prefers-reduced-motion`.

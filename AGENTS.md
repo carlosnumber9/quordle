@@ -9,7 +9,8 @@ Lee `docs/README.md` antes de realizar cambios relevantes.
 
 ## Comandos
 
-- `npm run dev`: servidor local.
+- `npm run dev`: servidor local. No lo inicies salvo petición explícita del
+  propietario.
 - `npm run check`: tipos y diagnóstico de Astro.
 - `npm test`: pruebas unitarias.
 - `npm run validate:dictionary`: valida `src/data/words.json`.

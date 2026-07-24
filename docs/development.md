@@ -15,6 +15,9 @@
 5. Sustituir y validar el diccionario.
 6. `npm run dev`
 
+Los agentes no deben iniciar el servidor de desarrollo, ni abrir la aplicación
+en un navegador local, salvo que el propietario lo solicite explícitamente.
+
 La primera vez, autentica la CLI con `npx supabase login`. `db:status` compara
 el historial local y remoto sin modificar la base de datos. `db:verify`
 comprueba la conexión Data API y que `daily_words` rechaza la clave pública.

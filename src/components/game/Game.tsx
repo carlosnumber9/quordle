@@ -95,7 +95,9 @@ export function Game({ siteUrl }: GameProps) {
   const [manualShareText, setManualShareText] = useState<string | null>(null);
   const [resultOpen, setResultOpen] = useState(false);
   const [replaying, setReplaying] = useState(false);
+  const [introFinished, setIntroFinished] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const manualShareRef = useRef<HTMLTextAreaElement>(null);
   const previousAttemptCount = useRef(0);
 
@@ -160,8 +162,81 @@ export function Game({ siteUrl }: GameProps) {
   const gameStatus = game?.status ?? null;
 
   useEffect(() => {
-    setResultOpen(gameStatus !== null && gameStatus !== "playing");
-  }, [gameId, gameStatus]);
+    setResultOpen(
+      introFinished && gameStatus !== null && gameStatus !== "playing",
+    );
+  }, [gameId, gameStatus, introFinished]);
+
+  useLayoutEffect(() => {
+    if (view.status !== "ready") {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIntroFinished(true);
+      return;
+    }
+
+    const title = titleRef.current;
+    const root = rootRef.current;
+    if (title === null || root === null) {
+      setIntroFinished(true);
+      return;
+    }
+
+    const bounds = title.getBoundingClientRect();
+    const availableWidth = window.innerWidth - 32;
+    const initialScale = Math.max(
+      1.1,
+      Math.min(2.25, availableWidth / bounds.width),
+    );
+    const startX = window.innerWidth / 2 - (bounds.left + bounds.width / 2);
+    const startY = window.innerHeight / 2 - (bounds.top + bounds.height / 2);
+    const revealElements = root.querySelectorAll("[data-intro-reveal]");
+
+    const context = gsap.context(() => {
+      const timeline = gsap.timeline({
+        onComplete: () => setIntroFinished(true),
+      });
+
+      timeline
+        .set(revealElements, { autoAlpha: 0 })
+        .set(title, {
+          autoAlpha: 0,
+          scale: initialScale,
+          transformOrigin: "center center",
+          x: startX,
+          y: startY,
+        })
+        .to(title, {
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        })
+        .to(
+          title,
+          {
+            duration: 0.75,
+            ease: "power3.inOut",
+            scale: 1,
+            x: 0,
+            y: 0,
+          },
+          "+=1",
+        )
+        .to(
+          revealElements,
+          {
+            autoAlpha: 1,
+            duration: 0.35,
+            ease: "power2.out",
+          },
+          "-=0.25",
+        );
+    }, root);
+
+    return () => context.revert();
+  }, [view.status]);
 
   useLayoutEffect(() => {
     if (
@@ -175,18 +250,38 @@ export function Game({ siteUrl }: GameProps) {
 
     const rowIndex = attemptCount - 1;
     const context = gsap.context(() => {
-      const tiles =
-        rootRef.current?.querySelectorAll(`[data-attempt="${rowIndex}"] > *`) ??
-        [];
+      const correctTiles =
+        rootRef.current?.querySelectorAll(
+          `[data-attempt="${rowIndex}"] [data-letter-status="correct"]`,
+        ) ?? [];
+      const presentTiles =
+        rootRef.current?.querySelectorAll(
+          `[data-attempt="${rowIndex}"] [data-letter-status="present"]`,
+        ) ?? [];
+
       gsap.fromTo(
-        tiles,
-        { opacity: 0.6, scale: 0.92 },
+        correctTiles,
+        { scale: 1 },
         {
-          opacity: 1,
-          scale: 1,
-          duration: 0.24,
+          duration: 0.16,
           ease: "power2.out",
-          stagger: 0.02,
+          repeat: 1,
+          scale: 1.16,
+          stagger: 0.04,
+          yoyo: true,
+        },
+      );
+      gsap.fromTo(
+        presentTiles,
+        {
+          rotationY: 180,
+          transformPerspective: 420,
+        },
+        {
+          duration: 0.72,
+          ease: "elastic.out(1, 0.48)",
+          rotationY: 0,
+          stagger: 0.04,
         },
       );
     }, rootRef);
@@ -314,6 +409,9 @@ export function Game({ siteUrl }: GameProps) {
         styles.game,
         "mx-auto flex min-h-svh w-full max-w-4xl flex-col gap-[var(--game-gap)] px-2 py-2 sm:px-4 sm:py-3",
         view.status === "ready" &&
+          !introFinished &&
+          styles.introRunning,
+        view.status === "ready" &&
           view.game.status === "playing" &&
           styles.playing,
       )}
@@ -321,10 +419,21 @@ export function Game({ siteUrl }: GameProps) {
     >
       <Toaster position="top-center" />
       <header className="flex shrink-0 items-center justify-between gap-4">
-        <h1 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
+        <h1
+          className={cn(
+            "font-heading text-2xl font-semibold tracking-tight sm:text-3xl",
+            view.status === "loading" && styles.titleWaiting,
+            view.status === "ready" &&
+              !introFinished &&
+              styles.introTitle,
+          )}
+          ref={titleRef}
+        >
           Quordle para Mamá
         </h1>
-        <HelpDialog />
+        <div data-intro-reveal>
+          <HelpDialog />
+        </div>
       </header>
 
       {view.status === "loading" ? <GameSkeleton /> : null}
@@ -357,6 +466,7 @@ export function Game({ siteUrl }: GameProps) {
           <section
             aria-label="Tableros de juego"
             className={styles.boards}
+            data-intro-reveal
           >
             {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
               <Board
@@ -369,7 +479,7 @@ export function Game({ siteUrl }: GameProps) {
           </section>
 
           {view.game.status === "playing" ? (
-            <section className={styles.keyboard}>
+            <section className={styles.keyboard} data-intro-reveal>
               <Keyboard
                 disabled={view.game.status !== "playing"}
                 keyboardState={keyboardState}
@@ -446,10 +556,61 @@ function ResultDialog({
   readonly replaying: boolean;
 }) {
   const won = game.status === "won";
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const content = contentRef.current;
+    if (content === null || !open) {
+      return;
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(content, { clearProps: "opacity,scale" });
+      return;
+    }
+
+    const context = gsap.context(() => {
+      if (won) {
+        const timeline = gsap.timeline();
+        timeline
+          .set(content, { opacity: 0, scale: 0 })
+          .to(content, {
+            opacity: 1,
+            duration: 0.18,
+            ease: "power1.out",
+          })
+          .to(
+            content,
+            {
+              duration: 0.72,
+              ease: "elastic.out(1, 0.45)",
+              scale: 1,
+            },
+            "<",
+          );
+        return;
+      }
+
+      gsap.fromTo(
+        content,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 1.1,
+          ease: "power1.out",
+        },
+      );
+    }, content);
+
+    return () => context.revert();
+  }, [open, won]);
 
   return (
     <Dialog onOpenChange={onOpenChange} open={open}>
-      <DialogContent className="gap-5 text-center sm:max-w-lg">
+      <DialogContent
+        className={cn(styles.resultDialog, "gap-5 text-center sm:max-w-lg")}
+        ref={contentRef}
+      >
         <DialogHeader className="items-center text-center">
           <Badge className="mb-2" variant={won ? "default" : "secondary"}>
             <RiTrophyLine data-icon="inline-start" />

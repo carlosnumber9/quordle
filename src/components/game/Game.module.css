@@ -12,6 +12,13 @@
   overflow: hidden;
 }
 
+.titleWaiting,
+.introTitle,
+.introRunning [data-intro-reveal] {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .boards {
   display: grid;
   min-height: 0;
@@ -30,4 +37,21 @@
 .tile {
   width: var(--tile-size);
   height: var(--tile-size);
+}
+
+.tile[data-letter-status="present"] {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.resultDialog {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .resultDialog {
+    animation: none !important;
+    transition: none !important;
+  }
 }

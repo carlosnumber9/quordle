@@ -90,6 +90,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
                             : "border-border bg-background"
                           : TILE_STATUS_CLASSES[status],
                       )}
+                      data-letter-status={status}
                       key={letterIndex}
                       role="gridcell"
                     >
