@@ -17,10 +17,16 @@ con una secret key de backend; no se obtiene ni versiona desde la CLI.
 
 1. Conectar el repositorio.
 2. Configurar las cuatro variables de `.env.example`.
-3. Desplegar con el adaptador oficial de Astro.
-4. Verificar `/api/health`.
-5. Confirmar que Vercel ha registrado el cron de `vercel.json`.
-6. Invocar el cron manualmente con el Bearer token y comprobar que una segunda
+3. Mantener Node.js 24 alineado entre `.nvmrc` y `engines.node`. Vercel solo
+   garantiza la major configurada (`24.x`) y actualiza minor y patch
+   automáticamente.
+4. Instalar con `npm ci` usando el `package-lock.json` versionado. Si una
+   instalación de Vercel falla dentro de npm, repetir el primer despliegue sin
+   reutilizar Build Cache.
+5. Desplegar con el adaptador oficial de Astro.
+6. Verificar `/api/health`.
+7. Confirmar que Vercel ha registrado el cron de `vercel.json`.
+8. Invocar el cron manualmente con el Bearer token y comprobar que una segunda
    llamada devuelve `created: false`.
 
 ## Antes de producción
