@@ -1,0 +1,39 @@
+{
+  "name": "quordle",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:dictionary": "node --import tsx scripts/validate-dictionary.ts"
+  },
+  "dependencies": {
+    "@astrojs/react": "latest",
+    "@astrojs/vercel": "latest",
+    "@supabase/supabase-js": "latest",
+    "astro": "latest",
+    "gsap": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tsx": "latest",
+    "typescript": "^6.0.0",
+    "vitest": "latest"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "path-to-regexp": "^6.3.0"
+  }
+}
