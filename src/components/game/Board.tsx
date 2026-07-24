@@ -2,6 +2,9 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
+import { gsap } from "gsap";
+import { useLayoutEffect, useRef, useState } from "react";
+
 import { cn } from "@/lib/utils";
 import {
   MAX_ATTEMPTS,
@@ -26,6 +29,82 @@ const TILE_STATUS_CLASSES: Readonly<Record<LetterStatus, string>> = {
 
 export function Board({ boardIndex, currentGuess, state }: BoardProps) {
   const board = state.boards[boardIndex];
+  const solvedAtAttempt = board?.solvedAtAttempt ?? null;
+  const [visibleRowCount, setVisibleRowCount] = useState(
+    () => solvedAtAttempt ?? MAX_ATTEMPTS,
+  );
+  const cardRef = useRef<HTMLDivElement>(null);
+  const previousSolvedAtAttempt = useRef(solvedAtAttempt);
+
+  useLayoutEffect(() => {
+    const previousSolved = previousSolvedAtAttempt.current;
+    previousSolvedAtAttempt.current = solvedAtAttempt;
+
+    if (solvedAtAttempt === null) {
+      setVisibleRowCount(MAX_ATTEMPTS);
+      return;
+    }
+
+    if (previousSolved !== null) {
+      setVisibleRowCount(solvedAtAttempt);
+      return;
+    }
+
+    const card = cardRef.current;
+    if (
+      card === null ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setVisibleRowCount(solvedAtAttempt);
+      return;
+    }
+
+    const grid = card.querySelector<HTMLElement>("[data-board-grid]");
+    const solvedRow = grid?.querySelector<HTMLElement>(
+      `[data-row-index="${solvedAtAttempt - 1}"]`,
+    );
+
+    if (grid === null || solvedRow === undefined || solvedRow === null) {
+      setVisibleRowCount(solvedAtAttempt);
+      return;
+    }
+
+    const cardBounds = card.getBoundingClientRect();
+    const gridBounds = grid.getBoundingClientRect();
+    const solvedRowBounds = solvedRow.getBoundingClientRect();
+    const compactHeight =
+      cardBounds.height - (gridBounds.bottom - solvedRowBounds.bottom);
+    let clearHeightFrame: number | null = null;
+
+    const context = gsap.context(() => {
+      gsap.fromTo(
+        card,
+        {
+          height: cardBounds.height,
+          willChange: "height",
+        },
+        {
+          duration: 1,
+          ease: "power2.inOut",
+          height: compactHeight,
+          onComplete: () => {
+            setVisibleRowCount(solvedAtAttempt);
+            clearHeightFrame = window.requestAnimationFrame(() => {
+              gsap.set(card, { clearProps: "height,willChange" });
+            });
+          },
+        },
+      );
+    }, card);
+
+    return () => {
+      if (clearHeightFrame !== null) {
+        window.cancelAnimationFrame(clearHeightFrame);
+      }
+      context.revert();
+    };
+  }, [solvedAtAttempt]);
+
   if (board === undefined) {
     return null;
   }
@@ -41,6 +120,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
         "relative w-fit gap-0 rounded-xl py-1 [--card-spacing:--spacing(1)]",
         solved && "ring-primary/50",
       )}
+      ref={cardRef}
     >
       <span className="sr-only">
         {visibleSolution === null
@@ -50,8 +130,8 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
           : `La palabra era ${visibleSolution}`}
       </span>
       <CardContent>
-        <div className="grid gap-0.5" role="grid">
-          {Array.from({ length: MAX_ATTEMPTS }, (_, rowIndex) => {
+        <div className="grid gap-0.5" data-board-grid role="grid">
+          {Array.from({ length: visibleRowCount }, (_, rowIndex) => {
             const attempt = state.attempts[rowIndex];
             const isCurrentRow =
               rowIndex === state.attempts.length && state.status === "playing";
@@ -71,6 +151,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
                     ? undefined
                     : rowIndex
                 }
+                data-row-index={rowIndex}
                 key={rowIndex}
                 role="row"
               >

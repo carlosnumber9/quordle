@@ -468,13 +468,17 @@ export function Game({ siteUrl }: GameProps) {
             className={styles.boards}
             data-intro-reveal
           >
-            {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
-              <Board
-                boardIndex={boardIndex}
-                currentGuess={currentGuess}
-                key={boardIndex}
-                state={view.game}
-              />
+            {Array.from({ length: 2 }, (_, columnIndex) => (
+              <div className={styles.boardColumn} key={columnIndex}>
+                {[columnIndex, columnIndex + 2].map((boardIndex) => (
+                  <Board
+                    boardIndex={boardIndex}
+                    currentGuess={currentGuess}
+                    key={boardIndex}
+                    state={view.game}
+                  />
+                ))}
+              </div>
             ))}
           </section>
 

@@ -44,6 +44,11 @@ colores ni variables propios.
 
 La isla representa el estado inmutable del motor, carga y restaura la sesión,
 despacha intentos y delega las reglas en `src/game/`. GSAP coordina la entrada
-del título, las respuestas visuales de las casillas evaluadas y la aparición
-del resultado según victoria o derrota. Todas estas animaciones se omiten con
-`prefers-reduced-motion`.
+del título, las respuestas visuales de las casillas evaluadas, el plegado de
+los tableros resueltos y la aparición del resultado según victoria o derrota.
+Todas estas animaciones se omiten con `prefers-reduced-motion`.
+
+Los tableros se distribuyen en dos columnas independientes: 1 sobre 3 y 2
+sobre 4. Las columnas quedan ancladas arriba para que los tableros superiores
+no cambien su posición al plegarse y para que cada tablero inferior ascienda
+con el encogimiento del que tiene encima.

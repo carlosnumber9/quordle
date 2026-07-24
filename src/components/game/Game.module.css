@@ -20,13 +20,23 @@
 }
 
 .boards {
+  --board-gap: clamp(0.25rem, 0.75svh, 0.5rem);
+
   display: grid;
   min-height: 0;
   flex: 1;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  place-content: center;
-  place-items: center;
-  gap: clamp(0.25rem, 0.75svh, 0.5rem);
+  align-content: start;
+  align-items: start;
+  column-gap: var(--board-gap);
+}
+
+.boardColumn {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--board-gap);
 }
 
 .keyboard {
