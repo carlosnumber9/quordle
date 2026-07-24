@@ -1,6 +1,5 @@
 import {
   RiAlertLine,
-  RiCalendarLine,
   RiQuestionLine,
   RiShareLine,
   RiTrophyLine,
@@ -55,6 +54,7 @@ import {
 } from "@/game/local-game-client";
 import { loadGame, saveGame } from "@/game/persistence";
 import { createShareText } from "@/game/share";
+import { cn } from "@/lib/utils";
 import {
   BOARD_COUNT,
   WORD_LENGTH,
@@ -66,6 +66,7 @@ import type { GameMode, GamePayload } from "@/types/api";
 import { Board } from "./Board";
 import { Keyboard } from "./Keyboard";
 import { LocalReplayButton } from "./LocalReplayButton";
+import styles from "./Game.module.css";
 
 interface GameProps {
   readonly siteUrl: string;
@@ -303,22 +304,20 @@ export function Game({ siteUrl }: GameProps) {
 
   return (
     <main
-      className="mx-auto flex min-h-svh w-full max-w-6xl flex-col gap-6 px-4 py-6 sm:px-6 lg:gap-8 lg:py-10"
+      className={cn(
+        styles.game,
+        "mx-auto flex min-h-svh w-full max-w-4xl flex-col gap-[var(--game-gap)] px-2 py-2 sm:px-4 sm:py-3",
+        view.status === "ready" &&
+          view.game.status === "playing" &&
+          styles.playing,
+      )}
       ref={rootRef}
     >
       <Toaster position="top-center" />
-      <header className="flex items-start justify-between gap-4">
-        <div className="grid gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <h1 className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
-              Quordle
-            </h1>
-            <Badge variant="secondary">En español</Badge>
-          </div>
-          <p className="text-sm text-muted-foreground sm:text-base">
-            Cuatro palabras. Nueve intentos. Un reto cada día.
-          </p>
-        </div>
+      <header className="flex shrink-0 items-center justify-between gap-4">
+        <h1 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
+          Quordle para Mamá
+        </h1>
         <HelpDialog />
       </header>
 
@@ -349,27 +348,9 @@ export function Game({ siteUrl }: GameProps) {
 
       {view.status === "ready" ? (
         <>
-          <section className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="outline">
-                <RiCalendarLine data-icon="inline-start" />
-                {formatGameDate(view.game.gameDate)}
-              </Badge>
-              <Badge variant="secondary">
-                Intento {Math.min(view.game.attempts.length + 1, 9)} de 9
-              </Badge>
-              {view.mode === "local" ? (
-                <Badge variant="outline">Modo local</Badge>
-              ) : null}
-            </div>
-            <p aria-live="polite" className="text-sm text-muted-foreground">
-              {statusMessage(view.game)}
-            </p>
-          </section>
-
           <section
             aria-label="Tableros de juego"
-            className="grid grid-cols-2 gap-3 lg:gap-5"
+            className={styles.boards}
           >
             {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
               <Board
@@ -382,28 +363,15 @@ export function Game({ siteUrl }: GameProps) {
           </section>
 
           {view.game.status === "playing" ? (
-            <Card>
-              <CardHeader>
-                <CardTitle>Tu palabra</CardTitle>
-                <CardDescription>
-                  Escribe con el teclado o pulsa las letras.
-                </CardDescription>
-                <CardAction>
-                  <Badge variant="outline">
-                    {Array.from(currentGuess).length}/{WORD_LENGTH}
-                  </Badge>
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <Keyboard
-                  disabled={view.game.status !== "playing"}
-                  keyboardState={keyboardState}
-                  onBackspace={removeLetter}
-                  onEnter={submitCurrentGuess}
-                  onLetter={addLetter}
-                />
-              </CardContent>
-            </Card>
+            <section className={styles.keyboard}>
+              <Keyboard
+                disabled={view.game.status !== "playing"}
+                keyboardState={keyboardState}
+                onBackspace={removeLetter}
+                onEnter={submitCurrentGuess}
+                onLetter={addLetter}
+              />
+            </section>
           ) : (
             <ResultCard
               game={view.game}
@@ -580,33 +548,30 @@ function Legend({
 
 function GameSkeleton() {
   return (
-    <div aria-label="Cargando partida" className="grid gap-6">
-      <div className="flex gap-2">
-        <Skeleton className="h-5 w-32" />
-        <Skeleton className="h-5 w-24" />
-      </div>
-      <div className="grid grid-cols-2 gap-3 lg:gap-5">
-        {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
-          <Card key={boardIndex} size="sm">
-            <CardHeader>
-              <Skeleton className="h-5 w-24" />
-              <Skeleton className="h-4 w-20" />
-            </CardHeader>
-            <CardContent className="grid gap-1.5">
-              {Array.from({ length: 9 }, (_, rowIndex) => (
-                <div className="grid grid-cols-5 gap-1.5" key={rowIndex}>
-                  {Array.from({ length: WORD_LENGTH }, (_, tileIndex) => (
-                    <Skeleton
-                      className="aspect-square rounded-xl"
-                      key={tileIndex}
-                    />
-                  ))}
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+    <div
+      aria-label="Cargando partida"
+      className="grid flex-1 grid-cols-2 place-content-center place-items-center gap-1"
+    >
+      {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
+        <Card
+          className="gap-0 rounded-xl py-1 [--card-spacing:--spacing(1)]"
+          key={boardIndex}
+          size="sm"
+        >
+          <CardContent className="grid gap-0.5">
+            {Array.from({ length: 9 }, (_, rowIndex) => (
+              <div className="grid grid-cols-5 gap-0.5" key={rowIndex}>
+                {Array.from({ length: WORD_LENGTH }, (_, tileIndex) => (
+                  <Skeleton
+                    className={cn(styles.tile, "rounded-md")}
+                    key={tileIndex}
+                  />
+                ))}
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ))}
     </div>
   );
 }
@@ -668,29 +633,4 @@ function publicApiError(value: unknown): string {
   }
 
   return "No se pudo cargar la partida.";
-}
-
-function formatGameDate(gameDate: string): string {
-  const date = new Date(`${gameDate}T12:00:00`);
-  return new Intl.DateTimeFormat("es-ES", {
-    day: "numeric",
-    month: "long",
-  }).format(date);
-}
-
-function statusMessage(game: GameState): string {
-  if (game.status === "won") {
-    return "Has resuelto los cuatro tableros.";
-  }
-
-  if (game.status === "lost") {
-    return "Has completado los nueve intentos.";
-  }
-
-  const solved = game.boards.filter(
-    (board) => board.solvedAtAttempt !== null,
-  ).length;
-  return solved === 0
-    ? "Los cuatro tableros siguen en juego."
-    : `${solved} de ${BOARD_COUNT} tableros resueltos.`;
 }

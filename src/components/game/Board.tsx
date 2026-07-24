@@ -1,13 +1,6 @@
-import { RiCheckboxCircleLine } from "@remixicon/react";
-
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
@@ -16,6 +9,8 @@ import {
   type GameState,
   type LetterStatus,
 } from "@/game/types";
+
+import styles from "./Game.module.css";
 
 interface BoardProps {
   readonly boardIndex: number;
@@ -39,27 +34,23 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
   const visibleSolution = state.status === "lost" ? board.solution : null;
 
   return (
-    <Card size="sm" aria-label={`Tablero ${boardIndex + 1}`}>
-      <CardHeader>
-        <CardTitle>Tablero {boardIndex + 1}</CardTitle>
-        <CardDescription>
-          {visibleSolution === null
-            ? solved
-              ? `Resuelto en ${board.solvedAtAttempt} intentos`
-              : "Cinco letras"
-            : `La palabra era ${visibleSolution}`}
-        </CardDescription>
-        {solved ? (
-          <CardAction>
-            <Badge>
-              <RiCheckboxCircleLine data-icon="inline-start" />
-              Resuelto
-            </Badge>
-          </CardAction>
-        ) : null}
-      </CardHeader>
+    <Card
+      size="sm"
+      aria-label={`Tablero ${boardIndex + 1}`}
+      className={cn(
+        "relative w-fit gap-0 rounded-xl py-1 [--card-spacing:--spacing(1)]",
+        solved && "ring-primary/50",
+      )}
+    >
+      <span className="sr-only">
+        {visibleSolution === null
+          ? solved
+            ? `Resuelto en ${board.solvedAtAttempt} intentos`
+            : "Cinco letras"
+          : `La palabra era ${visibleSolution}`}
+      </span>
       <CardContent>
-        <div className="grid gap-1.5" role="grid">
+        <div className="grid gap-0.5" role="grid">
           {Array.from({ length: MAX_ATTEMPTS }, (_, rowIndex) => {
             const attempt = state.attempts[rowIndex];
             const isCurrentRow =
@@ -74,7 +65,7 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
 
             return (
               <div
-                className="grid grid-cols-5 gap-1.5"
+                className="grid grid-cols-5 gap-0.5"
                 data-attempt={
                   attempt === undefined || evaluation === null
                     ? undefined
@@ -91,7 +82,8 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
                     <div
                       aria-label={tileLabel(letter, status)}
                       className={cn(
-                        "flex aspect-square items-center justify-center rounded-xl border text-base font-semibold uppercase sm:text-lg",
+                        styles.tile,
+                        "flex items-center justify-center rounded-md border text-[clamp(0.625rem,calc(var(--tile-size)*0.45),1.125rem)] font-semibold uppercase",
                         status === undefined
                           ? letter.length > 0
                             ? "border-foreground/30 bg-background text-foreground"
@@ -110,6 +102,11 @@ export function Board({ boardIndex, currentGuess, state }: BoardProps) {
           })}
         </div>
       </CardContent>
+      {visibleSolution !== null ? (
+        <p className="px-1 text-center text-xs font-semibold uppercase">
+          {visibleSolution}
+        </p>
+      ) : null}
     </Card>
   );
 }

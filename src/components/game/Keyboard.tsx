@@ -33,13 +33,13 @@ export function Keyboard({
   onLetter,
 }: KeyboardProps) {
   return (
-    <div aria-label="Teclado del juego" className="grid gap-2" role="group">
+    <div aria-label="Teclado del juego" className="grid gap-1" role="group">
       {LETTER_ROWS.map((row, rowIndex) => (
-        <div className="flex justify-center gap-1.5" key={rowIndex}>
+        <div className="flex justify-center gap-1" key={rowIndex}>
           {rowIndex === 2 ? (
             <Button
               aria-label="Enviar palabra"
-              className="h-11 flex-2 px-2 sm:h-12"
+              className="h-[clamp(2rem,5.5svh,2.25rem)] flex-2 rounded-lg px-1"
               disabled={disabled}
               onClick={onEnter}
               type="button"
@@ -52,7 +52,7 @@ export function Keyboard({
           {row.map((letter) => (
             <Button
               aria-label={`Letra ${letter}`}
-              className="h-11 min-w-0 flex-1 flex-col gap-0 px-0 text-xs sm:h-12 sm:text-sm"
+              className="h-[clamp(2rem,5.5svh,2.25rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-xs sm:text-sm"
               disabled={disabled}
               key={letter}
               onClick={() => onLetter(letter)}
@@ -81,7 +81,7 @@ export function Keyboard({
           {rowIndex === 2 ? (
             <Button
               aria-label="Borrar letra"
-              className="h-11 flex-1 px-2 sm:h-12"
+              className="h-[clamp(2rem,5.5svh,2.25rem)] flex-1 rounded-lg px-1"
               disabled={disabled}
               onClick={onBackspace}
               type="button"
