@@ -3,9 +3,15 @@
 ## Supabase
 
 1. Crear el proyecto.
-2. Ejecutar `supabase/migrations/0001_create_daily_words.sql`.
-3. Crear una secret key dedicada para el backend.
-4. Confirmar que `anon` y `authenticated` no tienen acceso a `daily_words`.
+2. Autenticar la CLI y ejecutar `npm run db:link`.
+3. Aplicar `supabase/migrations/0001_create_daily_words.sql` mediante
+   `npm run db:migrate`.
+4. Crear una secret key dedicada para el backend.
+5. Confirmar que `anon` y `authenticated` no tienen acceso a `daily_words`.
+
+La comprobación automatizada `npm run db:verify` debe terminar correctamente.
+Para que el cron funcione, `SUPABASE_SECRET_KEY` debe configurarse en Vercel
+con una secret key de backend; no se obtiene ni versiona desde la CLI.
 
 ## Vercel
 

@@ -10,7 +10,13 @@
     "check": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
-    "validate:dictionary": "node --import tsx scripts/validate-dictionary.ts"
+    "validate:dictionary": "node --import tsx scripts/validate-dictionary.ts",
+    "db:init": "supabase init",
+    "db:link": "node scripts/supabase-link.mjs",
+    "db:push": "supabase db push",
+    "db:migrate": "supabase db push",
+    "db:status": "supabase migration list",
+    "db:verify": "node scripts/verify-supabase-connection.mjs"
   },
   "dependencies": {
     "@astrojs/react": "latest",
@@ -27,6 +33,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "supabase": "latest",
     "tsx": "latest",
     "typescript": "^6.0.0",
     "vitest": "latest"

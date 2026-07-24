@@ -10,9 +10,14 @@
 
 1. `npm install`
 2. Crear `.env`.
-3. Aplicar la migración SQL en Supabase.
-4. Sustituir y validar el diccionario.
-5. `npm run dev`
+3. `npm run db:link` para enlazar el proyecto indicado por `SUPABASE_URL`.
+4. `npm run db:migrate` para aplicar migraciones pendientes.
+5. Sustituir y validar el diccionario.
+6. `npm run dev`
+
+La primera vez, autentica la CLI con `npx supabase login`. `db:status` compara
+el historial local y remoto sin modificar la base de datos. `db:verify`
+comprueba la conexión Data API y que `daily_words` rechaza la clave pública.
 
 ## Variables
 
