@@ -4,6 +4,7 @@ import {
   getCurrentGameDate,
   getMadridCalendarDate,
   getMadridDateTime,
+  getNextGameResetAt,
 } from "./game-date";
 
 describe("game day in Europe/Madrid", () => {
@@ -49,5 +50,35 @@ describe("game day in Europe/Madrid", () => {
     expect(getMadridCalendarDate(instant)).toBe("2026-01-15");
     expect(getMadridDateTime(instant).hour).toBe(4);
     expect(getCurrentGameDate(instant)).toBe("2026-01-14");
+  });
+
+  it("calcula el siguiente reinicio en horario de invierno", () => {
+    expect(
+      getNextGameResetAt(new Date("2026-01-15T03:59:59Z")).toISOString(),
+    ).toBe("2026-01-15T04:00:00.000Z");
+    expect(
+      getNextGameResetAt(new Date("2026-01-15T04:00:00Z")).toISOString(),
+    ).toBe("2026-01-16T04:00:00.000Z");
+  });
+
+  it("calcula el siguiente reinicio en horario de verano", () => {
+    expect(
+      getNextGameResetAt(new Date("2026-07-24T02:59:59Z")).toISOString(),
+    ).toBe("2026-07-24T03:00:00.000Z");
+    expect(
+      getNextGameResetAt(new Date("2026-07-24T03:00:00Z")).toISOString(),
+    ).toBe("2026-07-25T03:00:00.000Z");
+  });
+
+  it("ajusta el reinicio al cambio a horario de verano", () => {
+    expect(
+      getNextGameResetAt(new Date("2026-03-28T05:00:00Z")).toISOString(),
+    ).toBe("2026-03-29T03:00:00.000Z");
+  });
+
+  it("ajusta el reinicio al cambio a horario de invierno", () => {
+    expect(
+      getNextGameResetAt(new Date("2026-10-24T05:00:00Z")).toISOString(),
+    ).toBe("2026-10-25T04:00:00.000Z");
   });
 });

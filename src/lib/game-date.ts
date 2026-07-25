@@ -63,16 +63,69 @@ export function getCurrentGameDate(instant: Date = new Date()): string {
     : previousCalendarDate(madrid);
 }
 
+export function getNextGameResetAt(instant: Date = new Date()): Date {
+  const madrid = getMadridDateTime(instant);
+  const targetDate =
+    madrid.hour < RESET_HOUR ? madrid : shiftCalendarDate(madrid, 1);
+
+  return madridDateTimeToInstant({
+    ...targetDate,
+    hour: RESET_HOUR,
+    minute: 0,
+    second: 0,
+  });
+}
+
 function previousCalendarDate(parts: ZonedDateTimeParts): string {
-  const previous = new Date(
-    Date.UTC(parts.year, parts.month - 1, parts.day - 1),
+  return toIsoDate(shiftCalendarDate(parts, -1));
+}
+
+function shiftCalendarDate(
+  parts: ZonedDateTimeParts,
+  days: number,
+): ZonedDateTimeParts {
+  const shifted = new Date(
+    Date.UTC(parts.year, parts.month - 1, parts.day + days),
   );
 
-  return [
-    previous.getUTCFullYear(),
-    String(previous.getUTCMonth() + 1).padStart(2, "0"),
-    String(previous.getUTCDate()).padStart(2, "0"),
-  ].join("-");
+  return {
+    year: shifted.getUTCFullYear(),
+    month: shifted.getUTCMonth() + 1,
+    day: shifted.getUTCDate(),
+    hour: parts.hour,
+    minute: parts.minute,
+    second: parts.second,
+  };
+}
+
+function madridDateTimeToInstant(parts: ZonedDateTimeParts): Date {
+  const targetAsUtc = partsAsUtc(parts);
+  let candidate = targetAsUtc;
+
+  // Iterate from a UTC guess until its Madrid fields match the requested
+  // wall-clock time. This lets Intl account for CET, CEST, and DST changes.
+  for (let iteration = 0; iteration < 4; iteration += 1) {
+    const observed = getMadridDateTime(new Date(candidate));
+    const adjustment = targetAsUtc - partsAsUtc(observed);
+    candidate += adjustment;
+
+    if (adjustment === 0) {
+      return new Date(candidate);
+    }
+  }
+
+  throw new Error("No se pudo calcular el próximo reinicio de la partida.");
+}
+
+function partsAsUtc(parts: ZonedDateTimeParts): number {
+  return Date.UTC(
+    parts.year,
+    parts.month - 1,
+    parts.day,
+    parts.hour,
+    parts.minute,
+    parts.second,
+  );
 }
 
 function toIsoDate(parts: ZonedDateTimeParts): string {

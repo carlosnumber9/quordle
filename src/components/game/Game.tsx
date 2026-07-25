@@ -1,7 +1,7 @@
 import {
   RiAlertLine,
+  RiFileCopyLine,
   RiQuestionLine,
-  RiShareLine,
   RiTrophyLine,
 } from "@remixicon/react";
 import { gsap } from "gsap";
@@ -16,7 +16,6 @@ import {
 import { toast } from "sonner";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -53,6 +52,7 @@ import {
 } from "@/game/local-game-client";
 import { loadGame, saveGame } from "@/game/persistence";
 import { createShareText } from "@/game/share";
+import { getNextGameResetAt } from "@/lib/game-date";
 import { cn } from "@/lib/utils";
 import {
   BOARD_COUNT,
@@ -89,6 +89,13 @@ const ERROR_MESSAGES: Readonly<Record<SubmitGuessError, string>> = {
   "invalid-characters": "Usa únicamente letras de la A a la Z y la Ñ.",
   "unknown-word": "Esa palabra no está en el diccionario.",
 };
+
+const LOSS_MESSAGES = [
+  "¡Otro día será!",
+  "Esta vez no pudo ser...",
+  "¡No esta vez!",
+  "¡Mañana lo conseguirás!",
+] as const;
 
 export function Game({ siteUrl }: GameProps) {
   const [view, setView] = useState<GameView>({ status: "loading" });
@@ -339,7 +346,12 @@ export function Game({ siteUrl }: GameProps) {
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.metaKey || event.ctrlKey || event.altKey) {
+      if (
+        gameStatus !== "playing" ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey
+      ) {
         return;
       }
 
@@ -363,7 +375,7 @@ export function Game({ siteUrl }: GameProps) {
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [addLetter, removeLetter, submitCurrentGuess]);
+  }, [addLetter, gameStatus, removeLetter, submitCurrentGuess]);
 
   const share = useCallback(async () => {
     if (view.status !== "ready" || view.game.status === "playing") {
@@ -466,7 +478,10 @@ export function Game({ siteUrl }: GameProps) {
         <>
           <section
             aria-label="Tableros de juego"
-            className={styles.boards}
+            className={cn(
+              styles.boards,
+              view.game.status !== "playing" && styles.finishedBoards,
+            )}
             data-intro-reveal
           >
             {Array.from({ length: 2 }, (_, columnIndex) => (
@@ -500,15 +515,21 @@ export function Game({ siteUrl }: GameProps) {
           ) : null}
 
           {view.game.status !== "playing" ? (
-            <ResultDialog
-              game={view.game}
-              mode={view.mode}
-              onOpenChange={setResultOpen}
-              onReplay={replay}
-              onShare={share}
-              open={resultOpen}
-              replaying={replaying}
-            />
+            <>
+              <CompletedGamePanel
+                onReset={load}
+                onShowResults={() => setResultOpen(true)}
+              />
+              <ResultDialog
+                game={view.game}
+                mode={view.mode}
+                onOpenChange={setResultOpen}
+                onReplay={replay}
+                onShare={share}
+                open={resultOpen}
+                replaying={replaying}
+              />
+            </>
           ) : null}
         </>
       ) : null}
@@ -547,6 +568,84 @@ export function Game({ siteUrl }: GameProps) {
   );
 }
 
+function CompletedGamePanel({
+  onReset,
+  onShowResults,
+}: {
+  readonly onReset: () => void | Promise<void>;
+  readonly onShowResults: () => void;
+}) {
+  const [resetAt] = useState(() => getNextGameResetAt());
+  const [remainingMilliseconds, setRemainingMilliseconds] = useState(() =>
+    Math.max(0, resetAt.getTime() - Date.now()),
+  );
+  const resetTriggered = useRef(false);
+
+  useEffect(() => {
+    function updateCountdown() {
+      const remaining = Math.max(0, resetAt.getTime() - Date.now());
+      setRemainingMilliseconds(remaining);
+
+      if (remaining === 0 && !resetTriggered.current) {
+        resetTriggered.current = true;
+        void onReset();
+      }
+    }
+
+    updateCountdown();
+    const interval = window.setInterval(updateCountdown, 1_000);
+    return () => window.clearInterval(interval);
+  }, [onReset, resetAt]);
+
+  const countdown = formatCountdown(remainingMilliseconds);
+
+  return (
+    <Card className={styles.finishedPanel} size="sm">
+      <CardHeader className="items-center text-center">
+        <CardTitle aria-level={2} className="text-xl" role="heading">
+          Partida terminada
+        </CardTitle>
+        <CardDescription>Nueva partida en</CardDescription>
+      </CardHeader>
+      <CardContent className="text-center">
+        <time
+          aria-label={`Faltan ${countdown.hours} horas, ${countdown.minutes} minutos y ${countdown.seconds} segundos`}
+          className={styles.countdown}
+          dateTime={`PT${countdown.hours}H${countdown.minutes}M${countdown.seconds}S`}
+        >
+          {countdown.formatted}
+        </time>
+      </CardContent>
+      <CardFooter className="justify-center">
+        <Button onClick={onShowResults} type="button" variant="outline">
+          Resultados
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+
+function formatCountdown(milliseconds: number): {
+  readonly formatted: string;
+  readonly hours: number;
+  readonly minutes: number;
+  readonly seconds: number;
+} {
+  const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1_000));
+  const hours = Math.floor(totalSeconds / 3_600);
+  const minutes = Math.floor((totalSeconds % 3_600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return {
+    formatted: [hours, minutes, seconds]
+      .map((part) => String(part).padStart(2, "0"))
+      .join(":"),
+    hours,
+    minutes,
+    seconds,
+  };
+}
+
 function ResultDialog({
   game,
   mode,
@@ -566,6 +665,21 @@ function ResultDialog({
 }) {
   const won = game.status === "won";
   const contentRef = useRef<HTMLDivElement>(null);
+  const lossMessage = useMemo(
+    () =>
+      LOSS_MESSAGES[Math.floor(Math.random() * LOSS_MESSAGES.length)] ??
+      LOSS_MESSAGES[0],
+    [game.gameId],
+  );
+  const resolvedWordsByAttempt = useMemo(
+    () =>
+      game.attempts.map((_, attemptIndex) =>
+        game.boards
+          .filter((board) => board.solvedAtAttempt === attemptIndex + 1)
+          .map((board) => board.solution),
+      ),
+    [game.attempts, game.boards],
+  );
 
   useLayoutEffect(() => {
     const content = contentRef.current;
@@ -574,13 +688,30 @@ function ResultDialog({
     }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      gsap.set(content, { clearProps: "opacity,scale" });
+      gsap.set(content, { clearProps: "opacity,scale,transform" });
+      gsap.set(content.querySelectorAll("[data-result-turn]"), {
+        clearProps: "opacity,transform",
+      });
+      gsap.set(content.querySelectorAll("[data-result-connector]"), {
+        clearProps: "transform",
+      });
+      gsap.set(content.querySelectorAll("[data-result-word]"), {
+        clearProps: "opacity,transform",
+      });
       return;
     }
 
     const context = gsap.context(() => {
+      const turns = gsap.utils.toArray<HTMLElement>("[data-result-turn]");
+      gsap.set(turns, { opacity: 0, x: -10 });
+      gsap.set("[data-result-connector]", {
+        scaleY: 0,
+        transformOrigin: "top center",
+      });
+      gsap.set("[data-result-word]", { opacity: 0, scale: 0.8 });
+
+      const timeline = gsap.timeline();
       if (won) {
-        const timeline = gsap.timeline();
         timeline
           .set(content, { opacity: 0, scale: 0 })
           .to(content, {
@@ -597,18 +728,49 @@ function ResultDialog({
             },
             "<",
           );
-        return;
+      } else {
+        timeline.fromTo(
+          content,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.4,
+            ease: "power1.out",
+          },
+        );
       }
 
-      gsap.fromTo(
-        content,
-        { opacity: 0 },
-        {
+      turns.forEach((turn) => {
+        timeline.to(turn, {
           opacity: 1,
-          duration: 1.1,
+          x: 0,
+          duration: 0.16,
           ease: "power1.out",
-        },
-      );
+        });
+
+        const resolvedWord = turn.querySelector("[data-result-word]");
+        if (resolvedWord !== null) {
+          timeline.to(
+            resolvedWord,
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.22,
+              ease: "back.out(1.7)",
+            },
+            "<",
+          );
+        }
+
+        const connector = turn.querySelector("[data-result-connector]");
+        if (connector !== null) {
+          timeline.to(connector, {
+            scaleY: 1,
+            duration: 0.12,
+            ease: "none",
+          });
+        }
+      });
     }, content);
 
     return () => context.revert();
@@ -621,41 +783,82 @@ function ResultDialog({
         ref={contentRef}
       >
         <DialogHeader className="items-center text-center">
-          <Badge className="mb-2" variant={won ? "default" : "secondary"}>
-            <RiTrophyLine data-icon="inline-start" />
-            {won ? "Victoria" : "Completada"}
-          </Badge>
-          <DialogTitle className="text-2xl">
-            {won ? "¡Cuatro de cuatro!" : "Partida terminada"}
+          <DialogTitle className={styles.resultTitle}>
+            {won && (
+              <RiTrophyLine
+                aria-hidden="true"
+                className={styles.resultVictoryIcon}
+              />
+            )}
+            <span>{won ? "Victoria" : lossMessage}</span>
           </DialogTitle>
-          <DialogDescription>
-            {won
-              ? `Has resuelto el reto en ${game.attempts.length} intentos.`
-              : "Mañana tendrás cuatro palabras nuevas."}
-          </DialogDescription>
+          {!won && (
+            <DialogDescription>
+              Mañana tendrás cuatro palabras nuevas.
+            </DialogDescription>
+          )}
         </DialogHeader>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {game.boards.map((board, index) => (
-            <div
-              className="rounded-2xl bg-muted p-3 text-center"
-              key={index}
-            >
-              <p className="text-xs text-muted-foreground">
-                Tablero {index + 1}
-              </p>
-              <p className="font-heading text-lg font-semibold">
-                {board.solvedAtAttempt ?? "—"}
-              </p>
-            </div>
-          ))}
+        <div
+          aria-label="Cronología de la partida"
+          className={styles.resultTimeline}
+        >
+          <p className={styles.resultTimelineTitle}>Turnos jugados</p>
+          <ol className={styles.resultTimelineList}>
+            {game.attempts.map((_, attemptIndex) => {
+              const attemptNumber = attemptIndex + 1;
+              const resolvedWords =
+                resolvedWordsByAttempt[attemptIndex] ?? [];
+              const accessibleResult =
+                resolvedWords.length > 0
+                  ? `palabra resuelta: ${resolvedWords.join(", ")}`
+                  : "ninguna palabra resuelta";
+
+              return (
+                <li
+                  aria-label={`Turno ${attemptNumber}, ${accessibleResult}`}
+                  className={styles.resultTimelineTurn}
+                  data-result-turn
+                  key={attemptNumber}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={styles.resultTimelineAxis}
+                  >
+                    <span
+                      className={styles.resultTimelineMarker}
+                      data-solved={resolvedWords.length > 0 ? "" : undefined}
+                    />
+                    {attemptNumber < game.attempts.length && (
+                      <span
+                        className={styles.resultTimelineConnector}
+                        data-result-connector
+                      />
+                    )}
+                  </span>
+                  <span aria-hidden="true" className={styles.resultTurnNumber}>
+                    Turno {attemptNumber}
+                  </span>
+                  {resolvedWords.length > 0 && (
+                    <span
+                      aria-hidden="true"
+                      className={styles.resultWord}
+                      data-result-word
+                    >
+                      {resolvedWords.join(" · ")}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
         </div>
 
         <Separator />
         <DialogFooter className="flex-col gap-2 sm:justify-center">
           <Button onClick={() => void onShare()} size="lg" type="button">
-            <RiShareLine data-icon="inline-start" />
-            Compartir resultado
+            <RiFileCopyLine data-icon="inline-start" />
+            Copiar resultado
           </Button>
           <LocalReplayButton
             mode={mode}
