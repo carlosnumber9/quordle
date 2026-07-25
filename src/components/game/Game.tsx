@@ -427,6 +427,9 @@ export function Game({ siteUrl }: GameProps) {
         view.status === "ready" &&
           view.game.status === "playing" &&
           styles.playing,
+        view.status === "ready" &&
+          view.game.status !== "playing" &&
+          styles.finished,
       )}
       ref={rootRef}
     >
@@ -478,10 +481,7 @@ export function Game({ siteUrl }: GameProps) {
         <>
           <section
             aria-label="Tableros de juego"
-            className={cn(
-              styles.boards,
-              view.game.status !== "playing" && styles.finishedBoards,
-            )}
+            className={styles.boards}
             data-intro-reveal
           >
             {Array.from({ length: 2 }, (_, columnIndex) => (
@@ -601,26 +601,31 @@ function CompletedGamePanel({
 
   return (
     <Card className={styles.finishedPanel} size="sm">
-      <CardHeader className="items-center text-center">
-        <CardTitle aria-level={2} className="text-xl" role="heading">
-          Partida terminada
-        </CardTitle>
-        <CardDescription>Nueva partida en</CardDescription>
-      </CardHeader>
-      <CardContent className="text-center">
-        <time
-          aria-label={`Faltan ${countdown.hours} horas, ${countdown.minutes} minutos y ${countdown.seconds} segundos`}
-          className={styles.countdown}
-          dateTime={`PT${countdown.hours}H${countdown.minutes}M${countdown.seconds}S`}
+      <CardContent className={styles.finishedPanelContent}>
+        <div className={styles.finishedPanelSummary}>
+          <CardTitle aria-level={2} role="heading">
+            Partida terminada
+          </CardTitle>
+          <CardDescription>
+            <span>Nueva partida en</span>
+            <time
+              aria-label={`Faltan ${countdown.hours} horas, ${countdown.minutes} minutos y ${countdown.seconds} segundos`}
+              className={styles.countdown}
+              dateTime={`PT${countdown.hours}H${countdown.minutes}M${countdown.seconds}S`}
+            >
+              {countdown.formatted}
+            </time>
+          </CardDescription>
+        </div>
+        <Button
+          onClick={onShowResults}
+          size="sm"
+          type="button"
+          variant="outline"
         >
-          {countdown.formatted}
-        </time>
-      </CardContent>
-      <CardFooter className="justify-center">
-        <Button onClick={onShowResults} type="button" variant="outline">
           Resultados
         </Button>
-      </CardFooter>
+      </CardContent>
     </Card>
   );
 }
@@ -680,6 +685,14 @@ function ResultDialog({
       ),
     [game.attempts, game.boards],
   );
+  const unresolvedWords = useMemo(
+    () =>
+      game.boards
+        .filter((board) => board.solvedAtAttempt === null)
+        .map((board) => board.solution),
+    [game.boards],
+  );
+  const showTimeline = won || unresolvedWords.length < game.boards.length;
 
   useLayoutEffect(() => {
     const content = contentRef.current;
@@ -748,15 +761,16 @@ function ResultDialog({
           ease: "power1.out",
         });
 
-        const resolvedWord = turn.querySelector("[data-result-word]");
-        if (resolvedWord !== null) {
+        const resultWords = turn.querySelectorAll("[data-result-word]");
+        if (resultWords.length > 0) {
           timeline.to(
-            resolvedWord,
+            resultWords,
             {
               opacity: 1,
               scale: 1,
               duration: 0.22,
               ease: "back.out(1.7)",
+              stagger: 0.06,
             },
             "<",
           );
@@ -799,60 +813,107 @@ function ResultDialog({
           )}
         </DialogHeader>
 
-        <div
-          aria-label="Cronología de la partida"
-          className={styles.resultTimeline}
-        >
-          <p className={styles.resultTimelineTitle}>Turnos jugados</p>
-          <ol className={styles.resultTimelineList}>
-            {game.attempts.map((_, attemptIndex) => {
-              const attemptNumber = attemptIndex + 1;
-              const resolvedWords =
-                resolvedWordsByAttempt[attemptIndex] ?? [];
-              const accessibleResult =
-                resolvedWords.length > 0
-                  ? `palabra resuelta: ${resolvedWords.join(", ")}`
-                  : "ninguna palabra resuelta";
+        {showTimeline ? (
+          <div
+            aria-label="Cronología de la partida"
+            className={styles.resultTimeline}
+          >
+            <p className={styles.resultTimelineTitle}>Turnos jugados</p>
+            <ol className={styles.resultTimelineList}>
+              {game.attempts.map((_, attemptIndex) => {
+                const attemptNumber = attemptIndex + 1;
+                const resolvedWords =
+                  resolvedWordsByAttempt[attemptIndex] ?? [];
+                const revealedWords =
+                  !won && attemptNumber === game.attempts.length
+                    ? unresolvedWords
+                    : [];
+                const accessibleResult =
+                  resolvedWords.length > 0 && revealedWords.length > 0
+                    ? `palabra resuelta: ${resolvedWords.join(", ")}; palabras sin resolver: ${revealedWords.join(", ")}`
+                    : resolvedWords.length > 0
+                      ? `palabra resuelta: ${resolvedWords.join(", ")}`
+                      : revealedWords.length > 0
+                        ? `palabras sin resolver: ${revealedWords.join(", ")}`
+                        : "ninguna palabra resuelta";
 
-              return (
-                <li
-                  aria-label={`Turno ${attemptNumber}, ${accessibleResult}`}
-                  className={styles.resultTimelineTurn}
-                  data-result-turn
-                  key={attemptNumber}
-                >
-                  <span
-                    aria-hidden="true"
-                    className={styles.resultTimelineAxis}
+                return (
+                  <li
+                    aria-label={`Turno ${attemptNumber}, ${accessibleResult}`}
+                    className={styles.resultTimelineTurn}
+                    data-result-turn
+                    key={attemptNumber}
                   >
                     <span
-                      className={styles.resultTimelineMarker}
-                      data-solved={resolvedWords.length > 0 ? "" : undefined}
-                    />
-                    {attemptNumber < game.attempts.length && (
+                      aria-hidden="true"
+                      className={styles.resultTimelineAxis}
+                    >
                       <span
-                        className={styles.resultTimelineConnector}
-                        data-result-connector
+                        className={styles.resultTimelineMarker}
+                        data-revealed={
+                          revealedWords.length > 0 ? "" : undefined
+                        }
+                        data-solved={
+                          resolvedWords.length > 0 ? "" : undefined
+                        }
                       />
-                    )}
-                  </span>
-                  <span aria-hidden="true" className={styles.resultTurnNumber}>
-                    Turno {attemptNumber}
-                  </span>
-                  {resolvedWords.length > 0 && (
+                      {attemptNumber < game.attempts.length && (
+                        <span
+                          className={styles.resultTimelineConnector}
+                          data-result-connector
+                        />
+                      )}
+                    </span>
                     <span
                       aria-hidden="true"
-                      className={styles.resultWord}
-                      data-result-word
+                      className={styles.resultTurnNumber}
                     >
-                      {resolvedWords.join(" · ")}
+                      Turno {attemptNumber}
                     </span>
-                  )}
+                    {(resolvedWords.length > 0 ||
+                      revealedWords.length > 0) && (
+                      <span
+                        aria-hidden="true"
+                        className={styles.resultTurnWords}
+                      >
+                        {resolvedWords.length > 0 && (
+                          <span
+                            className={styles.resultWord}
+                            data-result-word
+                          >
+                            {resolvedWords.join(" · ")}
+                          </span>
+                        )}
+                        {revealedWords.length > 0 && (
+                          <span
+                            className={styles.resultMissedWords}
+                            data-result-word
+                          >
+                            <span className={styles.resultMissedLabel}>
+                              Sin resolver
+                            </span>
+                            <span>{revealedWords.join(" · ")}</span>
+                          </span>
+                        )}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        ) : (
+          <div aria-label="Soluciones" className={styles.resultSolutions}>
+            <p className={styles.resultTimelineTitle}>Las palabras eran</p>
+            <ul className={styles.resultSolutionList}>
+              {unresolvedWords.map((word) => (
+                <li className={styles.resultSolutionWord} key={word}>
+                  {word}
                 </li>
-              );
-            })}
-          </ol>
-        </div>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <Separator />
         <DialogFooter className="flex-col gap-2 sm:justify-center">

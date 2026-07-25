@@ -7,7 +7,8 @@
   );
 }
 
-.playing {
+.playing,
+.finished {
   height: 100svh;
   overflow: hidden;
 }
@@ -59,13 +60,6 @@
   gap: var(--board-gap);
 }
 
-.finishedBoards {
-  --tile-size: inherit;
-
-  container-type: normal;
-  flex: 0 0 auto;
-}
-
 .keyboard {
   width: min(100%, 48rem);
   margin-inline: auto;
@@ -109,18 +103,32 @@
 }
 
 .finishedPanel {
-  width: min(100%, 22rem);
-  margin: clamp(1rem, 5svh, 3rem) auto auto;
+  width: min(100%, 24rem);
+  margin-inline: auto;
   flex: 0 0 auto;
 }
 
+.finishedPanelContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.finishedPanelSummary {
+  min-width: 0;
+  text-align: left;
+}
+
 .countdown {
+  display: block;
+  margin-block-start: 0.125rem;
   color: var(--foreground);
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-size: 1.125rem;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1;
 }
 
@@ -195,6 +203,11 @@
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 18%, transparent);
 }
 
+.resultTimelineMarker[data-revealed]:not([data-solved]) {
+  border-color: var(--foreground);
+  background: var(--foreground);
+}
+
 .resultTimelineConnector {
   position: absolute;
   top: 0.875rem;
@@ -209,6 +222,12 @@
   line-height: 1.125rem;
 }
 
+.resultTurnWords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .resultWord {
   width: fit-content;
   border-radius: 999px;
@@ -220,6 +239,56 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.125rem;
+}
+
+.resultMissedWords {
+  display: inline-flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px dashed var(--muted-foreground);
+  border-radius: 999px;
+  padding: 0.0625rem 0.625rem;
+  background: var(--background);
+  color: var(--foreground);
+  column-gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.125rem;
+}
+
+.resultMissedLabel {
+  color: var(--muted-foreground);
+  font-size: 0.625rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.resultSolutions {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--muted);
+  text-align: left;
+}
+
+.resultSolutionList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.resultSolutionWord {
+  border-radius: 0.75rem;
+  padding: 0.625rem;
+  background: var(--background);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {

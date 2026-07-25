@@ -30,14 +30,16 @@ This prevents more yellow occurrences from being marked than actually exist.
 When a board is solved, the global guess number is recorded. Subsequent guesses
 store `null` for that board and do not change its result. The player wins by
 solving all four boards and loses by completing the ninth guess without doing
-so. At the end, both a win and a loss open a centered dialog with an animated
-turn-by-turn timeline. Every turn is represented and the solution appears on
-the turn where its board was completed. The animation is skipped when the
-player prefers reduced motion. A win uses a prominent trophy heading, while a
-loss shows one randomly selected encouragement message. After closing the
-dialog, a compact finished-game panel keeps the results available and counts
-down to the next 05:00 rollover in Madrid; reaching zero reloads the daily
-game.
+so. At the end, both a win and a loss open a centered results dialog. Wins and
+partial losses show an animated turn-by-turn timeline. Every turn is
+represented, each solved word appears where its board was completed, and a
+partial loss groups every unresolved solution on turn nine. A loss with no
+solved boards skips the empty timeline and reveals the four solutions directly.
+The animation is skipped when the player prefers reduced motion. A win uses a
+prominent trophy heading, while a loss shows one randomly selected
+encouragement message. After closing the dialog, a compact finished-game panel
+keeps the results available and counts down to the next 05:00 rollover in
+Madrid; reaching zero reloads the daily game.
 
 ## Keyboard
 
