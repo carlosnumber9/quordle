@@ -178,8 +178,8 @@ export function Board({
                         "flex items-center justify-center rounded-md border text-[clamp(0.625rem,calc(var(--tile-size)*0.45),1.125rem)] font-semibold uppercase",
                         status === undefined
                           ? letter.length > 0
-                            ? "border-foreground/30 bg-background text-foreground"
-                            : "border-border bg-background"
+                            ? "border-foreground/30 bg-muted text-foreground"
+                            : "border-muted bg-muted"
                           : TILE_STATUS_CLASSES[status],
                       )}
                       data-letter-status={status}
