@@ -9,6 +9,7 @@ import {
 import { PAYLOAD } from "./local-session/test/definitions";
 import { createMemoryStorage } from "./local-session/test/utils";
 import { GAME_STORAGE_KEY } from "./persistence";
+import { STREAK_STORAGE_KEY } from "./streak";
 
 describe("local game session", () => {
   it("mantiene la misma partida local durante el día", () => {
@@ -23,13 +24,15 @@ describe("local game session", () => {
     });
   });
 
-  it("reemplazar la sesión elimina el progreso de la partida anterior", () => {
+  it("reemplazar la sesión elimina el progreso pero conserva la racha", () => {
     const storage = createMemoryStorage();
     storage.setItem(GAME_STORAGE_KEY, "old progress");
+    storage.setItem(STREAK_STORAGE_KEY, "streak history");
 
     replaceLocalSession(storage, PAYLOAD);
 
     expect(storage.getItem(GAME_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem(STREAK_STORAGE_KEY)).toBe("streak history");
   });
 
   it("descarta sesiones de otro día o corruptas", () => {

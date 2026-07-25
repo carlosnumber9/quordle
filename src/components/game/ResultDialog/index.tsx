@@ -11,10 +11,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
+import { getStreakSummary, loadStreakHistory } from "@/game/streak";
 import { cn } from "@/lib/utils";
 
 import { LocalReplayButton } from "../LocalReplayButton";
 import { ResultTimeline } from "../ResultTimeline";
+import { StreakTimeline } from "../StreakTimeline";
 import { useResultAnimation } from "./animations";
 import { LOSS_MESSAGES, type ResultDialogProps } from "./definitions";
 import { ResultSolutions } from "./ResultSolutions";
@@ -32,6 +34,16 @@ export function ResultDialog(props: ResultDialogProps) {
     [game.gameId],
   );
   const summary = useMemo(() => summarizeResult(game), [game]);
+  const streakSummary = useMemo(
+    () =>
+      getStreakSummary(
+        typeof window === "undefined"
+          ? []
+          : loadStreakHistory(window.localStorage),
+        game.gameDate,
+      ),
+    [game],
+  );
   useResultAnimation(contentRef, open, won);
 
   return (
@@ -58,6 +70,7 @@ export function ResultDialog(props: ResultDialogProps) {
         ) : (
           <ResultSolutions words={summary.unresolvedWords} />
         )}
+        <StreakTimeline summary={streakSummary} />
         <Separator />
         <DialogFooter className="flex-col gap-2 sm:justify-center">
           <Button onClick={() => void onShare()} size="lg" type="button">

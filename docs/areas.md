@@ -6,6 +6,7 @@
 | Evaluation | `src/game/evaluator.ts` | Wordle colors and duplicate letters |
 | Dictionary | `src/game/dictionary.ts` | Normalize, validate, and select |
 | Persistence | `src/game/persistence.ts` | Save and reconstruct progress |
+| Streak | `src/game/streak.ts` | Store completed dates and derive the current streak |
 | Local session | `src/game/local-session.ts` | Keep or replace the local puzzle |
 | Local client | `src/game/local-game-client.ts` | Load the session and run replays |
 | Local replay | `src/game/replay.ts` | Visibility after a win or loss |

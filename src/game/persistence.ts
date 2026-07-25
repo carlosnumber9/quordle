@@ -6,6 +6,7 @@ import {
   type StorageLike,
 } from "./persistence/definitions";
 import { parsePersistedGame } from "./persistence/utils";
+import { recordCompletedGame } from "./streak";
 
 export {
   GAME_STORAGE_KEY,
@@ -79,6 +80,8 @@ export function loadGame(
   );
   if (restored === null) {
     storage.removeItem(GAME_STORAGE_KEY);
+  } else {
+    recordCompletedGame(storage, restored);
   }
 
   return restored;
@@ -86,4 +89,5 @@ export function loadGame(
 
 export function saveGame(storage: StorageLike, state: GameState): void {
   storage.setItem(GAME_STORAGE_KEY, serializeGame(state));
+  recordCompletedGame(storage, state);
 }

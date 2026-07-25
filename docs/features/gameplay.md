@@ -37,9 +37,20 @@ partial loss groups every unresolved solution on turn nine. A loss with no
 solved boards skips the empty timeline and reveals the four solutions directly.
 The animation is skipped when the player prefers reduced motion. A win uses a
 prominent trophy heading, while a loss shows one randomly selected
-encouragement message. After closing the dialog, a compact finished-game panel
-keeps the results available and counts down to the next 05:00 rollover in
-Madrid; reaching zero reloads the daily game.
+encouragement message.
+
+The dialog also shows a horizontal timeline for the last seven game dates.
+Victories display the final turn number in a green marker whose size decreases
+from turn four through turn nine. Consecutive victories join with a green
+segment; losses use a grey marker with an `X`, and dates without a completed
+game remain neutral. The markers enter from left to right with a short elastic
+scale animation, which is skipped under `prefers-reduced-motion`. A subtitle
+reports no active streak, the first victory in a new streak, or the full number
+of consecutive victories ending on the current game date.
+
+After closing the dialog, a compact finished-game panel keeps the results
+available and counts down to the next 05:00 rollover in Madrid; reaching zero
+reloads the daily game.
 
 ## Keyboard
 
@@ -51,6 +62,13 @@ priority is `correct > present > absent`, so a clue never degrades.
 The version, date, guess list, and whether the game has ended are stored. On
 load, guesses are replayed from scratch. A corrupt, inconsistent, or
 different-date payload is removed.
+
+Completed games are also stored by game date in a separate, versioned Local
+Storage history. Each entry contains only the outcome and final attempt count.
+This history is used for the seven-day timeline and for calculating a streak
+that may be longer than the visible window. Missing dates and losses break the
+current streak. Corrupt history is discarded, and restoring a completed game
+repairs its entry.
 
 ## Local development
 
@@ -64,6 +82,8 @@ different-date payload is removed.
 - “Volver a jugar” (“Play again”) appears only after a win or loss.
 - The button requests `POST /api/game/today`, replaces the local session,
   removes the previous progress, and creates state with the new `gameId`.
+- Replaying does not clear streak history. A later completed replay on the same
+  local game date replaces that date's result instead of creating a duplicate.
 - In production, POST returns `405` and the button is not rendered.
 
 The integration must use `getOrCreateLocalSession` during local startup and

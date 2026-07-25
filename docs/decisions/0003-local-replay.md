@@ -27,3 +27,6 @@ without polluting the shared history or preparing data in Supabase.
 - `POST /api/game/today` exists only in DEV mode.
 - Production keeps a single daily game and never shows replay controls.
 - The future UI must replace the session before creating the new state.
+- Replacing the session clears only active progress. Browser-local streak
+  history remains available, and the latest completed replay replaces the
+  result for that date.

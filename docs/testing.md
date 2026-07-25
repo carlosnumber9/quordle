@@ -11,6 +11,7 @@
 - An independent keyboard state for each board.
 - Dictionary normalization and exhaustion.
 - Local Storage restoration.
+- Seven-day streak history, interruptions, and same-date replacement.
 - Shared text without words.
 - The 05:00 cutoff in winter, summer, and both daylight-saving transitions.
 - Existing games, creation, races, and row corruption.

@@ -1,5 +1,7 @@
 .dialog {
   animation: none !important;
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
 }
 
 .title {

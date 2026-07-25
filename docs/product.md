@@ -13,6 +13,7 @@ The product prioritizes clarity and maintainability over scalability.
 - The same game for everyone.
 - Daily rollover at 05:00 in `Europe/Madrid`.
 - Progress restoration in the same browser.
+- A browser-local seven-day result timeline and current winning streak.
 - Replays blocked after the game ends.
 - A copyable final result containing an emoji grid and a link.
 - Restrained, accessible GSAP animations.
@@ -22,7 +23,7 @@ The product prioritizes clarity and maintainability over scalability.
 ## Out of scope
 
 - Authentication, accounts, and profiles.
-- Statistics and streaks.
+- Account-level or server-synchronized statistics.
 - Multiplayer.
 - A playable game history.
 - Hard mode.

@@ -35,11 +35,13 @@ Supabase, React, or GSAP.
 
 The server stores only the solution history. Player progress remains in Local
 Storage and is reconstructed by replaying guesses through the engine; persisted
-evaluations are not trusted.
+evaluations are not trusted. Completed outcomes and final turn counts are kept
+under a separate versioned Local Storage key, indexed by game date. The streak
+derivation remains domain code and treats losses or missing dates as breaks.
 
 Local development also stores the active session—its ID and four solutions—so
 reloading does not grant a new game. Each replay receives a new ID and removes
-the previous progress.
+the previous progress without clearing streak history.
 
 ## UI integration
 
@@ -54,7 +56,7 @@ The island renders the engine's immutable state, loads and restores the
 session, dispatches guesses, and delegates rules to `src/game/`. Each component
 owns its GSAP code in a local `animations.ts`: the title entrance and evaluated
 tiles belong to `Game`, collapsing solved boards to `Board`, and result reveal
-to `ResultDialog`. All animations are skipped when
+and the left-to-right streak markers to `ResultDialog`. All animations are skipped when
 `prefers-reduced-motion` is enabled.
 
 The boards are arranged in two independent columns: 1 above 3 and 2 above 4.

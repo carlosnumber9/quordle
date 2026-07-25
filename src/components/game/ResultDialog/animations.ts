@@ -14,11 +14,13 @@ export function useResultAnimation(
     const turns = content.querySelectorAll("[data-result-turn]");
     const connectors = content.querySelectorAll("[data-result-connector]");
     const words = content.querySelectorAll("[data-result-word]");
+    const streakPoints = content.querySelectorAll("[data-streak-point]");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       gsap.set(content, { clearProps: "opacity,scale,transform" });
       gsap.set(turns, { clearProps: "opacity,transform" });
       gsap.set(connectors, { clearProps: "transform" });
       gsap.set(words, { clearProps: "opacity,transform" });
+      gsap.set(streakPoints, { clearProps: "opacity,transform" });
       return;
     }
 
@@ -26,6 +28,7 @@ export function useResultAnimation(
       gsap.set(turns, { opacity: 0, x: -10 });
       gsap.set(connectors, { scaleY: 0, transformOrigin: "top center" });
       gsap.set(words, { opacity: 0, scale: 0.8 });
+      gsap.set(streakPoints, { opacity: 0, scale: 0.35 });
       const timeline = gsap.timeline();
 
       if (won) {
@@ -44,6 +47,14 @@ export function useResultAnimation(
           { opacity: 1, duration: 0.4, ease: "power1.out" },
         );
       }
+
+      timeline.to(streakPoints, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.38,
+        ease: "elastic.out(1, 0.55)",
+        stagger: 0.07,
+      });
 
       turns.forEach((turn) => {
         timeline.to(turn, {
