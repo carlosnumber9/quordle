@@ -31,6 +31,26 @@
   column-gap: var(--board-gap);
 }
 
+@supports (width: 1cqw) {
+  .boards {
+    /*
+     * Use the real space left between the header and keyboard. The positive
+     * offsets account for card padding and the gaps already removed from each
+     * tile, so the four boards fill their container without overflowing it.
+     */
+    --tile-size: clamp(
+      1.125rem,
+      min(
+        calc((100cqw + 1rem - var(--board-gap)) / 10),
+        calc((100cqh + 2.5rem - var(--board-gap)) / 18)
+      ),
+      2.5rem
+    );
+
+    container-type: size;
+  }
+}
+
 .boardColumn {
   display: flex;
   min-width: 0;
