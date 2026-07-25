@@ -14,6 +14,13 @@
 - No abstractions with only one implementation unless they define an external
   boundary, such as `DailyGameRepository`.
 - Derived state, such as the keyboard, is not persisted.
+- Aim for source files of at most 100 lines; split by responsibility rather
+  than compressing unrelated behavior.
+- Keep interfaces, type aliases, and constants in the nearest
+  `definitions.ts`.
+- Keep auxiliary functions in the nearest `utils.ts`.
+- Keep component animation hooks and GSAP timelines in that component's local
+  `animations.ts`.
 
 ## Security
 

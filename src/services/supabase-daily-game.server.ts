@@ -6,14 +6,11 @@ import {
   type NewDailyWordRow,
 } from "./daily-game";
 import { getSupabaseAdmin } from "./supabase.server";
-
-const HISTORY_PAGE_SIZE = 1_000;
-
-interface DailyWordDatabaseRow {
-  word: string;
-  game_date: string;
-  position: number;
-}
+import {
+  HISTORY_PAGE_SIZE,
+  type DailyWordDatabaseRow,
+} from "./supabase-daily-game/definitions";
+import { mapDailyWord } from "./supabase-daily-game/utils";
 
 export class SupabaseDailyGameRepository implements DailyGameRepository {
   constructor(private readonly client: SupabaseClient = getSupabaseAdmin()) {}
@@ -68,12 +65,4 @@ export class SupabaseDailyGameRepository implements DailyGameRepository {
       throw error;
     }
   }
-}
-
-function mapDailyWord(row: DailyWordDatabaseRow): DailyWordRow {
-  return {
-    word: row.word,
-    gameDate: row.game_date,
-    position: row.position,
-  };
 }

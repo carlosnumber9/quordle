@@ -1,38 +1,18 @@
 import { selectUnusedWords } from "@/game/dictionary";
-import { BOARD_COUNT } from "@/game/types";
+import { BOARD_COUNT } from "@/game/definitions";
+import {
+  type DailyGameRepository,
+  type DailyGameResult,
+} from "./daily-game/definitions";
+import { existingGameResult } from "./daily-game/utils";
 
-export interface DailyWordRow {
-  readonly word: string;
-  readonly gameDate: string;
-  readonly position: number;
-}
-
-export interface NewDailyWordRow {
-  readonly word: string;
-  readonly gameDate: string;
-  readonly position: number;
-}
-
-export interface DailyGameRepository {
-  findByDate(gameDate: string): Promise<ReadonlyArray<DailyWordRow>>;
-  listUsedWords(): Promise<ReadonlyArray<string>>;
-  insertWords(rows: ReadonlyArray<NewDailyWordRow>): Promise<void>;
-}
-
-export interface DailyGameResult {
-  readonly gameDate: string;
-  readonly words: ReadonlyArray<string>;
-  readonly created: boolean;
-}
-
-export class CorruptDailyGameError extends Error {
-  constructor(readonly gameDate: string, readonly rowCount: number) {
-    super(
-      `La partida ${gameDate} contiene ${rowCount} filas en lugar de ${BOARD_COUNT}.`,
-    );
-    this.name = "CorruptDailyGameError";
-  }
-}
+export {
+  CorruptDailyGameError,
+  type DailyGameRepository,
+  type DailyGameResult,
+  type DailyWordRow,
+  type NewDailyWordRow,
+} from "./daily-game/definitions";
 
 export async function ensureDailyGame(
   repository: DailyGameRepository,
@@ -74,34 +54,4 @@ export async function ensureDailyGame(
 
     throw insertError;
   }
-}
-
-function existingGameResult(
-  gameDate: string,
-  rows: ReadonlyArray<DailyWordRow>,
-): DailyGameResult {
-  if (rows.length !== BOARD_COUNT) {
-    throw new CorruptDailyGameError(gameDate, rows.length);
-  }
-
-  const ordered = [...rows].sort(
-    (left, right) => left.position - right.position,
-  );
-  const positions = new Set(ordered.map((row) => row.position));
-  const words = new Set(ordered.map((row) => row.word));
-  const validPositions = ordered.every((row, index) => row.position === index);
-
-  if (
-    positions.size !== BOARD_COUNT ||
-    words.size !== BOARD_COUNT ||
-    !validPositions
-  ) {
-    throw new CorruptDailyGameError(gameDate, rows.length);
-  }
-
-  return {
-    gameDate,
-    words: Object.freeze(ordered.map((row) => row.word)),
-    created: false,
-  };
 }

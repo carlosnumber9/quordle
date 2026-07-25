@@ -1,30 +1,19 @@
 import { describe, expect, it } from "vitest";
 
-import type { GamePayload } from "@/types/api";
-
 import {
   clearLocalSession,
   loadLocalSession,
   LOCAL_SESSION_STORAGE_KEY,
   replaceLocalSession,
 } from "./local-session";
-import {
-  GAME_STORAGE_KEY,
-  type StorageLike,
-} from "./persistence";
-
-const payload: GamePayload = {
-  gameId: "local:one",
-  gameDate: "2026-07-24",
-  words: ["BARCO", "PLUMA", "NOCHE", "ARBOL"],
-  mode: "local",
-  replayAllowed: true,
-};
+import { PAYLOAD } from "./local-session/test/definitions";
+import { createMemoryStorage } from "./local-session/test/utils";
+import { GAME_STORAGE_KEY } from "./persistence";
 
 describe("local game session", () => {
   it("mantiene la misma partida local durante el día", () => {
     const storage = createMemoryStorage();
-    replaceLocalSession(storage, payload);
+    replaceLocalSession(storage, PAYLOAD);
 
     expect(loadLocalSession(storage, "2026-07-24")).toEqual({
       version: 1,
@@ -38,14 +27,14 @@ describe("local game session", () => {
     const storage = createMemoryStorage();
     storage.setItem(GAME_STORAGE_KEY, "old progress");
 
-    replaceLocalSession(storage, payload);
+    replaceLocalSession(storage, PAYLOAD);
 
     expect(storage.getItem(GAME_STORAGE_KEY)).toBeNull();
   });
 
   it("descarta sesiones de otro día o corruptas", () => {
     const storage = createMemoryStorage();
-    replaceLocalSession(storage, payload);
+    replaceLocalSession(storage, PAYLOAD);
 
     expect(loadLocalSession(storage, "2026-07-25")).toBeNull();
     expect(storage.getItem(LOCAL_SESSION_STORAGE_KEY)).toBeNull();
@@ -59,7 +48,7 @@ describe("local game session", () => {
 
     expect(() =>
       replaceLocalSession(storage, {
-        ...payload,
+        ...PAYLOAD,
         mode: "daily",
         replayAllowed: false,
       }),
@@ -68,7 +57,7 @@ describe("local game session", () => {
 
   it("permite borrar sesión y progreso juntos", () => {
     const storage = createMemoryStorage();
-    replaceLocalSession(storage, payload);
+    replaceLocalSession(storage, PAYLOAD);
     storage.setItem(GAME_STORAGE_KEY, "progress");
 
     clearLocalSession(storage);
@@ -77,12 +66,3 @@ describe("local game session", () => {
     expect(storage.getItem(GAME_STORAGE_KEY)).toBeNull();
   });
 });
-
-function createMemoryStorage(): StorageLike {
-  const values = new Map<string, string>();
-  return {
-    getItem: (key) => values.get(key) ?? null,
-    setItem: (key, value) => values.set(key, value),
-    removeItem: (key) => values.delete(key),
-  };
-}

@@ -1,22 +1,17 @@
 import { createGame, submitGuess } from "./engine";
-import type { GameState } from "./types";
-import { GAME_STATE_VERSION } from "./types";
+import { GAME_STATE_VERSION, type GameState } from "./definitions";
+import {
+  GAME_STORAGE_KEY,
+  type PersistedGame,
+  type StorageLike,
+} from "./persistence/definitions";
+import { parsePersistedGame } from "./persistence/utils";
 
-export const GAME_STORAGE_KEY = `quordle:game:v${GAME_STATE_VERSION}`;
-
-export interface PersistedGame {
-  readonly version: typeof GAME_STATE_VERSION;
-  readonly gameId: string;
-  readonly gameDate: string;
-  readonly guesses: ReadonlyArray<string>;
-  readonly completed: boolean;
-}
-
-export interface StorageLike {
-  getItem(key: string): string | null;
-  setItem(key: string, value: string): void;
-  removeItem(key: string): void;
-}
+export {
+  GAME_STORAGE_KEY,
+  type PersistedGame,
+  type StorageLike,
+} from "./persistence/definitions";
 
 export function serializeGame(state: GameState): string {
   const persisted: PersistedGame = {
@@ -91,36 +86,4 @@ export function loadGame(
 
 export function saveGame(storage: StorageLike, state: GameState): void {
   storage.setItem(GAME_STORAGE_KEY, serializeGame(state));
-}
-
-function parsePersistedGame(serialized: string): PersistedGame | null {
-  try {
-    const value: unknown = JSON.parse(serialized);
-    if (
-      !isRecord(value) ||
-      value.version !== GAME_STATE_VERSION ||
-      typeof value.gameId !== "string" ||
-      value.gameId.length === 0 ||
-      typeof value.gameDate !== "string" ||
-      !Array.isArray(value.guesses) ||
-      !value.guesses.every((guess) => typeof guess === "string") ||
-      typeof value.completed !== "boolean"
-    ) {
-      return null;
-    }
-
-    return {
-      version: GAME_STATE_VERSION,
-      gameId: value.gameId,
-      gameDate: value.gameDate,
-      guesses: value.guesses,
-      completed: value.completed,
-    };
-  } catch {
-    return null;
-  }
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null;
 }

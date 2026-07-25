@@ -16,7 +16,7 @@
 | Supabase | `src/services/*supabase*` | Server-only adapter |
 | HTTP | `src/pages/api/` | Input and output contracts |
 | Database | `supabase/migrations/` | History and constraints |
-| Interface | `src/components/game/Game.tsx` | Loading, interaction, and rendering with the shadcn preset |
+| Interface | `src/components/game/Game.tsx` | Stable facade for the game island implemented in `Game/` |
 
 When investigating an issue, start with the area's entry point and its
 corresponding `*.test.ts` file.

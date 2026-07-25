@@ -1,22 +1,16 @@
 import { describe, expect, it, vi } from "vitest";
 
-import {
-  GAME_STORAGE_KEY,
-  type StorageLike,
-} from "./persistence";
+import { GAME_STORAGE_KEY } from "./persistence";
 import {
   getOrCreateLocalSession,
   replayLocalGame,
 } from "./local-game-client";
 import { LOCAL_SESSION_STORAGE_KEY } from "./local-session";
-
-const payload = {
-  gameId: "local:new",
-  gameDate: "2026-07-24",
-  words: ["BARCO", "PLUMA", "NOCHE", "ARBOL"],
-  mode: "local",
-  replayAllowed: true,
-} as const;
+import { PAYLOAD } from "./local-game-client/test/definitions";
+import {
+  createMemoryStorage,
+  response,
+} from "./local-game-client/test/utils";
 
 describe("local game client", () => {
   it("reutiliza la sesión diaria local sin pedir otra partida", async () => {
@@ -27,7 +21,7 @@ describe("local game client", () => {
         version: 1,
         gameId: "local:existing",
         gameDate: "2026-07-24",
-        words: payload.words,
+        words: PAYLOAD.words,
       }),
     );
     const fetchGame = vi.fn();
@@ -44,7 +38,7 @@ describe("local game client", () => {
 
   it("solicita y persiste la primera partida si no existe sesión", async () => {
     const storage = createMemoryStorage();
-    const fetchGame = vi.fn().mockResolvedValue(response(payload));
+    const fetchGame = vi.fn().mockResolvedValue(response(PAYLOAD));
 
     const session = await getOrCreateLocalSession(
       storage,
@@ -60,7 +54,7 @@ describe("local game client", () => {
 
   it("el replay usa POST, sustituye la sesión y guarda estado vacío", async () => {
     const storage = createMemoryStorage();
-    const fetchGame = vi.fn().mockResolvedValue(response(payload));
+    const fetchGame = vi.fn().mockResolvedValue(response(PAYLOAD));
 
     const state = await replayLocalGame(storage, fetchGame);
 
@@ -84,24 +78,3 @@ describe("local game client", () => {
     );
   });
 });
-
-function response(
-  body: unknown,
-  ok = true,
-  status = 200,
-): Pick<Response, "ok" | "status" | "json"> {
-  return {
-    ok,
-    status,
-    json: async () => body,
-  };
-}
-
-function createMemoryStorage(): StorageLike {
-  const values = new Map<string, string>();
-  return {
-    getItem: (key) => values.get(key) ?? null,
-    setItem: (key, value) => values.set(key, value),
-    removeItem: (key) => values.delete(key),
-  };
-}

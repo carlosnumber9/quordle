@@ -1,25 +1,15 @@
 import rawWords from "@/data/words.json";
 
-import { BOARD_COUNT, WORD_LENGTH } from "./types";
+import { BOARD_COUNT, WORD_LENGTH } from "./definitions";
+import {
+  DictionaryValidationError,
+  ENYE_SENTINEL,
+  VALID_WORD_PATTERN,
+} from "./dictionary/definitions";
 
-const ENYE_SENTINEL = "\u0000";
-const VALID_WORD_PATTERN = /^[A-ZÑ]+$/u;
-
-export class DictionaryValidationError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "DictionaryValidationError";
-  }
-}
-
-export class InsufficientWordsError extends Error {
-  constructor(readonly available: number, readonly required: number) {
-    super(
-      `No hay suficientes palabras sin usar: ${available} disponibles, ${required} necesarias.`,
-    );
-    this.name = "InsufficientWordsError";
-  }
-}
+export { DictionaryValidationError };
+export { InsufficientWordsError } from "./dictionary/definitions";
+export { selectUnusedWords } from "./dictionary/select-unused";
 
 export function normalizeWord(value: string): string {
   return value
@@ -80,31 +70,3 @@ export function prepareDictionary(input: unknown): ReadonlyArray<string> {
 
 export const dictionary = prepareDictionary(rawWords);
 export const dictionarySet: ReadonlySet<string> = new Set(dictionary);
-
-export function selectUnusedWords(
-  words: ReadonlyArray<string>,
-  usedWords: ReadonlySet<string>,
-  count = BOARD_COUNT,
-  random: () => number = Math.random,
-): ReadonlyArray<string> {
-  const available = words.filter((word) => !usedWords.has(word));
-
-  if (available.length < count) {
-    throw new InsufficientWordsError(available.length, count);
-  }
-
-  for (let index = available.length - 1; index > 0; index -= 1) {
-    const target = Math.floor(random() * (index + 1));
-    const current = available[index];
-    const replacement = available[target];
-
-    if (current === undefined || replacement === undefined) {
-      throw new Error("No se pudo barajar el diccionario.");
-    }
-
-    available[index] = replacement;
-    available[target] = current;
-  }
-
-  return Object.freeze(available.slice(0, count));
-}

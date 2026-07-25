@@ -4,21 +4,9 @@ import {
   CorruptDailyGameError,
   ensureDailyGame,
   type DailyGameRepository,
-  type DailyWordRow,
-  type NewDailyWordRow,
 } from "./daily-game";
-
-const gameDate = "2026-07-24";
-const dictionary = [
-  "BARCO",
-  "PLUMA",
-  "NOCHE",
-  "ARBOL",
-  "PERRO",
-  "GATOS",
-  "CAMPO",
-  "LUNES",
-] as const;
+import { DICTIONARY, GAME_DATE } from "./daily-game/test/definitions";
+import { createRepository, row } from "./daily-game/test/utils";
 
 describe("ensureDailyGame", () => {
   it("devuelve un juego existente ordenado por posición", async () => {
@@ -32,9 +20,9 @@ describe("ensureDailyGame", () => {
     });
 
     await expect(
-      ensureDailyGame(repository, gameDate, dictionary),
+      ensureDailyGame(repository, GAME_DATE, DICTIONARY),
     ).resolves.toEqual({
-      gameDate,
+      gameDate: GAME_DATE,
       words: ["BARCO", "PLUMA", "NOCHE", "ARBOL"],
       created: false,
     });
@@ -48,17 +36,15 @@ describe("ensureDailyGame", () => {
 
     const result = await ensureDailyGame(
       repository,
-      gameDate,
-      dictionary,
+      GAME_DATE,
+      DICTIONARY,
       () => 0.999,
     );
 
     expect(result.created).toBe(true);
     expect(result.words).toEqual(["NOCHE", "ARBOL", "PERRO", "GATOS"]);
     expect(repository.inserted).toHaveLength(4);
-    expect(repository.inserted.map((item) => item.position)).toEqual([
-      0, 1, 2, 3,
-    ]);
+    expect(repository.inserted.map((item) => item.position)).toEqual([0, 1, 2, 3]);
   });
 
   it("relee al ganador si otra ejecución inserta primero", async () => {
@@ -81,9 +67,9 @@ describe("ensureDailyGame", () => {
     };
 
     await expect(
-      ensureDailyGame(repository, gameDate, dictionary),
+      ensureDailyGame(repository, GAME_DATE, DICTIONARY),
     ).resolves.toEqual({
-      gameDate,
+      gameDate: GAME_DATE,
       words: ["PERRO", "GATOS", "CAMPO", "LUNES"],
       created: false,
     });
@@ -103,29 +89,10 @@ describe("ensureDailyGame", () => {
     });
 
     await expect(
-      ensureDailyGame(partial, gameDate, dictionary),
+      ensureDailyGame(partial, GAME_DATE, DICTIONARY),
     ).rejects.toBeInstanceOf(CorruptDailyGameError);
     await expect(
-      ensureDailyGame(invalidPositions, gameDate, dictionary),
+      ensureDailyGame(invalidPositions, GAME_DATE, DICTIONARY),
     ).rejects.toBeInstanceOf(CorruptDailyGameError);
   });
 });
-
-function row(word: string, position: number): DailyWordRow {
-  return { word, gameDate, position };
-}
-
-function createRepository(options: {
-  existing?: ReadonlyArray<DailyWordRow>;
-  used?: ReadonlyArray<string>;
-}): DailyGameRepository & { inserted: NewDailyWordRow[] } {
-  const inserted: NewDailyWordRow[] = [];
-  return {
-    inserted,
-    findByDate: async () => options.existing ?? [],
-    listUsedWords: async () => options.used ?? [],
-    insertWords: async (rows) => {
-      inserted.push(...rows);
-    },
-  };
-}

@@ -1,5 +1,3 @@
-import type { GamePayload } from "@/types/api";
-
 import { createGame } from "./engine";
 import {
   loadLocalSession,
@@ -10,12 +8,9 @@ import {
   saveGame,
   type StorageLike,
 } from "./persistence";
-import type { GameState } from "./types";
-
-type FetchGame = (
-  input: string,
-  init?: RequestInit,
-) => Promise<Pick<Response, "ok" | "status" | "json">>;
+import type { GameState } from "./definitions";
+import type { FetchGame } from "./local-game-client/definitions";
+import { requestLocalGame } from "./local-game-client/utils";
 
 export async function getOrCreateLocalSession(
   storage: StorageLike,
@@ -44,40 +39,4 @@ export async function replayLocalGame(
   );
   saveGame(storage, state);
   return state;
-}
-
-async function requestLocalGame(
-  method: "GET" | "POST",
-  fetchGame: FetchGame,
-): Promise<GamePayload> {
-  const response = await fetchGame("/api/game/today", { method });
-  if (!response.ok) {
-    throw new Error(
-      `No se pudo preparar la partida local (${response.status}).`,
-    );
-  }
-
-  const payload: unknown = await response.json();
-  if (!isGamePayload(payload) || payload.mode !== "local") {
-    throw new TypeError("La API no devolvió una partida local válida.");
-  }
-
-  return payload;
-}
-
-function isGamePayload(value: unknown): value is GamePayload {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    "gameId" in value &&
-    typeof value.gameId === "string" &&
-    "gameDate" in value &&
-    typeof value.gameDate === "string" &&
-    "words" in value &&
-    Array.isArray(value.words) &&
-    "mode" in value &&
-    (value.mode === "local" || value.mode === "daily") &&
-    "replayAllowed" in value &&
-    typeof value.replayAllowed === "boolean"
-  );
 }

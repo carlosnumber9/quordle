@@ -1,5 +1,5 @@
 import { selectUnusedWords } from "@/game/dictionary";
-import { BOARD_COUNT } from "@/game/types";
+import { BOARD_COUNT } from "@/game/definitions";
 import type { GamePayload } from "@/types/api";
 
 export function createLocalGame(

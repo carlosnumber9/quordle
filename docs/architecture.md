@@ -9,6 +9,12 @@
 4. `src/pages/api/`: HTTP transport, cron authentication, and error codes.
 5. `src/pages/` and `src/components/`: Astro/React composition.
 
+Large areas expose a small entry point and keep their implementation in a
+same-named local directory. Component contracts and constants live in
+`definitions.ts`, helpers in `utils.ts`, and GSAP integration in
+`animations.ts`. This keeps presentation details close to their owner without
+leaking React or GSAP into the domain.
+
 Dependencies point toward the domain. The domain has no knowledge of Astro,
 Supabase, React, or GSAP.
 
@@ -37,17 +43,19 @@ the previous progress.
 
 ## UI integration
 
-The page mounts a `Game` React island. Button, Card, Badge, Alert, Dialog,
-Textarea, Separator, Skeleton, and Sonner come from the shadcn preset. The
-`Board` and `Keyboard` composition components use only Tailwind utilities tied
-to the preset tokens; they do not add their own style sheets, colors, or
-variables.
+The page mounts the `Game` React island through the stable facade
+`src/components/game/Game.tsx`; its implementation lives in the adjacent
+`Game/` directory. Button, Card, Badge, Alert, Dialog, Textarea, Separator,
+Skeleton, and Sonner come from the shadcn preset. Composition components use
+Tailwind utilities and component-local CSS Modules tied to the preset tokens;
+they do not introduce global colors or variables.
 
 The island renders the engine's immutable state, loads and restores the
-session, dispatches guesses, and delegates rules to `src/game/`. GSAP
-coordinates the title entrance, visual feedback for evaluated tiles, collapsing
-solved boards, and revealing the result after a win or loss. All these
-animations are skipped when `prefers-reduced-motion` is enabled.
+session, dispatches guesses, and delegates rules to `src/game/`. Each component
+owns its GSAP code in a local `animations.ts`: the title entrance and evaluated
+tiles belong to `Game`, collapsing solved boards to `Board`, and result reveal
+to `ResultDialog`. All animations are skipped when
+`prefers-reduced-motion` is enabled.
 
 The boards are arranged in two independent columns: 1 above 3 and 2 above 4.
 The columns remain anchored to the top so that the upper boards do not move

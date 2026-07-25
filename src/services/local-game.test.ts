@@ -1,21 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import { createLocalGame } from "./local-game";
-
-const dictionary = [
-  "BARCO",
-  "PLUMA",
-  "NOCHE",
-  "ARBOL",
-  "PERRO",
-  "GATOS",
-] as const;
+import { DICTIONARY } from "./local-game/test/definitions";
 
 describe("createLocalGame", () => {
   it("elige cuatro palabras diferentes directamente del JSON", () => {
     const game = createLocalGame(
       "2026-07-24",
-      dictionary,
+      DICTIONARY,
       () => 0.999,
       () => "test-id",
     );
@@ -36,13 +28,13 @@ describe("createLocalGame", () => {
 
     const first = createLocalGame(
       "2026-07-24",
-      dictionary,
+      DICTIONARY,
       () => 0.5,
       createId,
     );
     const second = createLocalGame(
       "2026-07-24",
-      dictionary,
+      DICTIONARY,
       () => 0.5,
       createId,
     );

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { shouldShowSolutionWatermark } from "./local-development";
+import { shouldShowSolutionWatermark } from "./Board/utils";
 
 describe("local development helpers", () => {
   it("muestra soluciones solo en desarrollo local", () => {

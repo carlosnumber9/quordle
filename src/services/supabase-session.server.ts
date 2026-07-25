@@ -1,45 +1,14 @@
 import {
   createServerClient,
   parseCookieHeader,
-  type CookieOptions,
 } from "@supabase/ssr";
-import type { APIContext, AstroCookieSetOptions } from "astro";
 import {
   SUPABASE_PUBLISHABLE_KEY,
   SUPABASE_URL,
 } from "astro:env/server";
 
-type SupabaseSessionContext = Pick<APIContext, "cookies" | "request"> & {
-  responseHeaders: Headers;
-};
-
-function toAstroCookieOptions(
-  options: CookieOptions,
-): AstroCookieSetOptions {
-  const {
-    domain,
-    encode,
-    expires,
-    httpOnly,
-    maxAge,
-    partitioned,
-    path,
-    sameSite,
-    secure,
-  } = options;
-
-  return {
-    ...(domain === undefined ? {} : { domain }),
-    ...(encode === undefined ? {} : { encode }),
-    ...(expires === undefined ? {} : { expires }),
-    ...(httpOnly === undefined ? {} : { httpOnly }),
-    ...(maxAge === undefined ? {} : { maxAge }),
-    ...(partitioned === undefined ? {} : { partitioned }),
-    ...(path === undefined ? {} : { path }),
-    ...(sameSite === undefined ? {} : { sameSite }),
-    ...(secure === undefined ? {} : { secure }),
-  };
-}
+import type { SupabaseSessionContext } from "./supabase-session/definitions";
+import { toAstroCookieOptions } from "./supabase-session/utils";
 
 export function hasSupabaseSessionConfiguration(): boolean {
   return (

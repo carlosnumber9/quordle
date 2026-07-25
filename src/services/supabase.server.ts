@@ -1,16 +1,11 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { SUPABASE_SECRET_KEY, SUPABASE_URL } from "astro:env/server";
 
-let client: SupabaseClient | undefined;
+import { MissingServerConfigurationError } from "./supabase/definitions";
 
-export class MissingServerConfigurationError extends Error {
-  constructor(readonly variableNames: ReadonlyArray<string>) {
-    super(
-      `Faltan variables de entorno obligatorias: ${variableNames.join(", ")}.`,
-    );
-    this.name = "MissingServerConfigurationError";
-  }
-}
+export { MissingServerConfigurationError } from "./supabase/definitions";
+
+let client: SupabaseClient | undefined;
 
 export function getSupabaseAdmin(): SupabaseClient {
   const supabaseUrl = SUPABASE_URL;

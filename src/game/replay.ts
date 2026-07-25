@@ -1,4 +1,4 @@
-import type { GameStatus } from "./types";
+import type { GameStatus } from "./definitions";
 import type { GameMode } from "@/types/api";
 
 export function canReplayGame(

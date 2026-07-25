@@ -1,17 +1,20 @@
 import type { GamePayload } from "@/types/api";
 
-import { isValidWordShape, normalizeWord } from "./dictionary";
+import { GAME_STATE_VERSION } from "./definitions";
 import { GAME_STORAGE_KEY, type StorageLike } from "./persistence";
-import { BOARD_COUNT, GAME_STATE_VERSION } from "./types";
+import {
+  LOCAL_SESSION_STORAGE_KEY,
+  type LocalGameSession,
+} from "./local-session/definitions";
+import {
+  parseLocalSession,
+  validateLocalSession,
+} from "./local-session/utils";
 
-export const LOCAL_SESSION_STORAGE_KEY = `quordle:local-session:v${GAME_STATE_VERSION}`;
-
-export interface LocalGameSession {
-  readonly version: typeof GAME_STATE_VERSION;
-  readonly gameId: string;
-  readonly gameDate: string;
-  readonly words: ReadonlyArray<string>;
-}
+export {
+  LOCAL_SESSION_STORAGE_KEY,
+  type LocalGameSession,
+} from "./local-session/definitions";
 
 export function loadLocalSession(
   storage: StorageLike,
@@ -54,61 +57,4 @@ export function replaceLocalSession(
 export function clearLocalSession(storage: StorageLike): void {
   storage.removeItem(LOCAL_SESSION_STORAGE_KEY);
   storage.removeItem(GAME_STORAGE_KEY);
-}
-
-function parseLocalSession(serialized: string): LocalGameSession | null {
-  try {
-    const value: unknown = JSON.parse(serialized);
-    if (
-      typeof value !== "object" ||
-      value === null ||
-      !("version" in value) ||
-      !("gameId" in value) ||
-      !("gameDate" in value) ||
-      !("words" in value)
-    ) {
-      return null;
-    }
-
-    return validateLocalSession({
-      version: value.version,
-      gameId: value.gameId,
-      gameDate: value.gameDate,
-      words: value.words,
-    });
-  } catch {
-    return null;
-  }
-}
-
-function validateLocalSession(value: {
-  readonly version: unknown;
-  readonly gameId: unknown;
-  readonly gameDate: unknown;
-  readonly words: unknown;
-}): LocalGameSession {
-  if (
-    value.version !== GAME_STATE_VERSION ||
-    typeof value.gameId !== "string" ||
-    value.gameId.length === 0 ||
-    typeof value.gameDate !== "string" ||
-    !Array.isArray(value.words) ||
-    value.words.length !== BOARD_COUNT ||
-    !value.words.every(
-      (word) =>
-        typeof word === "string" &&
-        word === normalizeWord(word) &&
-        isValidWordShape(word),
-    ) ||
-    new Set(value.words).size !== BOARD_COUNT
-  ) {
-    throw new TypeError("La sesión local no es válida.");
-  }
-
-  return Object.freeze({
-    version: GAME_STATE_VERSION,
-    gameId: value.gameId,
-    gameDate: value.gameDate,
-    words: Object.freeze([...value.words]),
-  });
 }

@@ -1,13 +1,13 @@
-import type { GameState, LetterStatus } from "./types";
+import type { GameState, LetterStatus } from "./definitions";
+import {
+  STATUS_PRIORITY,
+  type KeyboardState,
+} from "./keyboard/definitions";
 
-export type KeyboardBoardState = Readonly<Record<string, LetterStatus>>;
-export type KeyboardState = ReadonlyArray<KeyboardBoardState>;
-
-const STATUS_PRIORITY: Readonly<Record<LetterStatus, number>> = {
-  absent: 0,
-  present: 1,
-  correct: 2,
-};
+export type {
+  KeyboardBoardState,
+  KeyboardState,
+} from "./keyboard/definitions";
 
 export function deriveKeyboardState(state: GameState): KeyboardState {
   const boards: Array<Record<string, LetterStatus>> = state.boards.map(() => ({}));

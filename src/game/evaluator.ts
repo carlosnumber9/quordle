@@ -1,5 +1,5 @@
-import type { LetterStatus, WordEvaluation } from "./types";
-import { WORD_LENGTH } from "./types";
+import type { LetterStatus, WordEvaluation } from "./definitions";
+import { WORD_LENGTH } from "./definitions";
 
 export function evaluateGuess(
   solution: string,
