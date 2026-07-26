@@ -9,10 +9,6 @@ import {
 export { GAME_TIME_ZONE, RESET_HOUR } from "./game-date/definitions";
 export { getMadridDateTime } from "./game-date/utils";
 
-export function getMadridCalendarDate(instant: Date = new Date()): string {
-  return toIsoDate(getMadridDateTime(instant));
-}
-
 export function getCurrentGameDate(instant: Date = new Date()): string {
   const madrid = getMadridDateTime(instant);
   return madrid.hour >= RESET_HOUR

@@ -5,18 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "npm run validate:data && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:dictionary": "node --import tsx scripts/validate-dictionary.ts",
-    "db:init": "supabase init",
-    "db:link": "node scripts/supabase-link.mjs",
-    "db:push": "supabase db push",
-    "db:migrate": "supabase db push",
-    "db:status": "supabase migration list",
-    "db:verify": "node scripts/verify-supabase-connection.mjs"
+    "calendar:generate": "node --import tsx scripts/generate-daily-calendar.ts",
+    "calendar:validate": "node --import tsx scripts/validate-daily-calendar.ts",
+    "validate:data": "npm run validate:dictionary && npm run calendar:validate"
   },
   "dependencies": {
     "@astrojs/react": "latest",
@@ -24,8 +21,6 @@
     "@base-ui/react": "^1.6.0",
     "@fontsource-variable/figtree": "^5.3.0",
     "@remixicon/react": "^4.9.0",
-    "@supabase/ssr": "latest",
-    "@supabase/supabase-js": "latest",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "latest",
     "class-variance-authority": "^0.7.1",
@@ -46,7 +41,6 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "ajv": "^8.20.0",
-    "supabase": "latest",
     "tsx": "latest",
     "typescript": "^6.0.0",
     "vitest": "latest"

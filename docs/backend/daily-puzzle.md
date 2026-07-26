@@ -6,35 +6,32 @@ The visible date changes at 05:00 in `Europe/Madrid`. The calculation uses local
 fields produced by `Intl.DateTimeFormat`; it does not subtract a fixed number
 of hours, so it works in CET, CEST, and during transitions between them.
 
-## Cron
+## Calendar
 
-Vercel runs `GET /api/cron/create-daily-game` at `03:00 UTC`. In summer this is
-05:00 in Madrid; in winter it prepares that calendar day's game at 04:00, but
-the game is not served until the 05:00 rollover.
+`src/data/daily-games.json` is the immutable source of production solutions.
+It contains a format version, a reproducibility seed, and four ordered words
+for every game date. The calendar is validated against the complete dictionary
+during the production build.
 
-The route requires `Authorization: Bearer <CRON_SECRET>` and never returns
-words.
+Every date must be consecutive, every game must contain four distinct
+dictionary words, and every dictionary word must appear exactly once across the
+calendar. A date is never reassigned silently.
 
-## Generation
+`GET /api/game/today` calculates the active Madrid game date and reads that
+entry. The response is not cached. Dates outside the generated range return
+`503 game-unavailable`.
 
-1. Query rows for the target date.
-2. If four valid rows exist, return immediately.
-3. If one to three rows exist, fail because the data is corrupt.
-4. Paginate through and load all previously used words.
-5. Remove them from the dictionary.
-6. Shuffle the remainder and choose four.
-7. Insert all four in a single statement.
+## Generation and extension
 
-The `word` primary key prevents historical reuse. The unique
-`(game_date, position)` constraint guarantees exactly one winner per position.
-If one execution loses an insertion race, it reads again and accepts the
-winner's complete game.
+The initial generator imports `word`, `game_date`, and `position` from a legacy
+CSV export, preserves those games, and orders them by position. It then ranks
+unused dictionary words with SHA-256 using the stored seed, groups them in
+blocks of four, and assigns consecutive dates.
 
-## Recovery
-
-`GET /api/game/today` applies the same idempotent operation. If the cron job
-failed, the first subsequent visit can create the game. The response is not
-cached.
+`npm run calendar:generate -- --history <csv>` creates the first calendar.
+Once the file exists, `npm run calendar:generate` may only append newly added
+dictionary words after the last existing date. It never accepts a new history
+or seed and never overwrites an existing date.
 
 ## Local development branch
 
@@ -47,14 +44,12 @@ from the JSON file and returns:
 - `mode: "local"`
 - `replayAllowed: true`
 
-The Supabase adapter is not imported and the history is not queried. The client
-persists this response so it can be reused after a reload. Once the game ends,
-`POST /api/game/today` generates another local game. In production, GET returns
-`mode: "daily"` and `replayAllowed: false`, and POST is disabled.
+The production calendar is not loaded. The client persists this response so it
+can be reused after a reload. Once the game ends, `POST /api/game/today`
+generates another local game. In production, GET returns `mode: "daily"` and
+`replayAllowed: false`, and POST is disabled.
 
 ## Operational failures
 
-- Exhausted dictionary: `503`; replace or expand the dictionary.
-- Partial game: `500`; inspect the rows manually and do not fill the missing
-  positions at random.
-- Missing configuration: `503`; check the Vercel variables.
+- Date outside the calendar: `503`; extend the dictionary and calendar.
+- Invalid calendar: the data validation or production build fails.

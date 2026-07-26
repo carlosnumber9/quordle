@@ -2,8 +2,9 @@
 
 The production dictionary must be stored in `src/data/words.json`.
 
-The file included in the repository contains only sample words for development
-and test execution. It must be replaced before the application is released.
+The versioned production schedule is stored in `daily-games.json`. Its imported
+historical dates are immutable, and newly added dictionary words may only be
+appended after the final scheduled date.
 
 ## Contract
 
@@ -16,4 +17,4 @@ and test execution. It must be replaced before the application is released.
 - There can be no duplicates after normalization.
 - Every word can be used both as a guess and as a solution.
 
-Run `npm run validate:dictionary` after replacing the file.
+Run `npm run validate:data` after changing either data file.

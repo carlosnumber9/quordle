@@ -15,26 +15,6 @@ export default defineConfig({
   },
   env: {
     schema: {
-      SUPABASE_URL: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
-      SUPABASE_SECRET_KEY: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
-      SUPABASE_PUBLISHABLE_KEY: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
-      CRON_SECRET: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
       PUBLIC_SITE_URL: envField.string({
         context: "client",
         access: "public",

@@ -14,14 +14,15 @@
 - Seven-day streak history, interruptions, and same-date replacement.
 - Shared text without words.
 - The 05:00 cutoff in winter, summer, and both daylight-saving transitions.
-- Existing games, creation, races, and row corruption.
+- Calendar import, deterministic generation, continuity, and full dictionary
+  coverage.
 - Local selection without history, a new identity for each replay, and a stable
   session across reloads.
 - The replay button being visible only after a win or loss in local mode.
 
 ## Before merging
 
-1. `npm run validate:dictionary`
+1. `npm run validate:data`
 2. `npm test`
 3. `npm run check`
 4. `npm run build`

@@ -25,7 +25,7 @@ Duplicates are checked after this transformation.
 - No duplicates.
 - At least four entries.
 
-The current file is a development sample. Run
-`npm run validate:dictionary` before every deployment that changes the word
-list. If fewer than four unused words remain, they are not recycled
-automatically.
+Run `npm run validate:data` before every deployment that changes the word list.
+Every dictionary word must appear exactly once in the daily calendar. New words
+must be added in groups of four and appended with `npm run calendar:generate`;
+existing dates are never reassigned.

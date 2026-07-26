@@ -10,9 +10,9 @@
 ## Code design
 
 - Explicit separation between domain, infrastructure, and presentation.
-- Repository and random generator injection for testing without network access.
+- Random generator injection for deterministic local-selection tests.
 - No abstractions with only one implementation unless they define an external
-  boundary, such as `DailyGameRepository`.
+  boundary.
 - Derived state, such as the keyboard, is not persisted.
 - Aim for source files of at most 100 lines; split by responsibility rather
   than compressing unrelated behavior.
@@ -24,10 +24,9 @@
 
 ## Security
 
-- Least privilege in Supabase, with RLS enabled.
-- Secret keys only in `.server.ts` modules.
-- Cron authentication with a Bearer token.
-- Generic public messages, with details only in server logs.
+- Production calendar imports remain in `.server.ts` modules.
+- Generated dates are immutable and validation rejects silent reassignment.
+- Generic public messages do not reveal solutions outside the daily payload.
 
 ## Interface
 

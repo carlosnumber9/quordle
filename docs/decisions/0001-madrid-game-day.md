@@ -6,22 +6,20 @@ Accepted.
 
 ## Decision
 
-The date changes at 05:00 in `Europe/Madrid`. Vercel Cron is scheduled once a
-day at 03:00 UTC and generates the current Madrid calendar date. The public API
-calculates the active game date separately. Once a game has ended, the client
-calculates the next 05:00 Madrid instant with the same shared date utility,
-shows a countdown, and reloads the game when that instant is reached.
+The date changes at 05:00 in `Europe/Madrid`. The public API calculates the
+active game date and reads it from the immutable calendar. Once a game has
+ended, the client calculates the next 05:00 Madrid instant with the same shared
+date utility, shows a countdown, and reloads the game when that instant is
+reached.
 
 ## Rationale
 
-Vercel uses UTC, and a single expression cannot track CET/CEST. Running at
-03:00 UTC prepares the game on time in both seasons without requiring two daily
-runs. Visibility still changes at exactly 05:00.
+Resolving Madrid wall-clock time through `Intl.DateTimeFormat` follows CET,
+CEST, and both transitions without fixed UTC offsets. Because every game is
+pregenerated, the rollover does not depend on a scheduled task completing.
 
 ## Consequence
 
-In winter, the row for the new day exists one hour before it is served. This
-does not affect gameplay and simplifies operation on plans that allow one daily
-cron job. Countdown calculations resolve Madrid wall-clock time through
-`Intl.DateTimeFormat`, so they follow CET/CEST instead of assuming a fixed UTC
-offset.
+Every generated date already exists in the deployed calendar but the API only
+serves the active one. Countdown calculations use the same date rules as the
+server.

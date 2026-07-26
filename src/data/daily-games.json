@@ -1,0 +1,7518 @@
+{
+  "version": 1,
+  "seed": "19074823261d38133268f92056de9368362cc2de284dda5725969e66a82d6ef6",
+  "games": {
+    "2026-07-24": [
+      "ANCHO",
+      "CIRCO",
+      "CHITA",
+      "PAJLA"
+    ],
+    "2026-07-25": [
+      "SANCO",
+      "GODEO",
+      "JABLE",
+      "BADEA"
+    ],
+    "2026-07-26": [
+      "BABLE",
+      "NANAY",
+      "SOLIO",
+      "BANCO"
+    ],
+    "2026-07-27": [
+      "CALOR",
+      "COMBO",
+      "MOLLE",
+      "AMIDA"
+    ],
+    "2026-07-28": [
+      "PUPAR",
+      "DALGO",
+      "DARDO",
+      "TAUCA"
+    ],
+    "2026-07-29": [
+      "VOMER",
+      "DOCTO",
+      "BLOCA",
+      "CORCA"
+    ],
+    "2026-07-30": [
+      "VICIA",
+      "COFAN",
+      "ERUTO",
+      "JUPON"
+    ],
+    "2026-07-31": [
+      "POSMA",
+      "HOSTE",
+      "ABONO",
+      "TARJA"
+    ],
+    "2026-08-01": [
+      "CAPEO",
+      "PODAR",
+      "IRANI",
+      "BADAN"
+    ],
+    "2026-08-02": [
+      "JAPON",
+      "ROCHO",
+      "NOVIO",
+      "BAURE"
+    ],
+    "2026-08-03": [
+      "JATEO",
+      "POLVO",
+      "NACHO",
+      "RAGUA"
+    ],
+    "2026-08-04": [
+      "PAMUE",
+      "LIARA",
+      "ASUSO",
+      "NAUTA"
+    ],
+    "2026-08-05": [
+      "CAPEL",
+      "NUCHE",
+      "POSAR",
+      "TASCA"
+    ],
+    "2026-08-06": [
+      "SABIR",
+      "GRUTA",
+      "FELON",
+      "NABLA"
+    ],
+    "2026-08-07": [
+      "PONCI",
+      "FETAL",
+      "BRECO",
+      "ESTOL"
+    ],
+    "2026-08-08": [
+      "TONCA",
+      "URAPE",
+      "JORCO",
+      "PITAO"
+    ],
+    "2026-08-09": [
+      "NAGUA",
+      "SURAL",
+      "CHONO",
+      "MONSE"
+    ],
+    "2026-08-10": [
+      "YERVO",
+      "HENNA",
+      "SUATO",
+      "JUNIO"
+    ],
+    "2026-08-11": [
+      "TALCO",
+      "PIGRO",
+      "FREZA",
+      "PUJES"
+    ],
+    "2026-08-12": [
+      "ARGAN",
+      "PARCE",
+      "ARMAR",
+      "AZTOR"
+    ],
+    "2026-08-13": [
+      "TOZAR",
+      "MURTA",
+      "TROPO",
+      "REVES"
+    ],
+    "2026-08-14": [
+      "MAGIA",
+      "BANCE",
+      "COMTO",
+      "CAGAR"
+    ],
+    "2026-08-15": [
+      "ISOCA",
+      "LONJA",
+      "BRASA",
+      "LONCO"
+    ],
+    "2026-08-16": [
+      "AROCA",
+      "CHALA",
+      "ICACO",
+      "TOTAL"
+    ],
+    "2026-08-17": [
+      "CUERA",
+      "SOLEA",
+      "TALUD",
+      "HIMNO"
+    ],
+    "2026-08-18": [
+      "MONFI",
+      "ABATI",
+      "GUIYE",
+      "ARABO"
+    ],
+    "2026-08-19": [
+      "AJUAR",
+      "CANIA",
+      "BUJEO",
+      "SORRA"
+    ],
+    "2026-08-20": [
+      "ROSON",
+      "MITAN",
+      "TRENA",
+      "OLEAR"
+    ],
+    "2026-08-21": [
+      "APESE",
+      "CAPIA",
+      "PALIO",
+      "ERRAJ"
+    ],
+    "2026-08-22": [
+      "MOREO",
+      "GACHE",
+      "OPACO",
+      "KEBAB"
+    ],
+    "2026-08-23": [
+      "MAMBO",
+      "FUÑAR",
+      "PINAL",
+      "MOPAN"
+    ],
+    "2026-08-24": [
+      "ULALA",
+      "ACIJE",
+      "QUITE",
+      "CLERO"
+    ],
+    "2026-08-25": [
+      "NIEGO",
+      "NAVIO",
+      "TERNO",
+      "BOHIO"
+    ],
+    "2026-08-26": [
+      "GRENO",
+      "LOGRO",
+      "COPRA",
+      "VAREO"
+    ],
+    "2026-08-27": [
+      "SOTAR",
+      "FOLIA",
+      "LARDA",
+      "GUIFA"
+    ],
+    "2026-08-28": [
+      "ENVIO",
+      "AXIAL",
+      "JEREZ",
+      "RIATA"
+    ],
+    "2026-08-29": [
+      "FERRA",
+      "PLEPA",
+      "OLAJE",
+      "RECUA"
+    ],
+    "2026-08-30": [
+      "CASCO",
+      "HILIO",
+      "BARDA",
+      "ACTEA"
+    ],
+    "2026-08-31": [
+      "PECAN",
+      "SERIO",
+      "COONA",
+      "PACAE"
+    ],
+    "2026-09-01": [
+      "IDEAL",
+      "ETAPA",
+      "REÑIR",
+      "FERRE"
+    ],
+    "2026-09-02": [
+      "VIAJE",
+      "CACLE",
+      "HELIO",
+      "POTAR"
+    ],
+    "2026-09-03": [
+      "CEFEA",
+      "PERNA",
+      "FIEMO",
+      "LINEO"
+    ],
+    "2026-09-04": [
+      "TETAR",
+      "HOGAR",
+      "CHITO",
+      "BINGO"
+    ],
+    "2026-09-05": [
+      "SAMPA",
+      "SAINO",
+      "RODEA",
+      "ANATA"
+    ],
+    "2026-09-06": [
+      "REDEL",
+      "CAUNO",
+      "CUICO",
+      "TEINA"
+    ],
+    "2026-09-07": [
+      "MOSCA",
+      "BLEDO",
+      "PIXEL",
+      "LLECO"
+    ],
+    "2026-09-08": [
+      "SECUA",
+      "COANA",
+      "CAUCE",
+      "CETRA"
+    ],
+    "2026-09-09": [
+      "SIGUA",
+      "OVINO",
+      "BEMBO",
+      "HAIKU"
+    ],
+    "2026-09-10": [
+      "YUNTO",
+      "ATICO",
+      "CLAPA",
+      "TEGUA"
+    ],
+    "2026-09-11": [
+      "DORIO",
+      "BACIN",
+      "FONDO",
+      "ZUMBO"
+    ],
+    "2026-09-12": [
+      "RAJAR",
+      "FILON",
+      "ZOCAR",
+      "CIRCE"
+    ],
+    "2026-09-13": [
+      "PECHA",
+      "LICOR",
+      "GROAR",
+      "OGAÑO"
+    ],
+    "2026-09-14": [
+      "CHATO",
+      "BOLLA",
+      "TAZON",
+      "VENIR"
+    ],
+    "2026-09-15": [
+      "SEGAR",
+      "VATER",
+      "AROMO",
+      "PULPA"
+    ],
+    "2026-09-16": [
+      "GAFAR",
+      "CAVAN",
+      "YAQUI",
+      "TIZNE"
+    ],
+    "2026-09-17": [
+      "HARCA",
+      "BARRA",
+      "JUNTA",
+      "TRATO"
+    ],
+    "2026-09-18": [
+      "TULPA",
+      "CRESO",
+      "FRESA",
+      "IJADA"
+    ],
+    "2026-09-19": [
+      "OCUME",
+      "CHUCO",
+      "BICHE",
+      "BARON"
+    ],
+    "2026-09-20": [
+      "DUNDO",
+      "LISOL",
+      "CAPAR",
+      "HIMEN"
+    ],
+    "2026-09-21": [
+      "RUEGO",
+      "BEATO",
+      "LLENO",
+      "MIÑON"
+    ],
+    "2026-09-22": [
+      "GLOBO",
+      "PICON",
+      "FOMES",
+      "MAMON"
+    ],
+    "2026-09-23": [
+      "NIPON",
+      "ALJEZ",
+      "PODRE",
+      "BASAL"
+    ],
+    "2026-09-24": [
+      "VAINA",
+      "ARREO",
+      "JEMER",
+      "JAQUE"
+    ],
+    "2026-09-25": [
+      "EXITO",
+      "MIRRA",
+      "TIPLE",
+      "GUIRI"
+    ],
+    "2026-09-26": [
+      "CHIRA",
+      "SOBRA",
+      "COSTE",
+      "PULIR"
+    ],
+    "2026-09-27": [
+      "CUTIO",
+      "YAMPA",
+      "TARAY",
+      "SARDA"
+    ],
+    "2026-09-28": [
+      "TOTEM",
+      "AMOLE",
+      "ELEGO",
+      "COJIN"
+    ],
+    "2026-09-29": [
+      "VICHY",
+      "JERPA",
+      "REATA",
+      "CURSO"
+    ],
+    "2026-09-30": [
+      "MISMO",
+      "PORRA",
+      "DESGA",
+      "NIDIO"
+    ],
+    "2026-10-01": [
+      "SACRO",
+      "BRIAL",
+      "BURGA",
+      "RAJON"
+    ],
+    "2026-10-02": [
+      "HEVEA",
+      "OIDOR",
+      "NEGRO",
+      "MOLSO"
+    ],
+    "2026-10-03": [
+      "RENTA",
+      "ABETE",
+      "MERAR",
+      "MUSCO"
+    ],
+    "2026-10-04": [
+      "VEDAR",
+      "DEDEO",
+      "COLLA",
+      "RADAR"
+    ],
+    "2026-10-05": [
+      "PIARA",
+      "ZONTO",
+      "TIFUS",
+      "PUÑAR"
+    ],
+    "2026-10-06": [
+      "GUASA",
+      "MAESE",
+      "ROMBO",
+      "USIER"
+    ],
+    "2026-10-07": [
+      "MACON",
+      "PIRCA",
+      "HECHA",
+      "CHILE"
+    ],
+    "2026-10-08": [
+      "MIURA",
+      "TAQUE",
+      "AGATA",
+      "KURDO"
+    ],
+    "2026-10-09": [
+      "PEROL",
+      "ARABI",
+      "PEINE",
+      "DEMAS"
+    ],
+    "2026-10-10": [
+      "LILAC",
+      "ALEMA",
+      "MIGAR",
+      "FOSCO"
+    ],
+    "2026-10-11": [
+      "MAJAL",
+      "JALDO",
+      "BAHIA",
+      "SEPIA"
+    ],
+    "2026-10-12": [
+      "RUMBO",
+      "NOBEL",
+      "JABON",
+      "PINGO"
+    ],
+    "2026-10-13": [
+      "PATAO",
+      "DEUDA",
+      "FLEJE",
+      "HALON"
+    ],
+    "2026-10-14": [
+      "OCIAR",
+      "CESTA",
+      "CHAMO",
+      "GREEN"
+    ],
+    "2026-10-15": [
+      "CETRE",
+      "CAUBA",
+      "EGUAR",
+      "GALLO"
+    ],
+    "2026-10-16": [
+      "DIÑAR",
+      "FRITO",
+      "SUNNA",
+      "VERGE"
+    ],
+    "2026-10-17": [
+      "DALLE",
+      "BOTOR",
+      "JIPIO",
+      "POCHO"
+    ],
+    "2026-10-18": [
+      "CAJIN",
+      "BORNE",
+      "TUNEL",
+      "TEMOR"
+    ],
+    "2026-10-19": [
+      "AZARO",
+      "CHECA",
+      "QUIMA",
+      "GUALA"
+    ],
+    "2026-10-20": [
+      "BOTAR",
+      "LINAO",
+      "APURE",
+      "FENIX"
+    ],
+    "2026-10-21": [
+      "QUEDA",
+      "RELVA",
+      "LICRA",
+      "LATIN"
+    ],
+    "2026-10-22": [
+      "ROÑIA",
+      "GOLFA",
+      "PURIN",
+      "CUNEO"
+    ],
+    "2026-10-23": [
+      "RACOR",
+      "GRAPA",
+      "PIDON",
+      "GUIAR"
+    ],
+    "2026-10-24": [
+      "MULEO",
+      "ZONDA",
+      "OLIVO",
+      "GRANT"
+    ],
+    "2026-10-25": [
+      "ALECE",
+      "MITAD",
+      "VALER",
+      "MUGLE"
+    ],
+    "2026-10-26": [
+      "FURTO",
+      "FOGON",
+      "VISTO",
+      "PILON"
+    ],
+    "2026-10-27": [
+      "REDRO",
+      "BONGO",
+      "YEDGO",
+      "OTERO"
+    ],
+    "2026-10-28": [
+      "FRASE",
+      "HUCHO",
+      "TAJIN",
+      "MIRON"
+    ],
+    "2026-10-29": [
+      "BLUES",
+      "GELFE",
+      "RABAL",
+      "TIQUE"
+    ],
+    "2026-10-30": [
+      "COPEO",
+      "GUISA",
+      "TOCIO",
+      "ULAGA"
+    ],
+    "2026-10-31": [
+      "VELLO",
+      "TIMBO",
+      "HAPAX",
+      "ELOTE"
+    ],
+    "2026-11-01": [
+      "YUNTA",
+      "DACIO",
+      "MERMA",
+      "ALGAR"
+    ],
+    "2026-11-02": [
+      "AGUIO",
+      "SUSTO",
+      "GANAR",
+      "PELIS"
+    ],
+    "2026-11-03": [
+      "FRESO",
+      "SIESO",
+      "RAZIA",
+      "FERAZ"
+    ],
+    "2026-11-04": [
+      "CIDRA",
+      "VUESO",
+      "RAQUE",
+      "DIESI"
+    ],
+    "2026-11-05": [
+      "MIOPE",
+      "ZURRA",
+      "ANGRA",
+      "JEQUE"
+    ],
+    "2026-11-06": [
+      "TRAGO",
+      "PACHO",
+      "REBUS",
+      "BAGAR"
+    ],
+    "2026-11-07": [
+      "LIBIO",
+      "VELOZ",
+      "TILLO",
+      "HUEVO"
+    ],
+    "2026-11-08": [
+      "PASTO",
+      "GOMEL",
+      "FOCIO",
+      "VALVA"
+    ],
+    "2026-11-09": [
+      "NEGUS",
+      "PARTY",
+      "HULTE",
+      "CINIA"
+    ],
+    "2026-11-10": [
+      "DUELO",
+      "MISIL",
+      "MOCHO",
+      "MICHE"
+    ],
+    "2026-11-11": [
+      "COLME",
+      "AFONO",
+      "MOTOR",
+      "CAITE"
+    ],
+    "2026-11-12": [
+      "FUROR",
+      "BARBO",
+      "SUZON",
+      "CELFO"
+    ],
+    "2026-11-13": [
+      "HIPER",
+      "ACODO",
+      "FRUTO",
+      "MALVA"
+    ],
+    "2026-11-14": [
+      "ADEME",
+      "BUCLE",
+      "FONDA",
+      "SESIL"
+    ],
+    "2026-11-15": [
+      "FLOJO",
+      "CASEO",
+      "BAJIO",
+      "CENAR"
+    ],
+    "2026-11-16": [
+      "SIGMA",
+      "FLEMA",
+      "PANZA",
+      "TARCO"
+    ],
+    "2026-11-17": [
+      "GAÑIN",
+      "CALLE",
+      "REHEN",
+      "VASAR"
+    ],
+    "2026-11-18": [
+      "GUEÑA",
+      "CHAPO",
+      "FETUA",
+      "CHUZA"
+    ],
+    "2026-11-19": [
+      "CAHIZ",
+      "ALCOR",
+      "ALTOR",
+      "JUMIL"
+    ],
+    "2026-11-20": [
+      "LIEGO",
+      "BOCHO",
+      "ADRAR",
+      "BAUSA"
+    ],
+    "2026-11-21": [
+      "ANDEN",
+      "MUARE",
+      "FALAZ",
+      "FANAL"
+    ],
+    "2026-11-22": [
+      "ÑURDO",
+      "BRECA",
+      "BUEGA",
+      "AUPAR"
+    ],
+    "2026-11-23": [
+      "CUERO",
+      "AJIPA",
+      "MAMAR",
+      "EVOHE"
+    ],
+    "2026-11-24": [
+      "COBIL",
+      "ERGIO",
+      "JIJEO",
+      "ORLAR"
+    ],
+    "2026-11-25": [
+      "FORCA",
+      "LUTEA",
+      "SINGA",
+      "ARDEA"
+    ],
+    "2026-11-26": [
+      "TROZO",
+      "FRIKI",
+      "ETNIA",
+      "JAMAR"
+    ],
+    "2026-11-27": [
+      "TORCO",
+      "RENCO",
+      "PANJI",
+      "PAPEL"
+    ],
+    "2026-11-28": [
+      "FELPO",
+      "BRETE",
+      "PRUNA",
+      "SOCHE"
+    ],
+    "2026-11-29": [
+      "TAULA",
+      "CODAL",
+      "HORCO",
+      "FICUS"
+    ],
+    "2026-11-30": [
+      "FOLIO",
+      "JASAR",
+      "NACAR",
+      "CANOA"
+    ],
+    "2026-12-01": [
+      "POLEA",
+      "LIDON",
+      "CURAL",
+      "PATAY"
+    ],
+    "2026-12-02": [
+      "CORRA",
+      "EXODO",
+      "LOCHE",
+      "GARLO"
+    ],
+    "2026-12-03": [
+      "SEISE",
+      "BEMBA",
+      "TABES",
+      "NILAD"
+    ],
+    "2026-12-04": [
+      "POYAL",
+      "SANTA",
+      "AVION",
+      "BREVE"
+    ],
+    "2026-12-05": [
+      "MUDAR",
+      "HIRCO",
+      "TORON",
+      "APERO"
+    ],
+    "2026-12-06": [
+      "OJERA",
+      "SESEO",
+      "PUZOL",
+      "BROMA"
+    ],
+    "2026-12-07": [
+      "CALCE",
+      "QUILA",
+      "ALOJA",
+      "PAVOR"
+    ],
+    "2026-12-08": [
+      "JAMAS",
+      "CHURU",
+      "HACHO",
+      "TONTO"
+    ],
+    "2026-12-09": [
+      "CORTA",
+      "ROLLO",
+      "CELIA",
+      "TAJAR"
+    ],
+    "2026-12-10": [
+      "ASTRO",
+      "PRADO",
+      "RAYON",
+      "ARIJE"
+    ],
+    "2026-12-11": [
+      "ORZAR",
+      "LUNFA",
+      "NAFTA",
+      "SAYON"
+    ],
+    "2026-12-12": [
+      "TILIN",
+      "ATABE",
+      "FALUA",
+      "TROVA"
+    ],
+    "2026-12-13": [
+      "MINAL",
+      "IMPLA",
+      "REDIL",
+      "OMISO"
+    ],
+    "2026-12-14": [
+      "CEBON",
+      "BELUA",
+      "TARDO",
+      "BILAO"
+    ],
+    "2026-12-15": [
+      "CASTA",
+      "TORGA",
+      "FUMON",
+      "MINAR"
+    ],
+    "2026-12-16": [
+      "CASIA",
+      "BAILA",
+      "CHURA",
+      "ANTIA"
+    ],
+    "2026-12-17": [
+      "HAYAL",
+      "FALDA",
+      "VEJEZ",
+      "BESAR"
+    ],
+    "2026-12-18": [
+      "QUIPU",
+      "DUBDA",
+      "NOCLA",
+      "BERON"
+    ],
+    "2026-12-19": [
+      "ASPRO",
+      "MAYAL",
+      "EDEMA",
+      "GIRAR"
+    ],
+    "2026-12-20": [
+      "BORDO",
+      "JULIO",
+      "PERSA",
+      "GRILL"
+    ],
+    "2026-12-21": [
+      "PAÑIL",
+      "RASCA",
+      "CUSCO",
+      "GOLES"
+    ],
+    "2026-12-22": [
+      "MAQUE",
+      "YUNGA",
+      "PAICO",
+      "CODIN"
+    ],
+    "2026-12-23": [
+      "RAUTA",
+      "HURTO",
+      "PAUSA",
+      "FRADA"
+    ],
+    "2026-12-24": [
+      "ADUFE",
+      "OMOTO",
+      "NAVAL",
+      "PACTO"
+    ],
+    "2026-12-25": [
+      "BOSTA",
+      "SALVO",
+      "LAUTO",
+      "ACEDO"
+    ],
+    "2026-12-26": [
+      "ROMEO",
+      "PROFE",
+      "TROJA",
+      "AYUGA"
+    ],
+    "2026-12-27": [
+      "FAJAR",
+      "MACHI",
+      "FAVOR",
+      "PARVO"
+    ],
+    "2026-12-28": [
+      "ILION",
+      "CHERO",
+      "DORSO",
+      "CURCO"
+    ],
+    "2026-12-29": [
+      "BUCAL",
+      "ASARO",
+      "SORGO",
+      "GACEL"
+    ],
+    "2026-12-30": [
+      "NOLIT",
+      "SAMAN",
+      "CABER",
+      "SARAN"
+    ],
+    "2026-12-31": [
+      "SAUCO",
+      "MONJE",
+      "PLANO",
+      "AÑINO"
+    ],
+    "2027-01-01": [
+      "SIOUX",
+      "FUGAZ",
+      "POSMO",
+      "DELCO"
+    ],
+    "2027-01-02": [
+      "FALCE",
+      "BERRA",
+      "ROBLE",
+      "RUNGO"
+    ],
+    "2027-01-03": [
+      "CACTO",
+      "CHUPA",
+      "CISTA",
+      "CITAR"
+    ],
+    "2027-01-04": [
+      "SOLEO",
+      "VIRAR",
+      "GOZAR",
+      "ZANGA"
+    ],
+    "2027-01-05": [
+      "MURTO",
+      "SUBIR",
+      "ROLEO",
+      "GUETO"
+    ],
+    "2027-01-06": [
+      "NINOT",
+      "GRITA",
+      "SEÑOR",
+      "BELEZ"
+    ],
+    "2027-01-07": [
+      "AFINO",
+      "BEZAR",
+      "LASUN",
+      "ARETE"
+    ],
+    "2027-01-08": [
+      "AIRON",
+      "TELON",
+      "CINTA",
+      "DANZA"
+    ],
+    "2027-01-09": [
+      "VALET",
+      "PUCHA",
+      "AVUGO",
+      "TONER"
+    ],
+    "2027-01-10": [
+      "VENIA",
+      "ROJAL",
+      "CHOYA",
+      "TREJA"
+    ],
+    "2027-01-11": [
+      "FLEJA",
+      "GLAYO",
+      "PALCO",
+      "SISMO"
+    ],
+    "2027-01-12": [
+      "BUIDO",
+      "DOSEL",
+      "ATADO",
+      "FEEZA"
+    ],
+    "2027-01-13": [
+      "CENSO",
+      "CAMAO",
+      "TANGA",
+      "CETME"
+    ],
+    "2027-01-14": [
+      "PUYON",
+      "DIOSO",
+      "ASNAL",
+      "USTED"
+    ],
+    "2027-01-15": [
+      "JARAL",
+      "TRIGO",
+      "BUERA",
+      "RIGIL"
+    ],
+    "2027-01-16": [
+      "APICE",
+      "TAPON",
+      "CAMPA",
+      "RISPO"
+    ],
+    "2027-01-17": [
+      "COCAR",
+      "OREAR",
+      "VACIO",
+      "MOGON"
+    ],
+    "2027-01-18": [
+      "LABRO",
+      "CHANE",
+      "RENGA",
+      "OVIDO"
+    ],
+    "2027-01-19": [
+      "POPAR",
+      "CLAVE",
+      "SALAR",
+      "BAGRE"
+    ],
+    "2027-01-20": [
+      "VENTA",
+      "NASAL",
+      "BARDO",
+      "APOLO"
+    ],
+    "2027-01-21": [
+      "ZOTAL",
+      "INGRE",
+      "SALOL",
+      "VESPA"
+    ],
+    "2027-01-22": [
+      "BRUGO",
+      "MISTO",
+      "ROMAN",
+      "HORRE"
+    ],
+    "2027-01-23": [
+      "LIAZA",
+      "PUCHO",
+      "BAIFA",
+      "DADOR"
+    ],
+    "2027-01-24": [
+      "NALCA",
+      "CHEJE",
+      "POISA",
+      "TORIL"
+    ],
+    "2027-01-25": [
+      "SOCOL",
+      "ACION",
+      "IZADA",
+      "IDEAY"
+    ],
+    "2027-01-26": [
+      "GARIA",
+      "ADORO",
+      "ESPIN",
+      "ACIMO"
+    ],
+    "2027-01-27": [
+      "RINDE",
+      "REJUS",
+      "CORVO",
+      "HASTA"
+    ],
+    "2027-01-28": [
+      "TRAPA",
+      "CARAU",
+      "FRETE",
+      "ISLAN"
+    ],
+    "2027-01-29": [
+      "PUGIL",
+      "LUCIR",
+      "BERZA",
+      "PEDRO"
+    ],
+    "2027-01-30": [
+      "CROCO",
+      "RUCHO",
+      "ALCEA",
+      "SALPA"
+    ],
+    "2027-01-31": [
+      "ARUPO",
+      "PUDOR",
+      "EPOXI",
+      "FACIL"
+    ],
+    "2027-02-01": [
+      "SESEN",
+      "FUSIL",
+      "ATAJO",
+      "ZAHON"
+    ],
+    "2027-02-02": [
+      "OVOLO",
+      "HELOR",
+      "RUMOR",
+      "AVIAR"
+    ],
+    "2027-02-03": [
+      "VALOR",
+      "FIACA",
+      "LIDIA",
+      "PICAR"
+    ],
+    "2027-02-04": [
+      "CROTO",
+      "SUPER",
+      "CRUOR",
+      "CENAL"
+    ],
+    "2027-02-05": [
+      "PATEO",
+      "TIZON",
+      "RETRO",
+      "JACAL"
+    ],
+    "2027-02-06": [
+      "BAJAR",
+      "PRUNO",
+      "CRUCE",
+      "HUCIA"
+    ],
+    "2027-02-07": [
+      "TENAZ",
+      "VALGO",
+      "ZURDA",
+      "LIGHT"
+    ],
+    "2027-02-08": [
+      "ANACO",
+      "TALPA",
+      "KOPEK",
+      "COBRA"
+    ],
+    "2027-02-09": [
+      "IDOLO",
+      "CORZO",
+      "ALIAR",
+      "PELLO"
+    ],
+    "2027-02-10": [
+      "LOMBA",
+      "CHEPA",
+      "TOCHO",
+      "NADIR"
+    ],
+    "2027-02-11": [
+      "ACABO",
+      "HIATO",
+      "NOMON",
+      "VAIDA"
+    ],
+    "2027-02-12": [
+      "NISTE",
+      "ESPIA",
+      "ASPID",
+      "HARON"
+    ],
+    "2027-02-13": [
+      "BAJEZ",
+      "CAURI",
+      "SORDO",
+      "CLORO"
+    ],
+    "2027-02-14": [
+      "CUMBA",
+      "MASTO",
+      "GUAJE",
+      "ROANO"
+    ],
+    "2027-02-15": [
+      "VARIO",
+      "ROIDO",
+      "NACRE",
+      "NAIPE"
+    ],
+    "2027-02-16": [
+      "ANODO",
+      "OKAPI",
+      "JOFOR",
+      "ZURDO"
+    ],
+    "2027-02-17": [
+      "GRANA",
+      "CAICO",
+      "PARNE",
+      "FOSOR"
+    ],
+    "2027-02-18": [
+      "GRAVE",
+      "JASPE",
+      "ZUPIA",
+      "ZARPA"
+    ],
+    "2027-02-19": [
+      "SOBON",
+      "GANGA",
+      "LUSCO",
+      "CARCA"
+    ],
+    "2027-02-20": [
+      "TESLA",
+      "GANTE",
+      "QUECO",
+      "PENAL"
+    ],
+    "2027-02-21": [
+      "CHULO",
+      "NONIO",
+      "ADRAL",
+      "BIZNA"
+    ],
+    "2027-02-22": [
+      "BATON",
+      "PEDIO",
+      "VALAR",
+      "CUASI"
+    ],
+    "2027-02-23": [
+      "CRACK",
+      "MONJA",
+      "MIXTO",
+      "INANE"
+    ],
+    "2027-02-24": [
+      "TUSAR",
+      "DARGA",
+      "JUSTA",
+      "BURDO"
+    ],
+    "2027-02-25": [
+      "UVADA",
+      "GERBO",
+      "ESCAS",
+      "AJOBO"
+    ],
+    "2027-02-26": [
+      "SILEX",
+      "FLUJO",
+      "PESCE",
+      "FISTO"
+    ],
+    "2027-02-27": [
+      "CEDRO",
+      "TASIO",
+      "SAUNA",
+      "JAYAN"
+    ],
+    "2027-02-28": [
+      "BURGO",
+      "CRONO",
+      "ITRIA",
+      "LIPIS"
+    ],
+    "2027-03-01": [
+      "SALDO",
+      "AILLO",
+      "DARES",
+      "ACROY"
+    ],
+    "2027-03-02": [
+      "TEMAR",
+      "LONGA",
+      "CALES",
+      "NUEVE"
+    ],
+    "2027-03-03": [
+      "CARIA",
+      "ELATO",
+      "BOZAL",
+      "HIERO"
+    ],
+    "2027-03-04": [
+      "PEDAL",
+      "TOBAR",
+      "LAMER",
+      "APALE"
+    ],
+    "2027-03-05": [
+      "TOQUE",
+      "TROJE",
+      "VERAZ",
+      "DAHIR"
+    ],
+    "2027-03-06": [
+      "LIOSO",
+      "LAURO",
+      "CALER",
+      "JUÑIR"
+    ],
+    "2027-03-07": [
+      "ANANA",
+      "SEMIS",
+      "MEAJA",
+      "ZORRO"
+    ],
+    "2027-03-08": [
+      "TRUJA",
+      "BIJAO",
+      "BROTO",
+      "BUDIN"
+    ],
+    "2027-03-09": [
+      "NIDAL",
+      "LEIMA",
+      "MARRO",
+      "KARMA"
+    ],
+    "2027-03-10": [
+      "FALSA",
+      "LINFA",
+      "TAIRE",
+      "LENCA"
+    ],
+    "2027-03-11": [
+      "ALORA",
+      "BOLON",
+      "MUTUO",
+      "GEODA"
+    ],
+    "2027-03-12": [
+      "TAITA",
+      "FUGAR",
+      "CURVA",
+      "MAREO"
+    ],
+    "2027-03-13": [
+      "CAÑAL",
+      "ZOPAS",
+      "CIATO",
+      "TRAZO"
+    ],
+    "2027-03-14": [
+      "GOZON",
+      "SOLLA",
+      "ZARCO",
+      "COJAL"
+    ],
+    "2027-03-15": [
+      "PARLA",
+      "PUGNA",
+      "SARAO",
+      "FICHA"
+    ],
+    "2027-03-16": [
+      "ARPON",
+      "ALELO",
+      "PINGA",
+      "CHIST"
+    ],
+    "2027-03-17": [
+      "DATEO",
+      "BILLA",
+      "RAPAR",
+      "TANTO"
+    ],
+    "2027-03-18": [
+      "MOSCO",
+      "REGLA",
+      "ACURE",
+      "AZERI"
+    ],
+    "2027-03-19": [
+      "DIEGO",
+      "CHULA",
+      "TANZA",
+      "RAPTO"
+    ],
+    "2027-03-20": [
+      "CAOBO",
+      "PUDIO",
+      "CAFRE",
+      "IRUPE"
+    ],
+    "2027-03-21": [
+      "YEDRA",
+      "GUARO",
+      "ATOBA",
+      "DRUSA"
+    ],
+    "2027-03-22": [
+      "RONDA",
+      "ACERA",
+      "ZEJEL",
+      "CURIL"
+    ],
+    "2027-03-23": [
+      "AJENO",
+      "SANSO",
+      "MUELO",
+      "TAMAL"
+    ],
+    "2027-03-24": [
+      "FLECO",
+      "BARIA",
+      "MORAR",
+      "CHOLO"
+    ],
+    "2027-03-25": [
+      "JIMIO",
+      "RUECA",
+      "MUGAR",
+      "DOSIS"
+    ],
+    "2027-03-26": [
+      "REFEZ",
+      "CALCA",
+      "DIVAN",
+      "LOSAR"
+    ],
+    "2027-03-27": [
+      "MUÑON",
+      "JADEO",
+      "TOZAL",
+      "CUZUL"
+    ],
+    "2027-03-28": [
+      "SIETE",
+      "CRESA",
+      "UFANO",
+      "BURLA"
+    ],
+    "2027-03-29": [
+      "FLOTE",
+      "DUCTO",
+      "ACILO",
+      "VIRIL"
+    ],
+    "2027-03-30": [
+      "BREGA",
+      "TERSO",
+      "DOBLE",
+      "BABOR"
+    ],
+    "2027-03-31": [
+      "ALAMA",
+      "AULLO",
+      "PATAX",
+      "AUREO"
+    ],
+    "2027-04-01": [
+      "HERIA",
+      "BANIR",
+      "TAIGA",
+      "CIANI"
+    ],
+    "2027-04-02": [
+      "TURMA",
+      "BOQUE",
+      "REOJO",
+      "LARVA"
+    ],
+    "2027-04-03": [
+      "FAJIN",
+      "ORINA",
+      "NEUMA",
+      "ALAZO"
+    ],
+    "2027-04-04": [
+      "GUIDO",
+      "BIRLI",
+      "VOTRI",
+      "DIQUE"
+    ],
+    "2027-04-05": [
+      "LANIO",
+      "CAÑEO",
+      "ZORRA",
+      "RASEL"
+    ],
+    "2027-04-06": [
+      "SALMO",
+      "APRES",
+      "VIGOR",
+      "SPORT"
+    ],
+    "2027-04-07": [
+      "SUELO",
+      "ÑANGO",
+      "VITRE",
+      "BRUMO"
+    ],
+    "2027-04-08": [
+      "CAGUE",
+      "PIRUL",
+      "BADAL",
+      "GLOSE"
+    ],
+    "2027-04-09": [
+      "NIMBO",
+      "TITAN",
+      "ZAMBA",
+      "CHUÑO"
+    ],
+    "2027-04-10": [
+      "JUANA",
+      "BALEO",
+      "TEAME",
+      "NARDO"
+    ],
+    "2027-04-11": [
+      "MIONA",
+      "RASPA",
+      "JURCO",
+      "PERLA"
+    ],
+    "2027-04-12": [
+      "TREBO",
+      "LEIDO",
+      "VELAR",
+      "SOTOL"
+    ],
+    "2027-04-13": [
+      "NOPAL",
+      "FEURA",
+      "RIVAL",
+      "PRISA"
+    ],
+    "2027-04-14": [
+      "ANADE",
+      "CARTA",
+      "ENERO",
+      "CELAN"
+    ],
+    "2027-04-15": [
+      "DANDI",
+      "TIBIO",
+      "TIACA",
+      "JOVEN"
+    ],
+    "2027-04-16": [
+      "BALSA",
+      "ROBOT",
+      "CAZAR",
+      "BISEL"
+    ],
+    "2027-04-17": [
+      "TRAMA",
+      "ONICE",
+      "ABEJA",
+      "HUEVA"
+    ],
+    "2027-04-18": [
+      "CASIS",
+      "ROZAR",
+      "BUCHE",
+      "BETEL"
+    ],
+    "2027-04-19": [
+      "SABEO",
+      "ARTAL",
+      "SOSAR",
+      "LINON"
+    ],
+    "2027-04-20": [
+      "CHECO",
+      "GORDA",
+      "GUIRA",
+      "LACHO"
+    ],
+    "2027-04-21": [
+      "OJEAR",
+      "BULON",
+      "AGUZO",
+      "ANCON"
+    ],
+    "2027-04-22": [
+      "RUGIR",
+      "CRUEL",
+      "NAHOA",
+      "PAJON"
+    ],
+    "2027-04-23": [
+      "USAJE",
+      "CUPLE",
+      "CHACA",
+      "ANCLA"
+    ],
+    "2027-04-24": [
+      "PUYAR",
+      "LLANA",
+      "POLLO",
+      "GOMAR"
+    ],
+    "2027-04-25": [
+      "QUINA",
+      "POPTI",
+      "SILBA",
+      "COCUY"
+    ],
+    "2027-04-26": [
+      "PESCA",
+      "LERDA",
+      "OCENA",
+      "ARABE"
+    ],
+    "2027-04-27": [
+      "YERMO",
+      "YARDA",
+      "SUMAR",
+      "NICOL"
+    ],
+    "2027-04-28": [
+      "FIZON",
+      "PAVON",
+      "PATAN",
+      "PRORA"
+    ],
+    "2027-04-29": [
+      "ENULA",
+      "ABUBO",
+      "BULLA",
+      "BARCA"
+    ],
+    "2027-04-30": [
+      "RUBLO",
+      "TOMIN",
+      "TASAR",
+      "MAYAR"
+    ],
+    "2027-05-01": [
+      "MILPA",
+      "OROYA",
+      "RANGO",
+      "CUINA"
+    ],
+    "2027-05-02": [
+      "AZOAR",
+      "SARZA",
+      "JEMAL",
+      "RACHA"
+    ],
+    "2027-05-03": [
+      "PISTA",
+      "JONDO",
+      "BEZON",
+      "BISTE"
+    ],
+    "2027-05-04": [
+      "GLUMA",
+      "CHOLA",
+      "CASBA",
+      "LIMON"
+    ],
+    "2027-05-05": [
+      "LORZA",
+      "MALON",
+      "POSCA",
+      "AMAGO"
+    ],
+    "2027-05-06": [
+      "ALADA",
+      "DEPRE",
+      "AFEAR",
+      "VICIO"
+    ],
+    "2027-05-07": [
+      "OCAPI",
+      "GROSO",
+      "REZNO",
+      "MANDA"
+    ],
+    "2027-05-08": [
+      "PINTO",
+      "BIMBA",
+      "CASCA",
+      "SATIN"
+    ],
+    "2027-05-09": [
+      "BARBA",
+      "PRIMO",
+      "PUNTA",
+      "TACHA"
+    ],
+    "2027-05-10": [
+      "YERTO",
+      "TALON",
+      "HONDO",
+      "BOXEO"
+    ],
+    "2027-05-11": [
+      "ROÑAL",
+      "BIZMA",
+      "GAVIA",
+      "FASOL"
+    ],
+    "2027-05-12": [
+      "RUMIA",
+      "COBRE",
+      "OTOBA",
+      "UNION"
+    ],
+    "2027-05-13": [
+      "SORBA",
+      "METER",
+      "RUSEL",
+      "DIETA"
+    ],
+    "2027-05-14": [
+      "TAIMA",
+      "GARPA",
+      "VENDI",
+      "CEGUA"
+    ],
+    "2027-05-15": [
+      "YANTA",
+      "PEGAR",
+      "AZADA",
+      "PITIO"
+    ],
+    "2027-05-16": [
+      "BARIO",
+      "PLOMO",
+      "MINGO",
+      "ALVEO"
+    ],
+    "2027-05-17": [
+      "OTATE",
+      "DAÑAR",
+      "HALAR",
+      "VOTAR"
+    ],
+    "2027-05-18": [
+      "MONGA",
+      "RAFEZ",
+      "PICIA",
+      "VIRON"
+    ],
+    "2027-05-19": [
+      "METAD",
+      "UVERO",
+      "TURAR",
+      "TESAR"
+    ],
+    "2027-05-20": [
+      "TEGUE",
+      "DIUCA",
+      "LACHA",
+      "NOQUE"
+    ],
+    "2027-05-21": [
+      "JERGA",
+      "OSOSO",
+      "SARTA",
+      "ENEAL"
+    ],
+    "2027-05-22": [
+      "FLACO",
+      "BEIGE",
+      "MONTO",
+      "ARULA"
+    ],
+    "2027-05-23": [
+      "ADOBE",
+      "HIGUI",
+      "POBRE",
+      "NORAY"
+    ],
+    "2027-05-24": [
+      "NIXTE",
+      "NATIO",
+      "GRATA",
+      "LAXAR"
+    ],
+    "2027-05-25": [
+      "EPODO",
+      "ROLAR",
+      "DESCA",
+      "EFETA"
+    ],
+    "2027-05-26": [
+      "PLENA",
+      "ENTEO",
+      "CIMPA",
+      "NAPAR"
+    ],
+    "2027-05-27": [
+      "BUFOS",
+      "CHORI",
+      "DRUSO",
+      "TAIRA"
+    ],
+    "2027-05-28": [
+      "SEPTO",
+      "CALCO",
+      "ACOSE",
+      "MENTE"
+    ],
+    "2027-05-29": [
+      "TATAS",
+      "MORFO",
+      "TIFON",
+      "JAUJA"
+    ],
+    "2027-05-30": [
+      "NENIA",
+      "ABANO",
+      "ZUREO",
+      "CICLO"
+    ],
+    "2027-05-31": [
+      "SACAR",
+      "MANIR",
+      "LAUNA",
+      "COGER"
+    ],
+    "2027-06-01": [
+      "BONGA",
+      "RATIO",
+      "JOBAR",
+      "TINCA"
+    ],
+    "2027-06-02": [
+      "PERRA",
+      "LIVOR",
+      "QUIÑO",
+      "EXTRA"
+    ],
+    "2027-06-03": [
+      "FINAL",
+      "ANCUA",
+      "TROCO",
+      "GALCE"
+    ],
+    "2027-06-04": [
+      "GUARA",
+      "GLIDE",
+      "ABSIT",
+      "PAYES"
+    ],
+    "2027-06-05": [
+      "SEGUN",
+      "ANULO",
+      "CLAVA",
+      "HOPEO"
+    ],
+    "2027-06-06": [
+      "FETEN",
+      "DESEO",
+      "RAMAL",
+      "BRAVO"
+    ],
+    "2027-06-07": [
+      "HURON",
+      "RIMAR",
+      "CISCA",
+      "BIZCO"
+    ],
+    "2027-06-08": [
+      "MIRLO",
+      "TAPIN",
+      "ALGUN",
+      "GUILO"
+    ],
+    "2027-06-09": [
+      "ORUGA",
+      "BOCHE",
+      "CITRA",
+      "GUATO"
+    ],
+    "2027-06-10": [
+      "JOLIN",
+      "BUJIA",
+      "CURRO",
+      "ZACEO"
+    ],
+    "2027-06-11": [
+      "LATEX",
+      "CEBRA",
+      "NUBLO",
+      "ZAFIR"
+    ],
+    "2027-06-12": [
+      "ARROZ",
+      "HUECA",
+      "KILIM",
+      "BOLAR"
+    ],
+    "2027-06-13": [
+      "PIRAR",
+      "FELIZ",
+      "JELIZ",
+      "LANDO"
+    ],
+    "2027-06-14": [
+      "JUNTO",
+      "BEBER",
+      "HINCO",
+      "ANIMO"
+    ],
+    "2027-06-15": [
+      "CAVEA",
+      "LACON",
+      "TRIPE",
+      "TORIO"
+    ],
+    "2027-06-16": [
+      "ÑINGA",
+      "CAREL",
+      "CALON",
+      "SACON"
+    ],
+    "2027-06-17": [
+      "AÑOJO",
+      "FUNDA",
+      "HAFIZ",
+      "BECAR"
+    ],
+    "2027-06-18": [
+      "SPRAY",
+      "URDIR",
+      "LABIO",
+      "LADRA"
+    ],
+    "2027-06-19": [
+      "VIREO",
+      "FUSTE",
+      "SALEP",
+      "TROLA"
+    ],
+    "2027-06-20": [
+      "GACHA",
+      "OPERA",
+      "RORRO",
+      "CEQUI"
+    ],
+    "2027-06-21": [
+      "SUSHI",
+      "BORDE",
+      "ERRAR",
+      "OIBLE"
+    ],
+    "2027-06-22": [
+      "GUAYA",
+      "IGUAR",
+      "SERBA",
+      "SALTO"
+    ],
+    "2027-06-23": [
+      "YACIO",
+      "MIMAR",
+      "CUCHA",
+      "COPON"
+    ],
+    "2027-06-24": [
+      "FILLO",
+      "RIADA",
+      "BEATA",
+      "BUSCO"
+    ],
+    "2027-06-25": [
+      "GOMER",
+      "FISCO",
+      "AOCAR",
+      "PEORA"
+    ],
+    "2027-06-26": [
+      "TULAR",
+      "FARDO",
+      "GLOSA",
+      "KIRIE"
+    ],
+    "2027-06-27": [
+      "ATORO",
+      "CARON",
+      "BELFO",
+      "BUENO"
+    ],
+    "2027-06-28": [
+      "EQUIS",
+      "TOPAR",
+      "OVERA",
+      "CERRO"
+    ],
+    "2027-06-29": [
+      "FACHO",
+      "DEBLA",
+      "LIDIO",
+      "LIGAR"
+    ],
+    "2027-06-30": [
+      "DEESA",
+      "TRUFA",
+      "MONIS",
+      "RUGBY"
+    ],
+    "2027-07-01": [
+      "FOQUE",
+      "LIMEN",
+      "LUDIR",
+      "LAUDO"
+    ],
+    "2027-07-02": [
+      "PROAL",
+      "RECIO",
+      "NORIA",
+      "MACAR"
+    ],
+    "2027-07-03": [
+      "HARAS",
+      "BIDON",
+      "CANEZ",
+      "APENA"
+    ],
+    "2027-07-04": [
+      "QUERA",
+      "COLPA",
+      "CHURO",
+      "AZUDA"
+    ],
+    "2027-07-05": [
+      "LEDON",
+      "SIRGO",
+      "RECTO",
+      "CERNA"
+    ],
+    "2027-07-06": [
+      "PULLA",
+      "SUAVE",
+      "CIEMO",
+      "TROLE"
+    ],
+    "2027-07-07": [
+      "GUZLA",
+      "KENDO",
+      "SURCO",
+      "ASPAR"
+    ],
+    "2027-07-08": [
+      "BRACO",
+      "CABRO",
+      "SATIS",
+      "JAUTO"
+    ],
+    "2027-07-09": [
+      "AFATE",
+      "COBRO",
+      "TUDEL",
+      "GRAND"
+    ],
+    "2027-07-10": [
+      "RONCE",
+      "RIPIO",
+      "COCHA",
+      "FIADO"
+    ],
+    "2027-07-11": [
+      "HONGO",
+      "PARED",
+      "RUANO",
+      "PESTE"
+    ],
+    "2027-07-12": [
+      "CERRA",
+      "PIZZA",
+      "OXEAR",
+      "MAGUE"
+    ],
+    "2027-07-13": [
+      "CAQUI",
+      "TAROT",
+      "BRAVA",
+      "BATIK"
+    ],
+    "2027-07-14": [
+      "PICHE",
+      "POLIS",
+      "BUCHA",
+      "ARLAR"
+    ],
+    "2027-07-15": [
+      "GUACO",
+      "TENCA",
+      "CUEZO",
+      "CERPA"
+    ],
+    "2027-07-16": [
+      "FORAL",
+      "MASIA",
+      "RENGO",
+      "FARIO"
+    ],
+    "2027-07-17": [
+      "HIPAR",
+      "PARIO",
+      "ALAMO",
+      "NUBIL"
+    ],
+    "2027-07-18": [
+      "RONZA",
+      "TECLA",
+      "JEDAR",
+      "JAIBA"
+    ],
+    "2027-07-19": [
+      "MASAR",
+      "ANEJO",
+      "ACEBO",
+      "LLAPA"
+    ],
+    "2027-07-20": [
+      "MACRO",
+      "PERNO",
+      "ALETO",
+      "PLICA"
+    ],
+    "2027-07-21": [
+      "ALMEA",
+      "MARTA",
+      "DELLO",
+      "ALALO"
+    ],
+    "2027-07-22": [
+      "GOLFO",
+      "FATOR",
+      "MUSGO",
+      "DULIA"
+    ],
+    "2027-07-23": [
+      "PROLE",
+      "MISIO",
+      "CAREY",
+      "PAUJI"
+    ],
+    "2027-07-24": [
+      "QUEDO",
+      "TAÑER",
+      "CARME",
+      "TOLON"
+    ],
+    "2027-07-25": [
+      "POCHA",
+      "AUTOR",
+      "PERLE",
+      "CEPTI"
+    ],
+    "2027-07-26": [
+      "CHIFA",
+      "DAQUI",
+      "CHALE",
+      "CORSE"
+    ],
+    "2027-07-27": [
+      "BOMBO",
+      "POMPI",
+      "DIODO",
+      "ÑUZCO"
+    ],
+    "2027-07-28": [
+      "TAZAR",
+      "RECLE",
+      "ERROR",
+      "ÑUBLO"
+    ],
+    "2027-07-29": [
+      "VERIL",
+      "SERPA",
+      "CELAR",
+      "SACRE"
+    ],
+    "2027-07-30": [
+      "ZUMBA",
+      "TECLO",
+      "YACER",
+      "OJOSO"
+    ],
+    "2027-07-31": [
+      "FELPA",
+      "PERRO",
+      "CARGO",
+      "JUERA"
+    ],
+    "2027-08-01": [
+      "MANEA",
+      "AFILO",
+      "CUSCU",
+      "AZCON"
+    ],
+    "2027-08-02": [
+      "SALVA",
+      "ARMON",
+      "CORCO",
+      "RAHEZ"
+    ],
+    "2027-08-03": [
+      "SOCIO",
+      "RAMON",
+      "IBICE",
+      "EJION"
+    ],
+    "2027-08-04": [
+      "ACANA",
+      "PUADO",
+      "PELON",
+      "ESTOS"
+    ],
+    "2027-08-05": [
+      "BELEN",
+      "AMPLO",
+      "AEREO",
+      "SUELA"
+    ],
+    "2027-08-06": [
+      "CENCA",
+      "MAMEY",
+      "BOXER",
+      "COFIA"
+    ],
+    "2027-08-07": [
+      "PARTE",
+      "GOLPE",
+      "MELCA",
+      "NINFO"
+    ],
+    "2027-08-08": [
+      "OSTRO",
+      "PATIN",
+      "MOLDE",
+      "UNICO"
+    ],
+    "2027-08-09": [
+      "PUNGA",
+      "LANZA",
+      "YERNO",
+      "OBRON"
+    ],
+    "2027-08-10": [
+      "DINAR",
+      "ESTIO",
+      "ANTES",
+      "ETNEO"
+    ],
+    "2027-08-11": [
+      "PASTA",
+      "KAYAK",
+      "CAOBA",
+      "SIMIA"
+    ],
+    "2027-08-12": [
+      "SANSA",
+      "FATUM",
+      "PELDE",
+      "PANCO"
+    ],
+    "2027-08-13": [
+      "MORRO",
+      "CALAO",
+      "TUSCA",
+      "PIANO"
+    ],
+    "2027-08-14": [
+      "DEDAL",
+      "FEMAR",
+      "ASCAR",
+      "TIGRA"
+    ],
+    "2027-08-15": [
+      "AMAÑO",
+      "MURGA",
+      "QUEMO",
+      "BODON"
+    ],
+    "2027-08-16": [
+      "TARIN",
+      "NUEVO",
+      "EPOTO",
+      "ATOMO"
+    ],
+    "2027-08-17": [
+      "ESTOR",
+      "RUBIA",
+      "AZIMO",
+      "CAMON"
+    ],
+    "2027-08-18": [
+      "BAÑIL",
+      "AMEBA",
+      "HEBEN",
+      "HAREM"
+    ],
+    "2027-08-19": [
+      "QUIMO",
+      "CRIDA",
+      "LUCHE",
+      "CHINA"
+    ],
+    "2027-08-20": [
+      "PEJIN",
+      "ISTMO",
+      "JAGUA",
+      "TIBOR"
+    ],
+    "2027-08-21": [
+      "PISCO",
+      "BALAJ",
+      "TARCA",
+      "TOLVA"
+    ],
+    "2027-08-22": [
+      "RIZAR",
+      "CAÑAR",
+      "PLUMA",
+      "VOLAR"
+    ],
+    "2027-08-23": [
+      "FERRO",
+      "MAIDO",
+      "MUFTI",
+      "TUECA"
+    ],
+    "2027-08-24": [
+      "FAGOT",
+      "CUATI",
+      "TILDE",
+      "PAPON"
+    ],
+    "2027-08-25": [
+      "LUDIO",
+      "AGUJA",
+      "JODON",
+      "NUBIO"
+    ],
+    "2027-08-26": [
+      "POEMA",
+      "NOVAR",
+      "CARPO",
+      "BASNA"
+    ],
+    "2027-08-27": [
+      "METAL",
+      "TREPE",
+      "OPALO",
+      "FENOL"
+    ],
+    "2027-08-28": [
+      "INTER",
+      "TANDA",
+      "PODIO",
+      "CULTO"
+    ],
+    "2027-08-29": [
+      "CERDA",
+      "ULTRA",
+      "RURAL",
+      "VORAZ"
+    ],
+    "2027-08-30": [
+      "CUBIL",
+      "APAÑO",
+      "GUACA",
+      "GARUA"
+    ],
+    "2027-08-31": [
+      "GUABO",
+      "EPALE",
+      "BOSAR",
+      "FOLGA"
+    ],
+    "2027-09-01": [
+      "RUCIO",
+      "PUNKI",
+      "FLETA",
+      "LIGON"
+    ],
+    "2027-09-02": [
+      "PONGO",
+      "VETAR",
+      "FLASH",
+      "ORATE"
+    ],
+    "2027-09-03": [
+      "BICHO",
+      "LEJAS",
+      "PILLA",
+      "AQUEL"
+    ],
+    "2027-09-04": [
+      "ZALEA",
+      "ORERO",
+      "MANES",
+      "SUERO"
+    ],
+    "2027-09-05": [
+      "CONTA",
+      "GUERO",
+      "COTIN",
+      "GOZNE"
+    ],
+    "2027-09-06": [
+      "CRIAR",
+      "OHMIO",
+      "GORRA",
+      "HUAJE"
+    ],
+    "2027-09-07": [
+      "TAGUA",
+      "CORVA",
+      "CHAPE",
+      "ZOMBI"
+    ],
+    "2027-09-08": [
+      "EFETO",
+      "OVADO",
+      "SASAL",
+      "PUZLE"
+    ],
+    "2027-09-09": [
+      "CHOPO",
+      "COLOR",
+      "CORPS",
+      "PURRE"
+    ],
+    "2027-09-10": [
+      "CANGA",
+      "FABLA",
+      "BARRO",
+      "CAVAR"
+    ],
+    "2027-09-11": [
+      "BORLA",
+      "SALVE",
+      "CRASO",
+      "TUNCA"
+    ],
+    "2027-09-12": [
+      "PAGRO",
+      "JUBON",
+      "FRISA",
+      "SUCRE"
+    ],
+    "2027-09-13": [
+      "VIVEZ",
+      "NORTE",
+      "ACABE",
+      "LECHE"
+    ],
+    "2027-09-14": [
+      "PIBIL",
+      "DONDE",
+      "AVENA",
+      "SUECO"
+    ],
+    "2027-09-15": [
+      "TERMA",
+      "MUGRE",
+      "CETRO",
+      "PROIZ"
+    ],
+    "2027-09-16": [
+      "HABLA",
+      "NITRO",
+      "HOTEL",
+      "YAMBO"
+    ],
+    "2027-09-17": [
+      "RIGOR",
+      "SHUAR",
+      "CUTRE",
+      "RODAL"
+    ],
+    "2027-09-18": [
+      "COREA",
+      "VINAL",
+      "MANDO",
+      "TIPOI"
+    ],
+    "2027-09-19": [
+      "NILON",
+      "MELSA",
+      "MORBO",
+      "DAJAO"
+    ],
+    "2027-09-20": [
+      "MICHO",
+      "BARCO",
+      "SIQUE",
+      "HACIA"
+    ],
+    "2027-09-21": [
+      "BOMBA",
+      "ARIDO",
+      "CUITA",
+      "ALISO"
+    ],
+    "2027-09-22": [
+      "TIARA",
+      "NAIFE",
+      "BOLLO",
+      "GRECA"
+    ],
+    "2027-09-23": [
+      "COGON",
+      "COQUI",
+      "PACAY",
+      "OASIS"
+    ],
+    "2027-09-24": [
+      "GALGO",
+      "VUSCO",
+      "JAIMA",
+      "POSTE"
+    ],
+    "2027-09-25": [
+      "TAINA",
+      "FORAS",
+      "BALDO",
+      "CAYAN"
+    ],
+    "2027-09-26": [
+      "GUISO",
+      "TORNA",
+      "CATEY",
+      "BUFON"
+    ],
+    "2027-09-27": [
+      "RUBIO",
+      "USINA",
+      "CURAR",
+      "NOGAL"
+    ],
+    "2027-09-28": [
+      "RUMBA",
+      "TURRO",
+      "DROGA",
+      "ZAQUE"
+    ],
+    "2027-09-29": [
+      "PLEXO",
+      "CANJE",
+      "MOSEN",
+      "GUILA"
+    ],
+    "2027-09-30": [
+      "TLACO",
+      "FIBRA",
+      "CUJON",
+      "PUNIR"
+    ],
+    "2027-10-01": [
+      "ROMIN",
+      "UMBRO",
+      "FOLUZ",
+      "LEZDA"
+    ],
+    "2027-10-02": [
+      "HIRMA",
+      "PAPIN",
+      "LEGUA",
+      "JIMAR"
+    ],
+    "2027-10-03": [
+      "PETRA",
+      "HAMPO",
+      "JAMBO",
+      "PUDIN"
+    ],
+    "2027-10-04": [
+      "RUINA",
+      "GUADO",
+      "MOLON",
+      "FAJON"
+    ],
+    "2027-10-05": [
+      "RUPIA",
+      "PUNAR",
+      "SUITA",
+      "BELIO"
+    ],
+    "2027-10-06": [
+      "FAJOL",
+      "PICOR",
+      "ADIVA",
+      "CUOTA"
+    ],
+    "2027-10-07": [
+      "BOLSO",
+      "MAFIA",
+      "MAURE",
+      "AREPA"
+    ],
+    "2027-10-08": [
+      "RAFIA",
+      "LUJAR",
+      "ELEMI",
+      "FUCAR"
+    ],
+    "2027-10-09": [
+      "ALIJO",
+      "GALAN",
+      "ANDON",
+      "SERIE"
+    ],
+    "2027-10-10": [
+      "CESTO",
+      "MOJAR",
+      "HEDER",
+      "ASTIL"
+    ],
+    "2027-10-11": [
+      "SELLO",
+      "HERPE",
+      "CIRRO",
+      "RUGAR"
+    ],
+    "2027-10-12": [
+      "BIOMA",
+      "TURRA",
+      "BRAMA",
+      "RABON"
+    ],
+    "2027-10-13": [
+      "BAYON",
+      "TROTE",
+      "FILIN",
+      "DEUDO"
+    ],
+    "2027-10-14": [
+      "LARGA",
+      "SIRIN",
+      "ÑENGO",
+      "FARSA"
+    ],
+    "2027-10-15": [
+      "PIRON",
+      "BABEL",
+      "CHEPO",
+      "HEÑIR"
+    ],
+    "2027-10-16": [
+      "CASAL",
+      "DORNA",
+      "CUSUL",
+      "ADALA"
+    ],
+    "2027-10-17": [
+      "AGNUS",
+      "RULAR",
+      "PIZCO",
+      "FECHA"
+    ],
+    "2027-10-18": [
+      "PARKA",
+      "FAUNO",
+      "TAPEO",
+      "PIJUY"
+    ],
+    "2027-10-19": [
+      "COSTA",
+      "JULIA",
+      "AGROR",
+      "RETAL"
+    ],
+    "2027-10-20": [
+      "GRIAL",
+      "HUESA",
+      "ROCIO",
+      "TIPOY"
+    ],
+    "2027-10-21": [
+      "CHUYO",
+      "PINZA",
+      "EMPOS",
+      "MONTE"
+    ],
+    "2027-10-22": [
+      "ARDIL",
+      "OCASO",
+      "VALSE",
+      "AGOTE"
+    ],
+    "2027-10-23": [
+      "PICEO",
+      "GUANO",
+      "VERDE",
+      "KOINE"
+    ],
+    "2027-10-24": [
+      "PUMBA",
+      "OCUMO",
+      "JAULA",
+      "MAMIA"
+    ],
+    "2027-10-25": [
+      "CHIMO",
+      "JOPEO",
+      "PASAR",
+      "ANSIA"
+    ],
+    "2027-10-26": [
+      "BRIOL",
+      "MESMO",
+      "FIGON",
+      "RAUDO"
+    ],
+    "2027-10-27": [
+      "RAUDA",
+      "JUDIA",
+      "FERMI",
+      "DANCE"
+    ],
+    "2027-10-28": [
+      "LAMIA",
+      "VASCO",
+      "CUECA",
+      "BULAR"
+    ],
+    "2027-10-29": [
+      "SEDAR",
+      "AYORA",
+      "TATAY",
+      "RAMPA"
+    ],
+    "2027-10-30": [
+      "COMIS",
+      "LIBRE",
+      "BAHAI",
+      "ARBOR"
+    ],
+    "2027-10-31": [
+      "MULAR",
+      "FIZAR",
+      "PARRO",
+      "NOVAL"
+    ],
+    "2027-11-01": [
+      "TAMBA",
+      "QUEPI",
+      "FISGA",
+      "UÑATE"
+    ],
+    "2027-11-02": [
+      "PICHA",
+      "YOGUR",
+      "SECTA",
+      "ASILO"
+    ],
+    "2027-11-03": [
+      "RUCHE",
+      "MOTEL",
+      "RALLO",
+      "LENTE"
+    ],
+    "2027-11-04": [
+      "CHANO",
+      "PIGRE",
+      "LEGON",
+      "SACRA"
+    ],
+    "2027-11-05": [
+      "DUCHA",
+      "PAREO",
+      "CERIO",
+      "CUADO"
+    ],
+    "2027-11-06": [
+      "ZIPER",
+      "MEADA",
+      "FUTRE",
+      "GAYAR"
+    ],
+    "2027-11-07": [
+      "AMITO",
+      "RUSIA",
+      "SOLLO",
+      "DUEÑA"
+    ],
+    "2027-11-08": [
+      "LETRA",
+      "MENTA",
+      "FIDEO",
+      "ROSCA"
+    ],
+    "2027-11-09": [
+      "GRECO",
+      "JUDAS",
+      "QUITO",
+      "BERTA"
+    ],
+    "2027-11-10": [
+      "ERINA",
+      "PIÑAL",
+      "MOSTO",
+      "CAUJE"
+    ],
+    "2027-11-11": [
+      "LIRIA",
+      "RORAR",
+      "REDOR",
+      "MOTIL"
+    ],
+    "2027-11-12": [
+      "ABIAR",
+      "RABEL",
+      "SILBO",
+      "MOÑON"
+    ],
+    "2027-11-13": [
+      "UÑOSO",
+      "VOCAL",
+      "GREBA",
+      "LISTO"
+    ],
+    "2027-11-14": [
+      "PIEJO",
+      "MICRO",
+      "TURCO",
+      "BEFAR"
+    ],
+    "2027-11-15": [
+      "SESGA",
+      "LUGAR",
+      "PECAR",
+      "CAENA"
+    ],
+    "2027-11-16": [
+      "LINEA",
+      "HAIGA",
+      "CAUCA",
+      "VIUDO"
+    ],
+    "2027-11-17": [
+      "SEIBO",
+      "FLETE",
+      "MORCA",
+      "CALLA"
+    ],
+    "2027-11-18": [
+      "ESQUI",
+      "ANIME",
+      "CELDA",
+      "OVERO"
+    ],
+    "2027-11-19": [
+      "PIFIA",
+      "NADAR",
+      "GRIDA",
+      "IDEAR"
+    ],
+    "2027-11-20": [
+      "TRAER",
+      "AVATI",
+      "AMPON",
+      "FOCHA"
+    ],
+    "2027-11-21": [
+      "QUERO",
+      "CHUFA",
+      "RELAX",
+      "GAITA"
+    ],
+    "2027-11-22": [
+      "DOLOR",
+      "CEBIL",
+      "FOSCA",
+      "AMALO"
+    ],
+    "2027-11-23": [
+      "SARDO",
+      "PALMO",
+      "ERBIO",
+      "ZABRA"
+    ],
+    "2027-11-24": [
+      "BILMA",
+      "BORNA",
+      "MARZO",
+      "RAFAL"
+    ],
+    "2027-11-25": [
+      "TIRON",
+      "GALES",
+      "LIBAR",
+      "TAHUR"
+    ],
+    "2027-11-26": [
+      "GULAR",
+      "FUGIR",
+      "MECHA",
+      "PACON"
+    ],
+    "2027-11-27": [
+      "HITON",
+      "RASAR",
+      "PRESA",
+      "ZURBA"
+    ],
+    "2027-11-28": [
+      "SOLAZ",
+      "BRUJA",
+      "ISLEO",
+      "RISPA"
+    ],
+    "2027-11-29": [
+      "POMAR",
+      "BAJON",
+      "MOJON",
+      "LAGUA"
+    ],
+    "2027-11-30": [
+      "FICAR",
+      "FARDE",
+      "MIOMA",
+      "AMIRI"
+    ],
+    "2027-12-01": [
+      "CANIL",
+      "MAESA",
+      "MENEO",
+      "YERRO"
+    ],
+    "2027-12-02": [
+      "ALTEA",
+      "ARNES",
+      "CODEZ",
+      "PIHUA"
+    ],
+    "2027-12-03": [
+      "TRECE",
+      "MACAL",
+      "YOGAR",
+      "TAPIR"
+    ],
+    "2027-12-04": [
+      "ZOCLO",
+      "ZAFIO",
+      "CORZA",
+      "BANYO"
+    ],
+    "2027-12-05": [
+      "CAUZA",
+      "SOÑAR",
+      "TISIS",
+      "MOVIL"
+    ],
+    "2027-12-06": [
+      "JACER",
+      "ANGLO",
+      "HAVAR",
+      "ABRIL"
+    ],
+    "2027-12-07": [
+      "VARIZ",
+      "MEZZO",
+      "REDAR",
+      "PISPA"
+    ],
+    "2027-12-08": [
+      "BOFIA",
+      "NEVUS",
+      "SUITE",
+      "SIGLO"
+    ],
+    "2027-12-09": [
+      "GANSA",
+      "AYUDA",
+      "RUEDO",
+      "TASTO"
+    ],
+    "2027-12-10": [
+      "CARGA",
+      "HORDA",
+      "AGUTI",
+      "BRIOS"
+    ],
+    "2027-12-11": [
+      "TORVO",
+      "HITAR",
+      "BALSO",
+      "COMER"
+    ],
+    "2027-12-12": [
+      "RIEGO",
+      "LIBER",
+      "CLAVO",
+      "SAETI"
+    ],
+    "2027-12-13": [
+      "CANTO",
+      "MUBLE",
+      "LUDIA",
+      "CURRY"
+    ],
+    "2027-12-14": [
+      "FARPA",
+      "ETILO",
+      "BRIDA",
+      "RETOR"
+    ],
+    "2027-12-15": [
+      "AGRAS",
+      "YAREY",
+      "RUFON",
+      "HUIDA"
+    ],
+    "2027-12-16": [
+      "RESTO",
+      "BOGAR",
+      "ROSAR",
+      "PLAYO"
+    ],
+    "2027-12-17": [
+      "PURGA",
+      "DRUPA",
+      "ZAGUA",
+      "VUELO"
+    ],
+    "2027-12-18": [
+      "FUERO",
+      "OZENA",
+      "AVEZA",
+      "QUEJO"
+    ],
+    "2027-12-19": [
+      "MEADO",
+      "DUDAR",
+      "CATOS",
+      "BUCES"
+    ],
+    "2027-12-20": [
+      "MASLO",
+      "SACHO",
+      "ENTRE",
+      "SARNA"
+    ],
+    "2027-12-21": [
+      "TIMON",
+      "POLIR",
+      "HUERA",
+      "SUIZA"
+    ],
+    "2027-12-22": [
+      "RAZAR",
+      "POBRA",
+      "TOREO",
+      "CODEX"
+    ],
+    "2027-12-23": [
+      "POISE",
+      "ENEMA",
+      "GARMA",
+      "AMBON"
+    ],
+    "2027-12-24": [
+      "JORGA",
+      "AJORO",
+      "TORMO",
+      "BISAR"
+    ],
+    "2027-12-25": [
+      "ALEDA",
+      "NABAL",
+      "AÑERO",
+      "BRISA"
+    ],
+    "2027-12-26": [
+      "ZANCA",
+      "AMARO",
+      "BARZA",
+      "TIMAR"
+    ],
+    "2027-12-27": [
+      "PESGO",
+      "BOTIN",
+      "SARRO",
+      "COPAL"
+    ],
+    "2027-12-28": [
+      "LINIO",
+      "PEAÑA",
+      "CISCO",
+      "ENVES"
+    ],
+    "2027-12-29": [
+      "SUBEO",
+      "SAXEO",
+      "LEVAR",
+      "MAMBI"
+    ],
+    "2027-12-30": [
+      "BAFLE",
+      "SENDA",
+      "GALON",
+      "GRUIR"
+    ],
+    "2027-12-31": [
+      "GENOL",
+      "MORSA",
+      "BAZAR",
+      "SAETA"
+    ],
+    "2028-01-01": [
+      "RESPE",
+      "FENDI",
+      "PEMON",
+      "ONDRA"
+    ],
+    "2028-01-02": [
+      "ZALEO",
+      "CASAR",
+      "USUAL",
+      "VIRUS"
+    ],
+    "2028-01-03": [
+      "TUTIA",
+      "FRISO",
+      "PELAR",
+      "GARLA"
+    ],
+    "2028-01-04": [
+      "MACLA",
+      "GALIO",
+      "MIAJA",
+      "TUMBA"
+    ],
+    "2028-01-05": [
+      "GARZA",
+      "POLIO",
+      "MANTA",
+      "TENOR"
+    ],
+    "2028-01-06": [
+      "NEBEL",
+      "BLAVO",
+      "HETEO",
+      "PODAL"
+    ],
+    "2028-01-07": [
+      "ARRAZ",
+      "APEGO",
+      "TITIS",
+      "BRUZA"
+    ],
+    "2028-01-08": [
+      "GALEA",
+      "CHUPE",
+      "ELLOS",
+      "CUICA"
+    ],
+    "2028-01-09": [
+      "CACHO",
+      "CULLE",
+      "LOLIO",
+      "MUSAR"
+    ],
+    "2028-01-10": [
+      "CHULE",
+      "CAMBO",
+      "CUJIN",
+      "PLAYA"
+    ],
+    "2028-01-11": [
+      "RONDO",
+      "BALAY",
+      "RISCO",
+      "NANCE"
+    ],
+    "2028-01-12": [
+      "TRAJE",
+      "ARBOL",
+      "COPEY",
+      "AMIBA"
+    ],
+    "2028-01-13": [
+      "DRAGO",
+      "FERIA",
+      "CELLO",
+      "TIMPA"
+    ],
+    "2028-01-14": [
+      "CABRA",
+      "EPOCA",
+      "TEBEO",
+      "ARRAS"
+    ],
+    "2028-01-15": [
+      "BUZON",
+      "POLEN",
+      "TONGO",
+      "BAMBA"
+    ],
+    "2028-01-16": [
+      "CANEY",
+      "CODON",
+      "SECON",
+      "NARCO"
+    ],
+    "2028-01-17": [
+      "UÑERO",
+      "SONTO",
+      "TODIA",
+      "TOCIA"
+    ],
+    "2028-01-18": [
+      "ULANO",
+      "LLAGA",
+      "BOZON",
+      "SOROR"
+    ],
+    "2028-01-19": [
+      "ROZON",
+      "PEPON",
+      "SARZO",
+      "OLURA"
+    ],
+    "2028-01-20": [
+      "CACAN",
+      "LOINO",
+      "TRETA",
+      "PALPO"
+    ],
+    "2028-01-21": [
+      "MUELA",
+      "SAMIO",
+      "PATER",
+      "ACUTO"
+    ],
+    "2028-01-22": [
+      "BURIL",
+      "AYUNO",
+      "LAUDA",
+      "AILLU"
+    ],
+    "2028-01-23": [
+      "GUATE",
+      "ACERE",
+      "CAÑON",
+      "FURIA"
+    ],
+    "2028-01-24": [
+      "FINCA",
+      "CRIBA",
+      "LOBBY",
+      "TEMPO"
+    ],
+    "2028-01-25": [
+      "CLEMA",
+      "NARES",
+      "CENCO",
+      "COCHO"
+    ],
+    "2028-01-26": [
+      "RATEO",
+      "FUESA",
+      "NUNCA",
+      "ALACO"
+    ],
+    "2028-01-27": [
+      "DRABA",
+      "TRIPA",
+      "MELIS",
+      "INOPE"
+    ],
+    "2028-01-28": [
+      "HOSCO",
+      "PADEL",
+      "ACATO",
+      "DESTE"
+    ],
+    "2028-01-29": [
+      "MEJER",
+      "CHOFE",
+      "HUIDO",
+      "TORPE"
+    ],
+    "2028-01-30": [
+      "ARRIA",
+      "TERCO",
+      "CARDO",
+      "MORRA"
+    ],
+    "2028-01-31": [
+      "COIME",
+      "BEQUE",
+      "BACAN",
+      "VILLA"
+    ],
+    "2028-02-01": [
+      "ZAMBO",
+      "VESTE",
+      "FEUCO",
+      "EPODA"
+    ],
+    "2028-02-02": [
+      "DUCAS",
+      "UPUPA",
+      "AGUAI",
+      "MAEÑO"
+    ],
+    "2028-02-03": [
+      "CHUÑA",
+      "VENDO",
+      "MASTE",
+      "LEZNA"
+    ],
+    "2028-02-04": [
+      "ROBAR",
+      "CHIAR",
+      "LUMBO",
+      "OMANI"
+    ],
+    "2028-02-05": [
+      "HUACA",
+      "CONGA",
+      "PARSI",
+      "BICAL"
+    ],
+    "2028-02-06": [
+      "RIZON",
+      "OSETA",
+      "LIMBO",
+      "BRAGA"
+    ],
+    "2028-02-07": [
+      "TOJAL",
+      "JOULE",
+      "QUARK",
+      "PENCO"
+    ],
+    "2028-02-08": [
+      "NIPOS",
+      "CIEGO",
+      "CORAL",
+      "POPES"
+    ],
+    "2028-02-09": [
+      "ALZAR",
+      "JIJAS",
+      "MODAL",
+      "TAFON"
+    ],
+    "2028-02-10": [
+      "MARSO",
+      "COBEZ",
+      "TRUST",
+      "CACHU"
+    ],
+    "2028-02-11": [
+      "LOGOS",
+      "TUPIR",
+      "MACIA",
+      "AUSOL"
+    ],
+    "2028-02-12": [
+      "BEJIN",
+      "BUSTO",
+      "SAGAZ",
+      "CINCA"
+    ],
+    "2028-02-13": [
+      "BUENA",
+      "CUCHO",
+      "MAPEO",
+      "CRUDA"
+    ],
+    "2028-02-14": [
+      "PALLA",
+      "DANTO",
+      "GNOMO",
+      "OSEAR"
+    ],
+    "2028-02-15": [
+      "CHUTO",
+      "DECOR",
+      "LODRA",
+      "BAMBU"
+    ],
+    "2028-02-16": [
+      "PAPAR",
+      "OZONA",
+      "OJOTA",
+      "TRONO"
+    ],
+    "2028-02-17": [
+      "LIRON",
+      "ADIVE",
+      "GRUPA",
+      "LIBON"
+    ],
+    "2028-02-18": [
+      "NITOR",
+      "BUFEO",
+      "AMOMO",
+      "BIFAZ"
+    ],
+    "2028-02-19": [
+      "ATUFO",
+      "SUDAR",
+      "PROBO",
+      "AUGUR"
+    ],
+    "2028-02-20": [
+      "FARRA",
+      "ETICO",
+      "OLLAR",
+      "SUMIR"
+    ],
+    "2028-02-21": [
+      "MEJOR",
+      "ACARO",
+      "ERCER",
+      "UMBRA"
+    ],
+    "2028-02-22": [
+      "ASOMO",
+      "CHANA",
+      "LENTO",
+      "PRAVO"
+    ],
+    "2028-02-23": [
+      "POLIN",
+      "SALEA",
+      "RODEO",
+      "RUEDA"
+    ],
+    "2028-02-24": [
+      "CILIO",
+      "CALAN",
+      "VINTA",
+      "CHETO"
+    ],
+    "2028-02-25": [
+      "SOEZA",
+      "ZANJO",
+      "CULAR",
+      "ALPES"
+    ],
+    "2028-02-26": [
+      "ARGON",
+      "BULBO",
+      "PERTA",
+      "ATRIO"
+    ],
+    "2028-02-27": [
+      "REZAR",
+      "CICCA",
+      "SESGO",
+      "TOPIL"
+    ],
+    "2028-02-28": [
+      "COSER",
+      "LESNA",
+      "ROSCO",
+      "PISON"
+    ],
+    "2028-02-29": [
+      "NABAR",
+      "MUDEZ",
+      "CIMIA",
+      "HOQUE"
+    ],
+    "2028-03-01": [
+      "JUNCO",
+      "LILAO",
+      "BEMBE",
+      "POYAR"
+    ],
+    "2028-03-02": [
+      "BOINA",
+      "HACER",
+      "VARON",
+      "TORSO"
+    ],
+    "2028-03-03": [
+      "VIVAC",
+      "URUBU",
+      "PASIL",
+      "DEÑAR"
+    ],
+    "2028-03-04": [
+      "MEDIR",
+      "PIGUA",
+      "GAMBA",
+      "PESTO"
+    ],
+    "2028-03-05": [
+      "POTRA",
+      "LOMBO",
+      "ICHAL",
+      "BUTIA"
+    ],
+    "2028-03-06": [
+      "MEANO",
+      "PASTE",
+      "TAFUR",
+      "GNEIS"
+    ],
+    "2028-03-07": [
+      "PARDO",
+      "MAMUA",
+      "MOLSA",
+      "ZUZAR"
+    ],
+    "2028-03-08": [
+      "TILLA",
+      "JARRA",
+      "METRO",
+      "AMIGO"
+    ],
+    "2028-03-09": [
+      "OBICE",
+      "NORMA",
+      "CHIMU",
+      "APEAR"
+    ],
+    "2028-03-10": [
+      "SEDAL",
+      "UVATE",
+      "NIMIO",
+      "REZON"
+    ],
+    "2028-03-11": [
+      "PEUMO",
+      "HUIRO",
+      "BOIRA",
+      "ABUSO"
+    ],
+    "2028-03-12": [
+      "YUCAL",
+      "ROETE",
+      "DEBDA",
+      "LITRE"
+    ],
+    "2028-03-13": [
+      "OVOSO",
+      "TALLA",
+      "TOCON",
+      "NUTRA"
+    ],
+    "2028-03-14": [
+      "SUBTE",
+      "CROAR",
+      "RIMEL",
+      "NAPEO"
+    ],
+    "2028-03-15": [
+      "ACEÑA",
+      "BROMO",
+      "HOYAR",
+      "TAIFA"
+    ],
+    "2028-03-16": [
+      "FAUNA",
+      "AYACO",
+      "RALLY",
+      "CALVA"
+    ],
+    "2028-03-17": [
+      "PELVI",
+      "HERIR",
+      "MANTO",
+      "LEILA"
+    ],
+    "2028-03-18": [
+      "ZONAL",
+      "COIPO",
+      "ZARZA",
+      "PODON"
+    ],
+    "2028-03-19": [
+      "XENON",
+      "ROBIN",
+      "COREO",
+      "BRAÑA"
+    ],
+    "2028-03-20": [
+      "LAPIZ",
+      "POLEX",
+      "URICO",
+      "PIADA"
+    ],
+    "2028-03-21": [
+      "LLOSA",
+      "ZAMPA",
+      "TRACE",
+      "LABIL"
+    ],
+    "2028-03-22": [
+      "RITON",
+      "TRAZA",
+      "ACULA",
+      "KOALA"
+    ],
+    "2028-03-23": [
+      "LIPON",
+      "MOFAR",
+      "GOCHA",
+      "NEMON"
+    ],
+    "2028-03-24": [
+      "FREIR",
+      "TILMA",
+      "BLUSA",
+      "TIQUI"
+    ],
+    "2028-03-25": [
+      "TABON",
+      "MOBLE",
+      "OBITO",
+      "BELLO"
+    ],
+    "2028-03-26": [
+      "YESON",
+      "NOTRO",
+      "GLERA",
+      "ANGOR"
+    ],
+    "2028-03-27": [
+      "BASTO",
+      "HOSPA",
+      "FILIS",
+      "NARIZ"
+    ],
+    "2028-03-28": [
+      "ÑIZCA",
+      "TUNCO",
+      "PIPAR",
+      "EBANO"
+    ],
+    "2028-03-29": [
+      "SOPLO",
+      "PAGAR",
+      "MATIZ",
+      "BUGLE"
+    ],
+    "2028-03-30": [
+      "JORFE",
+      "ABADI",
+      "CUTER",
+      "MOTON"
+    ],
+    "2028-03-31": [
+      "ÑORBO",
+      "RONCA",
+      "EFORO",
+      "TUMOR"
+    ],
+    "2028-04-01": [
+      "PERAL",
+      "EMULO",
+      "CHOBA",
+      "SUNNI"
+    ],
+    "2028-04-02": [
+      "YATAY",
+      "FOLLA",
+      "CAJON",
+      "UÑETA"
+    ],
+    "2028-04-03": [
+      "BATEL",
+      "ORSAY",
+      "NATRI",
+      "CHOCO"
+    ],
+    "2028-04-04": [
+      "ORGIA",
+      "DOGAL",
+      "LLERA",
+      "RADON"
+    ],
+    "2028-04-05": [
+      "AMINA",
+      "COMPA",
+      "CERNE",
+      "ASCUA"
+    ],
+    "2028-04-06": [
+      "RIÑON",
+      "ARECA",
+      "MEYOR",
+      "PLECA"
+    ],
+    "2028-04-07": [
+      "DOMBO",
+      "SABOR",
+      "BANDO",
+      "HARPA"
+    ],
+    "2028-04-08": [
+      "AZALA",
+      "ESTER",
+      "OCREY",
+      "FISIO"
+    ],
+    "2028-04-09": [
+      "MANDI",
+      "MODEM",
+      "COEVO",
+      "ALAUI"
+    ],
+    "2028-04-10": [
+      "CHOCA",
+      "AMIGA",
+      "VERAS",
+      "PITON"
+    ],
+    "2028-04-11": [
+      "TANOR",
+      "OVEJA",
+      "LLEVE",
+      "SEGUR"
+    ],
+    "2028-04-12": [
+      "COYAN",
+      "CANTE",
+      "CHOTO",
+      "SUDOR"
+    ],
+    "2028-04-13": [
+      "SOPOR",
+      "SARDE",
+      "RATON",
+      "ARPAR"
+    ],
+    "2028-04-14": [
+      "VENDA",
+      "LAMPA",
+      "CURIO",
+      "SISCA"
+    ],
+    "2028-04-15": [
+      "TRUSA",
+      "TRIZA",
+      "TUCAN",
+      "MACUA"
+    ],
+    "2028-04-16": [
+      "ABACA",
+      "BAIFO",
+      "HURRA",
+      "CEÑIR"
+    ],
+    "2028-04-17": [
+      "HONRA",
+      "RIFAR",
+      "JODER",
+      "OCOTE"
+    ],
+    "2028-04-18": [
+      "CLIMA",
+      "DOLAR",
+      "FETOR",
+      "JALDE"
+    ],
+    "2028-04-19": [
+      "GUATA",
+      "SABRE",
+      "SUENO",
+      "PARIR"
+    ],
+    "2028-04-20": [
+      "FEROZ",
+      "ROLLA",
+      "LUEGO",
+      "CHUCA"
+    ],
+    "2028-04-21": [
+      "CHAUZ",
+      "ZALBO",
+      "ESCOA",
+      "CURTO"
+    ],
+    "2028-04-22": [
+      "PREDA",
+      "NUEVA",
+      "BITOR",
+      "NEBLI"
+    ],
+    "2028-04-23": [
+      "ZUÑIR",
+      "CEBRO",
+      "FASTO",
+      "ARZON"
+    ],
+    "2028-04-24": [
+      "CAMPO",
+      "TABOR",
+      "YAMAO",
+      "FATUO"
+    ],
+    "2028-04-25": [
+      "OSADO",
+      "SOSAL",
+      "BETUN",
+      "MAORI"
+    ],
+    "2028-04-26": [
+      "CORTO",
+      "ZEINA",
+      "LISIS",
+      "URGIR"
+    ],
+    "2028-04-27": [
+      "GUAYO",
+      "MOCHA",
+      "ACIAL",
+      "ITZAJ"
+    ],
+    "2028-04-28": [
+      "ATEAR",
+      "MITON",
+      "FAINO",
+      "AUDIO"
+    ],
+    "2028-04-29": [
+      "MENGE",
+      "FLUIR",
+      "TETRO",
+      "GOCHO"
+    ],
+    "2028-04-30": [
+      "PUNTO",
+      "GRADO",
+      "SUTIL",
+      "ASINA"
+    ],
+    "2028-05-01": [
+      "TARAR",
+      "MIRLA",
+      "CALZO",
+      "ZOQUE"
+    ],
+    "2028-05-02": [
+      "VISCO",
+      "LANDA",
+      "NOCHE",
+      "PUÑIR"
+    ],
+    "2028-05-03": [
+      "CHAUL",
+      "OSTIA",
+      "AFACA",
+      "CECEO"
+    ],
+    "2028-05-04": [
+      "TAPAR",
+      "TARDE",
+      "RUBEO",
+      "BURIO"
+    ],
+    "2028-05-05": [
+      "NIVEO",
+      "ZAINA",
+      "POSIT",
+      "SALIO"
+    ],
+    "2028-05-06": [
+      "BALIN",
+      "PIOLA",
+      "LIMAR",
+      "CUCAR"
+    ],
+    "2028-05-07": [
+      "LAZAR",
+      "URUGA",
+      "QUIJO",
+      "PALON"
+    ],
+    "2028-05-08": [
+      "ONDEO",
+      "PLANA",
+      "COMUN",
+      "VELAY"
+    ],
+    "2028-05-09": [
+      "SICLO",
+      "SOCAZ",
+      "APNEA",
+      "TARMA"
+    ],
+    "2028-05-10": [
+      "CARDA",
+      "MIRZA",
+      "TELAR",
+      "EGIDA"
+    ],
+    "2028-05-11": [
+      "MASER",
+      "ROBRA",
+      "CHAMA",
+      "GRASA"
+    ],
+    "2028-05-12": [
+      "BURDA",
+      "MINIO",
+      "RENIO",
+      "ACUSE"
+    ],
+    "2028-05-13": [
+      "RABIA",
+      "SALSO",
+      "COYOL",
+      "SORCE"
+    ],
+    "2028-05-14": [
+      "PRIMA",
+      "BROCA",
+      "TRAPO",
+      "OSUNO"
+    ],
+    "2028-05-15": [
+      "TOLDO",
+      "TRINO",
+      "NOMAS",
+      "MULLO"
+    ],
+    "2028-05-16": [
+      "LEGAR",
+      "ALHOZ",
+      "SONAR",
+      "ANCHA"
+    ],
+    "2028-05-17": [
+      "FALTE",
+      "LOTEO",
+      "SONDA",
+      "GESTO"
+    ],
+    "2028-05-18": [
+      "MOLAR",
+      "LOGIS",
+      "UNCIA",
+      "CAPIN"
+    ],
+    "2028-05-19": [
+      "HUILO",
+      "AHILO",
+      "TEÑIR",
+      "VARGA"
+    ],
+    "2028-05-20": [
+      "NUMEN",
+      "RAPTA",
+      "TINTA",
+      "PAXTE"
+    ],
+    "2028-05-21": [
+      "UÑADO",
+      "PEUCO",
+      "HIERA",
+      "ANEXO"
+    ],
+    "2028-05-22": [
+      "VELIZ",
+      "GILVO",
+      "INGLE",
+      "MINAZ"
+    ],
+    "2028-05-23": [
+      "JUVIA",
+      "JUGAR",
+      "NIARA",
+      "CAVON"
+    ],
+    "2028-05-24": [
+      "ASEAR",
+      "AHORA",
+      "MESTO",
+      "AXILA"
+    ],
+    "2028-05-25": [
+      "AQUEO",
+      "BICHA",
+      "BONUS",
+      "ZUECA"
+    ],
+    "2028-05-26": [
+      "GULES",
+      "GIBAO",
+      "RUBRO",
+      "COPAR"
+    ],
+    "2028-05-27": [
+      "LOGIA",
+      "VIVIR",
+      "ZARBO",
+      "IBERO"
+    ],
+    "2028-05-28": [
+      "SOPIE",
+      "FONIO",
+      "PRAZA",
+      "SORNA"
+    ],
+    "2028-05-29": [
+      "PUTON",
+      "OMEGA",
+      "HACHA",
+      "ABISO"
+    ],
+    "2028-05-30": [
+      "ACOSO",
+      "DELIO",
+      "DATAR",
+      "JIBIA"
+    ],
+    "2028-05-31": [
+      "MAGRO",
+      "AZORO",
+      "ALTAR",
+      "TABLA"
+    ],
+    "2028-06-01": [
+      "SERVO",
+      "SOLFA",
+      "ONOTO",
+      "ABADA"
+    ],
+    "2028-06-02": [
+      "YUCPA",
+      "FAENA",
+      "ETANO",
+      "AMEOS"
+    ],
+    "2028-06-03": [
+      "PELEA",
+      "YURAS",
+      "COLON",
+      "POZAL"
+    ],
+    "2028-06-04": [
+      "HENAL",
+      "MUSEO",
+      "DICAZ",
+      "GRIPO"
+    ],
+    "2028-06-05": [
+      "JOCON",
+      "VALLA",
+      "MUJOL",
+      "AVISO"
+    ],
+    "2028-06-06": [
+      "MODIO",
+      "OCELO",
+      "PORTA",
+      "RODIO"
+    ],
+    "2028-06-07": [
+      "VARAL",
+      "RALEO",
+      "MAGMA",
+      "UÑADA"
+    ],
+    "2028-06-08": [
+      "ASTER",
+      "FILFA",
+      "DECIR",
+      "POLEO"
+    ],
+    "2028-06-09": [
+      "FRAGA",
+      "CABLE",
+      "ROZNO",
+      "SIENA"
+    ],
+    "2028-06-10": [
+      "GACHI",
+      "OJALA",
+      "ALICA",
+      "DIANA"
+    ],
+    "2028-06-11": [
+      "FIRMA",
+      "CORDA",
+      "OSCAR",
+      "CHAJA"
+    ],
+    "2028-06-12": [
+      "COSTO",
+      "CINTO",
+      "VOLEA",
+      "LUCRO"
+    ],
+    "2028-06-13": [
+      "PIFAS",
+      "TONAR",
+      "CEIBO",
+      "TAPIA"
+    ],
+    "2028-06-14": [
+      "HIENA",
+      "TURCA",
+      "CUINO",
+      "YERNA"
+    ],
+    "2028-06-15": [
+      "ÑIQUE",
+      "TEJER",
+      "ARASA",
+      "TILIA"
+    ],
+    "2028-06-16": [
+      "OLLAO",
+      "OBELO",
+      "FARON",
+      "BAYAL"
+    ],
+    "2028-06-17": [
+      "CIFRA",
+      "MISAL",
+      "TEOSO",
+      "LITUO"
+    ],
+    "2028-06-18": [
+      "GAÑON",
+      "PROSA",
+      "ENANO",
+      "ETICA"
+    ],
+    "2028-06-19": [
+      "SOPON",
+      "COPIN",
+      "SENIL",
+      "PICHO"
+    ],
+    "2028-06-20": [
+      "PLAGA",
+      "EDRAR",
+      "AHITO",
+      "LIBRO"
+    ],
+    "2028-06-21": [
+      "MEDIO",
+      "FOVEA",
+      "FLAVO",
+      "FACHA"
+    ],
+    "2028-06-22": [
+      "PETAR",
+      "HOLCO",
+      "FARIA",
+      "PRION"
+    ],
+    "2028-06-23": [
+      "CUZMA",
+      "ESCAY",
+      "GRAMA",
+      "TUSCO"
+    ],
+    "2028-06-24": [
+      "HULAR",
+      "PAÑOL",
+      "FREON",
+      "SARIA"
+    ],
+    "2028-06-25": [
+      "OMERO",
+      "CAPUZ",
+      "BEDEL",
+      "YERRA"
+    ],
+    "2028-06-26": [
+      "FENAL",
+      "RELEJ",
+      "LINDE",
+      "HERTZ"
+    ],
+    "2028-06-27": [
+      "SAJAR",
+      "GLIAL",
+      "CHACO",
+      "ORDEN"
+    ],
+    "2028-06-28": [
+      "AMPAY",
+      "FREDO",
+      "PARCA",
+      "TENIA"
+    ],
+    "2028-06-29": [
+      "RAUCO",
+      "TONAL",
+      "ZARJA",
+      "MURAL"
+    ],
+    "2028-06-30": [
+      "ARFAR",
+      "CECAL",
+      "TENUE",
+      "COLZA"
+    ],
+    "2028-07-01": [
+      "ZUECO",
+      "CORLA",
+      "CUAPE",
+      "DABLE"
+    ],
+    "2028-07-02": [
+      "ARAZA",
+      "ARGEL",
+      "CAPIO",
+      "SONSO"
+    ],
+    "2028-07-03": [
+      "GUBIA",
+      "EOLIO",
+      "ESMOG",
+      "COBEA"
+    ],
+    "2028-07-04": [
+      "NATAL",
+      "SEICO",
+      "AMENO",
+      "DUEÑO"
+    ],
+    "2028-07-05": [
+      "JETAR",
+      "ANIMA",
+      "TALLO",
+      "TRENO"
+    ],
+    "2028-07-06": [
+      "PUNZO",
+      "NEBRO",
+      "MUÑIR",
+      "ARGOT"
+    ],
+    "2028-07-07": [
+      "IGNEO",
+      "FAROL",
+      "PAÑAL",
+      "SULLA"
+    ],
+    "2028-07-08": [
+      "TIRRO",
+      "RELOJ",
+      "DIADO",
+      "SISON"
+    ],
+    "2028-07-09": [
+      "LASCA",
+      "SAJON",
+      "FACTO",
+      "QUESO"
+    ],
+    "2028-07-10": [
+      "ZUELA",
+      "ALIOJ",
+      "ATOAR",
+      "JIMEN"
+    ],
+    "2028-07-11": [
+      "TORCA",
+      "NELDO",
+      "CETIS",
+      "AONIO"
+    ],
+    "2028-07-12": [
+      "ALAJU",
+      "TITEO",
+      "HUECO",
+      "BOCON"
+    ],
+    "2028-07-13": [
+      "COCUI",
+      "HARRE",
+      "GANTA",
+      "JONIO"
+    ],
+    "2028-07-14": [
+      "VALON",
+      "HUIRA",
+      "CEBTI",
+      "ROGAR"
+    ],
+    "2028-07-15": [
+      "TINEA",
+      "CANTU",
+      "JUTIA",
+      "DEDIL"
+    ],
+    "2028-07-16": [
+      "ANION",
+      "PAVIA",
+      "YAGUA",
+      "NANSA"
+    ],
+    "2028-07-17": [
+      "HUSAR",
+      "ÑEQUE",
+      "TIGUE",
+      "MEDIA"
+    ],
+    "2028-07-18": [
+      "HABER",
+      "YERBA",
+      "TAJEA",
+      "CHINE"
+    ],
+    "2028-07-19": [
+      "LATON",
+      "DUBIO",
+      "GASON",
+      "CUMEL"
+    ],
+    "2028-07-20": [
+      "CIMBA",
+      "CREER",
+      "FILAR",
+      "MATON"
+    ],
+    "2028-07-21": [
+      "TORNO",
+      "ÑAQUE",
+      "FUTIL",
+      "TAÑAR"
+    ],
+    "2028-07-22": [
+      "TINEO",
+      "PLENO",
+      "ASPIC",
+      "RESTA"
+    ],
+    "2028-07-23": [
+      "MUGOR",
+      "CUÑAR",
+      "FRUTA",
+      "PAYAR"
+    ],
+    "2028-07-24": [
+      "CLARO",
+      "LANAR",
+      "FARRO",
+      "GORJA"
+    ],
+    "2028-07-25": [
+      "PIEZA",
+      "HISCA",
+      "JALAR",
+      "CACHA"
+    ],
+    "2028-07-26": [
+      "FLORA",
+      "CHOPA",
+      "GRAVA",
+      "CORBE"
+    ],
+    "2028-07-27": [
+      "CIENO",
+      "ACASO",
+      "GUAMO",
+      "ZOIZO"
+    ],
+    "2028-07-28": [
+      "PULGA",
+      "ATORA",
+      "HAMEZ",
+      "LIANA"
+    ],
+    "2028-07-29": [
+      "PEGUE",
+      "BAILE",
+      "CERCO",
+      "CATIN"
+    ],
+    "2028-07-30": [
+      "VIEJO",
+      "RENTO",
+      "ATRIL",
+      "LUNAR"
+    ],
+    "2028-07-31": [
+      "CREDO",
+      "PARIA",
+      "CAMBA",
+      "TOLMO"
+    ],
+    "2028-08-01": [
+      "MUSLO",
+      "NEVAR",
+      "GRANO",
+      "METRA"
+    ],
+    "2028-08-02": [
+      "CARRA",
+      "RIERA",
+      "COCHE",
+      "PUJAR"
+    ],
+    "2028-08-03": [
+      "SACIO",
+      "MAOMA",
+      "YENTE",
+      "GOMIA"
+    ],
+    "2028-08-04": [
+      "GRIFA",
+      "BROTA",
+      "COATI",
+      "CONGO"
+    ],
+    "2028-08-05": [
+      "AROMA",
+      "CELLA",
+      "ARAÑO",
+      "PANDA"
+    ],
+    "2028-08-06": [
+      "GORDO",
+      "VILOS",
+      "FALSO",
+      "TUTEO"
+    ],
+    "2028-08-07": [
+      "AYUSO",
+      "PAUTA",
+      "BAULA",
+      "HABUS"
+    ],
+    "2028-08-08": [
+      "ARCEN",
+      "TRABA",
+      "MAREA",
+      "CARAO"
+    ],
+    "2028-08-09": [
+      "CHUTE",
+      "SESMA",
+      "OLOTE",
+      "CURIA"
+    ],
+    "2028-08-10": [
+      "RENDA",
+      "CUMPA",
+      "FIFAR",
+      "BANAL"
+    ],
+    "2028-08-11": [
+      "BRUTO",
+      "SILGA",
+      "MARGA",
+      "MONGO"
+    ],
+    "2028-08-12": [
+      "RECTA",
+      "ZEBRA",
+      "LAÑAR",
+      "PIPON"
+    ],
+    "2028-08-13": [
+      "FUSTA",
+      "MENOR",
+      "VERMU",
+      "CEAJO"
+    ],
+    "2028-08-14": [
+      "JACHA",
+      "VISTA",
+      "TENIO",
+      "CEBAR"
+    ],
+    "2028-08-15": [
+      "YAPAR",
+      "TALMA",
+      "SOVOZ",
+      "TOSER"
+    ],
+    "2028-08-16": [
+      "GUASO",
+      "BIJOL",
+      "TOÑIL",
+      "SAFIR"
+    ],
+    "2028-08-17": [
+      "CUYEO",
+      "CENIA",
+      "YEZGO",
+      "OPTAR"
+    ],
+    "2028-08-18": [
+      "LLORO",
+      "PAINA",
+      "ZAFON",
+      "ARADO"
+    ],
+    "2028-08-19": [
+      "ERMAR",
+      "TINTE",
+      "FERRY",
+      "PAMBA"
+    ],
+    "2028-08-20": [
+      "VODCA",
+      "PERCA",
+      "LESEO",
+      "ABASI"
+    ],
+    "2028-08-21": [
+      "FISAN",
+      "FOSIL",
+      "BATUA",
+      "PIRLA"
+    ],
+    "2028-08-22": [
+      "LOCAL",
+      "CUSMA",
+      "TEQUE",
+      "NUESO"
+    ],
+    "2028-08-23": [
+      "MAJAR",
+      "TALGO",
+      "ARCHI",
+      "CUTRA"
+    ],
+    "2028-08-24": [
+      "TIMBA",
+      "RODAO",
+      "YATAI",
+      "CEGAR"
+    ],
+    "2028-08-25": [
+      "SOBEO",
+      "CIVIL",
+      "NOVEN",
+      "ORIBE"
+    ],
+    "2028-08-26": [
+      "POLCA",
+      "AVARO",
+      "HUMAR",
+      "HELAR"
+    ],
+    "2028-08-27": [
+      "LLENA",
+      "BULDA",
+      "VERBA",
+      "GAMMA"
+    ],
+    "2028-08-28": [
+      "GUIJA",
+      "MISAR",
+      "RIOJA",
+      "AVIDO"
+    ],
+    "2028-08-29": [
+      "PANDO",
+      "TERNA",
+      "EBRIO",
+      "YESCA"
+    ],
+    "2028-08-30": [
+      "LIGIO",
+      "ARANA",
+      "SIMIL",
+      "FATAL"
+    ],
+    "2028-08-31": [
+      "DACHA",
+      "PASEO",
+      "ALIMO",
+      "CHINO"
+    ],
+    "2028-09-01": [
+      "UTERO",
+      "NOBLE",
+      "ZAFAR",
+      "TRARO"
+    ],
+    "2028-09-02": [
+      "VAREA",
+      "TRIGA",
+      "TORTA",
+      "TUNAR"
+    ],
+    "2028-09-03": [
+      "ALIER",
+      "SISAR",
+      "CACEA",
+      "QUISA"
+    ],
+    "2028-09-04": [
+      "ACLLA",
+      "ESTAR",
+      "BOLDO",
+      "LOCHA"
+    ],
+    "2028-09-05": [
+      "AHOGO",
+      "SONIO",
+      "LITAR",
+      "CAPPA"
+    ],
+    "2028-09-06": [
+      "YESAL",
+      "COTAR",
+      "RIFLE",
+      "ALELI"
+    ],
+    "2028-09-07": [
+      "SELVA",
+      "TOPON",
+      "ITALO",
+      "FRUIR"
+    ],
+    "2028-09-08": [
+      "ACUYO",
+      "PUDIR",
+      "VIEJA",
+      "ÑISCA"
+    ],
+    "2028-09-09": [
+      "GISTE",
+      "SILVA",
+      "REATO",
+      "YODAR"
+    ],
+    "2028-09-10": [
+      "LLAMA",
+      "HILAR",
+      "ÑANGA",
+      "MEREY"
+    ],
+    "2028-09-11": [
+      "ABOZO",
+      "MECER",
+      "RUTEL",
+      "FESTA"
+    ],
+    "2028-09-12": [
+      "CRUZA",
+      "AINAS",
+      "RANDA",
+      "MURAR"
+    ],
+    "2028-09-13": [
+      "VOLON",
+      "YERAL",
+      "PESOL",
+      "NICHO"
+    ],
+    "2028-09-14": [
+      "BEMOL",
+      "CALZA",
+      "PARGO",
+      "TORES"
+    ],
+    "2028-09-15": [
+      "GROMO",
+      "FOCAL",
+      "SIMIO",
+      "CIMAR"
+    ],
+    "2028-09-16": [
+      "FALTA",
+      "GUAMA",
+      "GLEBA",
+      "NAPEA"
+    ],
+    "2028-09-17": [
+      "TABAL",
+      "NAFRA",
+      "SIFON",
+      "DOPAR"
+    ],
+    "2028-09-18": [
+      "MARIA",
+      "BOREO",
+      "PUÑAL",
+      "PODER"
+    ],
+    "2028-09-19": [
+      "CAREA",
+      "SUCIO",
+      "CUATE",
+      "APURO"
+    ],
+    "2028-09-20": [
+      "CALLO",
+      "FECHO",
+      "BRUNO",
+      "LAUDE"
+    ],
+    "2028-09-21": [
+      "MERSA",
+      "GARBO",
+      "SARGA",
+      "COLPE"
+    ],
+    "2028-09-22": [
+      "NOVEL",
+      "MONDA",
+      "ADOBA",
+      "PLACA"
+    ],
+    "2028-09-23": [
+      "SISAL",
+      "HINDU",
+      "ATONA",
+      "TACET"
+    ],
+    "2028-09-24": [
+      "MADRE",
+      "GUINO",
+      "CEUTI",
+      "ZUIZA"
+    ],
+    "2028-09-25": [
+      "SILLA",
+      "RADAL",
+      "ACEMA",
+      "NAIRE"
+    ],
+    "2028-09-26": [
+      "ÑECLA",
+      "NADIE",
+      "RADIO",
+      "BERMA"
+    ],
+    "2028-09-27": [
+      "TALAN",
+      "LAMPO",
+      "GONCE",
+      "HOLAN"
+    ],
+    "2028-09-28": [
+      "ROSJO",
+      "ARFIL",
+      "TAINO",
+      "PAJEL"
+    ],
+    "2028-09-29": [
+      "COÑAC",
+      "UNCIR",
+      "PINOL",
+      "JALEO"
+    ],
+    "2028-09-30": [
+      "TENER",
+      "JEJEN",
+      "CULON",
+      "SABER"
+    ],
+    "2028-10-01": [
+      "CANSO",
+      "HUERO",
+      "JIMIA",
+      "EUBEO"
+    ],
+    "2028-10-02": [
+      "CAMIO",
+      "CUCUY",
+      "RIZAL",
+      "ALBIN"
+    ],
+    "2028-10-03": [
+      "TRILE",
+      "DETAL",
+      "GIBAR",
+      "GRAPO"
+    ],
+    "2028-10-04": [
+      "YAITI",
+      "LAGAR",
+      "ATILA",
+      "ALIFA"
+    ],
+    "2028-10-05": [
+      "BOYAR",
+      "VERJA",
+      "PARCO",
+      "FERAL"
+    ],
+    "2028-10-06": [
+      "FINAR",
+      "ZAGAL",
+      "DAIFA",
+      "DORAR"
+    ],
+    "2028-10-07": [
+      "TEXTO",
+      "FACER",
+      "ACETO",
+      "FALTO"
+    ],
+    "2028-10-08": [
+      "PONTO",
+      "PEPLO",
+      "ODEON",
+      "HAREN"
+    ],
+    "2028-10-09": [
+      "RAMIO",
+      "NALGA",
+      "PANEL",
+      "MUTIS"
+    ],
+    "2028-10-10": [
+      "SIEGA",
+      "CHIDO",
+      "SIMPA",
+      "HEBRA"
+    ],
+    "2028-10-11": [
+      "CACUY",
+      "UNGIR",
+      "VACAR",
+      "GRUPO"
+    ],
+    "2028-10-12": [
+      "HABON",
+      "CEJAR",
+      "BULIN",
+      "POETA"
+    ],
+    "2028-10-13": [
+      "PAJIL",
+      "REAJE",
+      "COCOL",
+      "POPEL"
+    ],
+    "2028-10-14": [
+      "GALOP",
+      "CUETE",
+      "SIGNO",
+      "PALOR"
+    ],
+    "2028-10-15": [
+      "MEIGO",
+      "CEDER",
+      "BUQUE",
+      "JIÑAR"
+    ],
+    "2028-10-16": [
+      "BOCHA",
+      "CHAYA",
+      "LUCIO",
+      "COJON"
+    ],
+    "2028-10-17": [
+      "VASTO",
+      "OVALO",
+      "BULTO",
+      "LACRE"
+    ],
+    "2028-10-18": [
+      "VIVON",
+      "LECHA",
+      "BACHE",
+      "UVULA"
+    ],
+    "2028-10-19": [
+      "LAMIN",
+      "CHIPE",
+      "CLOTA",
+      "VAGAR"
+    ],
+    "2028-10-20": [
+      "HUSMO",
+      "CAMAL",
+      "VINAR",
+      "OJITO"
+    ],
+    "2028-10-21": [
+      "ÑAMPI",
+      "MARCO",
+      "ALALA",
+      "ALFIL"
+    ],
+    "2028-10-22": [
+      "COMIC",
+      "ARENA",
+      "CUNAR",
+      "LUGRE"
+    ],
+    "2028-10-23": [
+      "MIRAR",
+      "BOJEO",
+      "KEFIR",
+      "LARRA"
+    ],
+    "2028-10-24": [
+      "CHOVA",
+      "FIGLE",
+      "XIOTE",
+      "VAGON"
+    ],
+    "2028-10-25": [
+      "MUTRO",
+      "TELEX",
+      "MELGA",
+      "CUILO"
+    ],
+    "2028-10-26": [
+      "SABIO",
+      "OBESO",
+      "ARPEO",
+      "NIPIS"
+    ],
+    "2028-10-27": [
+      "TAURO",
+      "QUILO",
+      "GULAY",
+      "GRADA"
+    ],
+    "2028-10-28": [
+      "CUECO",
+      "LLEGA",
+      "JALDA",
+      "NADGA"
+    ],
+    "2028-10-29": [
+      "SUFRA",
+      "BURRA",
+      "CRUDO",
+      "CUMBO"
+    ],
+    "2028-10-30": [
+      "BATEO",
+      "ZAHEN",
+      "ERALA",
+      "POMEZ"
+    ],
+    "2028-10-31": [
+      "CLICA",
+      "TUPIN",
+      "MEROL",
+      "BALEA"
+    ],
+    "2028-11-01": [
+      "CAREO",
+      "LIBRA",
+      "RECEL",
+      "VIRIO"
+    ],
+    "2028-11-02": [
+      "TORAL",
+      "JALEA",
+      "HACHE",
+      "JOYEL"
+    ],
+    "2028-11-03": [
+      "ALEYA",
+      "SANTO",
+      "LIGUE",
+      "ORNAR"
+    ],
+    "2028-11-04": [
+      "PIURE",
+      "SALGA",
+      "CHOTA",
+      "RAMEO"
+    ],
+    "2028-11-05": [
+      "SOTIL",
+      "CUSIR",
+      "TROPA",
+      "INGON"
+    ],
+    "2028-11-06": [
+      "OREJA",
+      "FIERA",
+      "SAQUE",
+      "SALCE"
+    ],
+    "2028-11-07": [
+      "JIGUE",
+      "MUNDO",
+      "SAUDI",
+      "CIECA"
+    ],
+    "2028-11-08": [
+      "MELAR",
+      "MUJER",
+      "ABRIR",
+      "UJIER"
+    ],
+    "2028-11-09": [
+      "CEAJA",
+      "YESAR",
+      "NEURA",
+      "BINAR"
+    ],
+    "2028-11-10": [
+      "GRIMA",
+      "ZUNZA",
+      "FANGO",
+      "CILLA"
+    ],
+    "2028-11-11": [
+      "MACIS",
+      "GULAG",
+      "PEDIR",
+      "PICHI"
+    ],
+    "2028-11-12": [
+      "DONEO",
+      "ACERO",
+      "PROIS",
+      "ENSAY"
+    ],
+    "2028-11-13": [
+      "LICIO",
+      "ESNOB",
+      "DUCHO",
+      "ARCHA"
+    ],
+    "2028-11-14": [
+      "OPADO",
+      "MOMIO",
+      "SORBO",
+      "ALAFA"
+    ],
+    "2028-11-15": [
+      "HUMIL",
+      "NEGAR",
+      "ROBRE",
+      "REVER"
+    ],
+    "2028-11-16": [
+      "AGRIO",
+      "TAIPA",
+      "LUMEN",
+      "REOCA"
+    ],
+    "2028-11-17": [
+      "PRIVA",
+      "PEBRE",
+      "CALAR",
+      "OTEAR"
+    ],
+    "2028-11-18": [
+      "APTAR",
+      "BOCEL",
+      "ALOYA",
+      "FORMA"
+    ],
+    "2028-11-19": [
+      "DOBLO",
+      "LEJIA",
+      "HAUTE",
+      "SIRIO"
+    ],
+    "2028-11-20": [
+      "PLAZA",
+      "ASCIO",
+      "PINAR",
+      "TONDO"
+    ],
+    "2028-11-21": [
+      "COTON",
+      "BIAZA",
+      "NIEVE",
+      "DALLA"
+    ],
+    "2028-11-22": [
+      "MARRA",
+      "SUFLE",
+      "QUIEN",
+      "BASCA"
+    ],
+    "2028-11-23": [
+      "DOTAR",
+      "SALAZ",
+      "PALTO",
+      "ALEVE"
+    ],
+    "2028-11-24": [
+      "COBLA",
+      "PICUY",
+      "MONTA",
+      "ATEJE"
+    ],
+    "2028-11-25": [
+      "SULCO",
+      "ERIAL",
+      "PINTA",
+      "VINCA"
+    ],
+    "2028-11-26": [
+      "BAIDA",
+      "ARDOR",
+      "NUEZA",
+      "IMPIA"
+    ],
+    "2028-11-27": [
+      "MANCO",
+      "PALCA",
+      "JUDIO",
+      "TROVO"
+    ],
+    "2028-11-28": [
+      "FAQUI",
+      "HERRE",
+      "SETAL",
+      "CHIVO"
+    ],
+    "2028-11-29": [
+      "HERMA",
+      "POLCO",
+      "LLACA",
+      "TRIBU"
+    ],
+    "2028-11-30": [
+      "BRUTA",
+      "LITIS",
+      "CLOWN",
+      "FINES"
+    ],
+    "2028-12-01": [
+      "GRUJA",
+      "KARST",
+      "MESON",
+      "CHAZA"
+    ],
+    "2028-12-02": [
+      "PILAR",
+      "DIGNO",
+      "FEUDO",
+      "LAYAR"
+    ],
+    "2028-12-03": [
+      "CHAFA",
+      "TEDIO",
+      "COPLA",
+      "FUEGO"
+    ],
+    "2028-12-04": [
+      "SERBO",
+      "HIDRA",
+      "TUINA",
+      "ENOJO"
+    ],
+    "2028-12-05": [
+      "FORUM",
+      "TUNDA",
+      "BANAS",
+      "OESTE"
+    ],
+    "2028-12-06": [
+      "ARIES",
+      "CHUNA",
+      "TOLLO",
+      "SALIR"
+    ],
+    "2028-12-07": [
+      "ATOLE",
+      "CULEN",
+      "ALETA",
+      "TUCIA"
+    ],
+    "2028-12-08": [
+      "FARTE",
+      "ORFRE",
+      "ROTAL",
+      "LEMUR"
+    ],
+    "2028-12-09": [
+      "BACIA",
+      "PIJUL",
+      "ZUBIA",
+      "POMPO"
+    ],
+    "2028-12-10": [
+      "CURSI",
+      "ACHIS",
+      "CLASE",
+      "CLARA"
+    ],
+    "2028-12-11": [
+      "UÑUDO",
+      "GARBA",
+      "CATEO",
+      "TOSCO"
+    ],
+    "2028-12-12": [
+      "MANGA",
+      "PREST",
+      "CERDO",
+      "DALIA"
+    ],
+    "2028-12-13": [
+      "ARDID",
+      "LABOR",
+      "LUEÑE",
+      "ACORO"
+    ],
+    "2028-12-14": [
+      "LINDO",
+      "DEBUT",
+      "CUAJO",
+      "LEMAN"
+    ],
+    "2028-12-15": [
+      "LIRIO",
+      "CARRO",
+      "EJIDO",
+      "REGIO"
+    ],
+    "2028-12-16": [
+      "PROCO",
+      "VIGIA",
+      "CAURO",
+      "ESTRO"
+    ],
+    "2028-12-17": [
+      "LLAVE",
+      "CALDO",
+      "CARVI",
+      "TRUCA"
+    ],
+    "2028-12-18": [
+      "TESTE",
+      "CALMO",
+      "HENRY",
+      "ALEJA"
+    ],
+    "2028-12-19": [
+      "BAYUA",
+      "BRUÑO",
+      "ISLAM",
+      "ZAPAR"
+    ],
+    "2028-12-20": [
+      "QUENA",
+      "SUPRA",
+      "ANAFE",
+      "CARPE"
+    ],
+    "2028-12-21": [
+      "PEZON",
+      "GRASO",
+      "SAYAL",
+      "ZABRO"
+    ],
+    "2028-12-22": [
+      "RURRU",
+      "TENIS",
+      "CONDE",
+      "PAPAZ"
+    ],
+    "2028-12-23": [
+      "ZUZON",
+      "MURIA",
+      "LAPON",
+      "ELEPE"
+    ],
+    "2028-12-24": [
+      "CHIPA",
+      "SODIO",
+      "CHESO",
+      "AFORE"
+    ],
+    "2028-12-25": [
+      "AMBOS",
+      "BANCA",
+      "QUINO",
+      "ARDUO"
+    ],
+    "2028-12-26": [
+      "SARGO",
+      "CATAN",
+      "FALLA",
+      "LIGUR"
+    ],
+    "2028-12-27": [
+      "PELTA",
+      "BANZO",
+      "HORCA",
+      "PONER"
+    ],
+    "2028-12-28": [
+      "CARAY",
+      "CAUTO",
+      "BORTO",
+      "CUEZA"
+    ],
+    "2028-12-29": [
+      "DURAR",
+      "GANSO",
+      "HUMUS",
+      "LITIO"
+    ],
+    "2028-12-30": [
+      "COITO",
+      "TUNAL",
+      "VISOR",
+      "TERMO"
+    ],
+    "2028-12-31": [
+      "LIBAN",
+      "FOTON",
+      "ERAJE",
+      "VICTO"
+    ],
+    "2029-01-01": [
+      "FIANA",
+      "LEUDO",
+      "COFIN",
+      "LEJOS"
+    ],
+    "2029-01-02": [
+      "MATUL",
+      "CHELE",
+      "PRIOR",
+      "BADIL"
+    ],
+    "2029-01-03": [
+      "BOCAL",
+      "JIOTE",
+      "FUERA",
+      "TISTE"
+    ],
+    "2029-01-04": [
+      "COINE",
+      "REDOL",
+      "ANABI",
+      "PLEBE"
+    ],
+    "2029-01-05": [
+      "TRAVO",
+      "SIRTE",
+      "DOLER",
+      "GALGA"
+    ],
+    "2029-01-06": [
+      "ARAÑA",
+      "LEGRA",
+      "MOGOL",
+      "BALAR"
+    ],
+    "2029-01-07": [
+      "AYOTE",
+      "AMADO",
+      "BATEA",
+      "OBVIO"
+    ],
+    "2029-01-08": [
+      "CUETO",
+      "MOHUR",
+      "TECOL",
+      "FLOTA"
+    ],
+    "2029-01-09": [
+      "PAUTO",
+      "DIMIR",
+      "TAMUL",
+      "MENAR"
+    ],
+    "2029-01-10": [
+      "DOBLA",
+      "VIUDA",
+      "CAJEL",
+      "ADURO"
+    ],
+    "2029-01-11": [
+      "ARDER",
+      "LACAR",
+      "MAZAR",
+      "SUNCO"
+    ],
+    "2029-01-12": [
+      "BUREO",
+      "CHELI",
+      "HACAN",
+      "HADAR"
+    ],
+    "2029-01-13": [
+      "BUCEO",
+      "CATON",
+      "MORFA",
+      "BOCIN"
+    ],
+    "2029-01-14": [
+      "GUIRE",
+      "ROSEO",
+      "GUAPO",
+      "LLANO"
+    ],
+    "2029-01-15": [
+      "ALBUR",
+      "MARLO",
+      "ANEAR",
+      "SOLER"
+    ],
+    "2029-01-16": [
+      "JIFIA",
+      "LANGA",
+      "CANDI",
+      "COPIA"
+    ],
+    "2029-01-17": [
+      "REYAR",
+      "HOZAR",
+      "PESOR",
+      "CUIDO"
+    ],
+    "2029-01-18": [
+      "LABIA",
+      "OSUDO",
+      "SEXMA",
+      "POLLA"
+    ],
+    "2029-01-19": [
+      "COLAR",
+      "JAJAY",
+      "VIROL",
+      "PIÑEN"
+    ],
+    "2029-01-20": [
+      "CAPON",
+      "OPIMO",
+      "BITAR",
+      "TAMBO"
+    ],
+    "2029-01-21": [
+      "ARMOS",
+      "GRIJA",
+      "ELITE",
+      "MERLO"
+    ],
+    "2029-01-22": [
+      "RAIJO",
+      "PARTO",
+      "ANUAL",
+      "PISTO"
+    ],
+    "2029-01-23": [
+      "HUICH",
+      "YUYAL",
+      "ALLEN",
+      "GRISU"
+    ],
+    "2029-01-24": [
+      "GUITA",
+      "OCUJE",
+      "BALDA",
+      "SUEÑO"
+    ],
+    "2029-01-25": [
+      "EREBO",
+      "LUCHA",
+      "TABEA",
+      "AÑOSO"
+    ],
+    "2029-01-26": [
+      "RAYAR",
+      "NANSU",
+      "AJADO",
+      "HUIFA"
+    ],
+    "2029-01-27": [
+      "CHIRI",
+      "PAMPA",
+      "LIJAR",
+      "ENCIA"
+    ],
+    "2029-01-28": [
+      "TRAMO",
+      "AMUSO",
+      "CISNE",
+      "SOSIA"
+    ],
+    "2029-01-29": [
+      "MORIR",
+      "IRADO",
+      "HARMA",
+      "REJAL"
+    ],
+    "2029-01-30": [
+      "POMPA",
+      "GALUA",
+      "HONOR",
+      "HUSMA"
+    ],
+    "2029-01-31": [
+      "MANGO",
+      "GRUMO",
+      "CORPA",
+      "OKUPA"
+    ],
+    "2029-02-01": [
+      "SILFO",
+      "PITAR",
+      "MOCIL",
+      "FRIOR"
+    ],
+    "2029-02-02": [
+      "CHORO",
+      "ZAFRA",
+      "ROÑAR",
+      "LIDER"
+    ],
+    "2029-02-03": [
+      "LEONA",
+      "CORMA",
+      "ANONA",
+      "HORMA"
+    ],
+    "2029-02-04": [
+      "ROTEN",
+      "PAHUA",
+      "MASON",
+      "CORSA"
+    ],
+    "2029-02-05": [
+      "REGIR",
+      "ASADO",
+      "RITMO",
+      "SUEVO"
+    ],
+    "2029-02-06": [
+      "MULLA",
+      "PENCA",
+      "COSPE",
+      "REMAR"
+    ],
+    "2029-02-07": [
+      "ACIDO",
+      "CUTIR",
+      "VIDRO",
+      "AORTA"
+    ],
+    "2029-02-08": [
+      "CORAS",
+      "BOGIE",
+      "MOVER",
+      "EPICO"
+    ],
+    "2029-02-09": [
+      "MINUE",
+      "CHELO",
+      "CAPAZ",
+      "PUBES"
+    ],
+    "2029-02-10": [
+      "QUITA",
+      "GLASE",
+      "DRIZA",
+      "CABAS"
+    ],
+    "2029-02-11": [
+      "ARPIA",
+      "ARILO",
+      "VALLE",
+      "GRAJA"
+    ],
+    "2029-02-12": [
+      "PANUL",
+      "IJUJU",
+      "COCAL",
+      "BROTE"
+    ],
+    "2029-02-13": [
+      "ALIÑO",
+      "MITRA",
+      "LUNES",
+      "NEGRA"
+    ],
+    "2029-02-14": [
+      "BLEDA",
+      "GUION",
+      "CORAR",
+      "MARTE"
+    ],
+    "2029-02-15": [
+      "SUABO",
+      "DEBDO",
+      "CALIZ",
+      "TURBO"
+    ],
+    "2029-02-16": [
+      "CURDO",
+      "CRIBO",
+      "MORAN",
+      "SUIZO"
+    ],
+    "2029-02-17": [
+      "MANAR",
+      "MILAN",
+      "GOFRE",
+      "BRIBA"
+    ],
+    "2029-02-18": [
+      "ARGOS",
+      "ROCHA",
+      "REINO",
+      "DUQUE"
+    ],
+    "2029-02-19": [
+      "PANAL",
+      "MANAL",
+      "MUFLA",
+      "CURRE"
+    ],
+    "2029-02-20": [
+      "TURBA",
+      "MADOR",
+      "ALUDA",
+      "TASCO"
+    ],
+    "2029-02-21": [
+      "COCHI",
+      "PALPI",
+      "YACAL",
+      "BANTU"
+    ],
+    "2029-02-22": [
+      "COMAL",
+      "FLAON",
+      "ACHIN",
+      "TALEA"
+    ],
+    "2029-02-23": [
+      "ELETO",
+      "SIRGA",
+      "CUSCA",
+      "JUSTO"
+    ],
+    "2029-02-24": [
+      "FUINA",
+      "ZUAVO",
+      "CENIT",
+      "DESDE"
+    ],
+    "2029-02-25": [
+      "LEGUI",
+      "VACUO",
+      "CISMA",
+      "HIELO"
+    ],
+    "2029-02-26": [
+      "LUTEO",
+      "ROCHE",
+      "CUIDA",
+      "TALAR"
+    ],
+    "2029-02-27": [
+      "ORAJE",
+      "MUGIL",
+      "OXIDO",
+      "GUITO"
+    ],
+    "2029-02-28": [
+      "RETIN",
+      "CASON",
+      "FRENO",
+      "LECHO"
+    ],
+    "2029-03-01": [
+      "CREPE",
+      "BOLIN",
+      "CARNE",
+      "BEGUM"
+    ],
+    "2029-03-02": [
+      "VIVAZ",
+      "DUELA",
+      "SANGO",
+      "ALDEA"
+    ],
+    "2029-03-03": [
+      "VINCO",
+      "ZARZO",
+      "SERNA",
+      "AJOTE"
+    ],
+    "2029-03-04": [
+      "AGUAY",
+      "MALLO",
+      "MORON",
+      "AGUAR"
+    ],
+    "2029-03-05": [
+      "BOSSA",
+      "BAJEL",
+      "AFANO",
+      "ELCHE"
+    ],
+    "2029-03-06": [
+      "YIHAD",
+      "PRONO",
+      "FENDA",
+      "DULCE"
+    ],
+    "2029-03-07": [
+      "TALIO",
+      "ZAJON",
+      "RACEL",
+      "IMPIO"
+    ],
+    "2029-03-08": [
+      "SAZON",
+      "ILESO",
+      "JALON",
+      "MELLA"
+    ],
+    "2029-03-09": [
+      "MABLE",
+      "TACON",
+      "AGUDO",
+      "RESMA"
+    ],
+    "2029-03-10": [
+      "ZENIT",
+      "TRACA",
+      "TROZA",
+      "ALADO"
+    ],
+    "2029-03-11": [
+      "GUSTO",
+      "SUCHE",
+      "CEÑAR",
+      "BASTE"
+    ],
+    "2029-03-12": [
+      "TREFE",
+      "TANGO",
+      "TALIN",
+      "SALMA"
+    ],
+    "2029-03-13": [
+      "MILLA",
+      "PACHA",
+      "MATAR",
+      "BRAZA"
+    ],
+    "2029-03-14": [
+      "CURUL",
+      "BUBON",
+      "OBOLO",
+      "NASON"
+    ],
+    "2029-03-15": [
+      "VERME",
+      "ATONO",
+      "ANDEL",
+      "PILCA"
+    ],
+    "2029-03-16": [
+      "SOLAR",
+      "ITRIO",
+      "TEPUY",
+      "ACUEO"
+    ],
+    "2029-03-17": [
+      "ARRUI",
+      "CRAZA",
+      "PICAL",
+      "TOLLA"
+    ],
+    "2029-03-18": [
+      "FRADE",
+      "AIREO",
+      "BALON",
+      "PILLO"
+    ],
+    "2029-03-19": [
+      "COXAL",
+      "SEXMO",
+      "ABAJO",
+      "VOACE"
+    ],
+    "2029-03-20": [
+      "CROSS",
+      "ATAUD",
+      "PIRAL",
+      "PUCIA"
+    ],
+    "2029-03-21": [
+      "VERSO",
+      "HORRO",
+      "DORAL",
+      "GUIPE"
+    ],
+    "2029-03-22": [
+      "TUERA",
+      "SEÑAL",
+      "CAGON",
+      "LUVIA"
+    ],
+    "2029-03-23": [
+      "ORIOL",
+      "DICHO",
+      "BAÑAR",
+      "CHATA"
+    ],
+    "2029-03-24": [
+      "BUFIA",
+      "ZAFRE",
+      "ROELA",
+      "MORAL"
+    ],
+    "2029-03-25": [
+      "CESIO",
+      "BEUDO",
+      "VOLVO",
+      "CRETA"
+    ],
+    "2029-03-26": [
+      "RUEJO",
+      "MINGA",
+      "INVAR",
+      "ÑOCHA"
+    ],
+    "2029-03-27": [
+      "VIADA",
+      "AGACE",
+      "CERON",
+      "VIDIA"
+    ],
+    "2029-03-28": [
+      "FOSAL",
+      "ZANCO",
+      "LARDO",
+      "TALLE"
+    ],
+    "2029-03-29": [
+      "JUNZA",
+      "HARTO",
+      "CIDRO",
+      "VENAL"
+    ],
+    "2029-03-30": [
+      "TORDO",
+      "MANSO",
+      "FLATO",
+      "LOGAR"
+    ],
+    "2029-03-31": [
+      "EFEBO",
+      "DOGMA",
+      "NINFA",
+      "PECIO"
+    ],
+    "2029-04-01": [
+      "LABRA",
+      "USADO",
+      "GOFIO",
+      "DEBIL"
+    ],
+    "2029-04-02": [
+      "PEQUE",
+      "CHEPE",
+      "OISLO",
+      "CREAR"
+    ],
+    "2029-04-03": [
+      "FABRO",
+      "AMELO",
+      "TOCAR",
+      "CIELO"
+    ],
+    "2029-04-04": [
+      "LAPSO",
+      "HAMPA",
+      "FUCIA",
+      "SOBAR"
+    ],
+    "2029-04-05": [
+      "CARBA",
+      "TESON",
+      "LEMBO",
+      "VAPOR"
+    ],
+    "2029-04-06": [
+      "DONAR",
+      "PULPO",
+      "SIBIL",
+      "MITIN"
+    ],
+    "2029-04-07": [
+      "TECLE",
+      "PUSPO",
+      "RELSO",
+      "LURTE"
+    ],
+    "2029-04-08": [
+      "ADOBO",
+      "SAVIA",
+      "DELTA",
+      "MAGNO"
+    ],
+    "2029-04-09": [
+      "BORNI",
+      "ARUÑO",
+      "TRAPE",
+      "LETEO"
+    ],
+    "2029-04-10": [
+      "ALUDO",
+      "POSON",
+      "WEBER",
+      "MELGO"
+    ],
+    "2029-04-11": [
+      "PUBER",
+      "COLEO",
+      "FUCHI",
+      "ADIAR"
+    ],
+    "2029-04-12": [
+      "GARFA",
+      "LAQUE",
+      "PUTAL",
+      "ADUAR"
+    ],
+    "2029-04-13": [
+      "CORSO",
+      "RECRE",
+      "ZAIDA",
+      "TIBIA"
+    ],
+    "2029-04-14": [
+      "LUPUS",
+      "CHELA",
+      "CLACO",
+      "SUIDO"
+    ],
+    "2029-04-15": [
+      "COVAR",
+      "ADEMA",
+      "LUISA",
+      "BARIL"
+    ],
+    "2029-04-16": [
+      "TRUCO",
+      "VEZAR",
+      "RODAR",
+      "ARGEN"
+    ],
+    "2029-04-17": [
+      "FILIA",
+      "BALDE",
+      "ÑOCLO",
+      "REGAR"
+    ],
+    "2029-04-18": [
+      "FUNDO",
+      "RUTAR",
+      "CERCA",
+      "GAUSS"
+    ],
+    "2029-04-19": [
+      "VIRAL",
+      "PASMA",
+      "FOISO",
+      "CULPA"
+    ],
+    "2029-04-20": [
+      "TOMAR",
+      "NIGUA",
+      "MIXTA",
+      "ATROZ"
+    ],
+    "2029-04-21": [
+      "NIAZO",
+      "LABEO",
+      "HABAR",
+      "VEJAR"
+    ],
+    "2029-04-22": [
+      "AJEAR",
+      "OJIVA",
+      "IGUAL",
+      "GRAFO"
+    ],
+    "2029-04-23": [
+      "ANAMU",
+      "FIRME",
+      "PORRO",
+      "BIOTA"
+    ],
+    "2029-04-24": [
+      "GACHO",
+      "ESULA",
+      "ALANO",
+      "MONDO"
+    ],
+    "2029-04-25": [
+      "FUSOR",
+      "SOPAR",
+      "PINNA",
+      "IRIDE"
+    ],
+    "2029-04-26": [
+      "AYEAR",
+      "MUERA",
+      "TRIAL",
+      "AJEBE"
+    ],
+    "2029-04-27": [
+      "MICRA",
+      "LESTE",
+      "ÑANDU",
+      "VOSEO"
+    ],
+    "2029-04-28": [
+      "FALLO",
+      "HALDA",
+      "MIERA",
+      "MOTIN"
+    ],
+    "2029-04-29": [
+      "MERLA",
+      "HOBBY",
+      "MELON",
+      "VULGO"
+    ],
+    "2029-04-30": [
+      "COIMA",
+      "ULEMA",
+      "PAFIO",
+      "PEINA"
+    ],
+    "2029-05-01": [
+      "JORRO",
+      "POZOL",
+      "SOBAO",
+      "RICIA"
+    ],
+    "2029-05-02": [
+      "TARSO",
+      "CACHE",
+      "GROSA",
+      "REBLE"
+    ],
+    "2029-05-03": [
+      "EGENO",
+      "PIOJO",
+      "LEIDA",
+      "BICOS"
+    ],
+    "2029-05-04": [
+      "PARVA",
+      "TALED",
+      "CAPEA",
+      "CHIZA"
+    ],
+    "2029-05-05": [
+      "MALAR",
+      "FORTE",
+      "GARIO",
+      "QUITU"
+    ],
+    "2029-05-06": [
+      "DANTA",
+      "AGORA",
+      "CUPON",
+      "CALTA"
+    ],
+    "2029-05-07": [
+      "FONJE",
+      "BIRLO",
+      "GUABA",
+      "JOYON"
+    ],
+    "2029-05-08": [
+      "GALLA",
+      "ACEZO",
+      "IJIYO",
+      "HABIL"
+    ],
+    "2029-05-09": [
+      "BURRO",
+      "BREÑA",
+      "CAFIZ",
+      "TIBAR"
+    ],
+    "2029-05-10": [
+      "RASGO",
+      "MOMIA",
+      "JUREL",
+      "COÑON"
+    ],
+    "2029-05-11": [
+      "LERDO",
+      "JAMBA",
+      "GATAS",
+      "ALEAR"
+    ],
+    "2029-05-12": [
+      "TURNO",
+      "LUMIA",
+      "DOTOR",
+      "RUCAR"
+    ],
+    "2029-05-13": [
+      "TAREA",
+      "FINTA",
+      "LETAL",
+      "FUFAR"
+    ],
+    "2029-05-14": [
+      "BAJIN",
+      "CONCA",
+      "BATIN",
+      "PLATA"
+    ],
+    "2029-05-15": [
+      "ALBOR",
+      "CATAR",
+      "DOMAR",
+      "AFIJO"
+    ],
+    "2029-05-16": [
+      "RALEA",
+      "AUDAZ",
+      "JITAR",
+      "CANON"
+    ],
+    "2029-05-17": [
+      "POINO",
+      "QUIVI",
+      "ALMUD",
+      "SEDAN"
+    ],
+    "2029-05-18": [
+      "APOYO",
+      "CAVIA",
+      "HANZO",
+      "UMERO"
+    ],
+    "2029-05-19": [
+      "PAGEL",
+      "JAMON",
+      "DEBER",
+      "ICTUS"
+    ],
+    "2029-05-20": [
+      "MONRA",
+      "TESIS",
+      "LLEVA",
+      "PALTA"
+    ],
+    "2029-05-21": [
+      "ANDAR",
+      "ROTAR",
+      "VITOR",
+      "ABITA"
+    ],
+    "2029-05-22": [
+      "SALON",
+      "MAÑIO",
+      "NUERA",
+      "AMBAR"
+    ],
+    "2029-05-23": [
+      "BADEN",
+      "PREAR",
+      "TRATA",
+      "TUCUN"
+    ],
+    "2029-05-24": [
+      "GRATO",
+      "MERCA",
+      "LATIR",
+      "LASER"
+    ],
+    "2029-05-25": [
+      "BUFAR",
+      "ÑOQUI",
+      "QUIZA",
+      "OJETE"
+    ],
+    "2029-05-26": [
+      "BIRLA",
+      "CAZUZ",
+      "QUEJA",
+      "DENTE"
+    ],
+    "2029-05-27": [
+      "BALTO",
+      "TUTOR",
+      "ROQUE",
+      "OTOÑO"
+    ],
+    "2029-05-28": [
+      "CARLA",
+      "BREAR",
+      "PANSA",
+      "GURDO"
+    ],
+    "2029-05-29": [
+      "PICOP",
+      "PATAS",
+      "URATO",
+      "NACER"
+    ],
+    "2029-05-30": [
+      "PULSO",
+      "MORSE",
+      "FEMUR",
+      "PILME"
+    ],
+    "2029-05-31": [
+      "ABETO",
+      "CALMA",
+      "DRAMA",
+      "SERON"
+    ],
+    "2029-06-01": [
+      "ROBLA",
+      "ATINO",
+      "GASTO",
+      "BORAX"
+    ],
+    "2029-06-02": [
+      "MENSU",
+      "GUIÑO",
+      "PONEY",
+      "MACHE"
+    ],
+    "2029-06-03": [
+      "ACTOR",
+      "BOQUI",
+      "CANDE",
+      "LODON"
+    ],
+    "2029-06-04": [
+      "HARDA",
+      "FORRO",
+      "VERBO",
+      "SIDRA"
+    ],
+    "2029-06-05": [
+      "CHUPO",
+      "DULAR",
+      "JIREL",
+      "ALERO"
+    ],
+    "2029-06-06": [
+      "ASMAR",
+      "IMADA",
+      "PESGA",
+      "GONGO"
+    ],
+    "2029-06-07": [
+      "AMINO",
+      "BATIR",
+      "BASTA",
+      "DERBI"
+    ],
+    "2029-06-08": [
+      "SITIO",
+      "COPEC",
+      "FAÑAR",
+      "SURTO"
+    ],
+    "2029-06-09": [
+      "SAJIA",
+      "TUMBO",
+      "CUMBE",
+      "FECAL"
+    ],
+    "2029-06-10": [
+      "DIJES",
+      "FUSTO",
+      "AGUIN",
+      "FULLA"
+    ],
+    "2029-06-11": [
+      "BEFRE",
+      "NIQUI",
+      "TARRO",
+      "NIOTO"
+    ],
+    "2029-06-12": [
+      "BOLEO",
+      "AYATE",
+      "FLEXO",
+      "LENON"
+    ],
+    "2029-06-13": [
+      "FASTA",
+      "OMEYA",
+      "ROCIN",
+      "ODIAR"
+    ],
+    "2029-06-14": [
+      "PIRCO",
+      "DIOSA",
+      "HUACO",
+      "RIPIA"
+    ],
+    "2029-06-15": [
+      "VULVA",
+      "GOBIO",
+      "RENAL",
+      "PUBIS"
+    ],
+    "2029-06-16": [
+      "VIVAR",
+      "SEGRI",
+      "CAIRE",
+      "GRIPE"
+    ],
+    "2029-06-17": [
+      "FINIR",
+      "MICHA",
+      "ZOLLE",
+      "TRONA"
+    ],
+    "2029-06-18": [
+      "MENOS",
+      "FULAR",
+      "PANTI",
+      "MICER"
+    ],
+    "2029-06-19": [
+      "ACIDA",
+      "FUMAR",
+      "MAGRA",
+      "PEÑON"
+    ],
+    "2029-06-20": [
+      "MILLO",
+      "CULIO",
+      "REALA",
+      "SESMO"
+    ],
+    "2029-06-21": [
+      "IMELA",
+      "CUIJA",
+      "CURIE",
+      "SATEN"
+    ],
+    "2029-06-22": [
+      "AFORO",
+      "NICLE",
+      "CUCHE",
+      "ARCAR"
+    ],
+    "2029-06-23": [
+      "OCTAL",
+      "ALOSA",
+      "CATRE",
+      "RUSCO"
+    ],
+    "2029-06-24": [
+      "CETIL",
+      "NIÑEZ",
+      "PORNO",
+      "PITAL"
+    ],
+    "2029-06-25": [
+      "CASPA",
+      "FRITA",
+      "MOJIL",
+      "YELGO"
+    ],
+    "2029-06-26": [
+      "PAIRO",
+      "RIGUA",
+      "CUZCO",
+      "TECHO"
+    ],
+    "2029-06-27": [
+      "HORNO",
+      "LEPRA",
+      "TRIAR",
+      "DESUS"
+    ],
+    "2029-06-28": [
+      "MAULA",
+      "GENIO",
+      "VAHAR",
+      "DOCIL"
+    ],
+    "2029-06-29": [
+      "DAUDA",
+      "VITAR",
+      "AGAPE",
+      "ORALE"
+    ],
+    "2029-06-30": [
+      "HUCHA",
+      "VITAL",
+      "MERGO",
+      "MENDA"
+    ],
+    "2029-07-01": [
+      "RUIDO",
+      "SEXTA",
+      "CALDA",
+      "LACIO"
+    ],
+    "2029-07-02": [
+      "FELUS",
+      "GARAY",
+      "ESTAY",
+      "CHUVA"
+    ],
+    "2029-07-03": [
+      "BITER",
+      "AFIAR",
+      "GESTA",
+      "CLISE"
+    ],
+    "2029-07-04": [
+      "ALBAR",
+      "ARIJO",
+      "PAJEA",
+      "TONGA"
+    ],
+    "2029-07-05": [
+      "DOTAL",
+      "GRITO",
+      "CHOZA",
+      "CROZA"
+    ],
+    "2029-07-06": [
+      "AJERO",
+      "FOSAR",
+      "BORDA",
+      "COTUA"
+    ],
+    "2029-07-07": [
+      "VOCEO",
+      "ALAGA",
+      "MOLER",
+      "DENSO"
+    ],
+    "2029-07-08": [
+      "LUNEL",
+      "ARCEA",
+      "MARON",
+      "FEBEO"
+    ],
+    "2029-07-09": [
+      "MEMEZ",
+      "MEATO",
+      "MUECA",
+      "TEJAR"
+    ],
+    "2029-07-10": [
+      "OFITA",
+      "YUMBO",
+      "JARCA",
+      "LITRO"
+    ],
+    "2029-07-11": [
+      "SABLE",
+      "TRAFA",
+      "EXIDA",
+      "MUESO"
+    ],
+    "2029-07-12": [
+      "EJOTE",
+      "ANTRO",
+      "AJUNO",
+      "ABUJE"
+    ],
+    "2029-07-13": [
+      "CHAVO",
+      "MOARE",
+      "QUEMA",
+      "ANETO"
+    ],
+    "2029-07-14": [
+      "CIRCA",
+      "JURAR",
+      "UCASE",
+      "VELIS"
+    ],
+    "2029-07-15": [
+      "RESOL",
+      "ZONZO",
+      "DSEDA",
+      "ELAMI"
+    ],
+    "2029-07-16": [
+      "VARAR",
+      "PIVOT",
+      "PAILA",
+      "SIMON"
+    ],
+    "2029-07-17": [
+      "XINCA",
+      "SIFUE",
+      "COQUE",
+      "CHICO"
+    ],
+    "2029-07-18": [
+      "ROBDA",
+      "HUESO",
+      "GORRO",
+      "AMURA"
+    ],
+    "2029-07-19": [
+      "SIMUN",
+      "FUDRE",
+      "TULIO",
+      "GROJO"
+    ],
+    "2029-07-20": [
+      "PENOL",
+      "GABAN",
+      "LARGO",
+      "LATAZ"
+    ],
+    "2029-07-21": [
+      "FOLGO",
+      "ALBUM",
+      "PAJAR",
+      "AUNAR"
+    ],
+    "2029-07-22": [
+      "NICHE",
+      "UVIAR",
+      "PALIA",
+      "ABECE"
+    ],
+    "2029-07-23": [
+      "RODIL",
+      "AGAVE",
+      "TEHUL",
+      "ECHAR"
+    ],
+    "2029-07-24": [
+      "SUAZI",
+      "ÑURDA",
+      "ABABA",
+      "SANAR"
+    ],
+    "2029-07-25": [
+      "MACHA",
+      "CHITE",
+      "FUSCO",
+      "ARCON"
+    ],
+    "2029-07-26": [
+      "ARTOS",
+      "SIRLE",
+      "DRINO",
+      "TUNJO"
+    ],
+    "2029-07-27": [
+      "DENDE",
+      "ABATE",
+      "ALMEZ",
+      "ALABE"
+    ],
+    "2029-07-28": [
+      "CIRIO",
+      "FALCA",
+      "PAGUA",
+      "BAQUE"
+    ],
+    "2029-07-29": [
+      "MALTA",
+      "RETEN",
+      "PECHE",
+      "SANIE"
+    ],
+    "2029-07-30": [
+      "CHOPE",
+      "BRUJO",
+      "TINTO",
+      "PASCO"
+    ],
+    "2029-07-31": [
+      "REHUS",
+      "PASMO",
+      "FLEME",
+      "SALUD"
+    ],
+    "2029-08-01": [
+      "MOJEL",
+      "TOCTE",
+      "DISON",
+      "DIADA"
+    ],
+    "2029-08-02": [
+      "DATIL",
+      "YEGUA",
+      "TRABE",
+      "CESAR"
+    ],
+    "2029-08-03": [
+      "NOTAR",
+      "SORDA",
+      "LAIDO",
+      "LOINA"
+    ],
+    "2029-08-04": [
+      "ROSAL",
+      "CUACO",
+      "ANJEO",
+      "LOTIN"
+    ],
+    "2029-08-05": [
+      "PISAR",
+      "ADAZA",
+      "GRIFO",
+      "TANKA"
+    ],
+    "2029-08-06": [
+      "MACEO",
+      "QUEMI",
+      "AJADA",
+      "TURON"
+    ],
+    "2029-08-07": [
+      "MEDRO",
+      "PAREL",
+      "BONAL",
+      "BOYAL"
+    ],
+    "2029-08-08": [
+      "CARIO",
+      "LIEVA",
+      "PEÑOL",
+      "JORGE"
+    ],
+    "2029-08-09": [
+      "NIETO",
+      "PORCO",
+      "VENUS",
+      "URUCU"
+    ],
+    "2029-08-10": [
+      "LOICA",
+      "MOCHE",
+      "BONZO",
+      "OSERA"
+    ],
+    "2029-08-11": [
+      "LADON",
+      "CURVO",
+      "YOGUI",
+      "TETON"
+    ],
+    "2029-08-12": [
+      "RUNGA",
+      "FORJA",
+      "PISCA",
+      "SOGUN"
+    ],
+    "2029-08-13": [
+      "FIERO",
+      "NADAL",
+      "FACON",
+      "SAMBA"
+    ],
+    "2029-08-14": [
+      "CHAYO",
+      "OSTRA",
+      "COLIN",
+      "YELMO"
+    ],
+    "2029-08-15": [
+      "CUABA",
+      "ANSAR",
+      "MIEDO",
+      "DAMIL"
+    ],
+    "2029-08-16": [
+      "RAULI",
+      "MAURO",
+      "GUAME",
+      "MALLA"
+    ],
+    "2029-08-17": [
+      "ADUJA",
+      "PICEA",
+      "CHOZO",
+      "ELUIR"
+    ],
+    "2029-08-18": [
+      "HERIL",
+      "COFRE",
+      "RUANA",
+      "ULULA"
+    ],
+    "2029-08-19": [
+      "RABEO",
+      "CORNO",
+      "ALJOR",
+      "AJAJA"
+    ],
+    "2029-08-20": [
+      "CABAL",
+      "MUTAR",
+      "GUAPE",
+      "BRIZA"
+    ],
+    "2029-08-21": [
+      "ETUSA",
+      "BROZA",
+      "YAQUE",
+      "RISCA"
+    ],
+    "2029-08-22": [
+      "PISTE",
+      "GORGA",
+      "SEXTO",
+      "RUBOR"
+    ],
+    "2029-08-23": [
+      "TEGEO",
+      "AIRAR",
+      "MUTUA",
+      "CINCO"
+    ],
+    "2029-08-24": [
+      "GUMIA",
+      "TOSCA",
+      "DICHA",
+      "CAIMA"
+    ],
+    "2029-08-25": [
+      "CELTA",
+      "ZARDA",
+      "CHUZO",
+      "CORTE"
+    ],
+    "2029-08-26": [
+      "LIEVE",
+      "ZOILO",
+      "PANGA",
+      "PARAL"
+    ],
+    "2029-08-27": [
+      "DANTE",
+      "CUSPA",
+      "OSMIO",
+      "PELMA"
+    ],
+    "2029-08-28": [
+      "DOGRE",
+      "DUETO",
+      "CHAZO",
+      "ZEGRI"
+    ],
+    "2029-08-29": [
+      "BORIA",
+      "BANDA",
+      "CUÑAL",
+      "DEJAR"
+    ],
+    "2029-08-30": [
+      "TORRE",
+      "DROPE",
+      "VETON",
+      "LEUDE"
+    ],
+    "2029-08-31": [
+      "INDEX",
+      "BANJO",
+      "OSERO",
+      "AJETE"
+    ],
+    "2029-09-01": [
+      "FEBLE",
+      "MULTA",
+      "CODEO",
+      "TIMOL"
+    ],
+    "2029-09-02": [
+      "CUTIS",
+      "VELON",
+      "PIPIL",
+      "JUMAS"
+    ],
+    "2029-09-03": [
+      "COLMO",
+      "BIELA",
+      "TIZNA",
+      "VOILA"
+    ],
+    "2029-09-04": [
+      "MAYOR",
+      "COCER",
+      "LIUDO",
+      "NODAL"
+    ],
+    "2029-09-05": [
+      "GREDA",
+      "LANCE",
+      "FOBIA",
+      "GRAMO"
+    ],
+    "2029-09-06": [
+      "BRUMA",
+      "NOBUK",
+      "ETIMO",
+      "MEONA"
+    ],
+    "2029-09-07": [
+      "JUEZA",
+      "PEPLA",
+      "DUMIR",
+      "ROLDE"
+    ],
+    "2029-09-08": [
+      "PIRRI",
+      "ALGOL",
+      "DAUCO",
+      "GREÑA"
+    ],
+    "2029-09-09": [
+      "CREMA",
+      "MIGRA",
+      "OLIVA",
+      "LACRA"
+    ],
+    "2029-09-10": [
+      "CHAPA",
+      "TORGO",
+      "BAUZA",
+      "GRISA"
+    ],
+    "2029-09-11": [
+      "GRUPI",
+      "TUNTA",
+      "LUXAR",
+      "PROEL"
+    ],
+    "2029-09-12": [
+      "PALAY",
+      "TIRTE",
+      "DRAGA",
+      "MUCHO"
+    ],
+    "2029-09-13": [
+      "ACROE",
+      "ZULLA",
+      "BILIS",
+      "CACEO"
+    ],
+    "2029-09-14": [
+      "TOCHE",
+      "LIPES",
+      "BOCOY",
+      "PILEO"
+    ],
+    "2029-09-15": [
+      "RETEL",
+      "BERRO",
+      "BASIS",
+      "FARAD"
+    ],
+    "2029-09-16": [
+      "MAQUI",
+      "REINA",
+      "GAMON",
+      "ACUTI"
+    ],
+    "2029-09-17": [
+      "TUECO",
+      "ALFAR",
+      "HINDI",
+      "TITAR"
+    ],
+    "2029-09-18": [
+      "CUCHI",
+      "LEMPO",
+      "CABIO",
+      "ATLAS"
+    ],
+    "2029-09-19": [
+      "TARTA",
+      "JALMA",
+      "GOBEN",
+      "BELGA"
+    ],
+    "2029-09-20": [
+      "ÑONGO",
+      "MBAYA",
+      "GUIRO",
+      "BREZO"
+    ],
+    "2029-09-21": [
+      "TIRIO",
+      "LEJIO",
+      "GINEA",
+      "BUNIO"
+    ],
+    "2029-09-22": [
+      "ABACO",
+      "CHOTE",
+      "ASTUR",
+      "PARAO"
+    ],
+    "2029-09-23": [
+      "ZENDO",
+      "ALFOZ",
+      "TORAX",
+      "QUIPA"
+    ],
+    "2029-09-24": [
+      "ANDAS",
+      "GIBON",
+      "APIRI",
+      "PACER"
+    ],
+    "2029-09-25": [
+      "TREMO",
+      "FIJAR",
+      "ALULA",
+      "GAÑIR"
+    ],
+    "2029-09-26": [
+      "DUPLO",
+      "SEMEN",
+      "HABIZ",
+      "PARRA"
+    ],
+    "2029-09-27": [
+      "RUBIN",
+      "OJUDO",
+      "VISON",
+      "JUEGO"
+    ],
+    "2029-09-28": [
+      "BACON",
+      "CANAL",
+      "CAULA",
+      "ALEAS"
+    ],
+    "2029-09-29": [
+      "TORDA",
+      "TOPIA",
+      "ZOCAS",
+      "FLUOR"
+    ],
+    "2029-09-30": [
+      "TARRA",
+      "BOSON",
+      "PEAJE",
+      "FILME"
+    ],
+    "2029-10-01": [
+      "CARPA",
+      "LINAR",
+      "PANCA",
+      "HEDOR"
+    ],
+    "2029-10-02": [
+      "BORRA",
+      "ANGEL",
+      "HEROE",
+      "LAVAR"
+    ],
+    "2029-10-03": [
+      "CHICA",
+      "ANURO",
+      "MAESO",
+      "MANUS"
+    ],
+    "2029-10-04": [
+      "GENTE",
+      "MATEO",
+      "CRICA",
+      "CEMBO"
+    ],
+    "2029-10-05": [
+      "CORUA",
+      "RASPE",
+      "HONDA",
+      "PAVES"
+    ],
+    "2029-10-06": [
+      "SUTAS",
+      "BOJAR",
+      "MOCAR",
+      "PLATO"
+    ],
+    "2029-10-07": [
+      "SECAR",
+      "TAMIZ",
+      "CARIZ",
+      "NUCIR"
+    ],
+    "2029-10-08": [
+      "ADIOS",
+      "BOLSA",
+      "ETOLO",
+      "FUSCA"
+    ],
+    "2029-10-09": [
+      "DEQUE",
+      "TAYUL",
+      "TACTO",
+      "PESIA"
+    ],
+    "2029-10-10": [
+      "LADEO",
+      "MIRTO",
+      "GRELO",
+      "NELES"
+    ],
+    "2029-10-11": [
+      "CROMO",
+      "TIRAR",
+      "ROPON",
+      "UNTAR"
+    ],
+    "2029-10-12": [
+      "GUIJO",
+      "AÑADA",
+      "RETAR",
+      "FROGA"
+    ],
+    "2029-10-13": [
+      "FLAMA",
+      "TIGRE",
+      "CALVO",
+      "TACHE"
+    ],
+    "2029-10-14": [
+      "SAUCE",
+      "MULSO",
+      "ZANJA",
+      "BINZA"
+    ],
+    "2029-10-15": [
+      "VOLEO",
+      "VIDON",
+      "RAIDO",
+      "RAZON"
+    ],
+    "2029-10-16": [
+      "MENSO",
+      "TOQUI",
+      "BOCIO",
+      "MOHIN"
+    ],
+    "2029-10-17": [
+      "OIDIO",
+      "OVULO",
+      "QUIER",
+      "LEÑAR"
+    ],
+    "2029-10-18": [
+      "VERGA",
+      "COMBA",
+      "HUTIA",
+      "NARRA"
+    ],
+    "2029-10-19": [
+      "PATON",
+      "GUAJA",
+      "TUSON",
+      "UJULE"
+    ],
+    "2029-10-20": [
+      "ROTOR",
+      "ZOFRA",
+      "CAIDO",
+      "MOLLA"
+    ],
+    "2029-10-21": [
+      "AUTAN",
+      "AOJAR",
+      "TONEL",
+      "CIGUA"
+    ],
+    "2029-10-22": [
+      "OBRAR",
+      "LUPIA",
+      "VISAR",
+      "PIZCA"
+    ],
+    "2029-10-23": [
+      "HECHO",
+      "AGRAZ",
+      "GLIFO",
+      "ANITO"
+    ],
+    "2029-10-24": [
+      "PLAZO",
+      "LILIO",
+      "JEITO",
+      "CEREO"
+    ],
+    "2029-10-25": [
+      "HENAR",
+      "VIESA",
+      "LANDE",
+      "VIDEO"
+    ],
+    "2029-10-26": [
+      "TAPIZ",
+      "USURA",
+      "FLETO",
+      "PIÑON"
+    ],
+    "2029-10-27": [
+      "RUÑAR",
+      "BATEY",
+      "COPTO",
+      "ADULA"
+    ],
+    "2029-10-28": [
+      "CEIBA",
+      "GAÑIL",
+      "FORNO",
+      "JERBO"
+    ],
+    "2029-10-29": [
+      "ARADA",
+      "BRAZO",
+      "RONCO",
+      "IZOTE"
+    ],
+    "2029-10-30": [
+      "HENIL",
+      "ALOES",
+      "OZONO",
+      "ZAPEO"
+    ],
+    "2029-10-31": [
+      "LETON",
+      "ARGUE",
+      "AÑEJO",
+      "RABIL"
+    ],
+    "2029-11-01": [
+      "FERIR",
+      "ÑOÑEZ",
+      "JATIB",
+      "RIGUE"
+    ],
+    "2029-11-02": [
+      "TREPA",
+      "TORCE",
+      "CASTO",
+      "HULLA"
+    ],
+    "2029-11-03": [
+      "TRAGA",
+      "PEANA",
+      "IZADO",
+      "VATIO"
+    ],
+    "2029-11-04": [
+      "CORIO",
+      "VODKA",
+      "OBLEA",
+      "ALFIZ"
+    ],
+    "2029-11-05": [
+      "VALIA",
+      "CHIVA",
+      "LISTA",
+      "AMIBO"
+    ],
+    "2029-11-06": [
+      "PAJUZ",
+      "TUERO",
+      "PECHO",
+      "AOVAR"
+    ],
+    "2029-11-07": [
+      "RILAR",
+      "GARRA",
+      "BUFET",
+      "GALEO"
+    ],
+    "2029-11-08": [
+      "TOESA",
+      "NABAB",
+      "VISIR",
+      "TEMER"
+    ],
+    "2029-11-09": [
+      "GOTEO",
+      "AZOTE",
+      "NECIO",
+      "JETON"
+    ],
+    "2029-11-10": [
+      "PATIO",
+      "LEZNE",
+      "ALIAS",
+      "OMASO"
+    ],
+    "2029-11-11": [
+      "RICIO",
+      "PIQUE",
+      "CLUBE",
+      "AÑOJA"
+    ],
+    "2029-11-12": [
+      "TAMIL",
+      "RUEÑO",
+      "DELGA",
+      "BASAR"
+    ],
+    "2029-11-13": [
+      "CURDA",
+      "JARRO",
+      "FARDA",
+      "MACIO"
+    ],
+    "2029-11-14": [
+      "CUEVA",
+      "LOCRO",
+      "SISEO",
+      "BUHIO"
+    ],
+    "2029-11-15": [
+      "AMATE",
+      "PORTE",
+      "SATAN",
+      "BUCIO"
+    ],
+    "2029-11-16": [
+      "GARZO",
+      "LEGAL",
+      "SOBRE",
+      "ALEZO"
+    ],
+    "2029-11-17": [
+      "CULAS",
+      "TITIL",
+      "TUANI",
+      "TRISA"
+    ],
+    "2029-11-18": [
+      "RAPAZ",
+      "SOLEN",
+      "DIAÑO",
+      "AFUFA"
+    ],
+    "2029-11-19": [
+      "PAPEO",
+      "RUÑIR",
+      "MARCA",
+      "BORRO"
+    ],
+    "2029-11-20": [
+      "NAHUA",
+      "ENTRO",
+      "REJON",
+      "NOCIR"
+    ],
+    "2029-11-21": [
+      "BUSCA",
+      "BOATO",
+      "KAPPA",
+      "LONGO"
+    ],
+    "2029-11-22": [
+      "ERIZO",
+      "VULTO",
+      "REUMA",
+      "MEDRA"
+    ],
+    "2029-11-23": [
+      "BEORI",
+      "MORGA",
+      "PAPAL",
+      "ATRAS"
+    ],
+    "2029-11-24": [
+      "ORIVE",
+      "PIUNE",
+      "GAÑAN",
+      "ZOMPO"
+    ],
+    "2029-11-25": [
+      "REBOL",
+      "MESAR",
+      "MUGIR",
+      "POLAR"
+    ],
+    "2029-11-26": [
+      "MACHO",
+      "YACON",
+      "LICEO",
+      "CAUDA"
+    ],
+    "2029-11-27": [
+      "HIÑIR",
+      "UEBOS",
+      "TIJUL",
+      "TAXON"
+    ],
+    "2029-11-28": [
+      "NERON",
+      "FONIL",
+      "NONES",
+      "TACHO"
+    ],
+    "2029-11-29": [
+      "BEODO",
+      "ESPAY",
+      "POTRO",
+      "ILEON"
+    ],
+    "2029-11-30": [
+      "TOMON",
+      "CIBAL",
+      "DIMES",
+      "TOTOL"
+    ],
+    "2029-12-01": [
+      "ZOTOL",
+      "TESTA",
+      "VIRGO",
+      "TAFIA"
+    ],
+    "2029-12-02": [
+      "RASTA",
+      "SALSA",
+      "ZAINO",
+      "VIOLA"
+    ],
+    "2029-12-03": [
+      "JAUDO",
+      "AGAMI",
+      "REJIN",
+      "LINCE"
+    ],
+    "2029-12-04": [
+      "NESGA",
+      "CORRO",
+      "COXIS",
+      "TIESO"
+    ],
+    "2029-12-05": [
+      "JISCA",
+      "CAVIO",
+      "SALIN",
+      "POSTA"
+    ],
+    "2029-12-06": [
+      "CHISA",
+      "LASTO",
+      "BUREL",
+      "PARAR"
+    ],
+    "2029-12-07": [
+      "DISCO",
+      "PESAR",
+      "FIQUE",
+      "ACIAR"
+    ],
+    "2029-12-08": [
+      "TERNE",
+      "GRIPA",
+      "ILUSO",
+      "MANIA"
+    ],
+    "2029-12-09": [
+      "BREVA",
+      "JARDA",
+      "CANTA",
+      "BUZAR"
+    ],
+    "2029-12-10": [
+      "SEXAR",
+      "TACAR",
+      "BUZOS",
+      "PADRE"
+    ],
+    "2029-12-11": [
+      "FROTE",
+      "CAUSA",
+      "DUPLA",
+      "PEGON"
+    ],
+    "2029-12-12": [
+      "PIJIN",
+      "LEUCO",
+      "NIVEL",
+      "FUTON"
+    ],
+    "2029-12-13": [
+      "ICONO",
+      "NEMEO",
+      "JINDA",
+      "HUEGO"
+    ],
+    "2029-12-14": [
+      "GEMIR",
+      "BATAN",
+      "PLEON",
+      "ROJEZ"
+    ],
+    "2029-12-15": [
+      "PENAR",
+      "CACAO",
+      "MAGIN",
+      "PALMA"
+    ],
+    "2029-12-16": [
+      "GRAJO",
+      "CAZON",
+      "DANGO",
+      "TORVA"
+    ],
+    "2029-12-17": [
+      "EPICA",
+      "BOMBE",
+      "CAIDA",
+      "DANES"
+    ],
+    "2029-12-18": [
+      "ORUJO",
+      "GOTON",
+      "CARLO",
+      "AHINA"
+    ],
+    "2029-12-19": [
+      "SAMBO",
+      "TEJON",
+      "ESTIL",
+      "BOTON"
+    ],
+    "2029-12-20": [
+      "DUCAL",
+      "SIGLA",
+      "PIDEN",
+      "INDIO"
+    ],
+    "2029-12-21": [
+      "GUZGO",
+      "LAICO",
+      "FIJON",
+      "TAJON"
+    ],
+    "2029-12-22": [
+      "MAHON",
+      "NOEMA",
+      "JIRON",
+      "TIRSO"
+    ],
+    "2029-12-23": [
+      "JUJEO",
+      "TINGE",
+      "BUARO",
+      "BABEO"
+    ],
+    "2029-12-24": [
+      "MELVA",
+      "HUMOR",
+      "TENSO",
+      "MENES"
+    ],
+    "2029-12-25": [
+      "PELLA",
+      "IMPAR",
+      "MAMUT",
+      "PRESO"
+    ],
+    "2029-12-26": [
+      "APODO",
+      "ILOTA",
+      "TAPIS",
+      "CERNO"
+    ]
+  }
+}

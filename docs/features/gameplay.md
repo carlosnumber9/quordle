@@ -75,7 +75,7 @@ repairs its entry.
 - Only one local session is active: reloading restores the same solutions and
   progress.
 - The initial session gets four random words directly from the JSON file.
-- The history is not queried and the Supabase client is not imported.
+- The production calendar is not loaded.
 - Each board displays its solution as a watermark to simplify manual checks.
   The UI requires both a `DEV` build and `local` mode; the watermark is never
   rendered in production.

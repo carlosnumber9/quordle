@@ -5,8 +5,8 @@
 1. `src/game/`: pure domain code. It normalizes, evaluates, and transforms
    state.
 2. `src/lib/`: shared infrastructure-independent utilities.
-3. `src/services/`: daily use cases and Supabase adapters.
-4. `src/pages/api/`: HTTP transport, cron authentication, and error codes.
+3. `src/services/`: daily calendar lookup and local game creation.
+4. `src/pages/api/`: HTTP transport and error codes.
 5. `src/pages/` and `src/components/`: Astro/React composition.
 
 Large areas expose a small entry point and keep their implementation in a
@@ -16,16 +16,16 @@ same-named local directory. Component contracts and constants live in
 leaking React or GSAP into the domain.
 
 Dependencies point toward the domain. The domain has no knowledge of Astro,
-Supabase, React, or GSAP.
+React, or GSAP.
 
 ## Loading flow
 
 1. The page requests `GET /api/game/today`.
 2. The server calculates the Madrid game date.
-3. In production, the service retrieves four ordered rows or creates the game
-   if it does not exist.
-4. In development, it selects four words from the JSON file without loading
-   the Supabase adapter.
+3. In production, the server-only service retrieves four words from the
+   immutable calendar.
+4. In development, it selects four words from the dictionary without loading
+   the production calendar.
 5. The client receives the ID, date, solutions, mode, and replay permission.
 6. The React island creates the state or reconstructs it from Local Storage.
 7. Each guess is processed with `submitGuess`.
@@ -33,11 +33,12 @@ Supabase, React, or GSAP.
 
 ## State
 
-The server stores only the solution history. Player progress remains in Local
-Storage and is reconstructed by replaying guesses through the engine; persisted
-evaluations are not trusted. Completed outcomes and final turn counts are kept
-under a separate versioned Local Storage key, indexed by game date. The streak
-derivation remains domain code and treats losses or missing dates as breaks.
+The repository stores the complete solution calendar. Player progress remains
+in Local Storage and is reconstructed by replaying guesses through the engine;
+persisted evaluations are not trusted. Completed outcomes and final turn counts
+are kept under a separate versioned Local Storage key, indexed by game date.
+The streak derivation remains domain code and treats losses or missing dates as
+breaks.
 
 Local development also stores the active session—its ID and four solutions—so
 reloading does not grant a new game. Each replay receives a new ID and removes

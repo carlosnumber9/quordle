@@ -2,8 +2,6 @@ import { describe, expect, it } from "vitest";
 
 import {
   getCurrentGameDate,
-  getMadridCalendarDate,
-  getMadridDateTime,
   getNextGameResetAt,
 } from "./game-date";
 
@@ -42,14 +40,6 @@ describe("game day in Europe/Madrid", () => {
     expect(getCurrentGameDate(new Date("2026-10-25T04:00:00Z"))).toBe(
       "2026-10-25",
     );
-  });
-
-  it("expone por separado la fecha civil de Madrid para el cron", () => {
-    const instant = new Date("2026-01-15T03:00:00Z");
-
-    expect(getMadridCalendarDate(instant)).toBe("2026-01-15");
-    expect(getMadridDateTime(instant).hour).toBe(4);
-    expect(getCurrentGameDate(instant)).toBe("2026-01-14");
   });
 
   it("calcula el siguiente reinicio en horario de invierno", () => {

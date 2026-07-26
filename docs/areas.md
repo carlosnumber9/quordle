@@ -12,11 +12,10 @@
 | Local replay | `src/game/replay.ts` | Visibility after a win or loss |
 | Sharing | `src/game/share.ts` | Solution-free emoji text |
 | Date | `src/lib/game-date.ts` | Madrid game day |
-| Daily use case | `src/services/daily-game.ts` | Idempotency and concurrency |
-| Local game | `src/services/local-game.ts` | Random selection without Supabase |
-| Supabase | `src/services/*supabase*` | Server-only adapter |
+| Daily calendar | `src/services/daily-calendar.ts` | Validate and read scheduled games |
+| Local game | `src/services/local-game.ts` | Random selection for development |
 | HTTP | `src/pages/api/` | Input and output contracts |
-| Database | `supabase/migrations/` | History and constraints |
+| Calendar data | `src/data/daily-games.json` | Immutable production schedule |
 | Interface | `src/components/game/Game.tsx` | Stable facade for the game island implemented in `Game/` |
 
 When investigating an issue, start with the area's entry point and its

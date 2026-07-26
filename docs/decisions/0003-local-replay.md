@@ -10,14 +10,14 @@ Local development has one active session per date, stored in Local Storage.
 Reloading preserves that game. After it ends, an explicit “Volver a jugar”
 (“Play again”) action can replace it with four new words from the JSON file.
 
-The local endpoint does not query Supabase. Each game receives a unique
-`gameId` to prevent progress from another replay on the same day from being
-restored.
+The local endpoint does not load the production calendar. Each game receives a
+unique `gameId` to prevent progress from another replay on the same day from
+being restored.
 
 ## Rationale
 
 This makes it possible to test wins, losses, persistence, and dialogs repeatedly
-without polluting the shared history or preparing data in Supabase.
+without changing the shared production calendar.
 
 ## Consequences
 
