@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { isLetterAbsentFromAllBoards } from "@/game/keyboard";
 import { cn } from "@/lib/utils";
 
 import { DOT_CLASSES, type LetterKeyProps } from "./definitions";
@@ -9,10 +10,19 @@ export function LetterKey({
   letter,
   onLetter,
 }: LetterKeyProps) {
+  const isAbsentFromAllBoards = isLetterAbsentFromAllBoards(
+    keyboardState,
+    letter,
+  );
+
   return (
     <Button
       aria-label={`Letra ${letter}`}
-      className="h-[clamp(2.75rem,6svh,3rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-sm sm:text-base"
+      className={cn(
+        "h-[clamp(2.75rem,6svh,3rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-sm sm:text-base",
+        isAbsentFromAllBoards &&
+          "border-muted bg-muted/70 text-muted-foreground hover:bg-muted/80 hover:text-muted-foreground dark:bg-muted/40 dark:hover:bg-muted/50",
+      )}
       disabled={disabled}
       onClick={() => onLetter(letter)}
       type="button"

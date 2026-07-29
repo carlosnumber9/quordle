@@ -9,6 +9,27 @@ export type {
   KeyboardState,
 } from "./keyboard/definitions";
 
+export function isLetterAbsentFromAllBoards(
+  keyboardState: KeyboardState,
+  letter: string,
+): boolean {
+  let hasAbsentEvaluation = false;
+
+  for (const board of keyboardState) {
+    const status = board[letter];
+
+    if (status === "correct" || status === "present") {
+      return false;
+    }
+
+    if (status === "absent") {
+      hasAbsentEvaluation = true;
+    }
+  }
+
+  return hasAbsentEvaluation;
+}
+
 export function deriveKeyboardState(state: GameState): KeyboardState {
   const boards: Array<Record<string, LetterStatus>> = state.boards.map(() => ({}));
 
