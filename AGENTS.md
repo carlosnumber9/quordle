@@ -54,7 +54,7 @@ Read `docs/README.md` before making significant changes.
 - Use Git over SSH for remote operations. The `origin` URL must use the
   `git@github.com:owner/repository.git` form, and normal fetch, pull, and push
   operations must not depend on GitHub CLI authentication.
-- Publish completed work to `main` unless the owner explicitly requests a
+- Publish completed work to `master` unless the owner explicitly requests a
   different branch.
 - Commit messages follow `<type>: <description>`, with the English description
   written in the simple past. Example: `feat: Added reduced boards gameplay`.
