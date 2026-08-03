@@ -59,6 +59,7 @@ describe("game completion", () => {
     const keyboard = deriveKeyboardState(state);
     expect(keyboard[0]?.B).toBe("correct");
     expect(keyboard[0]?.R).toBe("correct");
+    expect(keyboard[0]?.Z).toBe("absent");
     expect(keyboard).toHaveLength(4);
   });
 });

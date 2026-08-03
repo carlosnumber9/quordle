@@ -9,25 +9,24 @@ export function GameSkeleton() {
   return (
     <div
       aria-label="Cargando partida"
-      className="grid flex-1 grid-cols-2 place-content-center place-items-center gap-1"
+      className="grid flex-1 content-center gap-1.5"
     >
       {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
         <Card
-          className="gap-0 rounded-xl py-1 [--card-spacing:--spacing(1)]"
+          className="mx-auto w-full max-w-md gap-0 rounded-xl py-1.5 [--card-spacing:--spacing(2)]"
           key={boardIndex}
           size="sm"
         >
-          <CardContent className="grid gap-px">
-            {Array.from({ length: 9 }, (_, rowIndex) => (
-              <div className="grid grid-cols-5 gap-px" key={rowIndex}>
-                {Array.from({ length: WORD_LENGTH }, (_, tileIndex) => (
-                  <Skeleton
-                    className={cn(boardStyles.tile, "rounded-md")}
-                    key={tileIndex}
-                  />
-                ))}
-              </div>
-            ))}
+          <CardContent className={boardStyles.wordContent}>
+            <Skeleton className="size-6 rounded-full" />
+            <div className={boardStyles.positionGrid}>
+              {Array.from({ length: WORD_LENGTH }, (_, tileIndex) => (
+                <Skeleton
+                  className={cn(boardStyles.tile, "rounded-xl")}
+                  key={tileIndex}
+                />
+              ))}
+            </div>
           </CardContent>
         </Card>
       ))}

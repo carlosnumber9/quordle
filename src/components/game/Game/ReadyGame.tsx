@@ -1,46 +1,70 @@
+import { useEffect, useState } from "react";
+
 import { Board } from "../Board";
 import { CompletedGamePanel } from "../CompletedGamePanel";
 import { Keyboard } from "../Keyboard";
 import { shouldShowSolutionWatermark } from "../Board/utils";
 import { ResultDialog } from "../ResultDialog";
+import { CurrentGuess } from "./CurrentGuess";
 import type { ReadyGameProps } from "./definitions";
 import styles from "./styles.module.css";
 
 export function ReadyGame({ controller, view }: ReadyGameProps) {
+  const [selectedBoardIndex, setSelectedBoardIndex] = useState<number | null>(
+    null,
+  );
   const input = {
     onBackspace: controller.removeLetter,
     onEnter: controller.submitCurrentGuess,
     onLetter: controller.addLetter,
   };
 
+  useEffect(() => {
+    setSelectedBoardIndex(null);
+  }, [view.game.gameId]);
+
+  const toggleBoard = (boardIndex: number) => {
+    setSelectedBoardIndex((current) =>
+      current === boardIndex ? null : boardIndex,
+    );
+  };
+
   return (
     <>
-      <section aria-label="Tableros de juego" className={styles.boards} data-intro-reveal>
-        {Array.from({ length: 2 }, (_, columnIndex) => (
-          <div className={styles.boardColumn} key={columnIndex}>
-            {[columnIndex, columnIndex + 2].map((boardIndex) => (
-              <Board
-                boardIndex={boardIndex}
-                currentGuess={controller.currentGuess}
-                key={boardIndex}
-                showSolutionWatermark={shouldShowSolutionWatermark(
-                  import.meta.env.DEV,
-                  view.mode,
-                )}
-                state={view.game}
-              />
-            ))}
-          </div>
+      <section
+        aria-label="Palabras del juego"
+        className={styles.boards}
+        data-intro-reveal
+      >
+        {view.game.boards.map((_, boardIndex) => (
+          <Board
+            boardIndex={boardIndex}
+            key={boardIndex}
+            onSelect={() => toggleBoard(boardIndex)}
+            selected={selectedBoardIndex === boardIndex}
+            showSolutionWatermark={shouldShowSolutionWatermark(
+              import.meta.env.DEV,
+              view.mode,
+            )}
+            state={view.game}
+          />
         ))}
       </section>
       {view.game.status === "playing" ? (
-        <section className={styles.keyboard} data-intro-reveal>
-          <Keyboard
-            disabled={false}
-            keyboardState={controller.keyboardState}
-            {...input}
+        <div className={styles.inputArea} data-intro-reveal>
+          <CurrentGuess
+            attemptNumber={view.game.attempts.length + 1}
+            guess={controller.currentGuess}
           />
-        </section>
+          <section className={styles.keyboard}>
+            <Keyboard
+              disabled={false}
+              keyboardState={controller.keyboardState}
+              selectedBoardIndex={selectedBoardIndex}
+              {...input}
+            />
+          </section>
+        </div>
       ) : (
         <>
           <CompletedGamePanel

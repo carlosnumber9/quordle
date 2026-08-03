@@ -30,7 +30,17 @@ This prevents more yellow occurrences from being marked than actually exist.
 When a board is solved, the global guess number is recorded. Subsequent guesses
 store `null` for that board and do not change its result. The player wins by
 solving all four boards and loses by completing the ninth guess without doing
-so. At the end, both a win and a loss open a centered results dialog. Wins and
+so.
+
+The active interface does not render the full attempt history as four grids.
+Instead, it stacks four large five-position rows. A correct-position clue stays
+fixed in its position. Confirmed letters whose position is still unknown appear
+in a separate “Sin colocar” tray below that word, so they never imply a false
+position. The tray is cumulative and duplicate-aware: it shows the greatest
+confirmed occurrence count, minus occurrences already fixed in position. The
+current five-letter input is rendered once above the keyboard.
+
+At the end, both a win and a loss open a centered results dialog. Wins and
 partial losses show an animated turn-by-turn timeline. Every turn is
 represented, each solved word appears where its board was completed, and a
 partial loss groups every unresolved solution on turn nine. A loss with no
@@ -54,8 +64,17 @@ reloads the daily game.
 
 ## Keyboard
 
-Each key can have four visual states, one per board. Within each board, the
-priority is `correct > present > absent`, so a clue never degrades.
+In the default keyboard mode, individual board colours are hidden. A key whose
+letter is confirmed absent from all four words uses a fully muted treatment but
+remains enabled and can still be entered.
+
+Each word row acts as a keyboard filter. Selecting one animates the keyboard
+into that word's `correct`, `present`, `absent`, and unknown states using the
+whole key surface. Selecting another word switches the filter; selecting the
+active word again restores the default mode. The selected row is visibly
+highlighted, the interaction is keyboard accessible, and the transition is
+skipped under `prefers-reduced-motion`. Within each word, status priority
+remains `correct > present > absent`, so a clue never degrades.
 
 ## Persistence
 
@@ -76,7 +95,7 @@ repairs its entry.
   progress.
 - The initial session gets four random words directly from the JSON file.
 - The production calendar is not loaded.
-- Each board displays its solution as a watermark to simplify manual checks.
+- Each word row displays its solution as a watermark to simplify manual checks.
   The UI requires both a `DEV` build and `local` mode; the watermark is never
   rendered in production.
 - “Volver a jugar” (“Play again”) appears only after a win or loss.

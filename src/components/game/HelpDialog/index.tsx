@@ -35,6 +35,11 @@ export function HelpDialog() {
             Tienes nueve intentos para descubrir cuatro palabras de cinco
             letras.
           </p>
+          <p className="text-sm text-muted-foreground">
+            Cada palabra conserva en verde las posiciones que ya has acertado.
+            Las letras azules de “Sin colocar” pertenecen a esa palabra, pero
+            todavía pueden ocupar cualquiera de sus huecos libres.
+          </p>
           <div className="grid gap-2">
             <Legend variant="correct">Letra y posición correctas</Legend>
             <Legend variant="present">Letra correcta en otra posición</Legend>
@@ -42,7 +47,10 @@ export function HelpDialog() {
           </div>
           <Separator />
           <p className="text-sm text-muted-foreground">
-            Las cuatro marcas bajo cada tecla resumen su pista en cada tablero.
+            Una tecla completamente gris indica que esa letra no está en
+            ninguna palabra, pero puedes seguir utilizándola. Toca una palabra
+            para colorear todo el teclado con sus pistas; tócala otra vez para
+            volver al teclado general.
           </p>
         </div>
       </DialogContent>

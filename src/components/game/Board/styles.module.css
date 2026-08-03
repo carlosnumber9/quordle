@@ -1,9 +1,130 @@
-.tile {
-  width: calc(var(--tile-size) - 4px);
-  height: calc(var(--tile-size) - 4px);
+.wordCard {
+  min-height: calc(var(--word-tile-size) + 1.75rem);
+  transition:
+    outline-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
 }
 
-.tile[data-letter-status="present"] {
+.wordCard:hover {
+  background: color-mix(in oklab, var(--card) 94%, var(--color-sky-300));
+}
+
+.wordSelector {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wordSelector:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 1px;
+}
+
+.selectedWordCard {
+  background: color-mix(in oklab, var(--card) 88%, var(--sky-300));
+  outline: 3px solid var(--color-sky-400);
+  outline-offset: 1px;
+}
+
+.wordContent {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.wordNumber {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.selectedWordNumber {
+  background: var(--color-sky-300);
+  color: var(--color-sky-950);
+}
+
+.positionGrid {
+  display: grid;
+  width: fit-content;
+  margin-inline: auto;
+  grid-template-columns: repeat(5, var(--word-tile-size));
+  gap: clamp(0.2rem, 1vw, 0.375rem);
+}
+
+.tile {
+  display: grid;
+  width: var(--word-tile-size);
+  height: var(--word-tile-size);
+  place-items: center;
+  border: 2px solid var(--border);
+  border-radius: clamp(0.6rem, 2vw, 0.875rem);
+  font-size: clamp(1.4rem, calc(var(--word-tile-size) * 0.47), 2rem);
+  font-weight: 750;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.emptyTile {
+  background: color-mix(in oklab, var(--muted) 70%, transparent);
+}
+
+.correctTile {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.revealedTile {
+  border-color: var(--muted-foreground);
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.misplacedTray {
+  display: flex;
+  min-height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.125rem;
+}
+
+.misplacedLabel {
+  color: var(--muted-foreground);
+  font-size: 0.625rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.misplacedLetters {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.misplacedLetter {
+  display: grid;
+  width: 1.125rem;
+  height: 1.125rem;
+  place-items: center;
+  border-radius: 0.35rem;
+  background: var(--color-sky-300);
+  color: var(--color-sky-950);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
@@ -16,7 +137,7 @@
   place-items: center;
   overflow: hidden;
   color: var(--foreground);
-  font-size: clamp(0.75rem, calc(var(--tile-size) * 0.65), 1.625rem);
+  font-size: clamp(0.75rem, calc(var(--word-tile-size) * 0.42), 1.25rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -28,7 +149,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tile {
+  .wordCard,
+  .tile,
+  .misplacedLetter {
     animation: none !important;
     transition: none !important;
   }

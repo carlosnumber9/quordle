@@ -28,6 +28,17 @@
 - Generated dates are immutable and validation rejects silent reassignment.
 - Generic public messages do not reveal solutions outside the daily payload.
 
+## Version control
+
+- Remote Git operations use SSH and the `git@github.com:owner/repository.git`
+  URL form. Standard fetch, pull, and push workflows do not require `gh`
+  authentication.
+- Completed work targets `main` unless the owner specifies another branch.
+- Commit subjects follow `<type>: <description>`. The description is written in
+  English simple past, for example `feat: Added reduced boards gameplay`.
+- Choose a conventional type that matches the change: `feat`, `fix`,
+  `refactor`, `docs`, `test`, or `chore`.
+
 ## Interface
 
 - Semantic state in addition to color.

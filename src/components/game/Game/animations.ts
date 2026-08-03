@@ -75,10 +75,10 @@ export function useGuessAnimation(
       return;
     }
 
-    const row = `[data-attempt="${attemptCount - 1}"]`;
+    const row = `[data-clue-attempt="${attemptCount}"]`;
     const context = gsap.context(() => {
-      const correct = `${row} [data-letter-status="correct"]`;
-      const present = `${row} [data-letter-status="present"]`;
+      const correct = `${row}[data-letter-status="correct"]`;
+      const present = `${row}[data-letter-status="present"]`;
       gsap.fromTo(correct, { scale: 1 }, {
         duration: 0.16, ease: "power2.out", repeat: 1,
         scale: 1.16, stagger: 0.04, yoyo: true,

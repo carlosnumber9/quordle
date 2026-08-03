@@ -1,12 +1,31 @@
+import { useRef } from "react";
 import { RiCornerDownLeftLine, RiDeleteBack2Line } from "@remixicon/react";
 
 import { ActionKey } from "./ActionKey";
+import { useKeyboardModeAnimation } from "./animations";
 import { LETTER_ROWS, type KeyboardProps } from "./definitions";
 import { LetterKey } from "./LetterKey";
 
 export function Keyboard(props: KeyboardProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  useKeyboardModeAnimation(props.selectedBoardIndex, rootRef);
+
   return (
-    <div aria-label="Teclado del juego" className="grid gap-1" role="group">
+    <div
+      aria-label={
+        props.selectedBoardIndex === null
+          ? "Teclado del juego"
+          : `Teclado del juego, mostrando la palabra ${props.selectedBoardIndex + 1}`
+      }
+      className="grid gap-1"
+      ref={rootRef}
+      role="group"
+    >
+      <span aria-live="polite" className="sr-only">
+        {props.selectedBoardIndex === null
+          ? "Teclado general"
+          : `Mostrando pistas de la palabra ${props.selectedBoardIndex + 1}`}
+      </span>
       {LETTER_ROWS.map((row, rowIndex) => (
         <div className="flex justify-center gap-1" key={rowIndex}>
           {rowIndex === 2 ? (

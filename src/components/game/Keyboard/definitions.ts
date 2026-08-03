@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import type { KeyboardState } from "@/game/keyboard";
 import type { LetterStatus } from "@/game/definitions";
 
@@ -7,6 +9,7 @@ export interface KeyboardProps {
   readonly onBackspace: () => void;
   readonly onEnter: () => void;
   readonly onLetter: (letter: string) => void;
+  readonly selectedBoardIndex: number | null;
 }
 
 export interface ActionKeyProps {
@@ -18,7 +21,10 @@ export interface ActionKeyProps {
 }
 
 export interface LetterKeyProps
-  extends Pick<KeyboardProps, "disabled" | "keyboardState" | "onLetter"> {
+  extends Pick<
+    KeyboardProps,
+    "disabled" | "keyboardState" | "onLetter" | "selectedBoardIndex"
+  > {
   readonly letter: string;
 }
 
@@ -28,9 +34,11 @@ export const LETTER_ROWS = [
   ["Z", "X", "C", "V", "B", "N", "M"],
 ] as const;
 
-export const DOT_CLASSES: Readonly<Record<LetterStatus, string>> = {
-  correct: "bg-primary",
-  present: "bg-sky-300",
-  absent: "bg-muted-foreground/40",
+export const KEY_STATUS_CLASSES: Readonly<Record<LetterStatus, string>> = {
+  correct:
+    "border-primary bg-primary text-primary-foreground hover:bg-primary/85",
+  present:
+    "border-sky-300 bg-sky-300 text-sky-950 hover:bg-sky-200 hover:text-sky-950",
+  absent:
+    "border-muted-foreground/30 bg-muted-foreground/20 text-muted-foreground shadow-none hover:bg-muted-foreground/30 hover:text-foreground",
 };
-import type { ReactNode } from "react";

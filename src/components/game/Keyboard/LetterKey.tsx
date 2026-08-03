@@ -1,48 +1,37 @@
 import { Button } from "@/components/ui/button";
-import { isLetterAbsentFromAllBoards } from "@/game/keyboard";
 import { cn } from "@/lib/utils";
 
-import { DOT_CLASSES, type LetterKeyProps } from "./definitions";
+import { KEY_STATUS_CLASSES, type LetterKeyProps } from "./definitions";
+import { letterKeyLabel, visibleLetterStatus } from "./utils";
 
 export function LetterKey({
   disabled,
   keyboardState,
   letter,
   onLetter,
+  selectedBoardIndex,
 }: LetterKeyProps) {
-  const isAbsentFromAllBoards = isLetterAbsentFromAllBoards(
+  const status = visibleLetterStatus(
     keyboardState,
     letter,
+    selectedBoardIndex,
   );
 
   return (
     <Button
-      aria-label={`Letra ${letter}`}
+      aria-label={letterKeyLabel(letter, status, selectedBoardIndex)}
       className={cn(
-        "h-[clamp(2.75rem,6svh,3rem)] min-w-0 flex-1 flex-col gap-0 rounded-lg px-0 text-sm sm:text-base",
-        isAbsentFromAllBoards &&
-          "border-muted bg-muted/70 text-muted-foreground hover:bg-muted/80 hover:text-muted-foreground dark:bg-muted/40 dark:hover:bg-muted/50",
+        "h-[clamp(2.75rem,6svh,3rem)] min-w-0 flex-1 rounded-lg px-0 text-sm sm:text-base",
+        status !== undefined && KEY_STATUS_CLASSES[status],
       )}
+      data-key-status={status}
+      data-letter-key
       disabled={disabled}
       onClick={() => onLetter(letter)}
       type="button"
       variant="outline"
     >
-      <span>{letter}</span>
-      <span aria-hidden="true" className="grid grid-cols-4 gap-0.5">
-        {keyboardState.map((board, boardIndex) => {
-          const status = board[letter];
-          return (
-            <span
-              className={cn(
-                "size-1.5 rounded-full",
-                status === undefined ? "bg-border" : DOT_CLASSES[status],
-              )}
-              key={boardIndex}
-            />
-          );
-        })}
-      </span>
+      {letter}
     </Button>
   );
 }

@@ -1,5 +1,6 @@
 import type { GameState, LetterStatus } from "./definitions";
 import {
+  SPANISH_ALPHABET,
   STATUS_PRIORITY,
   type KeyboardState,
 } from "./keyboard/definitions";
@@ -62,6 +63,23 @@ export function deriveKeyboardState(state: GameState): KeyboardState {
       });
     });
   }
+
+  state.boards.forEach((boardState, boardIndex) => {
+    if (boardState.solvedAtAttempt === null) {
+      return;
+    }
+
+    const board = boards[boardIndex];
+    if (board === undefined) {
+      return;
+    }
+    const solutionLetters = new Set(Array.from(boardState.solution));
+    SPANISH_ALPHABET.forEach((letter) => {
+      if (!solutionLetters.has(letter)) {
+        board[letter] = "absent";
+      }
+    });
+  });
 
   return Object.freeze(
     boards.map((board) => Object.freeze({ ...board })),

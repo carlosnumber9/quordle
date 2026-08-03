@@ -49,6 +49,18 @@ Read `docs/README.md` before making significant changes.
 - `.env` is never committed; `.env.example` must reflect all variables.
 - Public errors must not include credentials, queries, or solutions.
 
+## Version control
+
+- Use Git over SSH for remote operations. The `origin` URL must use the
+  `git@github.com:owner/repository.git` form, and normal fetch, pull, and push
+  operations must not depend on GitHub CLI authentication.
+- Publish completed work to `main` unless the owner explicitly requests a
+  different branch.
+- Commit messages follow `<type>: <description>`, with the English description
+  written in the simple past. Example: `feat: Added reduced boards gameplay`.
+- Use an appropriate conventional type such as `feat`, `fix`, `refactor`,
+  `docs`, `test`, or `chore`.
+
 ## Minimum required changes
 
 - Rule changes: update tests and `docs/features/gameplay.md`.
