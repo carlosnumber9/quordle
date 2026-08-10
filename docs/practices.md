@@ -25,7 +25,8 @@
 ## Security
 
 - Production calendar imports remain in `.server.ts` modules.
-- Generated dates are immutable and validation rejects silent reassignment.
+- Published dates are immutable; regenerating unpublished dates requires an
+  explicit cutoff, and the generator keeps the preserved prefix unchanged.
 - Generic public messages do not reveal solutions outside the daily payload.
 
 ## Version control

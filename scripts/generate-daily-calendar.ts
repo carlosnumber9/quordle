@@ -7,6 +7,7 @@ import {
   createDailyCalendar,
   extendDailyCalendar,
   parseHistoryCsv,
+  regenerateDailyCalendarAfter,
 } from "./daily-calendar/utils";
 
 const outputPath = fileURLToPath(
@@ -14,6 +15,7 @@ const outputPath = fileURLToPath(
 );
 const historyPath = readArgument("--history");
 const seedArgument = readArgument("--seed");
+const regenerateAfter = readArgument("--regenerate-after");
 
 let calendar;
 if (existsSync(outputPath)) {
@@ -22,11 +24,14 @@ if (existsSync(outputPath)) {
       "El calendario ya existe; no se pueden sobrescribir su histórico o su semilla.",
     );
   }
-  calendar = extendDailyCalendar(
-    JSON.parse(readFileSync(outputPath, "utf8")) as unknown,
-    dictionary,
-  );
+  const currentCalendar = JSON.parse(readFileSync(outputPath, "utf8")) as unknown;
+  calendar = regenerateAfter
+    ? regenerateDailyCalendarAfter(currentCalendar, dictionary, regenerateAfter)
+    : extendDailyCalendar(currentCalendar, dictionary);
 } else {
+  if (regenerateAfter !== undefined) {
+    throw new Error("No se puede regenerar un calendario que todavía no existe.");
+  }
   if (historyPath === undefined) {
     throw new Error("La primera generación requiere --history <ruta-csv>.");
   }

@@ -15,7 +15,7 @@ during the production build.
 
 Every date must be consecutive, every game must contain four distinct
 dictionary words, and every dictionary word must appear exactly once across the
-calendar. A date is never reassigned silently.
+calendar. Published dates are never reassigned.
 
 `GET /api/game/today` calculates the active Madrid game date and reads that
 entry. The response is not cached. Dates outside the generated range return
@@ -32,6 +32,14 @@ blocks of four, and assigns consecutive dates.
 Once the file exists, `npm run calendar:generate` may only append newly added
 dictionary words after the last existing date. It never accepts a new history
 or seed and never overwrites an existing date.
+
+For a material dictionary update,
+`npm run calendar:generate -- --regenerate-after <YYYY-MM-DD>` preserves every
+game through the cutoff date and replaces all later games. The unused words
+from the current dictionary are ranked together with the existing seed, so new
+and previously scheduled words are distributed across the rebuilt future. The
+command rejects a cutoff outside the existing calendar and rejects removal of
+a word that has already been published.
 
 ## Local development branch
 

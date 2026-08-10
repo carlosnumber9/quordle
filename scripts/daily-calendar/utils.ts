@@ -5,7 +5,11 @@ import {
   DAILY_CALENDAR_VERSION,
   validateDailyCalendar,
 } from "../../src/services/daily-calendar";
-import { isIsoDate, nextIsoDate } from "../../src/services/daily-calendar/utils";
+import {
+  isIsoDate,
+  isRecord,
+  nextIsoDate,
+} from "../../src/services/daily-calendar/utils";
 import type { DailyWordHistoryRow } from "./definitions";
 
 export function parseHistoryCsv(csv: string): ReadonlyArray<DailyWordHistoryRow> {
@@ -96,6 +100,50 @@ export function extendDailyCalendar(
   const calendar = validateDailyCalendar(input, dictionary, {
     requireCompleteDictionary: false,
   });
+  return appendUnusedWords(calendar, dictionary);
+}
+
+export function regenerateDailyCalendarAfter(
+  input: unknown,
+  dictionary: ReadonlyArray<string>,
+  cutoffDate: string,
+): DailyCalendar {
+  if (!isIsoDate(cutoffDate)) {
+    throw new Error("La fecha de corte no es válida.");
+  }
+
+  const calendar = validateDailyCalendar(
+    input,
+    [...new Set([...dictionary, ...readExistingWords(input)])],
+    { requireCompleteDictionary: false },
+  );
+  if (calendar.games[cutoffDate] === undefined) {
+    throw new Error(`El calendario no contiene la fecha de corte ${cutoffDate}.`);
+  }
+
+  const dictionarySet = new Set(dictionary);
+  const games = Object.fromEntries(
+    Object.entries(calendar.games).filter(([date]) => date <= cutoffDate),
+  );
+  const unavailableWords = Object.values(games)
+    .flat()
+    .filter((word) => !dictionarySet.has(word));
+  if (unavailableWords.length > 0) {
+    throw new Error(
+      `La palabra publicada ${unavailableWords[0]} ya no está en el diccionario.`,
+    );
+  }
+
+  return appendUnusedWords(
+    { version: DAILY_CALENDAR_VERSION, seed: calendar.seed, games },
+    dictionary,
+  );
+}
+
+function appendUnusedWords(
+  calendar: DailyCalendar,
+  dictionary: ReadonlyArray<string>,
+): DailyCalendar {
   const usedWords = new Set(Object.values(calendar.games).flat());
   const remaining = dictionary.filter((word) => !usedWords.has(word));
   if (remaining.length % 4 !== 0) {
@@ -124,6 +172,18 @@ export function extendDailyCalendar(
 
 function rankWord(seed: string, word: string): string {
   return createHash("sha256").update(seed).update("\0").update(word).digest("hex");
+}
+
+function readExistingWords(input: unknown): string[] {
+  if (!isRecord(input) || !isRecord(input.games)) {
+    return [];
+  }
+
+  return Object.values(input.games).flatMap((words) =>
+    Array.isArray(words)
+      ? words.filter((word): word is string => typeof word === "string")
+      : [],
+  );
 }
 
 function parseCsvLine(line: string): string[] {

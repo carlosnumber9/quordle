@@ -4,6 +4,7 @@ import {
   createDailyCalendar,
   extendDailyCalendar,
   parseHistoryCsv,
+  regenerateDailyCalendarAfter,
 } from "./daily-calendar/utils";
 
 const DICTIONARY = [
@@ -52,6 +53,40 @@ describe("daily calendar generation", () => {
       existing.games["2026-07-24"],
     );
     expect(extended.games["2026-07-25"]).toHaveLength(4);
+  });
+
+  it("conserva las fechas publicadas y regenera todo el futuro", () => {
+    const existing = createDailyCalendar(
+      parseHistoryCsv(CSV),
+      DICTIONARY,
+      SEED,
+    );
+    const revisedDictionary = [
+      ...DICTIONARY.slice(0, 4),
+      "PERRO",
+      "GATOS",
+      "CIELO",
+      "RATON",
+    ];
+
+    const first = regenerateDailyCalendarAfter(
+      existing,
+      revisedDictionary,
+      "2026-07-24",
+    );
+    const second = regenerateDailyCalendarAfter(
+      existing,
+      revisedDictionary,
+      "2026-07-24",
+    );
+
+    expect(first).toEqual(second);
+    expect(first.games["2026-07-24"]).toEqual(
+      existing.games["2026-07-24"],
+    );
+    expect(new Set(first.games["2026-07-25"])).toEqual(
+      new Set(["PERRO", "GATOS", "CIELO", "RATON"]),
+    );
   });
 
   it("rechaza históricos parciales y duplicados", () => {

@@ -17,7 +17,7 @@ describe("production daily game response", () => {
   });
 
   it("devuelve indisponible fuera del calendario", async () => {
-    const response = await productionGameResponse("2030-01-01");
+    const response = await productionGameResponse("9999-12-31");
 
     expect(response.status).toBe(503);
     await expect(response.json()).resolves.toEqual({
