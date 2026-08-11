@@ -91,6 +91,8 @@ only opens after that explicit interaction.
 
 While the native keyboard is open, the game preserves the four-board layout and
 adds enough vertical scroll to reach the final rows of boards three and four.
+An enlarged board keeps additional scroll clearance below its final row so
+every tile can move fully above the native keyboard.
 Tapping anywhere outside an individual board removes focus from the invisible
 input and dismisses the native keyboard.
 

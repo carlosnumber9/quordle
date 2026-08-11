@@ -30,6 +30,12 @@
   pointer-events: none;
 }
 
+.playing[data-native-keyboard-open]:has(.boards[data-zoom-active])::after {
+  flex-basis: calc(
+    var(--native-keyboard-inset, 0px) + clamp(2rem, 7vmin, 3rem)
+  );
+}
+
 .playing[data-native-keyboard-open] .boards {
   flex: 0 0 var(--native-keyboard-boards-height);
 }
