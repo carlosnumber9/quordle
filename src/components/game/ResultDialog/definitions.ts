@@ -11,23 +11,6 @@ export interface ResultDialogProps {
   readonly replaying: boolean;
 }
 
-export interface ResultSummary {
-  readonly resolvedWordsByAttempt: ReadonlyArray<ReadonlyArray<string>>;
-  readonly showTimeline: boolean;
-  readonly unresolvedWords: ReadonlyArray<string>;
-}
-
-export interface ResultTimelineProps {
-  readonly game: GameState;
-  readonly resolvedWordsByAttempt: ReadonlyArray<ReadonlyArray<string>>;
-  readonly unresolvedWords: ReadonlyArray<string>;
-  readonly won: boolean;
-}
-
-export interface ResultSolutionsProps {
-  readonly words: ReadonlyArray<string>;
-}
-
 export const LOSS_MESSAGES = [
   "¡Otro día será!",
   "Esta vez no pudo ser...",

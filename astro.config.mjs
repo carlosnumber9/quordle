@@ -20,6 +20,11 @@ export default defineConfig({
         access: "public",
         optional: true,
       }),
+      RAE_API_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: true,
+      }),
     },
   },
 });

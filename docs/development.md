@@ -3,7 +3,8 @@
 ## Requirements
 
 - Node.js 24.
-- Variables based on `.env.example` only when overriding the shared-result URL.
+- Variables based on `.env.example` when overriding the shared-result URL or
+  testing definitions with an API key.
 
 ## Setup
 
@@ -20,9 +21,13 @@ browser unless the owner explicitly requests it.
 | Variable | Exposure | Purpose |
 | --- | --- | --- |
 | `PUBLIC_SITE_URL` | Public | Link included in shared results |
+| `RAE_API_KEY` | Server secret | Higher quota for final definitions; required in production |
 
-The project builds without an environment file. While `npm run dev` is
-running, the API selects four words from the dictionary and the browser
+The project builds without an environment file. Add `RAE_API_KEY` for local
+definition testing: the anonymous tier allows only ten requests per minute,
+while a single ambiguous word may require several lemma lookups. Without the
+key, some definition cards can collapse after the provider returns `429`.
+While `npm run dev` is running, the API selects four words from the dictionary and the browser
 maintains one local session per date. After the game ends, another can be
 generated with “Volver a jugar” (“Play again”). This behavior is removed from
 the production build.

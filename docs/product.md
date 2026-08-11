@@ -16,6 +16,7 @@ The product prioritizes clarity and maintainability over scalability.
 - A browser-local seven-day result timeline and current winning streak.
 - Replays blocked after the game ends.
 - A copyable final result containing an emoji grid and a link.
+- Final cards for all four solutions with their first RAE definitions.
 - Restrained, accessible GSAP animations.
 - An explicit replay after the game ends in local development to make testing
   easier.

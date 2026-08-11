@@ -30,3 +30,5 @@ without changing the shared production calendar.
 - Replacing the session clears only active progress. Browser-local streak
   history remains available, and the latest completed replay replaces the
   result for that date.
+- Cached definitions are scoped by `gameId`, date, and ordered solutions, so a
+  replay on the same date cannot restore definitions from the previous game.

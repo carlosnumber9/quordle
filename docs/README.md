@@ -30,6 +30,7 @@ This directory is the starting point for understanding and maintaining Quordle.
 - [ADR-0001: daily rollover at 05:00 Madrid time](decisions/0001-madrid-game-day.md)
 - [ADR-0003: replayable games in local development only](decisions/0003-local-replay.md)
 - [ADR-0004: immutable daily calendar](decisions/0004-immutable-daily-calendar.md)
+- [ADR-0005: on-demand final definitions](decisions/0005-on-demand-definitions.md)
 
 The visual interface uses the shadcn/ui preset `b1aJEHx6e` and its tokens as
 its sole styling system.

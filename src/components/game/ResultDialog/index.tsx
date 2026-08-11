@@ -15,13 +15,12 @@ import { getStreakSummary, loadStreakHistory } from "@/game/streak";
 import { cn } from "@/lib/utils";
 
 import { LocalReplayButton } from "../LocalReplayButton";
-import { ResultTimeline } from "../ResultTimeline";
+import { ResultDefinitions } from "../ResultDefinitions";
+import { useWordDefinitions } from "../ResultDefinitions/use-word-definitions";
 import { StreakTimeline } from "../StreakTimeline";
 import { useResultAnimation } from "./animations";
 import { LOSS_MESSAGES, type ResultDialogProps } from "./definitions";
-import { ResultSolutions } from "./ResultSolutions";
 import styles from "./styles.module.css";
-import { summarizeResult } from "./utils";
 
 export function ResultDialog(props: ResultDialogProps) {
   const { game, mode, onOpenChange, onReplay, onShare, open, replaying } = props;
@@ -33,7 +32,15 @@ export function ResultDialog(props: ResultDialogProps) {
       LOSS_MESSAGES[0],
     [game.gameId],
   );
-  const summary = useMemo(() => summarizeResult(game), [game]);
+  const words = useMemo(
+    () => game.boards.map((board) => board.solution),
+    [game.boards],
+  );
+  const definitionStates = useWordDefinitions(
+    game.gameId,
+    game.gameDate,
+    words,
+  );
   const streakSummary = useMemo(
     () =>
       getStreakSummary(
@@ -65,11 +72,10 @@ export function ResultDialog(props: ResultDialogProps) {
             </DialogDescription>
           ) : null}
         </DialogHeader>
-        {summary.showTimeline ? (
-          <ResultTimeline game={game} won={won} {...summary} />
-        ) : (
-          <ResultSolutions words={summary.unresolvedWords} />
-        )}
+        <ResultDefinitions
+          boards={game.boards}
+          definitionStates={definitionStates}
+        />
         <StreakTimeline summary={streakSummary} />
         <Separator />
         <DialogFooter className="flex-col gap-2 sm:justify-center">

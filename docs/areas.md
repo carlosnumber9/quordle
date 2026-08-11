@@ -14,9 +14,12 @@
 | Date | `src/lib/game-date.ts` | Madrid game day |
 | Daily calendar | `src/services/daily-calendar.ts` | Validate and read scheduled games |
 | Local game | `src/services/local-game.ts` | Random selection for development |
+| Definitions | `src/services/word-definitions.ts` | Combine morphology with dictionary senses |
+| Definition cache | `src/services/word-definitions-storage.ts` | Persist successful final definitions for the current game |
 | HTTP | `src/pages/api/` | Input and output contracts |
 | Calendar data | `src/data/daily-games.json` | Immutable production schedule |
 | Interface | `src/components/game/Game.tsx` | Stable facade for the game island implemented in `Game/` |
+| Final definitions | `src/components/game/ResultDefinitions/` | Load and render final word cards |
 
 When investigating an issue, start with the area's entry point and its
 corresponding `*.test.ts` file.

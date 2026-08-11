@@ -19,6 +19,12 @@
 - Local selection without history, a new identity for each replay, and a stable
   session across reloads.
 - The replay button being visible only after a win or loss in local mode.
+- Diacritic expansion and ambiguous Spanish morphological readings.
+- Selection of the first RAE sense matching each lexical category.
+- Independent definition loading, partial upstream failure, and result-card
+  labels.
+- Definition-cache restoration, corruption cleanup, and isolation between
+  daily games and local replays.
 
 ## Before merging
 

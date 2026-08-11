@@ -11,23 +11,14 @@ export function useResultAnimation(
     if (content === null || !open) {
       return;
     }
-    const turns = content.querySelectorAll("[data-result-turn]");
-    const connectors = content.querySelectorAll("[data-result-connector]");
-    const words = content.querySelectorAll("[data-result-word]");
     const streakPoints = content.querySelectorAll("[data-streak-point]");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       gsap.set(content, { clearProps: "opacity,scale,transform" });
-      gsap.set(turns, { clearProps: "opacity,transform" });
-      gsap.set(connectors, { clearProps: "transform" });
-      gsap.set(words, { clearProps: "opacity,transform" });
       gsap.set(streakPoints, { clearProps: "opacity,transform" });
       return;
     }
 
     const context = gsap.context(() => {
-      gsap.set(turns, { opacity: 0, x: -10 });
-      gsap.set(connectors, { scaleY: 0, transformOrigin: "top center" });
-      gsap.set(words, { opacity: 0, scale: 0.8 });
       gsap.set(streakPoints, { opacity: 0, scale: 0.35 });
       const timeline = gsap.timeline();
 
@@ -54,37 +45,6 @@ export function useResultAnimation(
         duration: 0.38,
         ease: "elastic.out(1, 0.55)",
         stagger: 0.07,
-      });
-
-      turns.forEach((turn) => {
-        timeline.to(turn, {
-          opacity: 1,
-          x: 0,
-          duration: 0.16,
-          ease: "power1.out",
-        });
-        const turnWords = turn.querySelectorAll("[data-result-word]");
-        if (turnWords.length > 0) {
-          timeline.to(
-            turnWords,
-            {
-              opacity: 1,
-              scale: 1,
-              duration: 0.22,
-              ease: "back.out(1.7)",
-              stagger: 0.06,
-            },
-            "<",
-          );
-        }
-        const connector = turn.querySelector("[data-result-connector]");
-        if (connector !== null) {
-          timeline.to(connector, {
-            scaleY: 1,
-            duration: 0.12,
-            ease: "none",
-          });
-        }
       });
     }, content);
 

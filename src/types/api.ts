@@ -1,1 +1,7 @@
-export type { GameMode, GamePayload } from "./api/definitions";
+export type {
+  GameMode,
+  GamePayload,
+  WordCategory,
+  WordDefinitionPayload,
+  WordReading,
+} from "./api/definitions";

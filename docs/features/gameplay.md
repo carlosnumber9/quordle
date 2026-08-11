@@ -46,14 +46,26 @@ Escape provides the same action. Both transitions become immediate under
 final dimensions; transforms exist only during each transition so the resting
 board remains sharp.
 
-At the end, both a win and a loss open a centered results dialog. Wins and
-partial losses show an animated turn-by-turn timeline. Every turn is
-represented, each solved word appears where its board was completed, and a
-partial loss groups every unresolved solution on turn nine. A loss with no
-solved boards skips the empty timeline and reveals the four solutions directly.
-The animation is skipped when the player prefers reduced motion. A win uses a
-prominent trophy heading, while a loss shows one randomly selected
+At the end, both a win and a loss open a centered results dialog. The dialog
+always shows the four solutions in board order; it does not show the previous
+turn-by-turn timeline. Each solution has a borderless card with a lightly green
+background when solved and a lightly grey background when unresolved. A small
+footer reports `Resuelta en 1 turno`, `Resuelta en N turnos`, or `No resuelta`.
+A win uses a prominent trophy heading, while a loss shows one randomly selected
 encouragement message.
+
+Each solution card requests its dictionary information independently after the
+game has ended. The word and result footer render immediately, while a skeleton
+reserves the definition area. A successful request replaces that skeleton with
+every valid lexical reading and the first matching RAE sense. An inflected verb
+first reports its possible person, number, tense, and mood, then the first sense
+of its infinitive. Because game words do not preserve vowel diacritics, all
+valid accented and unaccented readings are retained. If a definition cannot be
+loaded, the skeleton fades out and the card contracts to the word and result
+footer. Successful definitions are stored locally for that game and restored
+without another API request after closing or reloading the site. Failed
+lookups remain retryable on a later visit. Both transitions are skipped under
+`prefers-reduced-motion`.
 
 The dialog also shows a horizontal timeline for the last seven game dates.
 Victories display the final turn number in a green marker whose size decreases
@@ -64,7 +76,8 @@ scale animation, which is skipped under `prefers-reduced-motion`. A subtitle
 reports no active streak, the first victory in a new streak, or the full number
 of consecutive victories ending on the current game date.
 
-After closing the dialog, a compact finished-game panel keeps the results
+The result dialog retains the separate seven-day streak timeline. After closing
+the dialog, a compact finished-game panel keeps the results
 available and counts down to the next 05:00 rollover in Madrid; reaching zero
 reloads the daily game.
 

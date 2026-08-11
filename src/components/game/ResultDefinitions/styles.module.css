@@ -1,0 +1,131 @@
+.section {
+  width: 100%;
+  text-align: left;
+}
+
+.sectionTitle {
+  margin-block-end: 0.625rem;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wordList {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.wordCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  border: 0;
+  border-radius: 1rem;
+  padding: 0.875rem 1rem 0.75rem;
+  background: color-mix(in oklab, var(--muted) 82%, var(--background));
+}
+
+.wordCard[data-resolved] {
+  background: color-mix(in oklab, var(--primary) 14%, var(--card));
+}
+
+.word {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.definitionLayers {
+  display: grid;
+}
+
+.definitionSkeleton,
+.definitionContent {
+  grid-area: 1 / 1;
+}
+
+.definitionSkeleton {
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+  min-height: 4.35rem;
+}
+
+.skeletonLabel {
+  width: 42%;
+  height: 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--muted-foreground) 18%, transparent);
+}
+
+.skeletonLine,
+.skeletonShortLine {
+  height: 0.875rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--muted-foreground) 14%, transparent);
+}
+
+.skeletonLine {
+  width: 100%;
+}
+
+.skeletonShortLine {
+  width: 68%;
+}
+
+.definitionContent {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reading {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.readingHeading,
+.labels {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.readingHeading {
+  font-weight: 650;
+}
+
+.displayedForm {
+  color: var(--foreground);
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.labels {
+  font-style: italic;
+}
+
+.definition {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.definitionPrefix {
+  font-weight: 650;
+}
+
+.resultText {
+  margin-block-start: auto;
+  color: var(--muted-foreground);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .definitionSkeleton :global([data-slot="skeleton"]) {
+    animation: none;
+  }
+}

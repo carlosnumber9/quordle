@@ -22,31 +22,6 @@
   color: var(--primary);
 }
 
-.solutions {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 1rem;
-  background: var(--muted);
-  text-align: left;
-}
-
-.solutionList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-
-.solutionWord {
-  border-radius: 0.75rem;
-  padding: 0.625rem;
-  background: var(--background);
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-align: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .dialog {
     animation: none !important;

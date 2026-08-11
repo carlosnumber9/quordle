@@ -30,6 +30,13 @@ React, or GSAP.
 6. The React island creates the state or reconstructs it from Local Storage.
 7. Each guess is processed with `submitGuess`.
 8. The UI persists the new state and animates the resulting evaluation.
+9. After completion, the UI restores successful definitions cached for the
+   current game and requests only missing solutions from the local definitions
+   endpoint.
+10. Each successful response is added to a versioned Local Storage record tied
+    to the game ID, date, and ordered solutions.
+11. The endpoint uses Apertium to recover all morphological readings and the
+    unofficial RAE API to retrieve the first matching dictionary sense.
 
 ## State
 
@@ -57,8 +64,16 @@ The island renders the engine's immutable state, loads and restores the
 session, dispatches guesses, and delegates rules to `src/game/`. Each component
 owns its GSAP code in a local `animations.ts`: the title entrance and evaluated
 tiles belong to `Game`, collapsing solved boards to `Board`, and result reveal
-and the left-to-right streak markers to `ResultDialog`. All animations are skipped when
+and the left-to-right streak markers to `ResultDialog`, and definition loading
+transitions to `ResultDefinitions`. All animations are skipped when
 `prefers-reduced-motion` is enabled.
+
+Definition provider responses are translated into the stable
+`WordDefinitionPayload` API type. Provider payloads and credentials never reach
+the browser. Successful word responses are cached at the edge for one day;
+the browser also keeps successful definitions for the current game in Local
+Storage. Failed lookups are not persisted, so a later visit can retry them.
+Definitions remain absent from repository data.
 
 The boards are arranged in two independent columns: 1 above 3 and 2 above 4.
 The columns remain anchored to the top so that the upper boards do not move
