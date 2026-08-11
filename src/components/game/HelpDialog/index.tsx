@@ -36,9 +36,9 @@ export function HelpDialog() {
             letras.
           </p>
           <p className="text-sm text-muted-foreground">
-            Cada palabra conserva en verde las posiciones que ya has acertado.
-            Las letras azules de “Sin colocar” pertenecen a esa palabra, pero
-            todavía pueden ocupar cualquiera de sus huecos libres.
+            Cada intento aparece en los cuatro tableros. El verde marca una
+            letra en su posición, el azul una letra en otra posición y el gris
+            una letra ausente de esa palabra.
           </p>
           <div className="grid gap-2">
             <Legend variant="correct">Letra y posición correctas</Legend>
@@ -47,10 +47,9 @@ export function HelpDialog() {
           </div>
           <Separator />
           <p className="text-sm text-muted-foreground">
-            Una tecla completamente gris indica que esa letra no está en
-            ninguna palabra, pero puedes seguir utilizándola. Toca una palabra
-            para colorear todo el teclado con sus pistas; tócala otra vez para
-            volver al teclado general.
+            En ordenador, escribe directamente con el teclado físico. En móvil,
+            toca una vez cualquiera de los cuatro tableros para abrir el teclado
+            nativo. Usa Intro o la tecla de envío para probar la palabra.
           </p>
         </div>
       </DialogContent>

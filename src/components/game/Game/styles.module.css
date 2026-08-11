@@ -1,11 +1,10 @@
 .game {
   --game-gap: clamp(0.375rem, 1svh, 0.75rem);
-  --word-tile-size: clamp(
-    2.625rem,
-    min(7.4svh, calc((100vw - 5rem) / 5)),
-    4rem
+  --tile-size: clamp(
+    1rem,
+    min(calc((100svh - 6rem) / 18), calc((100vw - 3rem) / 10)),
+    3.5rem
   );
-  --guess-tile-size: clamp(2.35rem, 6.2svh, 3.25rem);
 }
 
 .playing,
@@ -22,63 +21,39 @@
 }
 
 .boards {
-  display: flex;
+  --board-gap: clamp(0.25rem, 0.75svh, 0.5rem);
+  display: grid;
   min-height: 0;
   flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(0.2rem, 0.65svh, 0.5rem);
-}
-
-.inputArea {
-  display: grid;
-  flex: none;
-  gap: clamp(0.25rem, 0.75svh, 0.5rem);
-}
-
-.currentGuess {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.currentGuessLabel {
-  width: 3.5rem;
-  color: var(--muted-foreground);
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 1.1;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-.guessGrid {
-  display: grid;
-  grid-template-columns: repeat(5, var(--guess-tile-size));
-  gap: 0.25rem;
-}
-
-.guessTile {
-  display: grid;
-  width: var(--guess-tile-size);
-  height: var(--guess-tile-size);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  place-content: center;
   place-items: center;
-  border: 2px solid var(--border);
-  border-radius: 0.7rem;
-  background: color-mix(in oklab, var(--muted) 70%, transparent);
-  font-size: clamp(1.15rem, calc(var(--guess-tile-size) * 0.46), 1.5rem);
-  font-weight: 750;
-  line-height: 1;
-  text-transform: uppercase;
+  gap: var(--board-gap);
 }
 
-.filledGuessTile {
-  border-color: color-mix(in oklab, var(--foreground) 35%, transparent);
-  background: var(--card);
+@supports (width: 1cqw) {
+  .boards {
+    --tile-size: clamp(
+      1rem,
+      min(
+        calc((100cqw - var(--board-gap) - 1.5rem) / 10),
+        calc((100cqh - var(--board-gap) - 1.5rem) / 18)
+      ),
+      3.5rem
+    );
+    container-type: size;
+  }
 }
 
-.keyboard {
-  width: min(100%, 48rem);
-  margin-inline: auto;
+.nativeInput {
+  position: fixed;
+  inset-inline-start: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  font-size: 16px;
+  pointer-events: none;
 }

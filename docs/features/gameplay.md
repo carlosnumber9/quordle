@@ -32,13 +32,11 @@ store `null` for that board and do not change its result. The player wins by
 solving all four boards and loses by completing the ninth guess without doing
 so.
 
-The active interface does not render the full attempt history as four grids.
-Instead, it stacks four large five-position rows. A correct-position clue stays
-fixed in its position. Confirmed letters whose position is still unknown appear
-in a separate “Sin colocar” tray below that word, so they never imply a false
-position. The tray is cumulative and duplicate-aware: it shows the greatest
-confirmed occurrence count, minus occurrences already fixed in position. The
-current five-letter input is rendered once above the keyboard.
+The active interface renders four nine-by-five grids in the original Quordle
+two-by-two layout. Every accepted guess remains visible in each unresolved
+board with its full `correct`, `present`, and `absent` evaluation. The current
+five-letter input appears simultaneously in the active row of every unresolved
+board. Rows after a board's solution remain empty.
 
 At the end, both a win and a loss open a centered results dialog. Wins and
 partial losses show an animated turn-by-turn timeline. Every turn is
@@ -62,19 +60,18 @@ After closing the dialog, a compact finished-game panel keeps the results
 available and counts down to the next 05:00 rollover in Madrid; reaching zero
 reloads the daily game.
 
-## Keyboard
+## Input
 
-In the default keyboard mode, individual board colours are hidden. A key whose
-letter is confirmed absent from all four words uses a fully muted treatment but
-remains enabled and can still be entered.
+The interface has no virtual keyboard. Desktop players can type immediately
+with a physical keyboard without first selecting a board. On touch devices, a
+single tap on any board focuses an invisible text input and opens the device's
+native keyboard. The input is not focused automatically, so the native keyboard
+only opens after that explicit interaction.
 
-Each word row acts as a keyboard filter. Selecting one animates the keyboard
-into that word's `correct`, `present`, `absent`, and unknown states using the
-whole key surface. Selecting another word switches the filter; selecting the
-active word again restores the default mode. The selected row is visibly
-highlighted, the interaction is keyboard accessible, and the transition is
-skipped under `prefers-reduced-motion`. Within each word, status priority
-remains `correct > present > absent`, so a clue never degrades.
+Letters are normalized and rendered simultaneously in the active row of every
+unresolved board. Backspace removes one letter, and Enter or the native send key
+submits the current word. Removing the virtual keyboard leaves the full
+remaining viewport available to the four-board grid.
 
 ## Persistence
 
@@ -95,7 +92,7 @@ repairs its entry.
   progress.
 - The initial session gets four random words directly from the JSON file.
 - The production calendar is not loaded.
-- Each word row displays its solution as a watermark to simplify manual checks.
+- Each board displays its solution as a watermark to simplify manual checks.
   The UI requires both a `DEV` build and `local` mode; the watermark is never
   rendered in production.
 - “Volver a jugar” (“Play again”) appears only after a win or loss.

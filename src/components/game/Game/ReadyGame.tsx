@@ -1,47 +1,43 @@
-import { useEffect, useState } from "react";
+import { useRef, type ChangeEvent } from "react";
+
+import { WORD_LENGTH } from "@/game/definitions";
 
 import { Board } from "../Board";
 import { CompletedGamePanel } from "../CompletedGamePanel";
-import { Keyboard } from "../Keyboard";
 import { shouldShowSolutionWatermark } from "../Board/utils";
 import { ResultDialog } from "../ResultDialog";
-import { CurrentGuess } from "./CurrentGuess";
 import type { ReadyGameProps } from "./definitions";
 import styles from "./styles.module.css";
 
 export function ReadyGame({ controller, view }: ReadyGameProps) {
-  const [selectedBoardIndex, setSelectedBoardIndex] = useState<number | null>(
-    null,
-  );
-  const input = {
-    onBackspace: controller.removeLetter,
-    onEnter: controller.submitCurrentGuess,
-    onLetter: controller.addLetter,
+  const nativeInputRef = useRef<HTMLInputElement>(null);
+
+  const focusNativeInput = () => {
+    const input = nativeInputRef.current;
+    if (input === null) {
+      return;
+    }
+    input.focus({ preventScroll: true });
+    input.setSelectionRange(input.value.length, input.value.length);
   };
 
-  useEffect(() => {
-    setSelectedBoardIndex(null);
-  }, [view.game.gameId]);
-
-  const toggleBoard = (boardIndex: number) => {
-    setSelectedBoardIndex((current) =>
-      current === boardIndex ? null : boardIndex,
-    );
+  const updateNativeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    controller.replaceCurrentGuess(event.currentTarget.value);
   };
 
   return (
     <>
       <section
-        aria-label="Palabras del juego"
+        aria-label="Tableros de juego"
         className={styles.boards}
         data-intro-reveal
       >
         {view.game.boards.map((_, boardIndex) => (
           <Board
             boardIndex={boardIndex}
+            currentGuess={controller.currentGuess}
             key={boardIndex}
-            onSelect={() => toggleBoard(boardIndex)}
-            selected={selectedBoardIndex === boardIndex}
+            onInputRequest={focusNativeInput}
             showSolutionWatermark={shouldShowSolutionWatermark(
               import.meta.env.DEV,
               view.mode,
@@ -51,20 +47,21 @@ export function ReadyGame({ controller, view }: ReadyGameProps) {
         ))}
       </section>
       {view.game.status === "playing" ? (
-        <div className={styles.inputArea} data-intro-reveal>
-          <CurrentGuess
-            attemptNumber={view.game.attempts.length + 1}
-            guess={controller.currentGuess}
-          />
-          <section className={styles.keyboard}>
-            <Keyboard
-              disabled={false}
-              keyboardState={controller.keyboardState}
-              selectedBoardIndex={selectedBoardIndex}
-              {...input}
-            />
-          </section>
-        </div>
+        <input
+          aria-label="Palabra actual"
+          autoCapitalize="characters"
+          autoComplete="off"
+          autoCorrect="off"
+          className={styles.nativeInput}
+          enterKeyHint="done"
+          inputMode="text"
+          maxLength={WORD_LENGTH}
+          onChange={updateNativeInput}
+          ref={nativeInputRef}
+          spellCheck={false}
+          type="text"
+          value={controller.currentGuess}
+        />
       ) : (
         <>
           <CompletedGamePanel

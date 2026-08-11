@@ -46,6 +46,19 @@ export function useGameInput(
   const removeLetter = useCallback(() => {
     setCurrentGuess((guess) => Array.from(guess).slice(0, -1).join(""));
   }, [setCurrentGuess]);
+
+  const replaceCurrentGuess = useCallback(
+    (value: string) => {
+      if (view.status !== "ready" || view.game.status !== "playing") {
+        return;
+      }
+      const letters = Array.from(normalizeWord(value))
+        .filter((letter) => /^[A-ZÑ]$/u.test(letter))
+        .slice(0, WORD_LENGTH);
+      setCurrentGuess(letters.join(""));
+    },
+    [setCurrentGuess, view],
+  );
   const status = view.status === "ready" ? view.game.status : null;
 
   useEffect(() => {
@@ -56,6 +69,13 @@ export function useGameInput(
         event.ctrlKey ||
         event.altKey
       ) {
+        return;
+      }
+      if (event.target instanceof HTMLInputElement) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          submitCurrentGuess();
+        }
         return;
       }
       if (event.key === "Enter" || event.key === "Backspace") {
@@ -72,5 +92,5 @@ export function useGameInput(
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [addLetter, removeLetter, status, submitCurrentGuess]);
 
-  return { addLetter, removeLetter, submitCurrentGuess };
+  return { replaceCurrentGuess, submitCurrentGuess };
 }
