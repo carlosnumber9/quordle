@@ -68,6 +68,11 @@ single tap on any board focuses an invisible text input and opens the device's
 native keyboard. The input is not focused automatically, so the native keyboard
 only opens after that explicit interaction.
 
+While the native keyboard is open, the game preserves the four-board layout and
+adds enough vertical scroll to reach the final rows of boards three and four.
+Tapping anywhere outside an individual board removes focus from the invisible
+input and dismisses the native keyboard.
+
 Letters are normalized and rendered simultaneously in the active row of every
 unresolved board. Backspace removes one letter, and Enter or the native send key
 submits the current word. Removing the virtual keyboard leaves the full

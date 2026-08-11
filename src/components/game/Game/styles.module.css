@@ -10,7 +10,28 @@
 .playing,
 .finished {
   height: 100svh;
+}
+
+.playing {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.finished {
   overflow: hidden;
+}
+
+.playing[data-native-keyboard-open]::after {
+  width: 1px;
+  flex: 0 0 var(--native-keyboard-inset, 0px);
+  content: "";
+  pointer-events: none;
+}
+
+.playing[data-native-keyboard-open] .boards {
+  flex: 0 0 var(--native-keyboard-boards-height);
 }
 
 .titleWaiting,

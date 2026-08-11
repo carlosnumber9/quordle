@@ -8,18 +8,18 @@ import { shouldShowSolutionWatermark } from "../Board/utils";
 import { ResultDialog } from "../ResultDialog";
 import type { ReadyGameProps } from "./definitions";
 import styles from "./styles.module.css";
+import { useNativeKeyboard } from "./use-native-keyboard";
 
 export function ReadyGame({ controller, view }: ReadyGameProps) {
   const nativeInputRef = useRef<HTMLInputElement>(null);
-
-  const focusNativeInput = () => {
-    const input = nativeInputRef.current;
-    if (input === null) {
-      return;
-    }
-    input.focus({ preventScroll: true });
-    input.setSelectionRange(input.value.length, input.value.length);
-  };
+  const boardsRef = useRef<HTMLElement>(null);
+  const { focusNativeInput, handleNativeInputBlur, handleNativeInputFocus } =
+    useNativeKeyboard(
+      nativeInputRef,
+      boardsRef,
+      controller.rootRef,
+      view.game.status === "playing",
+    );
 
   const updateNativeInput = (event: ChangeEvent<HTMLInputElement>) => {
     controller.replaceCurrentGuess(event.currentTarget.value);
@@ -31,6 +31,7 @@ export function ReadyGame({ controller, view }: ReadyGameProps) {
         aria-label="Tableros de juego"
         className={styles.boards}
         data-intro-reveal
+        ref={boardsRef}
       >
         {view.game.boards.map((_, boardIndex) => (
           <Board
@@ -56,7 +57,9 @@ export function ReadyGame({ controller, view }: ReadyGameProps) {
           enterKeyHint="done"
           inputMode="text"
           maxLength={WORD_LENGTH}
+          onBlur={handleNativeInputBlur}
           onChange={updateNativeInput}
+          onFocus={handleNativeInputFocus}
           ref={nativeInputRef}
           spellCheck={false}
           type="text"
