@@ -42,6 +42,20 @@ export interface ReadyGameProps {
   readonly view: ReadyGame;
 }
 
+export interface Bounds {
+  readonly height: number;
+  readonly left: number;
+  readonly top: number;
+  readonly width: number;
+}
+
+export interface FlipTransform {
+  readonly scaleX: number;
+  readonly scaleY: number;
+  readonly x: number;
+  readonly y: number;
+}
+
 export interface GameErrorProps {
   readonly load: () => Promise<void>;
   readonly view: Extract<GameView, { status: "error" }>;

@@ -1,9 +1,8 @@
-import {
-  isValidWordShape,
-  normalizeWord,
-} from "@/game/dictionary";
+import { isValidWordShape, normalizeWord } from "@/game/dictionary";
 import { BOARD_COUNT } from "@/game/definitions";
 import type { GamePayload } from "@/types/api";
+
+import type { Bounds, FlipTransform } from "./definitions";
 
 export async function requestGame(): Promise<GamePayload> {
   const response = await fetch("/api/game/today", { method: "GET" });
@@ -16,6 +15,27 @@ export async function requestGame(): Promise<GamePayload> {
     throw new TypeError("La API no devolvió una partida válida.");
   }
   return value;
+}
+
+export function calculateFlipTransform(
+  first: Bounds,
+  last: Bounds,
+): FlipTransform | null {
+  if (
+    first.width <= 0 ||
+    first.height <= 0 ||
+    last.width <= 0 ||
+    last.height <= 0
+  ) {
+    return null;
+  }
+
+  return {
+    scaleX: first.width / last.width,
+    scaleY: first.height / last.height,
+    x: first.left + first.width / 2 - (last.left + last.width / 2),
+    y: first.top + first.height / 2 - (last.top + last.height / 2),
+  };
 }
 
 function isGamePayload(value: unknown): value is GamePayload {

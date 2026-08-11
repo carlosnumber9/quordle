@@ -3,7 +3,10 @@ import type { GameState, LetterStatus } from "@/game/definitions";
 export interface BoardProps {
   readonly boardIndex: number;
   readonly currentGuess: string;
+  readonly isZoomObscured: boolean;
+  readonly isZoomed: boolean;
   readonly onInputRequest: () => void;
+  readonly onZoomRequest: () => void;
   readonly showSolutionWatermark: boolean;
   readonly state: GameState;
 }

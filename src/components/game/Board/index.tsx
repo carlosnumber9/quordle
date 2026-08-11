@@ -1,3 +1,5 @@
+import { useRef, type PointerEvent } from "react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -6,7 +8,16 @@ import type { BoardProps } from "./definitions";
 import styles from "./styles.module.css";
 
 export function Board(props: BoardProps) {
-  const { boardIndex, onInputRequest, showSolutionWatermark, state } = props;
+  const {
+    boardIndex,
+    isZoomObscured,
+    isZoomed,
+    onInputRequest,
+    onZoomRequest,
+    showSolutionWatermark,
+    state,
+  } = props;
+  const lastTouchRef = useRef(0);
   const board = state.boards[boardIndex];
 
   if (board === undefined) {
@@ -16,18 +27,38 @@ export function Board(props: BoardProps) {
   const solved = board.solvedAtAttempt !== null;
   const visibleSolution = state.status === "lost" ? board.solution : null;
 
+  const detectDoubleTap = (event: PointerEvent<HTMLButtonElement>) => {
+    if (event.pointerType === "mouse") {
+      return;
+    }
+    const elapsed = event.timeStamp - lastTouchRef.current;
+    if (lastTouchRef.current !== 0 && elapsed > 0 && elapsed <= 350) {
+      lastTouchRef.current = 0;
+      onZoomRequest();
+      return;
+    }
+    lastTouchRef.current = event.timeStamp;
+  };
+
   return (
     <Card
+      aria-hidden={isZoomObscured || undefined}
       className={cn(
         styles.board,
         "relative w-fit gap-0 overflow-visible rounded-none bg-transparent py-0 shadow-none ring-0 [--card-spacing:0px]",
       )}
+      data-board-index={boardIndex}
+      data-game-board
+      data-zoomed={isZoomed || undefined}
       size="sm"
     >
       <button
-        aria-label={`Tablero ${boardIndex + 1}. Tocar para escribir una palabra`}
+        aria-label={`Tablero ${boardIndex + 1}. Tocar para escribir; tocar dos veces para ampliar`}
         className={styles.boardSelector}
+        disabled={isZoomObscured}
         onClick={onInputRequest}
+        onDoubleClick={onZoomRequest}
+        onPointerUp={detectDoubleTap}
         type="button"
       />
       <span className="sr-only">

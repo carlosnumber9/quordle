@@ -38,6 +38,14 @@ board with its full `correct`, `present`, and `absent` evaluation. The current
 five-letter input appears simultaneously in the active row of every unresolved
 board. Rows after a board's solution remain empty.
 
+Double-clicking or double-tapping a board quickly enlarges it over the complete
+four-board area while the other boards fade out. A transparent close control in
+the enlarged board's upper-right corner reverses the animation at any time;
+Escape provides the same action. Both transitions become immediate under
+`prefers-reduced-motion`. The enlarged layout renders tiles and text at their
+final dimensions; transforms exist only during each transition so the resting
+board remains sharp.
+
 At the end, both a win and a loss open a centered results dialog. Wins and
 partial losses show an animated turn-by-turn timeline. Every turn is
 represented, each solved word appears where its board was completed, and a

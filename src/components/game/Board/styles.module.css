@@ -3,6 +3,10 @@
   box-shadow: none;
 }
 
+.board[data-zoomed] {
+  z-index: 30;
+}
+
 .boardSelector {
   position: absolute;
   inset: 0;
@@ -11,6 +15,7 @@
   border-radius: inherit;
   background: transparent;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .boardSelector:focus-visible {
@@ -40,6 +45,11 @@
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.board[data-zoomed] .tile {
+  border-radius: clamp(0.3rem, calc(var(--tile-size) * 0.16), 0.75rem);
+  font-size: clamp(1.125rem, calc(var(--tile-size) * 0.45), 2.25rem);
 }
 
 .emptyTile {
@@ -75,6 +85,10 @@
   transform: rotate(-18deg);
   user-select: none;
   white-space: nowrap;
+}
+
+.board[data-zoomed] .solutionWatermark {
+  font-size: clamp(1.625rem, calc(var(--tile-size) * 0.65), 3.25rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
