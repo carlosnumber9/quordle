@@ -20,8 +20,7 @@ export function Board(props: BoardProps) {
     <Card
       className={cn(
         styles.board,
-        "relative w-fit gap-0 rounded-lg py-1 [--card-spacing:--spacing(1)]",
-        solved && "ring-2 ring-primary/60",
+        "relative w-fit gap-0 overflow-visible rounded-none bg-transparent py-0 shadow-none ring-0 [--card-spacing:0px]",
       )}
       size="sm"
     >
@@ -50,9 +49,6 @@ export function Board(props: BoardProps) {
           state={state}
         />
       </CardContent>
-      {visibleSolution !== null ? (
-        <p className={styles.revealedSolution}>{visibleSolution}</p>
-      ) : null}
     </Card>
   );
 }

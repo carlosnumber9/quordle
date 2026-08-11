@@ -13,7 +13,10 @@ export function GameSkeleton() {
     >
       {Array.from({ length: BOARD_COUNT }, (_, boardIndex) => (
         <Card
-          className="gap-0 rounded-lg py-1 [--card-spacing:--spacing(1)]"
+          className={cn(
+            boardStyles.board,
+            "gap-0 rounded-none bg-transparent py-0 shadow-none ring-0 [--card-spacing:0px]",
+          )}
           key={boardIndex}
           size="sm"
         >

@@ -1,11 +1,6 @@
 .board {
-  transition:
-    outline-color 160ms ease,
-    background-color 160ms ease;
-}
-
-.board:hover {
-  background: color-mix(in oklab, var(--card) 94%, var(--color-sky-300));
+  background: transparent;
+  box-shadow: none;
 }
 
 .boardSelector {
@@ -82,16 +77,7 @@
   white-space: nowrap;
 }
 
-.revealedSolution {
-  padding-inline: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 650;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .board,
   .tile {
     animation: none !important;
     transition: none !important;
