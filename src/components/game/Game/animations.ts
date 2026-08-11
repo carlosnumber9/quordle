@@ -148,7 +148,11 @@ function positionCloseButton(
       rootBounds.left -
       closeButton.offsetWidth -
       closeInset,
-    top: selectedBounds.top - rootBounds.top + closeInset,
+    top:
+      selectedBounds.top -
+      rootBounds.top -
+      closeButton.offsetHeight -
+      closeInset,
   });
 }
 
