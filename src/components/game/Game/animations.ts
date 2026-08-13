@@ -83,10 +83,10 @@ export function useGuessAnimation(
       return;
     }
 
-    const row = `[data-clue-attempt="${attemptCount}"]`;
+    const row = `[data-board-row="${attemptCount}"]:not([data-solved-row])`;
     const context = gsap.context(() => {
-      const correct = `${row}[data-letter-status="correct"]`;
-      const present = `${row}[data-letter-status="present"]`;
+      const correct = `${row} [data-letter-status="correct"]`;
+      const present = `${row} [data-letter-status="present"]`;
       gsap.fromTo(
         correct,
         { scale: 1 },

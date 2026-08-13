@@ -36,7 +36,13 @@ The active interface renders four nine-by-five grids in the original Quordle
 two-by-two layout. Every accepted guess remains visible in each unresolved
 board with its full `correct`, `present`, and `absent` evaluation. The current
 five-letter input appears simultaneously in the active row of every unresolved
-board. Rows after a board's solution remain empty.
+board. When a board is solved, its tiles pulse in a quick bottom-to-top wave,
+starting at row nine and ending at the solving row. Half a second later, the
+unused rows fade out in the same order, excluding the solving row. The hidden
+rows keep their layout space, so every board retains the same nine-row
+footprint and the four-board layout does not move. Both transitions are
+skipped when the player prefers reduced motion. If the guess ends the game,
+the results dialog waits for this sequence to finish.
 
 Double-clicking or double-tapping a board quickly enlarges it over the complete
 four-board area while the other boards fade out. A transparent close control in

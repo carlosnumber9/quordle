@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { solvedBoardAnimationDuration } from "../Board/animations";
 import { useGuessAnimation, useIntroAnimation } from "./animations";
 import type { GameController, GameView } from "./definitions";
 import { useGameInput } from "./use-game-input";
@@ -17,6 +18,7 @@ export function useGame(siteUrl: string): GameController {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const manualShareRef = useRef<HTMLTextAreaElement>(null);
   const previousAttemptCount = useRef(0);
+  const sawPlayingGame = useRef(false);
   const load = useGameLoader(setView, setCurrentGuess, previousAttemptCount);
   const input = useGameInput(view, currentGuess, setView, setCurrentGuess);
   const results = useGameResults(
@@ -34,16 +36,42 @@ export function useGame(siteUrl: string): GameController {
   const completeIntro = useCallback(() => setIntroFinished(true), []);
 
   useIntroAnimation(view, rootRef, titleRef, completeIntro);
-  useGuessAnimation(
-    game?.attempts.length ?? 0,
-    rootRef,
-    previousAttemptCount,
-  );
+  useGuessAnimation(game?.attempts.length ?? 0, rootRef, previousAttemptCount);
   useEffect(() => {
-    setResultOpen(
-      introFinished && game !== null && game.status !== "playing",
+    if (game === null) {
+      sawPlayingGame.current = false;
+      setResultOpen(false);
+      return;
+    }
+    if (game.status === "playing") {
+      sawPlayingGame.current = true;
+      setResultOpen(false);
+      return;
+    }
+    if (!introFinished) {
+      return;
+    }
+
+    const solvedOnLastAttempt = game.boards.some(
+      (board) => board.solvedAtAttempt === game.attempts.length,
     );
-  }, [game?.gameId, game?.status, introFinished]);
+    const shouldWait =
+      sawPlayingGame.current &&
+      solvedOnLastAttempt &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!shouldWait) {
+      sawPlayingGame.current = false;
+      setResultOpen(true);
+      return;
+    }
+
+    const delay = solvedBoardAnimationDuration(game.attempts.length) * 1_000;
+    const timer = window.setTimeout(() => {
+      sawPlayingGame.current = false;
+      setResultOpen(true);
+    }, delay);
+    return () => window.clearTimeout(timer);
+  }, [game, introFinished]);
 
   return {
     ...input,

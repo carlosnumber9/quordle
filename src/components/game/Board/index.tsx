@@ -42,7 +42,10 @@ export function Board(props: BoardProps) {
   const handleKeyboardActivation = (event: MouseEvent<HTMLButtonElement>) => {
     if (event.detail === 0) {
       onZoomRequest();
+      return;
     }
+
+    event.currentTarget.blur();
   };
 
   return (
