@@ -1,33 +1,26 @@
 import { RiCloseLine } from "@remixicon/react";
-import { useRef, type ChangeEvent } from "react";
-
-import { WORD_LENGTH } from "@/game/definitions";
+import { useRef } from "react";
 
 import { Board } from "../Board";
 import { CompletedGamePanel } from "../CompletedGamePanel";
+import { Keyboard } from "../Keyboard";
 import { shouldShowSolutionWatermark } from "../Board/utils";
 import { ResultDialog } from "../ResultDialog";
 import type { ReadyGameProps } from "./definitions";
 import styles from "./styles.module.css";
 import { useBoardZoom } from "./use-board-zoom";
-import { useNativeKeyboard } from "./use-native-keyboard";
 
 export function ReadyGame({ controller, view }: ReadyGameProps) {
-  const nativeInputRef = useRef<HTMLInputElement>(null);
   const boardsRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const { focusedBoardIndex, layoutBoardIndex, restoreBoards, zoomBoard } =
     useBoardZoom(boardsRef, closeButtonRef);
-  const { focusNativeInput, handleNativeInputBlur, handleNativeInputFocus } =
-    useNativeKeyboard(
-      nativeInputRef,
-      boardsRef,
-      controller.rootRef,
-      view.game.status === "playing",
-    );
-
-  const updateNativeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    controller.replaceCurrentGuess(event.currentTarget.value);
+  const toggleBoardZoom = (boardIndex: number) => {
+    if (focusedBoardIndex === boardIndex) {
+      restoreBoards();
+      return;
+    }
+    zoomBoard(boardIndex);
   };
 
   return (
@@ -48,8 +41,7 @@ export function ReadyGame({ controller, view }: ReadyGameProps) {
             }
             isZoomed={layoutBoardIndex === boardIndex}
             key={boardIndex}
-            onInputRequest={focusNativeInput}
-            onZoomRequest={() => zoomBoard(boardIndex)}
+            onZoomRequest={() => toggleBoardZoom(boardIndex)}
             showSolutionWatermark={shouldShowSolutionWatermark(
               import.meta.env.DEV,
               view.mode,
@@ -70,23 +62,16 @@ export function ReadyGame({ controller, view }: ReadyGameProps) {
         </button>
       </section>
       {view.game.status === "playing" ? (
-        <input
-          aria-label="Palabra actual"
-          autoCapitalize="characters"
-          autoComplete="off"
-          autoCorrect="off"
-          className={styles.nativeInput}
-          enterKeyHint="done"
-          inputMode="text"
-          maxLength={WORD_LENGTH}
-          onBlur={handleNativeInputBlur}
-          onChange={updateNativeInput}
-          onFocus={handleNativeInputFocus}
-          ref={nativeInputRef}
-          spellCheck={false}
-          type="text"
-          value={controller.currentGuess}
-        />
+        <section className={styles.keyboard} data-intro-reveal>
+          <Keyboard
+            disabled={false}
+            keyboardState={controller.keyboardState}
+            onBackspace={controller.removeLetter}
+            onEnter={controller.submitCurrentGuess}
+            onLetter={controller.addLetter}
+            selectedBoardIndex={focusedBoardIndex}
+          />
+        </section>
       ) : (
         <>
           <CompletedGamePanel

@@ -41,10 +41,12 @@ board. Rows after a board's solution remain empty.
 Double-clicking or double-tapping a board quickly enlarges it over the complete
 four-board area while the other boards fade out. A transparent close control in
 the enlarged board's upper-right corner reverses the animation at any time;
-Escape provides the same action. Both transitions become immediate under
-`prefers-reduced-motion`. The enlarged layout renders tiles and text at their
-final dimensions; transforms exist only during each transition so the resting
-board remains sharp.
+double-clicking or double-tapping the enlarged board or pressing Escape
+provides the same action. While a board is enlarged, the help control shifts
+left so it does not cover the close control. Both transitions become immediate
+under `prefers-reduced-motion`. The enlarged layout renders tiles and text at
+their final dimensions; transforms exist only during each transition so the
+resting board remains sharp.
 
 At the end, both a win and a loss open a centered results dialog. The dialog
 always shows the four solutions in board order; it does not show the previous
@@ -83,23 +85,21 @@ reloads the daily game.
 
 ## Input
 
-The interface has no virtual keyboard. Desktop players can type immediately
-with a physical keyboard without first selecting a board. On touch devices, a
-single tap on any board focuses an invisible text input and opens the device's
-native keyboard. The input is not focused automatically, so the native keyboard
-only opens after that explicit interaction.
+The interface renders a three-row Spanish virtual keyboard with letter,
+Backspace, and Enter controls. Physical keyboard input remains available.
 
-While the native keyboard is open, the game preserves the four-board layout and
-adds enough vertical scroll to reach the final rows of boards three and four.
-An enlarged board keeps additional scroll clearance below its final row so
-every tile can move fully above the native keyboard.
-Tapping anywhere outside an individual board removes focus from the invisible
-input and dismisses the native keyboard.
+Without an enlarged board, the keyboard hides per-board `correct` and `present`
+colours. It only greys a letter after the player has tried it and every board
+confirms that the letter is absent. The key remains enabled.
+
+While a board is enlarged, the keyboard reflects only that board's accumulated
+`correct`, `present`, and `absent` evaluations. Restoring the four-board layout
+returns the keyboard to its global absent-only mode. Keyboard colour changes
+are immediate under `prefers-reduced-motion`.
 
 Letters are normalized and rendered simultaneously in the active row of every
-unresolved board. Backspace removes one letter, and Enter or the native send key
-submits the current word. Removing the virtual keyboard leaves the full
-remaining viewport available to the four-board grid.
+unresolved board. Backspace removes one letter, and Enter submits the current
+word.
 
 ## Persistence
 

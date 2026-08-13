@@ -47,9 +47,17 @@ export function HelpDialog() {
           </div>
           <Separator />
           <p className="text-sm text-muted-foreground">
-            En ordenador, escribe directamente con el teclado físico. En móvil,
-            toca una vez cualquiera de los cuatro tableros para abrir el teclado
-            nativo. Usa Intro o la tecla de envío para probar la palabra.
+            Usa el teclado en pantalla o el teclado físico. Sin ampliar ningún
+            tablero, solo se apagan las letras descartadas en las cuatro
+            palabras.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Haz doble clic o doble toque sobre un tablero para ampliarlo. El
+            teclado mostrará entonces solo sus pistas verdes, azules y grises.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Para volver a los cuatro tableros, haz doble clic o doble toque
+            sobre el tablero ampliado, pulsa el aspa de cierre o usa Escape.
           </p>
         </div>
       </DialogContent>

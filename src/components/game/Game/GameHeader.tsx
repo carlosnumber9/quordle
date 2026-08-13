@@ -21,7 +21,7 @@ export function GameHeader({
       >
         Quordle para Mamá
       </h1>
-      <div data-intro-reveal>
+      <div className={styles.helpControl} data-intro-reveal>
         <HelpDialog />
       </div>
     </header>

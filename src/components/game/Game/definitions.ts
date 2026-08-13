@@ -1,5 +1,6 @@
 import type { RefObject } from "react";
 
+import type { KeyboardState } from "@/game/keyboard";
 import type { GameState, SubmitGuessError } from "@/game/definitions";
 import type { GameMode } from "@/types/api";
 
@@ -19,14 +20,16 @@ export type GameView =
   | ({ readonly status: "ready" } & ReadyGame);
 
 export interface GameController {
+  readonly addLetter: (letter: string) => void;
   readonly currentGuess: string;
   readonly introFinished: boolean;
+  readonly keyboardState: KeyboardState;
   readonly load: () => Promise<void>;
   readonly manualShareRef: RefObject<HTMLTextAreaElement | null>;
   readonly manualShareText: string | null;
-  readonly replaceCurrentGuess: (value: string) => void;
   readonly replay: () => Promise<void>;
   readonly replaying: boolean;
+  readonly removeLetter: () => void;
   readonly resultOpen: boolean;
   readonly rootRef: RefObject<HTMLElement | null>;
   readonly setManualShareText: (text: string | null) => void;

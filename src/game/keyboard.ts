@@ -1,9 +1,5 @@
 import type { GameState, LetterStatus } from "./definitions";
-import {
-  SPANISH_ALPHABET,
-  STATUS_PRIORITY,
-  type KeyboardState,
-} from "./keyboard/definitions";
+import { STATUS_PRIORITY, type KeyboardState } from "./keyboard/definitions";
 
 export type {
   KeyboardBoardState,
@@ -33,9 +29,11 @@ export function isLetterAbsentFromAllBoards(
 
 export function deriveKeyboardState(state: GameState): KeyboardState {
   const boards: Array<Record<string, LetterStatus>> = state.boards.map(() => ({}));
+  const attemptedLetters = new Set<string>();
 
   for (const attempt of state.attempts) {
     const letters = Array.from(attempt.guess);
+    letters.forEach((letter) => attemptedLetters.add(letter));
 
     attempt.boards.forEach((evaluation, boardIndex) => {
       if (evaluation === null) {
@@ -74,7 +72,7 @@ export function deriveKeyboardState(state: GameState): KeyboardState {
       return;
     }
     const solutionLetters = new Set(Array.from(boardState.solution));
-    SPANISH_ALPHABET.forEach((letter) => {
+    attemptedLetters.forEach((letter) => {
       if (!solutionLetters.has(letter)) {
         board[letter] = "absent";
       }

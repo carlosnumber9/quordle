@@ -1,12 +1,14 @@
 import {
   useCallback,
   useEffect,
+  useMemo,
   type Dispatch,
   type RefObject,
 } from "react";
 import { toast } from "sonner";
 
 import { copyTextToClipboard } from "@/game/clipboard";
+import { deriveKeyboardState } from "@/game/keyboard";
 import { replayLocalGame } from "@/game/local-game-client";
 import { createShareText } from "@/game/share";
 
@@ -23,6 +25,12 @@ export function useGameResults(
   manualShareRef: RefObject<HTMLTextAreaElement | null>,
   previousAttemptCount: RefObject<number>,
 ) {
+  const game = view.status === "ready" ? view.game : null;
+  const keyboardState = useMemo(
+    () => (game === null ? [] : deriveKeyboardState(game)),
+    [game],
+  );
+
   useEffect(() => {
     if (manualShareText !== null) {
       manualShareRef.current?.focus();
@@ -66,5 +74,5 @@ export function useGameResults(
     view,
   ]);
 
-  return { replay, share };
+  return { keyboardState, replay, share };
 }

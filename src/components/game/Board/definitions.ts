@@ -5,7 +5,6 @@ export interface BoardProps {
   readonly currentGuess: string;
   readonly isZoomObscured: boolean;
   readonly isZoomed: boolean;
-  readonly onInputRequest: () => void;
   readonly onZoomRequest: () => void;
   readonly showSolutionWatermark: boolean;
   readonly state: GameState;

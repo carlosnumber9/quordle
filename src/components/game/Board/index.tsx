@@ -1,4 +1,4 @@
-import { useRef, type PointerEvent } from "react";
+import { useRef, type MouseEvent, type PointerEvent } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,6 @@ export function Board(props: BoardProps) {
     boardIndex,
     isZoomObscured,
     isZoomed,
-    onInputRequest,
     onZoomRequest,
     showSolutionWatermark,
     state,
@@ -40,6 +39,12 @@ export function Board(props: BoardProps) {
     lastTouchRef.current = event.timeStamp;
   };
 
+  const handleKeyboardActivation = (event: MouseEvent<HTMLButtonElement>) => {
+    if (event.detail === 0) {
+      onZoomRequest();
+    }
+  };
+
   return (
     <Card
       aria-hidden={isZoomObscured || undefined}
@@ -53,10 +58,15 @@ export function Board(props: BoardProps) {
       size="sm"
     >
       <button
-        aria-label={`Tablero ${boardIndex + 1}. Tocar para escribir; tocar dos veces para ampliar`}
+        aria-label={
+          isZoomed
+            ? `Tablero ${boardIndex + 1}. Doble clic o doble toque para volver a los cuatro tableros`
+            : `Tablero ${boardIndex + 1}. Doble clic o doble toque para ampliar`
+        }
+        aria-pressed={isZoomed}
         className={styles.boardSelector}
         disabled={isZoomObscured}
-        onClick={onInputRequest}
+        onClick={handleKeyboardActivation}
         onDoubleClick={onZoomRequest}
         onPointerUp={detectDoubleTap}
         type="button"
