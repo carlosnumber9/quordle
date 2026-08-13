@@ -10,4 +10,25 @@
   html {
     @apply font-sans;
   }
+
+  :where(
+    a[href],
+    button:not(:disabled),
+    input:not(:disabled):is(
+      [type="button"],
+      [type="checkbox"],
+      [type="color"],
+      [type="file"],
+      [type="radio"],
+      [type="range"],
+      [type="reset"],
+      [type="submit"]
+    ),
+    label[for],
+    [role="button"]:not([aria-disabled="true"]),
+    select:not(:disabled),
+    summary
+  ) {
+    cursor: pointer;
+  }
 }

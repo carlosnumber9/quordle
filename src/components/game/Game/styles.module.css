@@ -89,7 +89,6 @@
   border: 0;
   background: transparent;
   color: var(--foreground);
-  cursor: pointer;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
